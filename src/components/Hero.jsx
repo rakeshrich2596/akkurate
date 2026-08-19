@@ -574,10 +574,15 @@ function Hero() {
 
             flex
 
-            min-h-[570px]
+            min-h-[500px]
+
+            -mt-24
 
             items-end
             justify-center
+
+            sm:mt-0
+            sm:min-h-[570px]
 
             lg:min-h-[700px]
 
@@ -598,14 +603,15 @@ function Hero() {
 
               z-10
 
-              h-[570px]
-              w-[64%]
+              h-[470px]
+              w-[72%]
 
               rounded-t-[32px]
 
               bg-white
 
-              sm:h-[600px]
+              sm:h-[570px]
+              sm:w-[64%]
 
               lg:left-[12%]
               lg:h-[610px]
@@ -627,17 +633,18 @@ function Hero() {
               absolute
 
               bottom-0
-              left-[17%]
+              left-[13%]
 
               z-20
 
-              w-[63%]
+              w-[72%]
 
               max-w-[570px]
 
               object-contain
               object-bottom
 
+              sm:left-[17%]
               sm:w-[60%]
 
               lg:left-[13%]
@@ -791,12 +798,16 @@ function Hero() {
 
               absolute
 
-              bottom-[140px]
-              left-[-30px]
+              bottom-[115px]
+              left-[-8px]
 
               z-30
 
-              w-[50px]
+              w-[42px]
+
+              sm:bottom-[140px]
+              sm:left-[-30px]
+              sm:w-[50px]
 
               max-w-none
 
@@ -820,11 +831,14 @@ function Hero() {
               absolute
 
               bottom-0
-              left-[2%]
+              left-1/2
 
               z-40
 
-              w-[340px]
+              w-[calc(100%-32px)]
+              max-w-[340px]
+
+              -translate-x-1/2
 
               overflow-hidden
 
@@ -835,6 +849,11 @@ function Hero() {
               p-6
 
               shadow-[0_20px_50px_rgba(0,0,0,0.10)]
+
+              sm:left-[2%]
+              sm:w-[340px]
+              sm:max-w-none
+              sm:translate-x-0
 
               lg:left-[-3%]
               lg:w-[365px]
@@ -976,14 +995,17 @@ function Hero() {
 
               bottom-0
 
-              right-[-1%]
+              right-[2%]
 
               z-40
 
               flex
 
-              h-[150px]
-              w-[150px]
+              h-[120px]
+              w-[120px]
+
+              sm:h-[150px]
+              sm:w-[150px]
 
               items-center
               justify-center
@@ -993,6 +1015,8 @@ function Hero() {
               text-white
 
               shadow-[0_20px_40px_rgba(20,85,217,0.25)]
+
+              sm:right-[-1%]
 
               lg:right-[10%]
             "
@@ -1006,9 +1030,11 @@ function Hero() {
 
               <div
                 className="
-                  text-[52px]
+                      text-[42px]
 
                   font-bold
+
+                  sm:text-[52px]
 
                   leading-none
                 "
