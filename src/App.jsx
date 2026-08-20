@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import CustomCursor from "./components/CustomCursor";
 import Hero from "./components/Hero";
 import BrandSlider from "./components/BrandSlider";
 import About from "./components/About";
@@ -15,9 +16,21 @@ import Footer from "./components/Footer";
 import ResultsSection from "./components/ResultsSection";
 import ClientTrust from "./components/ClientTrust";
 
-function App() {
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import FAQ from "./pages/FAQ";
+
+
+function HomePage() {
   return (
     <>
+
+      <CustomCursor />
+
       <Navbar />
 
       <main>
@@ -47,8 +60,6 @@ function App() {
 
         <GlobalPresence />
 
-        
-
         <Integrations />
       </main>
 
@@ -56,5 +67,46 @@ function App() {
     </>
   );
 }
+
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* =========================================
+            HOME PAGE
+        ========================================= */}
+
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+
+
+        {/* =========================================
+            FAQ PAGE
+        ========================================= */}
+
+        <Route
+          path="/faq"
+          element={
+            <>
+              <Navbar />
+
+              <FAQ />
+
+              <Footer />
+            </>
+          }
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
+
 
 export default App;

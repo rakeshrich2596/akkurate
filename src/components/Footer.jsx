@@ -14,11 +14,12 @@ import {
   FiPhone,
   FiMail,
   FiMapPin,
+  FiArrowUpRight,
 } from "react-icons/fi";
 
-// =========================================================
-// SOCIAL LINKS
-// =========================================================
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
 
 const socialLinks = [
   {
@@ -26,25 +27,21 @@ const socialLinks = [
     href: "https://www.instagram.com/akkurate_digital/",
     icon: FaInstagram,
   },
-
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/akkurate-in/",
     icon: FaLinkedinIn,
   },
-
   {
     name: "Facebook",
     href: "https://www.facebook.com/people/Akkurate/61581308511005/",
     icon: FaFacebookF,
   },
-
   {
     name: "X",
     href: "#",
     icon: FaXTwitter,
   },
-
   {
     name: "YouTube",
     href: "#",
@@ -52,40 +49,59 @@ const socialLinks = [
   },
 ];
 
-// =========================================================
-// QUICK LINKS
-// =========================================================
+/* =========================================================
+   QUICK LINKS
+========================================================= */
 
 const quickLinks = [
   {
     label: "About Us",
     href: "/about",
   },
-
   {
     label: "Services",
     href: "/services",
   },
-
   {
     label: "Industries",
     href: "/industries",
   },
-
   {
     label: "Blog",
     href: "/blog",
   },
-
+  {
+    label: "FAQ",
+    href: "/faq",
+  },
   {
     label: "Contact",
     href: "/contact",
   },
 ];
 
-// =========================================================
-// AKKURATE LOGO
-// =========================================================
+/* =========================================================
+   WHAT WE DO
+========================================================= */
+
+const serviceLinks = [
+  {
+    label: "Digital Marketing",
+    href: "/services/digital-marketing",
+  },
+  {
+    label: "Website Development",
+    href: "/services/website-development",
+  },
+  {
+    label: "Branding",
+    href: "/services/branding",
+  },
+];
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 const AkkurateLogo = () => {
   return (
@@ -93,29 +109,27 @@ const AkkurateLogo = () => {
       src="/assets/images/logo/favicon.png"
       alt="Akkurate Digital Solutions"
       className="
-        h-[46px]
-        w-[54px]
+        h-[42px]
+        w-[50px]
 
         object-contain
 
-        sm:h-[50px]
-        sm:w-[55px]
+        sm:h-[46px]
+        sm:w-[52px]
       "
     />
   );
 };
 
-// =========================================================
-// FOOTER
-// =========================================================
+/* =========================================================
+   FOOTER
+========================================================= */
 
 const Footer = () => {
   return (
     <>
       {/* =====================================================
           FIXED WHATSAPP BUTTON
-
-          This stays fixed while scrolling on every page
       ===================================================== */}
 
       <a
@@ -127,14 +141,15 @@ const Footer = () => {
         className="
           fixed
 
-          bottom-5
-          right-5
+          bottom-4
+          right-4
 
           z-[9999]
 
           flex
-          h-[54px]
-          w-[54px]
+
+          h-[52px]
+          w-[52px]
 
           items-center
           justify-center
@@ -145,7 +160,7 @@ const Footer = () => {
 
           text-white
 
-          shadow-[0_8px_25px_rgba(37,211,102,0.35)]
+          shadow-[0_8px_25px_rgba(37,211,102,0.30)]
 
           transition-all
           duration-300
@@ -153,29 +168,27 @@ const Footer = () => {
           hover:-translate-y-1
           hover:scale-105
 
-          hover:shadow-[0_12px_30px_rgba(37,211,102,0.45)]
+          hover:shadow-[0_12px_30px_rgba(37,211,102,0.40)]
 
-          sm:bottom-6
-          sm:right-6
+          sm:bottom-5
+          sm:right-5
 
-          sm:h-[58px]
-          sm:w-[58px]
+          sm:h-[56px]
+          sm:w-[56px]
 
-          md:h-[60px]
-          md:w-[60px]
+          md:h-[58px]
+          md:w-[58px]
         "
       >
         <FaWhatsapp
           className="
-            text-[28px]
+            text-[27px]
 
-            sm:text-[30px]
+            sm:text-[29px]
 
-            md:text-[32px]
+            md:text-[31px]
           "
         />
-
-        {/* Small notification dot */}
 
         <span
           className="
@@ -184,8 +197,8 @@ const Footer = () => {
             right-0
             top-0
 
-            h-[13px]
-            w-[13px]
+            h-[12px]
+            w-[12px]
 
             rounded-full
 
@@ -193,9 +206,6 @@ const Footer = () => {
             border-white
 
             bg-[#25D366]
-
-            sm:h-[14px]
-            sm:w-[14px]
           "
         />
       </a>
@@ -215,9 +225,9 @@ const Footer = () => {
           text-white
         "
       >
-        {/* =====================================================
+        {/* ===================================================
             MAIN FOOTER
-        ===================================================== */}
+        ==================================================== */}
 
         <div
           className="
@@ -228,20 +238,21 @@ const Footer = () => {
             max-w-[1280px]
 
             px-5
-            py-[55px]
+
+            py-[38px]
 
             sm:px-8
-            sm:py-[65px]
+            sm:py-[44px]
 
             lg:px-10
-            lg:py-[70px]
+            lg:py-[48px]
 
             xl:px-0
           "
         >
-          {/* ===================================================
-              THREE COLUMN LAYOUT
-          ==================================================== */}
+          {/* =================================================
+              FOUR COLUMN LAYOUT
+          ================================================= */}
 
           <div
             className="
@@ -249,16 +260,17 @@ const Footer = () => {
 
               grid-cols-1
 
-              gap-12
+              gap-9
 
-              md:grid-cols-3
-              md:gap-10
+              sm:grid-cols-2
 
-              lg:grid-cols-[1.45fr_0.75fr_1fr]
-              lg:gap-[55px]
+              sm:gap-x-10
+              sm:gap-y-10
 
-              xl:gap-[65px]
-            "
+              lg:grid-cols-[1.45fr_1fr_0.8fr_1fr]
+
+              lg:gap-[42px]
+          "
           >
             {/* =================================================
                 COLUMN 1
@@ -270,7 +282,7 @@ const Footer = () => {
                 min-w-0
               "
             >
-              {/* LOGO + NAME */}
+              {/* LOGO */}
 
               <a
                 href="/"
@@ -286,28 +298,21 @@ const Footer = () => {
                   no-underline
                 "
               >
-                {/* LOGO */}
-
                 <div
                   className="
                     flex
 
-                    h-[62px]
-                    w-[62px]
+                    h-[52px]
+                    w-[52px]
 
                     shrink-0
 
                     items-center
                     justify-center
-
-                    sm:h-[65px]
-                    sm:w-[65px]
                   "
                 >
                   <AkkurateLogo />
                 </div>
-
-                {/* NAME */}
 
                 <div
                   className="
@@ -317,11 +322,11 @@ const Footer = () => {
                 >
                   <span
                     className="
-                      text-[25px]
+                      text-[23px]
 
                       font-bold
 
-                      leading-[1]
+                      leading-none
 
                       tracking-[-0.03em]
 
@@ -333,15 +338,15 @@ const Footer = () => {
 
                   <span
                     className="
-                      mt-[5px]
+                      mt-[4px]
 
-                      text-[10px]
+                      text-[9px]
 
-                      font-semibold
+                      font-medium
 
                       uppercase
 
-                      tracking-[0.25em]
+                      tracking-[0.23em]
 
                       text-blue-300
                     "
@@ -355,23 +360,22 @@ const Footer = () => {
 
               <p
                 className="
-                  mt-6
+                  mt-4
 
-                  max-w-[340px]
+                  max-w-[330px]
 
-                  text-[13px]
+                  text-[12px]
 
-                  leading-[1.7]
+                  leading-[1.65]
 
                   text-slate-300
-
-                  sm:max-w-[360px]
                 "
               >
-                We help businesses build stronger brands,
-                create better digital experiences, and
-                achieve measurable growth through
-                technology and marketing.
+                We help businesses build stronger
+                brands, create better digital
+                experiences, and achieve measurable
+                growth through technology and
+                marketing.
               </p>
 
               {/* PHONE */}
@@ -379,7 +383,7 @@ const Footer = () => {
               <a
                 href="tel:+919841663161"
                 className="
-                  mt-6
+                  mt-4
 
                   flex
 
@@ -387,9 +391,9 @@ const Footer = () => {
 
                   items-center
 
-                  gap-3
+                  gap-2.5
 
-                  text-[13px]
+                  text-[12px]
 
                   text-slate-300
 
@@ -405,7 +409,7 @@ const Footer = () => {
                   className="
                     shrink-0
 
-                    text-[16px]
+                    text-[14px]
                   "
                 />
 
@@ -419,7 +423,7 @@ const Footer = () => {
               <a
                 href="mailto:growth@akkurate.in"
                 className="
-                  mt-3
+                  mt-2.5
 
                   flex
 
@@ -427,9 +431,9 @@ const Footer = () => {
 
                   items-center
 
-                  gap-3
+                  gap-2.5
 
-                  text-[13px]
+                  text-[12px]
 
                   text-slate-300
 
@@ -445,7 +449,7 @@ const Footer = () => {
                   className="
                     shrink-0
 
-                    text-[16px]
+                    text-[14px]
                   "
                 />
 
@@ -458,28 +462,28 @@ const Footer = () => {
 
               <div
                 className="
-                  mt-3
+                  mt-2.5
 
                   flex
 
                   items-start
 
-                  gap-3
+                  gap-2.5
 
-                  text-[13px]
+                  text-[12px]
 
-                  leading-[1.6]
+                  leading-[1.5]
 
                   text-slate-300
                 "
               >
                 <FiMapPin
                   className="
-                    mt-[3px]
+                    mt-[2px]
 
                     shrink-0
 
-                    text-[16px]
+                    text-[14px]
                   "
                 />
 
@@ -495,6 +499,109 @@ const Footer = () => {
 
             {/* =================================================
                 COLUMN 2
+                WHAT WE DO
+            ================================================= */}
+
+            <div
+              className="
+                min-w-0
+              "
+            >
+              <h3
+                className="
+                  m-0
+
+                  text-[14px]
+
+                  font-bold
+
+                  tracking-[-0.01em]
+
+                  text-white
+                "
+              >
+                What We Do
+              </h3>
+
+              <ul
+                className="
+                  m-0
+
+                  mt-4
+
+                  list-none
+
+                  space-y-2.5
+
+                  p-0
+                "
+              >
+                {serviceLinks.map(
+                  (link) => (
+                    <li
+                      key={
+                        link.label
+                      }
+                    >
+                      <a
+                        href={
+                          link.href
+                        }
+                        className="
+                          group
+
+                          flex
+
+                          w-fit
+
+                          items-center
+
+                          gap-1.5
+
+                          text-[12px]
+
+                          text-slate-300
+
+                          no-underline
+
+                          transition-all
+                          duration-200
+
+                          hover:translate-x-1
+
+                          hover:text-white
+                        "
+                      >
+                        <span>
+                          {
+                            link.label
+                          }
+                        </span>
+
+                        <FiArrowUpRight
+                          className="
+                            text-[11px]
+
+                            opacity-0
+
+                            transition-all
+                            duration-200
+
+                            group-hover:translate-x-0.5
+                            group-hover:-translate-y-0.5
+
+                            group-hover:opacity-100
+                          "
+                        />
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* =================================================
+                COLUMN 3
                 QUICK LINKS
             ================================================= */}
 
@@ -507,7 +614,7 @@ const Footer = () => {
                 className="
                   m-0
 
-                  text-[15px]
+                  text-[14px]
 
                   font-bold
 
@@ -523,11 +630,11 @@ const Footer = () => {
                 className="
                   m-0
 
-                  mt-6
+                  mt-4
 
                   list-none
 
-                  space-y-[15px]
+                  space-y-2.5
 
                   p-0
                 "
@@ -535,10 +642,14 @@ const Footer = () => {
                 {quickLinks.map(
                   (link) => (
                     <li
-                      key={link.label}
+                      key={
+                        link.label
+                      }
                     >
                       <a
-                        href={link.href}
+                        href={
+                          link.href
+                        }
                         className="
                           group
 
@@ -548,9 +659,9 @@ const Footer = () => {
 
                           items-center
 
-                          gap-2
+                          gap-1.5
 
-                          text-[13px]
+                          text-[12px]
 
                           text-slate-300
 
@@ -565,8 +676,26 @@ const Footer = () => {
                         "
                       >
                         <span>
-                          {link.label}
+                          {
+                            link.label
+                          }
                         </span>
+
+                        <FiArrowUpRight
+                          className="
+                            text-[11px]
+
+                            opacity-0
+
+                            transition-all
+                            duration-200
+
+                            group-hover:translate-x-0.5
+                            group-hover:-translate-y-0.5
+
+                            group-hover:opacity-100
+                          "
+                        />
                       </a>
                     </li>
                   )
@@ -575,7 +704,7 @@ const Footer = () => {
             </div>
 
             {/* =================================================
-                COLUMN 3
+                COLUMN 4
                 CONNECT WITH US
             ================================================= */}
 
@@ -588,7 +717,7 @@ const Footer = () => {
                 className="
                   m-0
 
-                  text-[15px]
+                  text-[14px]
 
                   font-bold
 
@@ -604,7 +733,7 @@ const Footer = () => {
 
               <div
                 className="
-                  mt-6
+                  mt-4
 
                   flex
 
@@ -612,7 +741,7 @@ const Footer = () => {
 
                   items-center
 
-                  gap-3
+                  gap-2.5
                 "
               >
                 {socialLinks.map(
@@ -652,8 +781,8 @@ const Footer = () => {
                         className="
                           flex
 
-                          h-[38px]
-                          w-[38px]
+                          h-[34px]
+                          w-[34px]
 
                           shrink-0
 
@@ -678,13 +807,13 @@ const Footer = () => {
 
                           hover:text-white
 
-                          sm:h-[40px]
-                          sm:w-[40px]
+                          sm:h-[36px]
+                          sm:w-[36px]
                         "
                       >
                         <Icon
                           className="
-                            text-[17px]
+                            text-[15px]
                           "
                         />
                       </a>
@@ -693,26 +822,63 @@ const Footer = () => {
                 )}
               </div>
 
-              {/* SOCIAL DESCRIPTION */}
-
               <p
                 className="
-                  mt-5
+                  mt-4
 
-                  max-w-[300px]
+                  max-w-[250px]
 
-                  text-[13px]
+                  text-[11px]
 
-                  leading-[1.7]
+                  leading-[1.6]
 
                   text-slate-400
                 "
               >
-                Follow us on social media
-                for updates, insights,
-                and the latest from
-                Akkurate.
+                Follow us for insights,
+                updates, and the latest
+                from Akkurate.
               </p>
+
+              {/* WHATSAPP */}
+
+              <a
+                href="https://wa.me/919841663161"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  mt-4
+
+                  inline-flex
+
+                  items-center
+
+                  gap-2
+
+                  text-[12px]
+
+                  font-medium
+
+                  text-slate-300
+
+                  no-underline
+
+                  transition-colors
+                  duration-200
+
+                  hover:text-[#25D366]
+                "
+              >
+                <FaWhatsapp
+                  className="
+                    text-[17px]
+                  "
+                />
+
+                <span>
+                  Chat with us
+                </span>
+              </a>
             </div>
           </div>
 
@@ -722,15 +888,15 @@ const Footer = () => {
 
           <div
             className="
-              mt-[50px]
+              mt-8
 
               h-px
 
               w-full
 
-              bg-white/15
+              bg-white/10
 
-              sm:mt-[55px]
+              sm:mt-9
             "
           />
 
@@ -744,9 +910,9 @@ const Footer = () => {
 
               flex-col
 
-              gap-4
+              gap-3
 
-              pt-5
+              pt-4
 
               sm:flex-row
 
@@ -761,11 +927,11 @@ const Footer = () => {
               className="
                 m-0
 
-                text-[11px]
+                text-[10px]
 
                 text-slate-400
 
-                sm:text-[12px]
+                sm:text-[11px]
               "
             >
               © 2026 Akkurate.
@@ -782,14 +948,15 @@ const Footer = () => {
 
                 items-center
 
-                gap-x-6
-                gap-y-2
+                gap-x-5
+
+                gap-y-1.5
               "
             >
               <a
                 href="/policy-privacy"
                 className="
-                  text-[11px]
+                  text-[10px]
 
                   text-slate-400
 
@@ -800,16 +967,16 @@ const Footer = () => {
 
                   hover:text-white
 
-                  sm:text-[12px]
+                  sm:text-[11px]
                 "
               >
                 Privacy Policy
               </a>
 
               <a
-                href="#"
+                href="/terms"
                 className="
-                  text-[11px]
+                  text-[10px]
 
                   text-slate-400
 
@@ -820,7 +987,7 @@ const Footer = () => {
 
                   hover:text-white
 
-                  sm:text-[12px]
+                  sm:text-[11px]
                 "
               >
                 Terms & Conditions
@@ -830,7 +997,7 @@ const Footer = () => {
         </div>
 
         {/* =====================================================
-            RESPONSIVE FOOTER
+            RESPONSIVE
         ===================================================== */}
 
         <style>{`
@@ -859,8 +1026,8 @@ const Footer = () => {
           @media (max-width: 767px) {
 
             footer > div {
-              padding-top: 48px;
-              padding-bottom: 35px;
+              padding-top: 34px;
+              padding-bottom: 28px;
             }
 
           }
