@@ -46,8 +46,6 @@ const rowTwoLogos = [
 // =========================================================
 // ANIMATED TITLE
 // CENTER → OUTWARD
-//
-// Complete title is treated as ONE title.
 // =========================================================
 
 const AnimatedTitle = ({
@@ -58,10 +56,6 @@ const AnimatedTitle = ({
   const words = text.split(" ");
 
   const letters = [];
-
-  // =======================================================
-  // CREATE LETTER LIST
-  // =======================================================
 
   words.forEach((word, wordIndex) => {
     [...word].forEach(
@@ -76,21 +70,12 @@ const AnimatedTitle = ({
     );
   });
 
-  // =======================================================
-  // FIND COMPLETE TITLE CENTER
-  // =======================================================
-
   const center =
     (letters.length - 1) / 2;
-
-  // =======================================================
-  // CENTER → OUTWARD ORDER
-  // =======================================================
 
   const animationOrder = letters
     .map((letter) => ({
       ...letter,
-
       distance: Math.abs(
         letter.globalIndex - center
       ),
@@ -108,10 +93,6 @@ const AnimatedTitle = ({
       );
     });
 
-  // =======================================================
-  // CREATE DELAY FOR EACH LETTER
-  // =======================================================
-
   const delayMap = {};
 
   animationOrder.forEach(
@@ -123,10 +104,6 @@ const AnimatedTitle = ({
     }
   );
 
-  // =======================================================
-  // RENDER
-  // =======================================================
-
   return (
     <span
       key={animationKey}
@@ -137,10 +114,6 @@ const AnimatedTitle = ({
           <React.Fragment
             key={`${wordIndex}-${animationKey}`}
           >
-            {/* =========================================
-                WORD
-            ========================================= */}
-
             <span className="client-title-word">
               {[...word].map(
                 (
@@ -163,9 +136,7 @@ const AnimatedTitle = ({
                         ${characterIndex}-
                         ${animationKey}
                       `}
-                      className="
-                        client-title-letter
-                      "
+                      className="client-title-letter"
                       style={{
                         animationDelay: `${
                           delayMap[
@@ -181,16 +152,10 @@ const AnimatedTitle = ({
               )}
             </span>
 
-            {/* =========================================
-                PROPER WORD SPACE
-            ========================================= */}
-
             {wordIndex <
               words.length - 1 && (
               <span
-                className="
-                  client-title-space
-                "
+                className="client-title-space"
                 aria-hidden="true"
               >
                 &nbsp;
@@ -205,19 +170,16 @@ const AnimatedTitle = ({
 
 // =========================================================
 // LOGO CARD
+// ALL CARDS SAME LINE
 // =========================================================
 
-const LogoCard = ({
-  logo,
-  index,
-  row,
-}) => {
+const LogoCard = ({ logo, index }) => {
   return (
     <div
       className="
         group
         flex
-        h-[78px]
+        h-[82px]
         w-[180px]
         shrink-0
         items-center
@@ -225,39 +187,38 @@ const LogoCard = ({
         rounded-[10px]
         border
         border-slate-200
-        bg-white
+        bg-[#f8fafc]
         px-4
-        shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+        shadow-[0_3px_10px_rgba(0,0,0,0.08)]
         transition-all
         duration-300
+
         hover:-translate-y-1
+        hover:bg-white
         hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]
-        sm:h-[82px]
+
+        sm:h-[86px]
         sm:w-[200px]
+
+        lg:h-[88px]
+        lg:w-[215px]
       "
-      style={{
-        marginTop:
-          row === "row1"
-            ? index % 2 === 0
-              ? "0px"
-              : "20px"
-            : index % 2 === 0
-              ? "20px"
-              : "0px",
-      }}
     >
       <img
         src={logo}
         alt={`Client ${index + 1}`}
         className="
-          h-[52px]
+          h-[50px]
           w-full
           object-contain
           opacity-90
           transition-all
           duration-300
+
           group-hover:scale-105
           group-hover:opacity-100
+
+          sm:h-[54px]
         "
       />
     </div>
@@ -284,9 +245,6 @@ const ClientTrust = () => {
 
   // =======================================================
   // SCROLL INTO VIEW
-  //
-  // Animation runs whenever this section
-  // enters the viewport.
   // =======================================================
 
   useEffect(() => {
@@ -298,26 +256,15 @@ const ClientTrust = () => {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          // =================================================
-          // USER ENTERED CLIENT TRUST SECTION
-          // =================================================
-
           if (
             entry.isIntersecting
           ) {
-            // First hide
             setTitleVisible(false);
 
-            // Create completely new animation
             setAnimationKey(
               (previous) =>
                 previous + 1
             );
-
-            /*
-              Wait for React/browser to
-              paint hidden state first.
-            */
 
             requestAnimationFrame(
               () => {
@@ -330,29 +277,11 @@ const ClientTrust = () => {
                 );
               }
             );
-          }
-
-          // =================================================
-          // USER LEFT CLIENT TRUST SECTION
-          // =================================================
-
-          else {
-            /*
-              Reset.
-
-              So when user comes back,
-              animation starts again.
-            */
-
+          } else {
             setTitleVisible(false);
           }
         },
         {
-          /*
-            Animation starts when 25%
-            of section is visible.
-          */
-
           threshold: 0.25,
         }
       );
@@ -374,10 +303,13 @@ const ClientTrust = () => {
         bg-[#020617]
         py-[55px]
         text-white
+
         sm:py-[65px]
-        lg:py-[75px]
+
+        lg:py-[72px]
       "
     >
+
       {/* =====================================================
           BACKGROUND GLOW
       ===================================================== */}
@@ -413,7 +345,7 @@ const ClientTrust = () => {
       />
 
       {/* =====================================================
-          TOP TITLE
+          TITLE
       ===================================================== */}
 
       <div
@@ -421,19 +353,26 @@ const ClientTrust = () => {
           relative
           z-10
           mx-auto
-          max-w-[1000px]
+          w-full
+          max-w-[1500px]
           px-5
           text-center
+
+          sm:px-8
+          lg:px-12
         "
       >
         <h2
           className={`
             client-main-title
-            text-[clamp(2rem,5vw,3.5rem)]
+            mx-auto
+            whitespace-nowrap
             font-bold
-            leading-[1.15]
-            tracking-[-0.04em]
+            leading-none
+            tracking-[-0.045em]
+            text-[clamp(1.15rem,3.7vw,3.5rem)]
             text-white
+
             ${
               titleVisible
                 ? "client-title-visible"
@@ -441,34 +380,15 @@ const ClientTrust = () => {
             }
           `}
         >
-          {/* =================================================
-              COMPLETE TITLE
-
-              ONE CENTER POINT
-          ================================================= */}
-
           <AnimatedTitle
             text="Built on Trust."
-            delayStep={0.055}
+            delayStep={0.045}
             animationKey={`built-${animationKey}`}
           />
 
-          {/* MOBILE BREAK */}
-
-          <br className="sm:hidden" />
-
-          {/* DESKTOP SPACE */}
-
-          <span className="hidden sm:inline">
+          <span className="inline-block">
             {" "}
           </span>
-
-          {/* =================================================
-              BLUE TITLE
-
-              IMPORTANT:
-              Same animation timing system.
-          ================================================= */}
 
           <span
             className="
@@ -479,20 +399,18 @@ const ClientTrust = () => {
           >
             <AnimatedTitle
               text="Globally Proven Through Results."
-              delayStep={0.04}
+              delayStep={0.035}
               animationKey={`global-${animationKey}`}
             />
-
-            {/* UNDERLINE */}
 
             <span
               className="
                 pointer-events-none
                 absolute
-                bottom-[-2px]
+                bottom-[-5px]
                 left-0
                 -z-10
-                h-[7px]
+                h-[5px]
                 w-full
                 rounded-full
                 bg-blue-500/30
@@ -509,10 +427,12 @@ const ClientTrust = () => {
           className="
             mx-auto
             mt-5
-            max-w-[650px]
-            text-[14px]
+            max-w-[680px]
+            px-2
+            text-[13px]
             leading-[1.7]
             text-slate-400
+
             sm:text-[15px]
           "
         >
@@ -523,20 +443,23 @@ const ClientTrust = () => {
       </div>
 
       {/* =====================================================
-          LOGO SLIDER AREA
+          CLIENT LOGO SLIDER
       ===================================================== */}
 
       <div
         className="
           relative
           z-10
-          mt-[45px]
+          mt-[38px]
           w-full
+
+          sm:mt-[42px]
+
+          lg:mt-[48px]
         "
       >
-        {/* ===================================================
-            LEFT FADE
-        =================================================== */}
+
+        {/* LEFT FADE */}
 
         <div
           className="
@@ -546,18 +469,18 @@ const ClientTrust = () => {
             top-0
             z-20
             h-full
-            w-[70px]
+            w-[45px]
             bg-gradient-to-r
             from-[#020617]
             to-transparent
-            sm:w-[120px]
-            lg:w-[180px]
+
+            sm:w-[80px]
+
+            lg:w-[150px]
           "
         />
 
-        {/* ===================================================
-            RIGHT FADE
-        =================================================== */}
+        {/* RIGHT FADE */}
 
         <div
           className="
@@ -567,21 +490,30 @@ const ClientTrust = () => {
             top-0
             z-20
             h-full
-            w-[70px]
+            w-[45px]
             bg-gradient-to-l
             from-[#020617]
             to-transparent
-            sm:w-[120px]
-            lg:w-[180px]
+
+            sm:w-[80px]
+
+            lg:w-[150px]
           "
         />
 
         {/* ===================================================
             ROW 1
-            LEFT → RIGHT
+            ALL CARDS SAME HORIZONTAL LINE
         =================================================== */}
 
-        <div className="relative">
+        <div
+          className="
+            relative
+            h-[90px]
+            sm:h-[94px]
+            lg:h-[96px]
+          "
+        >
           <Swiper
             modules={[
               Autoplay,
@@ -608,20 +540,25 @@ const ClientTrust = () => {
               ...rowOneLogos,
               ...rowOneLogos,
               ...rowOneLogos,
+              ...rowOneLogos,
             ].map(
               (logo, index) => (
                 <SwiperSlide
                   key={`row1-${index}`}
                   className="
-                    !h-[105px]
+                    !h-[90px]
                     !w-[180px]
+
+                    sm:!h-[94px]
                     sm:!w-[200px]
+
+                    lg:!h-[96px]
+                    lg:!w-[215px]
                   "
                 >
                   <LogoCard
                     logo={logo}
                     index={index}
-                    row="row1"
                   />
                 </SwiperSlide>
               )
@@ -631,13 +568,19 @@ const ClientTrust = () => {
 
         {/* ===================================================
             ROW 2
-            RIGHT → LEFT
+            ALL CARDS SAME HORIZONTAL LINE
         =================================================== */}
 
         <div
           className="
             relative
-            mt-[12px]
+            mt-[10px]
+            h-[90px]
+
+            sm:mt-[12px]
+            sm:h-[94px]
+
+            lg:h-[96px]
           "
         >
           <Swiper
@@ -666,20 +609,25 @@ const ClientTrust = () => {
               ...rowTwoLogos,
               ...rowTwoLogos,
               ...rowTwoLogos,
+              ...rowTwoLogos,
             ].map(
               (logo, index) => (
                 <SwiperSlide
                   key={`row2-${index}`}
                   className="
-                    !h-[105px]
+                    !h-[90px]
                     !w-[180px]
+
+                    sm:!h-[94px]
                     sm:!w-[200px]
+
+                    lg:!h-[96px]
+                    lg:!w-[215px]
                   "
                 >
                   <LogoCard
                     logo={logo}
                     index={index}
-                    row="row2"
                   />
                 </SwiperSlide>
               )
@@ -692,69 +640,52 @@ const ClientTrust = () => {
           BOTTOM SPACE
       ===================================================== */}
 
-      <div className="h-[15px]" />
+      <div className="h-[8px]" />
 
       {/* =====================================================
-          TITLE ANIMATION CSS
+          CSS
       ===================================================== */}
 
       <style>{`
 
-        /* =================================================
-           BEFORE ENTERING VIEWPORT
-        ================================================= */
+        /* ================================================
+           TITLE HIDDEN
+        ================================================ */
 
         .client-title-hidden {
           opacity: 0;
         }
 
-        /* =================================================
-           WHEN SECTION IS VISIBLE
-        ================================================= */
+        /* ================================================
+           TITLE VISIBLE
+        ================================================ */
 
         .client-title-visible {
           opacity: 1;
         }
 
-        /* =================================================
-           COMPLETE TEXT
-        ================================================= */
+        /* ================================================
+           TITLE TEXT
+        ================================================ */
 
         .client-title-text {
           display: inline;
         }
 
-        /* =================================================
-           WORD
-        ================================================= */
-
         .client-title-word {
           display: inline-block;
-
           white-space: nowrap;
         }
 
-        /* =================================================
-           WORD SPACE
-
-           Example:
-
-           Built  on  Trust.
-
-           Globally  Proven  Through  Results.
-        ================================================= */
-
         .client-title-space {
           display: inline-block;
-
-          width: 0.35em;
-
+          width: 0.32em;
           white-space: normal;
         }
 
-        /* =================================================
-           EACH LETTER
-        ================================================= */
+        /* ================================================
+           LETTER ANIMATION
+        ================================================ */
 
         .client-title-letter {
           display: inline-block;
@@ -783,9 +714,9 @@ const ClientTrust = () => {
             forwards;
         }
 
-        /* =================================================
+        /* ================================================
            CENTER → OUTWARD
-        ================================================= */
+        ================================================ */
 
         @keyframes clientCenterLetterReveal {
 
@@ -815,9 +746,80 @@ const ClientTrust = () => {
 
         }
 
-        /* =================================================
+        /* ================================================
+           SWIPER
+        ================================================ */
+
+        .client-swiper-row {
+          width: 100%;
+          height: 100%;
+          overflow: visible !important;
+        }
+
+        .client-swiper-row
+        .swiper-wrapper {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          transition-timing-function:
+            linear !important;
+        }
+
+        .client-swiper-row
+        .swiper-slide {
+          flex-shrink: 0;
+          height: 100% !important;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        /* ================================================
+           MOBILE
+        ================================================ */
+
+        @media (max-width: 639px) {
+
+          .client-main-title {
+            font-size: clamp(
+              0.9rem,
+              4.4vw,
+              1.35rem
+            );
+
+            letter-spacing:
+              -0.045em;
+          }
+
+          .client-title-space {
+            width: 0.22em;
+          }
+
+        }
+
+        /* ================================================
+           TABLET
+        ================================================ */
+
+        @media (
+          min-width: 640px
+        ) and (
+          max-width: 1023px
+        ) {
+
+          .client-main-title {
+            font-size:
+              clamp(
+                1.7rem,
+                4.2vw,
+                2.7rem
+              );
+          }
+
+        }
+
+        /* ================================================
            REDUCED MOTION
-        ================================================= */
+        ================================================ */
 
         @media (
           prefers-reduced-motion: reduce
@@ -825,9 +827,7 @@ const ClientTrust = () => {
 
           .client-title-letter {
             opacity: 1;
-
             transform: none;
-
             animation: none;
           }
 

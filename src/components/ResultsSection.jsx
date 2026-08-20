@@ -1,9 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 const results = [
   {
     value: "3X – 5X",
-    description: "Average ROAS Across Campaigns",
+    description:
+      "Average ROAS Across Campaigns",
     type: "center",
     dark: true,
     width: "max-w-[388px]",
@@ -12,9 +17,11 @@ const results = [
     end: 5,
     suffix: "X",
   },
+
   {
     value: "40%",
-    description: "Reduction in Customer Acquisition Cost",
+    description:
+      "Reduction in Customer Acquisition Cost",
     type: "row",
     dark: true,
     width: "max-w-[514px]",
@@ -23,9 +30,11 @@ const results = [
     start: 40,
     suffix: "%",
   },
+
   {
     value: "2x",
-    description: "Increase in Qualified Leads Within 90 Days",
+    description:
+      "Increase in Qualified Leads Within 90 Days",
     type: "row",
     dark: false,
     width: "max-w-[388px]",
@@ -33,9 +42,11 @@ const results = [
     start: 2,
     suffix: "x",
   },
+
   {
     value: "60%",
-    description: "Faster Funnel Conversions",
+    description:
+      "Faster Funnel Conversions",
     type: "row",
     dark: false,
     width: "max-w-[490px]",
@@ -43,9 +54,11 @@ const results = [
     start: 60,
     suffix: "%",
   },
+
   {
     value: "25%",
-    description: "Improvement in Retention Metrics",
+    description:
+      "Improvement in Retention Metrics",
     type: "center",
     dark: true,
     width: "max-w-[288px]",
@@ -53,9 +66,11 @@ const results = [
     start: 25,
     suffix: "%",
   },
+
   {
     value: "100%",
-    description: "Transparent Performance Reporting clients",
+    description:
+      "Transparent Performance Reporting clients",
     type: "row",
     dark: false,
     width: "max-w-[514px]",
@@ -73,7 +88,8 @@ function CountUpValue({
   item,
   isVisible,
 }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] =
+    useState(0);
 
   useEffect(() => {
     if (!isVisible) {
@@ -81,8 +97,11 @@ function CountUpValue({
       return;
     }
 
-    const duration = 1600;
-    const startTime = performance.now();
+    // Faster count animation
+    const duration = 1200;
+
+    const startTime =
+      performance.now();
 
     const target =
       item.countType === "range"
@@ -91,8 +110,11 @@ function CountUpValue({
 
     let animationFrame;
 
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime;
+    const animate = (
+      currentTime
+    ) => {
+      const elapsed =
+        currentTime - startTime;
 
       const progress = Math.min(
         elapsed / duration,
@@ -100,33 +122,48 @@ function CountUpValue({
       );
 
       /*
-        Ease-out effect:
-        Fast initially -> slows down near target
+        Smooth ease-out
+        Fast initially -> slower near target
       */
-      const easeOut =
-        1 - Math.pow(1 - progress, 3);
 
-      const currentValue = Math.floor(
-        easeOut * target
-      );
+      const easeOut =
+        1 -
+        Math.pow(
+          1 - progress,
+          3
+        );
+
+      const currentValue =
+        Math.floor(
+          easeOut * target
+        );
 
       setCount(currentValue);
 
       if (progress < 1) {
         animationFrame =
-          requestAnimationFrame(animate);
+          requestAnimationFrame(
+            animate
+          );
       } else {
         setCount(target);
       }
     };
 
     animationFrame =
-      requestAnimationFrame(animate);
+      requestAnimationFrame(
+        animate
+      );
 
     return () => {
-      cancelAnimationFrame(animationFrame);
+      cancelAnimationFrame(
+        animationFrame
+      );
     };
-  }, [isVisible, item]);
+  }, [
+    isVisible,
+    item,
+  ]);
 
   /* =======================================================
      RANGE VALUE
@@ -134,11 +171,17 @@ function CountUpValue({
      3X – 5X
   ======================================================= */
 
-  if (item.countType === "range") {
+  if (
+    item.countType ===
+    "range"
+  ) {
     const rangeStart =
       count === 0
         ? 0
-        : Math.min(count, item.start);
+        : Math.min(
+            count,
+            item.start
+          );
 
     const rangeEnd =
       count === 0
@@ -148,7 +191,8 @@ function CountUpValue({
     return (
       <>
         {rangeStart}
-        {item.suffix} – {rangeEnd}
+        {item.suffix} –{" "}
+        {rangeEnd}
         {item.suffix}
       </>
     );
@@ -170,26 +214,19 @@ function CountUpValue({
   );
 }
 
-
 /* =========================================================
    MAIN COMPONENT
 ========================================================= */
 
 function ResultsSection() {
-  const sectionRef = useRef(null);
+  const sectionRef =
+    useRef(null);
 
   const [isVisible, setIsVisible] =
     useState(false);
 
-
   /* =========================================================
      INTERSECTION OBSERVER
-
-     Section enter:
-     Animation + CountUp start
-
-     Section leave:
-     Reset everything
   ========================================================= */
 
   useEffect(() => {
@@ -201,14 +238,16 @@ function ResultsSection() {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
             setIsVisible(true);
           } else {
             setIsVisible(false);
           }
         },
         {
-          threshold: 0.20,
+          threshold: 0.2,
         }
       );
 
@@ -219,47 +258,60 @@ function ResultsSection() {
     };
   }, []);
 
-
   return (
     <section
       ref={sectionRef}
       className="
         bg-white
-        pb-20
-        pt-[60px]
+        pb-10
+        pt-2
+
+        sm:pb-14
+        sm:pt-4
+
+        lg:pb-20
+        lg:pt-6
       "
     >
-
       <div
         className="
           mx-auto
           w-full
           max-w-[1440px]
+
           px-4
+
           sm:px-6
+
           lg:px-8
         "
       >
-
         {/* ==========================================
             HEADING
         ========================================== */}
 
         <h3
           className="
-            mb-14
+            mb-8
             overflow-hidden
+            px-2
+
             text-center
-            text-3xl
+            text-2xl
             font-light
-            leading-[1.04]
+            leading-[1.08]
             tracking-tight
             text-[#081a4b]
-            sm:text-4xl
+
+            sm:mb-10
+            sm:text-3xl
+
+            md:text-4xl
+
+            lg:mb-14
             lg:text-5xl
           "
         >
-
           {/* ACCURATE */}
 
           <span
@@ -280,7 +332,6 @@ function ResultsSection() {
           >
             Accurate
           </span>
-
 
           {/* RESULTS */}
 
@@ -310,7 +361,6 @@ function ResultsSection() {
             Results
           </span>
 
-
           {/* THAT COMPOUND */}
 
           <span
@@ -336,9 +386,7 @@ function ResultsSection() {
           >
             That Compound
           </span>
-
         </h3>
-
 
         {/* ==========================================
             RESULTS GRID
@@ -346,17 +394,23 @@ function ResultsSection() {
 
         <div
           className="
-            flex
+            grid
             w-full
-            flex-wrap
-            justify-center
+            grid-cols-1
+            justify-items-center
             gap-4
+
+            sm:grid-cols-2
+            sm:gap-5
+
+            lg:flex
+            lg:flex-wrap
+            lg:justify-center
+            lg:gap-4
           "
         >
-
           {results.map(
             (result, index) => (
-
               <div
                 key={index}
                 className={`
@@ -367,14 +421,31 @@ function ResultsSection() {
                   flex
                   w-full
                   ${result.width}
-                  min-h-[184px]
+
+                  ${
+                    index === 1
+                      ? "mt-2 sm:mt-3 lg:mt-4"
+                      : ""
+                  }
+
+                  min-h-[150px]
+
                   items-center
                   justify-center
 
-                  rounded-[100px]
+                  rounded-[80px]
 
-                  px-10
+                  px-5
                   py-6
+
+                  sm:min-h-[165px]
+                  sm:px-6
+
+                  md:min-h-[175px]
+                  md:px-8
+
+                  lg:min-h-[184px]
+                  lg:px-10
 
                   transition-all
                   duration-700
@@ -415,24 +486,29 @@ function ResultsSection() {
                   }
 
                   ${
-                    result.type === "center"
+                    result.type ===
+                    "center"
                       ? "flex-col gap-2 text-center"
                       : "flex-row gap-6 text-left"
                   }
 
-                  max-[768px]:flex-col
-                  max-[768px]:gap-3
-                  max-[768px]:rounded-[50px]
-                  max-[768px]:px-6
+                  max-[767px]:flex-col
+                  max-[767px]:gap-3
+                  max-[767px]:rounded-[42px]
+                  max-[767px]:px-5
+                  max-[767px]:py-5
                 `}
                 style={{
                   transitionDelay:
                     isVisible
-                      ? `${500 + index * 120}ms`
+                      ? `${
+                          500 +
+                          index *
+                            120
+                        }ms`
                       : "0ms",
                 }}
               >
-
                 {/* =================================================
                     STATIC OUTLINE
                 ================================================= */}
@@ -442,7 +518,8 @@ function ResultsSection() {
                     pointer-events-none
                     absolute
                     inset-[-3px]
-                    rounded-[103px]
+
+                    rounded-[83px]
 
                     opacity-0
 
@@ -451,7 +528,7 @@ function ResultsSection() {
 
                     group-hover:opacity-100
 
-                    max-[768px]:rounded-[53px]
+                    max-[767px]:rounded-[45px]
 
                     ${
                       result.dark
@@ -460,7 +537,6 @@ function ResultsSection() {
                     }
                   `}
                 />
-
 
                 {/* =================================================
                     MOVING BORDER
@@ -471,8 +547,9 @@ function ResultsSection() {
                     pointer-events-none
                     absolute
                     inset-[-3px]
+
                     overflow-hidden
-                    rounded-[103px]
+                    rounded-[83px]
 
                     opacity-0
 
@@ -481,10 +558,9 @@ function ResultsSection() {
 
                     group-hover:opacity-100
 
-                    max-[768px]:rounded-[53px]
+                    max-[767px]:rounded-[45px]
                   "
                 >
-
                   <span
                     className={`
                       absolute
@@ -492,7 +568,11 @@ function ResultsSection() {
                       top-1/2
 
                       h-[220%]
-                      w-[35%]
+                      w-[45%]
+
+                      sm:w-[40%]
+
+                      lg:w-[35%]
 
                       -translate-x-1/2
                       -translate-y-1/2
@@ -506,9 +586,7 @@ function ResultsSection() {
                       }
                     `}
                   />
-
                 </span>
-
 
                 {/* =================================================
                     INNER MASK
@@ -520,9 +598,10 @@ function ResultsSection() {
                     absolute
                     inset-0
                     z-[1]
-                    rounded-[100px]
 
-                    max-[768px]:rounded-[50px]
+                    rounded-[80px]
+
+                    max-[767px]:rounded-[42px]
 
                     ${
                       result.dark
@@ -531,7 +610,6 @@ function ResultsSection() {
                     }
                   `}
                 />
-
 
                 {/* =================================================
                     CARD CONTENT
@@ -548,7 +626,8 @@ function ResultsSection() {
                     justify-center
 
                     ${
-                      result.type === "center"
+                      result.type ===
+                      "center"
                         ? "flex-col gap-2 text-center"
                         : "flex-row gap-6 text-left"
                     }
@@ -557,35 +636,29 @@ function ResultsSection() {
                     max-[768px]:gap-3
                   `}
                 >
-
                   {/* ======================================
                       VALUE / COUNT UP
                   ====================================== */}
 
-                  <h3
+                  <div
                     className={`
-                      m-0
-                      whitespace-nowrap
-                      text-4xl
-                      font-medium
-                      leading-none
-
-                      sm:text-5xl
+                      flex
+                      shrink-0
+                      items-center
 
                       ${
-                        result.dark
-                          ? "text-white"
-                          : "text-[#1351D8]"
+                        result.type ===
+                        "center"
+                          ? "justify-center"
+                          : "justify-center"
                       }
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:scale-105
                     `}
                   >
+                    {/* ======================================
+                        GREEN INCREASE ARROW
 
-                    {/* GREEN ARROW */}
+                        ↑ 40%
+                    ====================================== */}
 
                     {result.arrow && (
                       <img
@@ -593,28 +666,66 @@ function ResultsSection() {
                         alt=""
                         className="
                           mr-2
+
                           inline-block
-                          h-8
+                          h-7
                           w-auto
+                          shrink-0
+
                           align-middle
 
                           transition-transform
                           duration-300
 
                           group-hover:-translate-y-1
+
+                          sm:mr-2.5
+                          sm:h-8
+
+                          md:h-9
+
+                          lg:h-10
                         "
                       />
                     )}
 
-                    {/* COUNT UP */}
+                    {/* ======================================
+                        COUNT VALUE
+                    ====================================== */}
 
-                    <CountUpValue
-                      item={result}
-                      isVisible={isVisible}
-                    />
+                    <h3
+                      className={`
+                        m-0
+                        whitespace-nowrap
 
-                  </h3>
+                        text-5xl
+                        font-medium
+                        leading-none
 
+                        sm:text-6xl
+
+                        lg:text-6xl
+
+                        ${
+                          result.dark
+                            ? "text-white"
+                            : "text-[#1351D8]"
+                        }
+
+                        transition-transform
+                        duration-300
+
+                        group-hover:scale-105
+                      `}
+                    >
+                      <CountUpValue
+                        item={result}
+                        isVisible={
+                          isVisible
+                        }
+                      />
+                    </h3>
+                  </div>
 
                   {/* ======================================
                       DESCRIPTION
@@ -623,11 +734,17 @@ function ResultsSection() {
                   <p
                     className={`
                       m-0
-                      max-w-[228px]
-                      text-sm
-                      leading-[1.4]
+                      max-w-[250px]
 
+                      text-sm
+                      leading-[1.45]
+
+                      sm:max-w-[260px]
                       sm:text-base
+
+                      md:text-[17px]
+
+                      lg:text-base
 
                       ${
                         result.dark
@@ -636,25 +753,23 @@ function ResultsSection() {
                       }
 
                       ${
-                        result.type === "row"
-                          ? "max-w-[194px]"
+                        result.type ===
+                        "row"
+                          ? "max-w-[260px] sm:max-w-[220px]"
                           : "mx-auto"
                       }
                     `}
                   >
-                    {result.description}
+                    {
+                      result.description
+                    }
                   </p>
-
                 </div>
-
               </div>
             )
           )}
-
         </div>
-
       </div>
-
 
       {/* =====================================================
           CUSTOM BORDER ANIMATION
@@ -686,6 +801,72 @@ function ResultsSection() {
             infinite;
         }
 
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+
+          .result-card {
+            min-height: 170px;
+          }
+
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 767px) {
+
+          .result-card {
+            min-height: 145px;
+          }
+
+          .result-card h3 {
+            font-size: 48px;
+          }
+
+        }
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+          .result-card {
+            min-height: 135px;
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+
+          .result-card h3 {
+            font-size: 44px;
+          }
+
+        }
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+          .result-card h3 {
+            font-size: 40px;
+          }
+
+          .result-card p {
+            font-size: 13px;
+          }
+
+        }
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
         @media (prefers-reduced-motion: reduce) {
 
           .animate-border-spin {
@@ -695,7 +876,6 @@ function ResultsSection() {
         }
 
       `}</style>
-
     </section>
   );
 }

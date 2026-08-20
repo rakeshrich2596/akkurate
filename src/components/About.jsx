@@ -576,8 +576,8 @@ export default function About() {
         overflow-hidden
         bg-slate-50
         py-12
-        sm:py-20
-        lg:py-28
+        sm:py-5
+        lg:py-5
       "
     >
       {/* BACKGROUND DECORATION */}
@@ -656,6 +656,7 @@ export default function About() {
             className="
               grid
               grid-cols-1
+              items-stretch
               gap-6
               lg:grid-cols-2
               lg:gap-10
@@ -666,13 +667,15 @@ export default function About() {
                 LEFT SIDE - 4 CARDS
             ================================================== */}
 
-            <div className="relative">
+            <div className="relative lg:h-full">
               <div
                 className="
                   grid
                   grid-cols-2
                   gap-3
                   sm:gap-4
+                  lg:h-full
+                  lg:grid-rows-2
                 "
               >
                 {/* =================================================
@@ -701,18 +704,19 @@ export default function About() {
                   }}
                   className="
                     flex
-                    min-h-[185px]
+                    min-h-[210px]
                     flex-col
                     items-center
                     justify-center
                     rounded-[20px]
-                    bg-blue-600
+                    bg-blue-700
                     p-4
                     text-center
                     shadow-lg
                     transition-shadow
                     hover:shadow-2xl
-                    sm:min-h-[250px]
+                    lg:h-full
+                    sm:min-h-[300px]
                     sm:rounded-[28px]
                     sm:p-8
                   "
@@ -804,12 +808,13 @@ export default function About() {
                   }}
                   className="
                     relative
-                    min-h-[185px]
+                    min-h-[210px]
                     overflow-visible
                     rounded-[20px]
-                    bg-indigo-600
-                    sm:min-h-[250px]
+                    bg-[#000435]
+                    sm:min-h-[300px]
                     sm:rounded-[28px]
+                    lg:h-full
                   "
                 >
                   {/* MODEL IMAGE */}
@@ -992,18 +997,19 @@ export default function About() {
                   }}
                   className="
                     flex
-                    min-h-[185px]
+                    min-h-[210px]
                     flex-col
                     items-center
                     justify-center
                     rounded-[20px]
-                    bg-indigo-600
+                    bg-[#000435]
                     p-4
                     text-center
                     shadow-lg
-                    sm:min-h-[280px]
+                    sm:min-h-[300px]
                     sm:rounded-[28px]
                     sm:p-8
+                    lg:h-full
                   "
                 >
                   <RadialProgress percentage={78} />
@@ -1047,8 +1053,9 @@ export default function About() {
                     delay: 0.35,
                   }}
                   className="
-                    min-h-[185px]
-                    sm:min-h-[280px]
+                    min-h-[210px]
+                    h-full
+                    sm:min-h-[300px]
                   "
                 >
                   <FloatingTags />

@@ -13,7 +13,6 @@ import GlobalPresence from "./components/GlobalPresence";
 import Integrations from "./components/Integrations";
 import Footer from "./components/Footer";
 import ResultsSection from "./components/ResultsSection";
-import OfferSection from "./components/OfferSection";
 import ClientTrust from "./components/ClientTrust";
 
 function App() {
@@ -35,8 +34,6 @@ function App() {
         <Roadmap />
 
         <ResultsSection />
-
-        <OfferSection />
 
         <Showcase />
 

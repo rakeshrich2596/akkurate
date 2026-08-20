@@ -295,8 +295,8 @@ function Services() {
             relative
             mx-auto
             max-w-[1000px]
-            pb-20
-            pt-24
+            pb-10
+            pt-12
             text-center
           "
         >
@@ -333,7 +333,7 @@ function Services() {
             className="
               relative
               z-10
-              mb-6
+              mb-1
               inline-flex
               rounded-full
               border
@@ -397,7 +397,7 @@ function Services() {
             STICKY CARDS
         ===================================================== */}
 
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-[1400px] pt-2">
           {services.map((service, index) => (
             <div
               key={service.number}
@@ -405,12 +405,12 @@ function Services() {
                 sticky
                 top-6
                 mb-8
-                min-h-[520px]
+                min-h-[420px]
                 overflow-hidden
                 rounded-[35px]
                 shadow-[0_20px_60px_rgba(0,0,0,0.10)]
-                md:min-h-[580px]
-                lg:min-h-[620px]
+                md:min-h-[470px]
+                lg:min-h-[480px]
               "
               style={{
                 zIndex: index + 1,
@@ -422,16 +422,16 @@ function Services() {
                 className={`
                   relative
                   flex
-                  min-h-[520px]
+                  min-h-[420px]
                   w-full
                   items-center
                   px-7
                   py-10
 
-                  md:min-h-[580px]
+                  md:min-h-[470px]
                   md:px-12
 
-                  lg:min-h-[620px]
+                  lg:min-h-[510px]
                   lg:px-16
 
                   ${service.color}
@@ -573,7 +573,7 @@ function Services() {
                       bg-white/60
                       p-5
                       md:h-[380px]
-                      lg:h-[470px]
+                      lg:h-[380px]
                     "
                   >
                     <img

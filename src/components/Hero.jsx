@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 /* =========================================================
    HERO SLIDES
 ========================================================= */
@@ -24,10 +23,8 @@ const slides = [
   },
 ];
 
-
 /* =========================================================
    GENERIC COUNTER
-   Runs ONLY when the component mounts.
 ========================================================= */
 
 function Counter({
@@ -48,32 +45,22 @@ function Counter({
         startTime = currentTime;
       }
 
-      const progress = Math.min(
-        (currentTime - startTime) / duration,
-        1
-      );
+      const progress = Math.min((currentTime - startTime) / duration, 1);
 
-      /*
-        Smooth ease-out.
-      */
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-      const currentValue =
-        target * easedProgress;
+      const currentValue = target * easedProgress;
 
       setValue(currentValue);
 
       if (progress < 1) {
-        animationFrame =
-          requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
       } else {
         setValue(target);
       }
     };
 
-    animationFrame =
-      requestAnimationFrame(animate);
+    animationFrame = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(animationFrame);
@@ -89,128 +76,86 @@ function Counter({
   );
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
 
 function Hero() {
-
-  /* =======================================================
-     INITIAL HERO CONTENT
-  ======================================================= */
-
   const [title, setTitle] = useState(
-    "Accurate Marketing That Performs Like Revenue"
+    "Accurate Marketing That Performs Like Revenue",
   );
 
   const [desc, setDesc] = useState(
-    "Data-first digital growth systems built for brands that want measurable outcomes, not vanity metrics."
+    "Data-first digital growth systems built for brands that want measurable outcomes, not vanity metrics.",
   );
 
   const [slideIndex, setSlideIndex] = useState(-1);
 
-  const [isChanging, setIsChanging] =
-    useState(false);
+  const [isChanging, setIsChanging] = useState(false);
 
+  /* =======================================================
+     RESTART REVENUE SHAPE ONLY
+  ======================================================= */
 
-  /*
-    ONLY used to restart the revenue shape animation.
-
-    It does NOT affect the counters.
-  */
-  const [revenueShapeKey, setRevenueShapeKey] =
-    useState(0);
-
+  const [revenueShapeKey, setRevenueShapeKey] = useState(0);
 
   /* =======================================================
      HERO SLIDER
 
-     Content changes every 2 seconds.
+     Same animation timing:
+     2 seconds interval
+     450ms content transition
   ======================================================= */
 
   useEffect(() => {
     let changeTimer;
 
     const interval = setInterval(() => {
-
-      /* -----------------------------------------------
-         Start content exit animation
-      ----------------------------------------------- */
-
       setIsChanging(true);
 
-
       changeTimer = setTimeout(() => {
-
         setSlideIndex((previousIndex) => {
-
           const nextIndex =
-            previousIndex + 1 >= slides.length
-              ? 0
-              : previousIndex + 1;
+            previousIndex + 1 >= slides.length ? 0 : previousIndex + 1;
 
+          setTitle(slides[nextIndex].title);
 
-          /* -------------------------------------------
-             CHANGE LEFT CONTENT
-          ------------------------------------------- */
+          setDesc(slides[nextIndex].desc);
 
-          setTitle(
-            slides[nextIndex].title
-          );
-
-          setDesc(
-            slides[nextIndex].desc
-          );
-
-
-          /* -------------------------------------------
-             RESTART REVENUE SHAPE ONLY
-
-             Numbers are NOT touched.
-          ------------------------------------------- */
-
-          setRevenueShapeKey(
-            (previous) => previous + 1
-          );
-
+          /* Revenue shape only */
+          setRevenueShapeKey((previous) => previous + 1);
 
           return nextIndex;
         });
 
-
-        /* ---------------------------------------------
-           Show new content
-        --------------------------------------------- */
-
         setIsChanging(false);
-
       }, 450);
-
     }, 2000);
-
 
     return () => {
       clearInterval(interval);
       clearTimeout(changeTimer);
     };
-
   }, []);
-
 
   return (
     <section
       id="home"
       className="
         relative
-        min-h-[calc(100vh-82px)]
+        min-h-[calc(100svh-82px)]
         overflow-hidden
         bg-[#f3f3ff]
       "
     >
-
       {/* =================================================
-          BACKGROUND SQUARE
+          BACKGROUND SQUARE / GRID
+
+          Desktop:
+          Starts around center and goes to right.
+
+          Mobile:
+          Stays behind hero content but becomes softer.
       ================================================= */}
 
       <img
@@ -220,16 +165,47 @@ function Hero() {
         className="
           pointer-events-none
           absolute
-          right-0
           top-0
           z-0
+
+          left-[40%]
+
           h-full
-          w-auto
+          w-[70%]
+
           object-cover
-          opacity-60
+          object-left
+
+          opacity-80
+
+          md:left-[40%]
+          md:w-[70%]
+          md:opacity-80
+
+          lg:left-[20%]
+          lg:w-[70%]
+          lg:opacity-80
+
+          xl:left-[40%]
+          xl:w-[70%]
+
+          2xl:left-[40%]
+          2xl:w-[72%]
+
+          max-md:left-[8%]
+          max-md:h-[100%]
+          max-md:w-[110%]
+          max-md:opacity-45
         "
       />
 
+      {/* =================================================
+          LIGHT CENTER BLEND
+
+          Keeps left content readable.
+      ================================================= */}
+
+      
 
       {/* =================================================
           MAIN CONTAINER
@@ -239,61 +215,100 @@ function Hero() {
         className="
           relative
           z-10
+
           mx-auto
+
           grid
-          min-h-[calc(100vh-82px)]
+
+          min-h-[calc(100svh-82px)]
+
           max-w-[1600px]
+
           grid-cols-1
+
           items-center
-          px-6
+
+          pb-[100px]
+
+          px-5
 
           sm:px-8
 
-          lg:grid-cols-[48%_52%]
-          lg:px-16
+          md:px-10
 
-          xl:px-20
+          lg:grid-cols-[46%_54%]
+
+          lg:px-12
+
+          xl:px-16
+
+          2xl:px-20
         "
       >
-
-
         {/* =================================================
-            LEFT SIDE
+            LEFT CONTENT
         ================================================= */}
 
         <div
           className="
             relative
             z-30
-            py-14
+
+            flex
+
+            min-h-full
+
+            flex-col
+
+            justify-center
+
+            py-12
+
+            sm:py-14
+
+            md:py-16
 
             lg:py-20
+            lg:pr-8
+
+            xl:pr-10
           "
         >
-
           {/* =================================================
               TITLE
           ================================================= */}
 
           <h1
             className={`
-              max-w-[720px]
+              max-w-[750px]
 
-              text-[48px]
-              font-extrabold
-              leading-[1.05]
-              tracking-[-2px]
+              break-words
+
+              text-[38px]
+              font-semibold
+              leading-[1.06]
+              tracking-[-1.5px]
 
               text-black
 
               transition-all
               duration-500
 
-              sm:text-[58px]
+              sm:text-[46px]
 
-              lg:text-[62px]
+              md:max-w-[680px]
+              md:text-[54px]
 
-              xl:text-[68px]
+              lg:max-w-[690px]
+              lg:text-[58px]
+              lg:tracking-[-2px]
+
+              xl:max-w-[720px]
+              xl:text-[66px]
+
+              2xl:text-[70px]
+
+              max-[380px]:text-[34px]
 
               ${
                 isChanging
@@ -305,25 +320,30 @@ function Hero() {
             {title}
           </h1>
 
-
           {/* =================================================
               DESCRIPTION
           ================================================= */}
 
           <p
             className={`
-              mt-8
+              mt-6
 
-              max-w-[650px]
+              max-w-[620px]
 
-              text-[17px]
-              leading-[1.9]
+              text-[15px]
+              leading-[1.75]
 
               text-[#61708a]
 
               transition-all
               duration-500
 
+              sm:mt-7
+              sm:text-[16px]
+
+              md:text-[17px]
+
+              lg:mt-8
               lg:text-[18px]
 
               ${
@@ -336,22 +356,32 @@ function Hero() {
             {desc}
           </p>
 
-
           {/* =================================================
               BUTTON + CLIENT INFORMATION
           ================================================= */}
 
           <div
             className="
-              mt-10
+              mt-8
 
               flex
-              flex-wrap
+              flex-nowrap
               items-center
-              gap-10
+
+              gap-6
+
+              sm:mt-9
+              sm:gap-8
+
+              md:gap-9
+
+              lg:mt-10
+              lg:gap-10
+
+              max-[480px]:flex-col
+              max-[480px]:items-start
             "
           >
-
             {/* =================================================
                 BUTTON
             ================================================= */}
@@ -361,7 +391,8 @@ function Hero() {
               className="
                 inline-flex
 
-                min-w-[310px]
+                min-h-[56px]
+                min-w-[280px]
 
                 items-center
                 justify-center
@@ -370,12 +401,11 @@ function Hero() {
 
                 bg-[#1455d9]
 
-                px-8
+                px-7
                 py-4
 
-                text-[17px]
+                text-[15px]
                 font-bold
-
                 text-white
 
                 shadow-[0_12px_30px_rgba(20,85,217,0.20)]
@@ -385,144 +415,118 @@ function Hero() {
 
                 hover:-translate-y-1
                 hover:bg-[#0847c9]
+
+                sm:min-w-[300px]
+                sm:text-[16px]
+
+                md:min-w-[310px]
+                md:text-[17px]
+
+                max-[480px]:w-full
+                max-[480px]:min-w-0
               "
             >
               Build My Growth Engine
             </a>
 
-
             {/* =================================================
                 CLIENT INFORMATION
             ================================================= */}
 
-            <div
-              className="
-                flex
-                items-center
-                gap-4
-              "
-            >
-
-              {/* CLIENT LOGOS */}
-
-              <div className="flex items-center">
-
-                {/* CLIENT 1 */}
-
-                <div
-                  className="
-                    relative
-                    z-[2]
-
-                    h-9
-                    w-9
-
-                    overflow-hidden
-                    rounded-full
-
-                    transition
-                    duration-300
-
-                    hover:z-[10]
-                    hover:scale-110
-                  "
-                >
-                  <img
-                    src="/assets/images/brand_logo/brand06.png"
-                    alt="Client Image"
+            <div className="flex flex-col">
+              {/* TOP ROW */}
+              <div className="flex items-center gap-4">
+                {/* CLIENT LOGOS */}
+                <div className="flex items-center">
+                  {/* CLIENT 1 */}
+                  <div
                     className="
-                      h-full
-                      w-full
-                      object-cover
-                    "
-                  />
-                </div>
+          relative
+          z-[3]
+          h-8
+          w-8
+          overflow-hidden
+          rounded-full
+          bg-white
+          transition
+          duration-300
+          hover:z-[10]
+          hover:scale-110
+          sm:h-9
+          sm:w-9
+        "
+                  >
+                    <img
+                      src="/assets/images/brand_logo/brand06.png"
+                      alt="Client"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
 
-
-                {/* CLIENT 2 */}
-
-                <div
-                  className="
-                    relative
-                    z-[1]
-
-                    -ml-2.5
-
-                    h-9
-                    w-9
-
-                    overflow-hidden
-                    rounded-full
-
-                    transition
-                    duration-300
-
-                    hover:z-[10]
-                    hover:scale-110
-                  "
-                >
-                  <img
-                    src="/assets/images/brand_logo/brand03.png"
-                    alt="Client Image"
+                  {/* CLIENT 2 */}
+                  <div
                     className="
-                      h-full
-                      w-full
-                      object-cover
-                    "
-                  />
-                </div>
+          relative
+          z-[2]
+          -ml-2
+          h-8
+          w-8
+          overflow-hidden
+          rounded-full
+          bg-white
+          transition
+          duration-300
+          hover:z-[10]
+          hover:scale-110
+          sm:-ml-2.5
+          sm:h-9
+          sm:w-9
+        "
+                  >
+                    <img
+                      src="/assets/images/brand_logo/brand03.png"
+                      alt="Client"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
 
-
-                {/* CLIENT 3 */}
-
-                <div
-                  className="
-                    relative
-
-                    -ml-2.5
-
-                    h-9
-                    w-9
-
-                    overflow-hidden
-                    rounded-full
-
-                    transition
-                    duration-300
-
-                    hover:z-[10]
-                    hover:scale-110
-                  "
-                >
-                  <img
-                    src="/assets/images/brand_logo/brand01.png"
-                    alt="Client Image"
+                  {/* CLIENT 3 */}
+                  <div
                     className="
-                      h-full
-                      w-full
-                      object-cover
-                    "
-                  />
+          relative
+          z-[1]
+          -ml-2
+          h-8
+          w-8
+          overflow-hidden
+          rounded-full
+          bg-white
+          transition
+          duration-300
+          hover:z-[10]
+          hover:scale-110
+          sm:-ml-2.5
+          sm:h-9
+          sm:w-9
+        "
+                  >
+                    <img
+                      src="/assets/images/brand_logo/brand01.png"
+                      alt="Client"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
-
-              </div>
-
-
-              {/* =================================================
-                  CLIENT COUNT
-              ================================================= */}
-
-              <div>
 
                 {/* 2.3M+ */}
-
                 <div
                   className="
-                    text-[27px]
-                    font-extrabold
-                    leading-none
-                    text-black
-                  "
+        text-[23px]
+        font-extrabold
+        leading-none
+        text-black
+        sm:text-[25px]
+      "
                 >
                   <Counter
                     target={2.3}
@@ -531,67 +535,56 @@ function Hero() {
                     suffix="M+"
                   />
                 </div>
-
-
-                {/* 5000+ */}
-
-                <div
-                  className="
-                    mt-3
-
-                    whitespace-nowrap
-
-                    text-[15px]
-                    font-medium
-
-                    text-[#1e293b]
-                  "
-                >
-                  <Counter
-                    target={5000}
-                    duration={4200}
-                    suffix="+"
-                  />{" "}
-                  Client reviews
-                </div>
-
               </div>
 
+              {/* BOTTOM ROW */}
+              <div
+                className="
+      mt-2
+      whitespace-nowrap
+      text-[13px]
+      font-medium
+      leading-none
+      text-[#1e293b]
+      sm:mt-3
+      sm:text-[15px]
+    "
+              >
+                <Counter target={5000} duration={4200} suffix="+" /> Client
+                reviews
+              </div>
             </div>
-
           </div>
-
         </div>
 
-
         {/* ===================================================
-            RIGHT SIDE
+            RIGHT HERO VISUAL
         =================================================== */}
 
         <div
           className="
             relative
+            z-20
 
             flex
 
-            min-h-[500px]
-
-            -mt-24
+            min-h-[540px]
 
             items-end
             justify-center
 
-            sm:mt-0
-            sm:min-h-[570px]
+            sm:min-h-[590px]
 
-            lg:min-h-[700px]
+            md:min-h-[620px]
+
+            lg:min-h-[calc(100svh-82px)]
+            lg:justify-end
 
             xl:min-h-[720px]
           "
         >
-
           {/* =================================================
-              WHITE PERSON BACKGROUND CARD
+              LARGE WHITE PERSON FRAME
           ================================================= */}
 
           <div
@@ -599,25 +592,40 @@ function Hero() {
               absolute
 
               bottom-0
-              left-[18%]
+              left-1/2
 
               z-10
 
-              h-[470px]
-              w-[72%]
+              h-[430px]
+              w-[86%]
+
+              -translate-x-1/2
 
               rounded-t-[32px]
+              rounded-br-[60px]
+              rounded-bl-[32px]
+
+              border
+              border-white
 
               bg-white
 
-              sm:h-[570px]
-              sm:w-[64%]
+              shadow-[0_25px_70px_rgba(20,30,70,0.06)]
 
-              lg:left-[12%]
-              lg:h-[610px]
-              lg:w-[64%]
+              sm:h-[500px]
+              sm:w-[76%]
 
-              xl:h-[630px]
+              md:h-[555px]
+              md:w-[70%]
+
+              lg:left-[15%]
+              lg:h-[625px]
+              lg:w-[60%]
+              lg:translate-x-0
+
+              xl:left-[13%]
+              xl:h-[650px]
+              xl:w-[66%]
             "
           />
 
@@ -632,31 +640,39 @@ function Hero() {
             className="
               absolute
 
-              bottom-0
-              left-[13%]
+              bottom-[20px]
+              left-1/2
 
               z-20
 
-              w-[72%]
+              w-[90%]
+              max-w-none
 
-              max-w-[570px]
+              -translate-x-1/2
 
               object-contain
               object-bottom
 
-              sm:left-[17%]
-              sm:w-[60%]
+              sm:bottom-[23px]
+              sm:w-[78%]
 
-              lg:left-[13%]
-              lg:w-[64%]
+              md:bottom-[25px]
+              md:w-[72%]
 
-              xl:w-[60%]
+              lg:bottom-[25px]
+              lg:left-[12%]
+              lg:w-[68%]
+              lg:translate-x-0
+
+              xl:left-[10%]
+              xl:w-[64%]
             "
           />
 
-
           {/* =================================================
               TRUSTPILOT CARD
+
+              Desktop + tablet only.
           ================================================= */}
 
           <div
@@ -664,29 +680,33 @@ function Hero() {
               absolute
 
               right-[1%]
-              top-[90px]
+              top-[70px]
 
               z-40
 
               hidden
 
-              w-full
-              max-w-[218px]
+              w-[195px]
 
-              rounded-3xl
+              rounded-[28px]
 
               bg-white
 
-              p-6
+              p-5
 
-              shadow-[0_12px_35px_rgba(0,0,0,0.10)]
+              shadow-[0_15px_40px_rgba(20,30,70,0.10)]
 
-              lg:block
+              md:block
+
+              lg:right-[1%]
+              lg:top-[90px]
+              lg:w-[218px]
+              lg:p-6
 
               xl:right-[2%]
+              xl:top-[80px]
             "
           >
-
             {/* 4.9 BADGE */}
 
             <div
@@ -704,6 +724,7 @@ function Hero() {
                 inline-flex
 
                 items-center
+
                 gap-1
 
                 rounded-full
@@ -714,7 +735,6 @@ function Hero() {
                 py-1
               "
             >
-
               <span
                 className="
                   text-sm
@@ -729,20 +749,23 @@ function Hero() {
               <img
                 src="/assets/images/icons/star.svg"
                 alt=""
-                className="h-4 w-4"
+                className="
+                  h-4
+                  w-4
+                "
               />
-
             </div>
-
 
             {/* RATINGS */}
 
             <img
               src="/assets/images/icons/ratings.svg"
               alt="Ratings"
-              className="h-auto w-auto"
+              className="
+                h-auto
+                w-auto
+              "
             />
-
 
             {/* TRUST PILOT */}
 
@@ -758,12 +781,13 @@ function Hero() {
                 justify-between
               "
             >
-
               <span
                 className="
-                  text-lg
+                  text-base
                   font-semibold
                   text-[#151b2c]
+
+                  lg:text-lg
                 "
               >
                 Trust pilot
@@ -772,20 +796,16 @@ function Hero() {
               <img
                 src="/assets/images/icons/verified-icon.svg"
                 alt="Verified"
-                className="h-5 w-5"
+                className="
+                  h-5
+                  w-5
+                "
               />
-
             </div>
-
           </div>
-
 
           {/* =================================================
               REVENUE SHAPE
-
-              IMPORTANT:
-              This is the ONLY element that gets restarted
-              when the hero content changes.
           ================================================= */}
 
           <img
@@ -798,29 +818,35 @@ function Hero() {
 
               absolute
 
-              bottom-[115px]
-              left-[-8px]
+              bottom-[118px]
+              left-[2%]
 
               z-30
 
-              w-[42px]
-
-              sm:bottom-[140px]
-              sm:left-[-30px]
-              sm:w-[50px]
+              w-[38px]
 
               max-w-none
 
               opacity-80
 
               animate-revenue-shake
+
+              sm:bottom-[135px]
+              sm:left-[2%]
+              sm:w-[46px]
+
+              md:bottom-[145px]
+              md:w-[50px]
+
+              lg:bottom-[150px]
+              lg:left-[2%]
+
+              xl:left-[1%]
             "
             style={{
-              transformOrigin:
-                "center bottom",
+              transformOrigin: "center bottom",
             }}
           />
-
 
           {/* =================================================
               REVENUE CARD
@@ -835,32 +861,36 @@ function Hero() {
 
               z-40
 
-              w-[calc(100%-32px)]
+              w-[calc(100%-24px)]
               max-w-[340px]
 
               -translate-x-1/2
 
               overflow-hidden
 
-              rounded-[22px]
+              rounded-[20px]
 
               bg-white
 
-              p-6
+              p-4
 
               shadow-[0_20px_50px_rgba(0,0,0,0.10)]
 
-              sm:left-[2%]
               sm:w-[340px]
               sm:max-w-none
-              sm:translate-x-0
+              sm:p-5
 
-              lg:left-[-3%]
+              md:left-[3%]
+              md:translate-x-0
+
+              lg:left-[1%]
               lg:w-[365px]
+              lg:p-6
+
+              xl:left-[-1%]
             "
           >
-
-            {/* CONTENT */}
+            {/* REVENUE CONTENT */}
 
             <div
               className="
@@ -868,30 +898,24 @@ function Hero() {
                 z-10
 
                 flex
-
                 items-start
                 justify-between
               "
             >
-
               <div>
-
                 <p
                   className="
-                    text-[14px]
-
+                    text-[13px]
                     font-medium
-
                     uppercase
-
                     tracking-wide
-
                     text-[#7c8799]
+
+                    sm:text-[14px]
                   "
                 >
                   Revenue
                 </p>
-
 
                 {/* REVENUE COUNTER */}
 
@@ -899,11 +923,13 @@ function Hero() {
                   className="
                     mt-2
 
-                    text-[30px]
-
+                    text-[25px]
                     font-bold
-
                     text-black
+
+                    sm:text-[28px]
+
+                    lg:text-[30px]
                   "
                 >
                   <Counter
@@ -914,7 +940,6 @@ function Hero() {
                   />
                 </h3>
 
-
                 {/* TABS */}
 
                 <div
@@ -922,15 +947,19 @@ function Hero() {
                     mt-3
 
                     flex
-
                     items-center
 
-                    gap-5
+                    gap-3
 
-                    text-[14px]
+                    text-[12px]
+
+                    sm:gap-4
+                    sm:text-[13px]
+
+                    lg:gap-5
+                    lg:text-[14px]
                   "
                 >
-
                   <span
                     className="
                       font-bold
@@ -955,11 +984,8 @@ function Hero() {
                   >
                     Monthly
                   </span>
-
                 </div>
-
               </div>
-
 
               {/* REVENUE CHART */}
 
@@ -968,22 +994,24 @@ function Hero() {
                 alt="Revenue chart"
                 className="
                   relative
-
                   z-10
 
-                  mt-2
+                  mt-1
 
-                  h-[100px]
-                  w-[100px]
+                  h-[72px]
+                  w-[72px]
 
                   object-contain
+
+                  sm:h-[82px]
+                  sm:w-[82px]
+
+                  lg:h-[100px]
+                  lg:w-[100px]
                 "
               />
-
             </div>
-
           </div>
-
 
           {/* =================================================
               8+ YEARS EXPERIENCE
@@ -993,19 +1021,15 @@ function Hero() {
             className="
               absolute
 
-              bottom-0
-
-              right-[2%]
+              bottom-5
+              right-[0%]
 
               z-40
 
               flex
 
-              h-[120px]
-              w-[120px]
-
-              sm:h-[150px]
-              sm:w-[150px]
+              h-[150px]
+              w-[200px]
 
               items-center
               justify-center
@@ -1016,61 +1040,67 @@ function Hero() {
 
               shadow-[0_20px_40px_rgba(20,85,217,0.25)]
 
-              sm:right-[-1%]
+              sm:h-[120px]
+              sm:w-[120px]
 
-              lg:right-[10%]
+              md:h-[140px]
+              md:w-[140px]
+
+              lg:h-[200px]
+              lg:w-[200px]
+
+              lg:right-[4%]
+
+              xl:right-[6%]
             "
             style={{
-              clipPath:
-                "polygon(0 0, 76% 0, 100% 25%, 100% 100%, 0 100%)",
+              clipPath: "polygon(0 0, 76% 0, 100% 25%, 100% 100%, 0 100%)",
             }}
           >
-
-            <div className="text-center">
-
+            <div
+              className="
+                text-center
+              "
+            >
               <div
                 className="
-                      text-[42px]
-
+                  text-[34px]
                   font-bold
-
-                  sm:text-[52px]
-
                   leading-none
+
+                  sm:text-[42px]
+
+                  md:text-[48px]
+
+                  lg:text-[52px]
                 "
               >
-                <Counter
-                  target={8}
-                  duration={4000}
-                  decimals={0}
-                  suffix="+"
-                />
+                <Counter target={8} duration={4000} decimals={0} suffix="+" />
               </div>
-
 
               <p
                 className="
-                  mt-3
+                  mt-2
 
-                  text-[15px]
-
+                  text-[11px]
                   font-medium
+
+                  sm:text-[13px]
+
+                  md:text-[14px]
+
+                  lg:mt-3
+                  lg:text-[15px]
                 "
               >
                 Years Experience
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
-
 
 export default Hero;

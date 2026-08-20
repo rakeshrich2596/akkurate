@@ -88,7 +88,7 @@ function BrandSlider() {
             <div
               className="
                 flex
-                h-[125px]
+                h-[100px]
                 w-full
                 items-center
                 justify-center

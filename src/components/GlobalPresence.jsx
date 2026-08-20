@@ -19,6 +19,7 @@ const locations = [
     lng: 80.1,
     flag: "/assets/images/icons/india.png",
   },
+
   {
     id: 2,
     city: "Trichy",
@@ -27,6 +28,7 @@ const locations = [
     lng: 78.693,
     flag: "/assets/images/icons/india.png",
   },
+
   {
     id: 3,
     city: "Singapore",
@@ -42,25 +44,17 @@ const locations = [
 // =========================================================
 
 const GlobalPresence = () => {
-  const globeContainerRef =
-    useRef(null);
+  const globeContainerRef = useRef(null);
 
-  const globeRef =
-    useRef(null);
+  const globeRef = useRef(null);
 
-  const sectionRef =
-    useRef(null);
+  const sectionRef = useRef(null);
 
   const [isVisible, setIsVisible] =
     useState(false);
 
   // =========================================================
   // SECTION SCROLL ANIMATION
-  //
-  // Left content  → left to center
-  // Globe         → right to center
-  //
-  // Replays every time section enters viewport.
   // =========================================================
 
   useEffect(() => {
@@ -72,20 +66,15 @@ const GlobalPresence = () => {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          if (
-            entry.isIntersecting
-          ) {
-            // Reset animation first
+          if (entry.isIntersecting) {
             setIsVisible(false);
 
-            // Start fresh animation
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
                 setIsVisible(true);
               });
             });
           } else {
-            // Reset when leaving viewport
             setIsVisible(false);
           }
         },
@@ -106,15 +95,12 @@ const GlobalPresence = () => {
   // =========================================================
 
   useEffect(() => {
-    if (
-      !globeContainerRef.current
-    ) {
+    if (!globeContainerRef.current) {
       return;
     }
 
     // Prevent duplicate globe
-    globeContainerRef.current.innerHTML =
-      "";
+    globeContainerRef.current.innerHTML = "";
 
     // Create Globe
     const globe =
@@ -122,8 +108,7 @@ const GlobalPresence = () => {
         globeContainerRef.current
       );
 
-    globeRef.current =
-      globe;
+    globeRef.current = globe;
 
     // =======================================================
     // EARTH IMAGE
@@ -217,24 +202,33 @@ const GlobalPresence = () => {
     const controls =
       globe.controls();
 
-    // Auto rotate
-    controls.autoRotate =
-      true;
+    // =======================================================
+    // FASTER AUTO ROTATION
+    // =======================================================
 
-    controls.autoRotateSpeed =
-      0.6;
+    controls.autoRotate = true;
+
+    /*
+      OLD:
+      0.6
+
+      NEW:
+      1.5
+
+      This makes the globe rotate faster while
+      keeping the movement smooth.
+    */
+
+    controls.autoRotateSpeed = 1.5;
 
     // Disable zoom
-    controls.enableZoom =
-      false;
+    controls.enableZoom = false;
 
     // Disable pan
-    controls.enablePan =
-      false;
+    controls.enablePan = false;
 
     // Allow rotation
-    controls.enableRotate =
-      true;
+    controls.enableRotate = true;
 
     // =======================================================
     // CLEANUP
@@ -248,8 +242,7 @@ const GlobalPresence = () => {
           "";
       }
 
-      globeRef.current =
-        null;
+      globeRef.current = null;
     };
   }, []);
 
@@ -271,7 +264,7 @@ const GlobalPresence = () => {
         lng,
         altitude: 1.8,
       },
-      1500
+      900
     );
   };
 
@@ -306,7 +299,11 @@ const GlobalPresence = () => {
         from-slate-100
         via-slate-100
         to-slate-200
-        pt-16
+        pt-12
+        pb-0
+
+        sm:pt-16
+
         lg:pt-20
       "
     >
@@ -342,9 +339,12 @@ const GlobalPresence = () => {
           flex-col
           items-center
           justify-between
-          gap-6
+          gap-4
           px-5
+
+          sm:gap-6
           sm:px-8
+
           lg:flex-row
           lg:gap-10
           lg:px-12
@@ -352,8 +352,6 @@ const GlobalPresence = () => {
       >
         {/* ===================================================
             LEFT CONTENT
-
-            LEFT → CENTER
         ==================================================== */}
 
         <div
@@ -364,6 +362,7 @@ const GlobalPresence = () => {
             flex-col
             items-center
             text-center
+
             lg:w-[50%]
             lg:items-start
             lg:text-left
@@ -386,13 +385,19 @@ const GlobalPresence = () => {
           <h1
             className="
               m-0
-              text-5xl
-              font-extrabold
+              text-[38px]
+              font-bold
               leading-[1.08]
               tracking-[-0.04em]
               text-slate-900
-              sm:text-6xl
+
+              sm:text-5xl
+
+              md:text-6xl
+
               lg:text-5xl
+
+              xl:text-6xl
             "
           >
             Trusted to Deliver
@@ -416,7 +421,7 @@ const GlobalPresence = () => {
               handleTalkToUs
             }
             className="
-              mt-8
+              mt-6
               inline-flex
               items-center
               justify-center
@@ -435,6 +440,8 @@ const GlobalPresence = () => {
               hover:bg-blue-700
               hover:shadow-xl
               active:scale-95
+
+              sm:mt-8
             "
           >
             Talk to us
@@ -447,8 +454,6 @@ const GlobalPresence = () => {
 
         {/* ===================================================
             RIGHT GLOBE
-
-            RIGHT → CENTER
         ==================================================== */}
 
         <div
@@ -458,11 +463,12 @@ const GlobalPresence = () => {
             w-full
             items-center
             justify-center
+
             lg:w-[50%]
 
             transition-all
-            duration-[1400ms]
-            delay-[150ms]
+            duration-[1200ms]
+            delay-[100ms]
             ease-[cubic-bezier(0.22,1,0.36,1)]
 
             ${
@@ -482,12 +488,17 @@ const GlobalPresence = () => {
             }
             className="
               flex
-              h-[380px]
-              w-[380px]
+              h-[320px]
+              w-[320px]
               items-center
               justify-center
-              sm:h-[430px]
-              sm:w-[430px]
+
+              sm:h-[380px]
+              sm:w-[380px]
+
+              md:h-[430px]
+              md:w-[430px]
+
               lg:h-[500px]
               lg:w-[500px]
             "
@@ -504,13 +515,15 @@ const GlobalPresence = () => {
           relative
           z-20
           mx-auto
-          mt-5
+          mt-2
           w-full
           max-w-[1400px]
           border-t
           border-slate-300
           px-5
+
           sm:px-8
+
           lg:px-12
         "
       >
@@ -518,6 +531,7 @@ const GlobalPresence = () => {
           className="
             grid
             grid-cols-1
+
             md:grid-cols-3
           "
         >
@@ -545,25 +559,24 @@ const GlobalPresence = () => {
                   gap-3
                   border-slate-300
                   px-4
-                  py-5
+                  py-4
                   text-left
                   transition-all
                   duration-300
                   hover:bg-white/60
+
                   md:justify-center
+                  md:py-5
 
                   ${
                     index !==
-                    locations.length -
-                      1
+                    locations.length - 1
                       ? "md:border-r"
                       : ""
                   }
                 `}
               >
-                {/* =========================================
-                    FLAG
-                ========================================= */}
+                {/* FLAG */}
 
                 <img
                   src={
@@ -582,9 +595,7 @@ const GlobalPresence = () => {
                   "
                 />
 
-                {/* =========================================
-                    LOCATION TEXT
-                ========================================= */}
+                {/* LOCATION TEXT */}
 
                 <div className="flex flex-col">
                   <span
@@ -620,7 +631,7 @@ const GlobalPresence = () => {
       </div>
 
       {/* =====================================================
-          REDUCED MOTION
+          RESPONSIVE + REDUCED MOTION
       ====================================================== */}
 
       <style>{`
@@ -631,6 +642,30 @@ const GlobalPresence = () => {
 
           section {
             scroll-behavior: auto;
+          }
+
+        }
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 480px) {
+
+          h1 {
+            font-size: 34px;
+          }
+
+        }
+
+        /* =========================================
+           MOBILE GLOBE
+        ========================================= */
+
+        @media (max-width: 639px) {
+
+          .globe-container {
+            transform: scale(0.9);
           }
 
         }

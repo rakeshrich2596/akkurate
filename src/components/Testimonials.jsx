@@ -8,19 +8,19 @@ const testimonials = [
   },
 
   {
-    logo: "/assets/images/brand_logo/brand01.png",
+    logo: "/assets/images/brand_logo/brand02.png",
     text: "We wanted our business and website to pop up when people searched online. With good SEO and website optimization, the team helped us accurately rank high. Their approach was professional, consistent, and focused on improving our online presence and visibility.",
     author: "Mr. Indrakumar",
   },
 
   {
-    logo: "/assets/images/brand_logo/brand/9.png",
+    logo: "/assets/images/brand_logo/brand03.png",
     text: "We needed our logo and brand name to be revisited as the initial ones were too long. Customers did not read our full names or pay attention to the brand. The team understood our requirements and helped us create a stronger, simpler brand identity that was easier for our customers to recognize and remember.",
     author: "Mr. Yuvaraj",
   },
 
   {
-    logo: "/assets/images/brand_logo/brand01.png",
+    logo: "/assets/images/brand_logo/brand04.png",
     text: "We have 2 hotel chains in Madurai, India and we found it hard to rank both of them online. Akkurate helped us optimize our Google My Business pages and improve our local online visibility. Their support helped us strengthen our presence in search results and make it easier for customers to find our hotels.",
     author: "Mr. Ravi Balakrishnan",
   },
@@ -43,11 +43,6 @@ function TestimonialCard({
         relative
         flex
         h-[530px]
-
-        /* =================================================
-           MOBILE
-           ONE CARD WIDTH
-        ================================================= */
 
         w-[calc(100vw-48px)]
         max-w-[360px]
@@ -75,19 +70,13 @@ function TestimonialCard({
         hover:border-[#1351D8]/30
         hover:shadow-[0_20px_45px_rgba(15,23,42,0.10)]
 
-        /* =================================================
-           TABLET / DESKTOP
-        ================================================= */
-
         sm:w-[380px]
         sm:max-w-none
 
         lg:w-[390px]
       "
     >
-      {/* =====================================================
-          LOGO
-      ===================================================== */}
+      {/* LOGO */}
 
       <div
         className="
@@ -125,9 +114,7 @@ function TestimonialCard({
         />
       </div>
 
-      {/* =====================================================
-          QUOTE
-      ===================================================== */}
+      {/* QUOTE */}
 
       <div
         className="
@@ -141,9 +128,7 @@ function TestimonialCard({
         “
       </div>
 
-      {/* =====================================================
-          TESTIMONIAL TEXT
-      ===================================================== */}
+      {/* TESTIMONIAL */}
 
       <p
         className="
@@ -158,9 +143,7 @@ function TestimonialCard({
         {testimonial.text}
       </p>
 
-      {/* =====================================================
-          AUTHOR
-      ===================================================== */}
+      {/* AUTHOR */}
 
       <div
         className="
@@ -200,25 +183,14 @@ function TestimonialCard({
 
 function Testimonials() {
   const sectionRef = useRef(null);
-
   const scrollContainerRef = useRef(null);
 
   const [isPaused, setIsPaused] = useState(false);
-
   const [headingVisible, setHeadingVisible] =
     useState(false);
 
   /* =========================================================
      HEADING INTERSECTION OBSERVER
-
-     Every time section enters viewport:
-     headingVisible = true
-
-     When section leaves:
-     headingVisible = false
-
-     So when user comes back:
-     animation starts again.
   ========================================================= */
 
   useEffect(() => {
@@ -254,13 +226,6 @@ function Testimonials() {
 
   /* =========================================================
      AUTO SCROLL REVIEW CARDS
-
-     MOBILE:
-     One card at a time.
-     Exact card width + gap.
-     
-     DESKTOP:
-     Existing 410px movement.
   ========================================================= */
 
   useEffect(() => {
@@ -274,9 +239,7 @@ function Testimonials() {
       const isMobile =
         window.innerWidth < 640;
 
-      /* =====================================================
-         MOBILE
-      ===================================================== */
+      /* MOBILE */
 
       if (isMobile) {
         const firstCard =
@@ -316,10 +279,7 @@ function Testimonials() {
         return;
       }
 
-      /* =====================================================
-         DESKTOP
-         KEEP EXISTING BEHAVIOUR
-      ===================================================== */
+      /* DESKTOP */
 
       const maxScroll =
         container.scrollWidth -
@@ -378,40 +338,33 @@ function Testimonials() {
         <div
           className="
             mb-12
-            flex
-            flex-col
+            grid
+            grid-cols-1
+            items-center
             gap-8
 
-            lg:flex-row
-            lg:items-center
-            lg:justify-between
+            lg:grid-cols-[minmax(0,1fr)_auto]
+            lg:gap-8
           "
         >
           {/* =================================================
               HEADING
 
-              ONLY THIS HEADING ANIMATES
+              EXACTLY 2 LINES
           ================================================= */}
 
           <div
             className="
-              w-full
+              min-w-0
               overflow-hidden
-
-              lg:max-w-[520px]
             "
           >
             <h3
               className={`
-                text-3xl
-                font-normal
-                leading-[1.15]
-                tracking-tight
+                testimonials-title
                 text-black
-
-                sm:text-4xl
-
-                lg:text-[48px]
+                font-normal
+                tracking-tight
 
                 ${
                   headingVisible
@@ -420,39 +373,41 @@ function Testimonials() {
                 }
               `}
             >
-              Our clients'{" "}
+              <span>
+                Our clients'{" "}
+                <span className="text-[#1351D8]">
+                  success stories
+                </span>{" "}
+                speak volumes about
+              </span>
 
-              <span
-                className="
-                  font-normal
-                  text-[#1351D8]
-                "
-              >
-                success stories
-              </span>{" "}
-
-              speak volumes about the impact of our services
+              <span>
+                the impact of our services
+              </span>
             </h3>
           </div>
 
           {/* =================================================
-              RATINGS
+              TRUSTPILOT + GOOGLE
+
+              STRAIGHT OPPOSITE HEADING
           ================================================= */}
 
           <div
             className="
               flex
-              flex-wrap
+              w-full
               items-center
               justify-start
-              gap-7
+              gap-4
 
+              sm:gap-6
+
+              lg:w-auto
               lg:justify-end
             "
           >
-            {/* =================================================
-                TRUSTPILOT
-            ================================================= */}
+            {/* TRUSTPILOT */}
 
             <a
               href="https://www.trustpilot.com/review/akkurate.in?languages=all"
@@ -460,8 +415,9 @@ function Testimonials() {
               rel="noopener noreferrer"
               className="
                 flex
+                shrink-0
                 items-center
-                gap-3
+                gap-2
                 no-underline
 
                 transition-transform
@@ -473,16 +429,21 @@ function Testimonials() {
                 src="/assets/images/icons/trustpilot-star.svg"
                 alt="Trustpilot"
                 className="
-                  h-[30px]
-                  w-[30px]
+                  h-[24px]
+                  w-[24px]
+
+                  sm:h-[28px]
+                  sm:w-[28px]
                 "
               />
 
               <span
                 className="
-                  text-[25px]
+                  text-[18px]
                   font-bold
                   text-black
+
+                  sm:text-[22px]
                 "
               >
                 Trustpilot
@@ -490,9 +451,11 @@ function Testimonials() {
 
               <span
                 className="
-                  text-[20px]
+                  text-[16px]
                   font-bold
                   text-black
+
+                  sm:text-[19px]
                 "
               >
                 4.8
@@ -500,32 +463,30 @@ function Testimonials() {
 
               <span
                 className="
-                  text-[25px]
+                  text-[18px]
                   text-amber-500
+
+                  sm:text-[22px]
                 "
               >
                 ★
               </span>
             </a>
 
-            {/* =================================================
-                DIVIDER
-            ================================================= */}
+            {/* DIVIDER */}
 
             <div
               className="
-                hidden
-                h-[34px]
+                h-[28px]
                 w-px
+                shrink-0
                 bg-neutral-300
 
-                sm:block
+                sm:h-[32px]
               "
             />
 
-            {/* =================================================
-                GOOGLE
-            ================================================= */}
+            {/* GOOGLE */}
 
             <a
               href="https://g.page/r/CdytXHC_I2fLEAE/review"
@@ -533,8 +494,9 @@ function Testimonials() {
               rel="noopener noreferrer"
               className="
                 flex
+                shrink-0
                 items-center
-                gap-3
+                gap-2
                 no-underline
 
                 transition-transform
@@ -544,30 +506,27 @@ function Testimonials() {
             >
               <span
                 className="
-                  text-[21px]
+                  text-[18px]
                   font-bold
+
+                  sm:text-[20px]
                 "
               >
                 <span className="text-blue-500">
                   G
                 </span>
-
                 <span className="text-red-500">
                   o
                 </span>
-
                 <span className="text-amber-500">
                   o
                 </span>
-
                 <span className="text-blue-500">
                   g
                 </span>
-
                 <span className="text-green-500">
                   l
                 </span>
-
                 <span className="text-red-500">
                   e
                 </span>
@@ -575,9 +534,11 @@ function Testimonials() {
 
               <span
                 className="
-                  text-[20px]
+                  text-[16px]
                   font-bold
                   text-black
+
+                  sm:text-[19px]
                 "
               >
                 4.9
@@ -585,8 +546,10 @@ function Testimonials() {
 
               <span
                 className="
-                  text-[20px]
+                  text-[18px]
                   text-amber-500
+
+                  sm:text-[20px]
                 "
               >
                 ★
@@ -610,9 +573,7 @@ function Testimonials() {
             lg:gap-10
           "
         >
-          {/* =================================================
-              VIDEO
-          ================================================= */}
+          {/* VIDEO */}
 
           <div
             className="
@@ -658,9 +619,7 @@ function Testimonials() {
             </div>
           </div>
 
-          {/* =================================================
-              REVIEW CARDS
-          ================================================= */}
+          {/* REVIEW CARDS */}
 
           <div
             className="
@@ -687,11 +646,6 @@ function Testimonials() {
                 pb-4
                 pt-8
 
-                /* =================================================
-                   MOBILE:
-                   SNAP ONE CARD TO CENTER
-                ================================================= */
-
                 snap-x
                 snap-mandatory
 
@@ -700,9 +654,7 @@ function Testimonials() {
                 [&::-webkit-scrollbar]:hidden
               "
             >
-              {/* =================================================
-                  ORIGINAL CARDS
-              ================================================= */}
+              {/* ORIGINAL CARDS */}
 
               {testimonials.map(
                 (testimonial, index) => (
@@ -727,9 +679,7 @@ function Testimonials() {
                 )
               )}
 
-              {/* =================================================
-                  DUPLICATE CARDS
-              ================================================= */}
+              {/* DUPLICATE CARDS */}
 
               {testimonials.map(
                 (testimonial, index) => (
@@ -759,10 +709,106 @@ function Testimonials() {
       </div>
 
       {/* =========================================================
-          HEADING ANIMATION
+          CUSTOM RESPONSIVE HEADING CSS
       ========================================================= */}
 
       <style>{`
+
+        /* ================================
+           HEADING
+           ALWAYS 2 LINES
+        ================================= */
+
+        .testimonials-title {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 0;
+
+          font-size: 38px;
+          line-height: 1.18;
+        }
+
+        .testimonials-title > span {
+          display: block;
+          white-space: nowrap;
+        }
+
+        /* ================================
+           LARGE DESKTOP
+        ================================= */
+
+        @media (min-width: 1280px) {
+
+          .testimonials-title {
+            font-size: 44px;
+            line-height: 1.15;
+          }
+
+        }
+
+        /* ================================
+           DESKTOP
+        ================================= */
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+
+          .testimonials-title {
+            font-size: 34px;
+            line-height: 1.18;
+          }
+
+        }
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+
+          .testimonials-title {
+            font-size: 32px;
+            line-height: 1.2;
+          }
+
+          .testimonials-title > span {
+            white-space: normal;
+          }
+
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 767px) {
+
+          .testimonials-title {
+            font-size: 27px;
+            line-height: 1.25;
+          }
+
+          .testimonials-title > span {
+            white-space: normal;
+          }
+
+        }
+
+        /* ================================
+           SMALL MOBILE
+        ================================= */
+
+        @media (max-width: 480px) {
+
+          .testimonials-title {
+            font-size: 23px;
+            line-height: 1.3;
+          }
+
+        }
+
+        /* ================================
+           HEADING ANIMATION
+        ================================= */
 
         .testimonials-heading-hidden {
           opacity: 0;
@@ -794,12 +840,9 @@ function Testimonials() {
 
         }
 
-        /* =======================================================
+        /* ================================
            MOBILE CARD WIDTH
-           
-           One card should occupy most of the screen.
-           This prevents two cards from appearing equally.
-        ======================================================= */
+        ================================= */
 
         @media (max-width: 639px) {
 
@@ -814,11 +857,9 @@ function Testimonials() {
 
         }
 
-        /* =======================================================
-           DESKTOP
-           
-           Keep original card sizing.
-        ======================================================= */
+        /* ================================
+           DESKTOP CARD WIDTH
+        ================================= */
 
         @media (min-width: 640px) {
 
@@ -828,9 +869,9 @@ function Testimonials() {
 
         }
 
-        /* =======================================================
+        /* ================================
            REDUCED MOTION
-        ======================================================= */
+        ================================= */
 
         @media (prefers-reduced-motion: reduce) {
 
