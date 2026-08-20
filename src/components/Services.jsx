@@ -212,13 +212,8 @@ function AnimatedMainTitle({ playKey }) {
       {/* FIRST LINE */}
 
       <span className="block whitespace-nowrap">
-        {renderCenterOutward(
-          firstLine,
-          "first"
-        )}
+        {renderCenterOutward(firstLine, "first")}
       </span>
-
-  
     </h2>
   );
 }
@@ -252,7 +247,7 @@ function Services() {
       },
       {
         threshold: 0.25,
-      }
+      },
     );
 
     observer.observe(section);
@@ -365,9 +360,7 @@ function Services() {
               CENTER → OUTWARD
           ================================================= */}
 
-          <AnimatedMainTitle
-            playKey={animationKey}
-          />
+          <AnimatedMainTitle playKey={animationKey} />
 
           {/* =================================================
               SUB HEADING
@@ -386,10 +379,9 @@ function Services() {
               sm:text-lg
             "
           >
-            Akkurate helps enterprises and high-growth
-            businesses design, build, and scale advanced
-            digital systems that are secure, compliant,
-            and built for real-world adoption.
+            Akkurate helps enterprises and high-growth businesses design, build,
+            and scale advanced digital systems that are secure, compliant, and
+            built for real-world adoption.
           </p>
         </div>
 
@@ -397,135 +389,197 @@ function Services() {
             STICKY CARDS
         ===================================================== */}
 
-        <div className="mx-auto max-w-[1400px] pt-2">
+        <div className="mx-auto max-w-[1400px] px-4 pt-2 sm:px-6 lg:px-8">
           {services.map((service, index) => (
             <div
               key={service.number}
               className="
-                sticky
-                top-6
-                mb-8
-                min-h-[420px]
-                overflow-hidden
-                rounded-[35px]
-                shadow-[0_20px_60px_rgba(0,0,0,0.10)]
-                md:min-h-[470px]
-                lg:min-h-[480px]
-              "
+        sticky
+        top-6
+        mb-6
+
+        min-h-[620px]
+
+        overflow-hidden
+        rounded-[30px]
+
+        shadow-[0_16px_45px_rgba(0,0,0,0.10)]
+
+        sm:min-h-[580px]
+        sm:rounded-[32px]
+
+        md:min-h-[400px]
+        md:mb-7
+
+        lg:min-h-[360px]
+        lg:mb-8
+      "
               style={{
                 zIndex: index + 1,
               }}
             >
-              {/* CARD BACKGROUND */}
+              {/* =================================================
+          CARD BACKGROUND
+      ================================================= */}
 
               <div
                 className={`
-                  relative
-                  flex
-                  min-h-[420px]
-                  w-full
-                  items-center
-                  px-7
-                  py-10
+          relative
 
-                  md:min-h-[470px]
-                  md:px-12
+          flex
+          min-h-[620px]
 
-                  lg:min-h-[510px]
-                  lg:px-16
+          w-full
 
-                  ${service.color}
-                `}
+          items-center
+
+          px-6
+          py-8
+
+          sm:min-h-[580px]
+          sm:px-9
+          sm:py-9
+
+          md:min-h-[400px]
+          md:px-10
+          md:py-8
+
+          lg:min-h-[360px]
+          lg:px-12
+          lg:py-7
+
+          ${service.color}
+        `}
               >
                 <div
                   className="
-                    grid
-                    w-full
-                    grid-cols-1
-                    items-center
-                    gap-10
-                    lg:grid-cols-2
-                    lg:gap-16
-                  "
+            grid
+            w-full
+
+            grid-cols-1
+
+            items-center
+
+            gap-7
+
+            md:gap-9
+
+            lg:grid-cols-2
+            lg:gap-12
+          "
                 >
                   {/* =========================================
-                      LEFT CONTENT
-                  ========================================= */}
+              LEFT CONTENT
+          ========================================= */}
 
                   <div>
                     {/* TITLE */}
 
                     <h3
                       className="
-                        text-3xl
-                        font-bold
-                        leading-tight
-                        tracking-tight
-                        text-[#081a4b]
-                        sm:text-4xl
-                        lg:text-[44px]
-                      "
+                text-lg
+                font-semibold
+                leading-[1.2]
+                tracking-tight
+                text-[#081a4b]
+
+                sm:text-2xl
+
+                md:text-3xl
+
+                lg:text-[38px]
+                lg:leading-[1.15]
+              "
                     >
-                      {service.number}{" "}
-                      {service.title}
+                      {service.number} {service.title}
                     </h3>
 
                     {/* DESCRIPTION */}
 
                     <p
                       className="
-                        mt-6
-                        max-w-[600px]
-                        text-base
-                        leading-8
-                        text-neutral-600
-                        sm:text-lg
-                      "
+                mt-4
+
+                max-w-[560px]
+
+                text-sm
+                leading-6
+
+                text-neutral-600
+
+                sm:mt-5
+                sm:text-base
+                sm:leading-7
+
+                lg:mt-5
+                lg:text-[15px]
+                lg:leading-7
+              "
                     >
                       {service.description}
                     </p>
 
                     {/* LIST */}
 
-                    <ul className="mt-7 space-y-4">
-                      {service.points.map(
-                        (point, pointIndex) => (
-                          <li
-                            key={pointIndex}
-                            className="
-                              flex
-                              items-start
-                              gap-3
-                              text-sm
-                              font-medium
-                              text-[#081a4b]
-                              sm:text-base
-                            "
-                          >
-                            <span
-                              className="
-                                mt-0.5
-                                flex
-                                h-6
-                                w-6
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                bg-[#1455d9]
-                                text-xs
-                                text-white
-                              "
-                            >
-                              →
-                            </span>
+                    <ul
+                      className="
+                mt-5
+                space-y-3
 
-                            <span>
-                              {point}
-                            </span>
-                          </li>
-                        )
-                      )}
+                sm:mt-6
+                sm:space-y-3
+              "
+                    >
+                      {service.points.map((point, pointIndex) => (
+                        <li
+                          key={pointIndex}
+                          className="
+                      flex
+                      items-start
+                      gap-2.5
+
+                      text-[13px]
+                      font-medium
+                      leading-5
+
+                      text-[#081a4b]
+
+                      sm:text-sm
+                      sm:leading-6
+
+                      lg:text-[14px]
+                    "
+                        >
+                          <span
+                            className="
+                        mt-0.5
+
+                        flex
+                        h-5
+                        w-5
+                        shrink-0
+
+                        items-center
+                        justify-center
+
+                        rounded-full
+
+                        bg-[#1455d9]
+
+                        text-[10px]
+                        text-white
+
+                        sm:h-5
+                        sm:w-5
+                        sm:text-[11px]
+                      "
+                          >
+                            →
+                          </span>
+
+                          <span>{point}</span>
+                        </li>
+                      ))}
                     </ul>
 
                     {/* BUTTON */}
@@ -533,60 +587,93 @@ function Services() {
                     <a
                       href="/contact"
                       className="
-                        mt-9
-                        inline-flex
-                        items-center
-                        gap-3
-                        rounded-full
-                        bg-[#081a4b]
-                        px-7
-                        py-3.5
-                        text-sm
-                        font-semibold
-                        text-white
-                        transition
-                        duration-300
-                        hover:-translate-y-1
-                        hover:bg-[#1455d9]
-                      "
+                mt-6
+
+                inline-flex
+
+                items-center
+                gap-2
+
+                rounded-full
+
+                bg-[#081a4b]
+
+                px-6
+                py-3
+
+                text-[13px]
+                font-semibold
+
+                text-white
+
+                transition
+                duration-300
+
+                hover:-translate-y-1
+                hover:bg-[#1455d9]
+
+                sm:mt-7
+                sm:px-6
+                sm:py-3
+
+                sm:text-sm
+              "
                     >
                       Explore solutions
-
-                      <span className="text-lg">
+                      <span
+                        className="
+                  text-base
+                "
+                      >
                         →
                       </span>
                     </a>
                   </div>
 
                   {/* =========================================
-                      RIGHT IMAGE
-                  ========================================= */}
+              RIGHT IMAGE
+          ========================================= */}
 
                   <div
                     className="
-                      flex
-                      h-[280px]
-                      items-center
-                      justify-center
-                      overflow-hidden
-                      rounded-3xl
-                      bg-white/60
-                      p-5
-                      md:h-[380px]
-                      lg:h-[380px]
-                    "
+              flex
+
+              h-[220px]
+
+              items-center
+              justify-center
+
+              overflow-hidden
+
+              rounded-2xl
+
+              bg-white/60
+
+              p-4
+
+              sm:h-[280px]
+              sm:rounded-3xl
+
+              md:h-[320px]
+
+              lg:h-[300px]
+              lg:p-5
+            "
                   >
                     <img
                       src={service.image}
                       alt={service.title}
                       className="
-                        h-full
-                        w-full
-                        object-contain
-                        transition
-                        duration-500
-                        hover:scale-105
-                      "
+                h-full
+                w-full
+
+                object-contain
+
+                transition
+                duration-500
+
+                hover:scale-105
+              "
                     />
                   </div>
                 </div>

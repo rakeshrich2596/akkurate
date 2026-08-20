@@ -811,7 +811,7 @@ export default function About() {
                     min-h-[210px]
                     overflow-visible
                     rounded-[20px]
-                    bg-[#000435]
+                    bg-[#0b2443]
                     sm:min-h-[300px]
                     sm:rounded-[28px]
                     lg:h-full
@@ -1002,7 +1002,7 @@ export default function About() {
                     items-center
                     justify-center
                     rounded-[20px]
-                    bg-[#000435]
+                    bg-[#0b2443]
                     p-4
                     text-center
                     shadow-lg

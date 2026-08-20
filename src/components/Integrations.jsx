@@ -304,6 +304,7 @@ const AkkurateLogo = () => {
         h-[58px]
         w-[62px]
         fill-white
+
         sm:h-[70px]
         sm:w-[70px]
       "
@@ -339,17 +340,24 @@ const LogoCard = ({
     <div
       className={`
         group
+
         flex
         h-[80px]
         w-[80px]
         shrink-0
+
         items-center
         justify-center
+
         rounded-[18px]
+
         border
         border-slate-200
+
         bg-white
+
         shadow-[0_4px_10px_rgba(0,0,0,0.03)]
+
         transition-all
         duration-300
 
@@ -366,8 +374,8 @@ const LogoCard = ({
               ? "mt-0"
               : "mt-[30px] md:mt-[50px]"
             : isEven
-              ? "mt-[30px] md:mt-[50px]"
-              : "mt-0"
+            ? "mt-[30px] md:mt-[50px]"
+            : "mt-0"
         }
 
         hover:-translate-y-2
@@ -382,10 +390,14 @@ const LogoCard = ({
         className="
           h-[42px]
           w-[42px]
+
           object-contain
+
           opacity-80
+
           transition-all
           duration-300
+
           group-hover:scale-110
           group-hover:opacity-100
 
@@ -420,9 +432,6 @@ const Integrations = () => {
 
   // ======================================================
   // SCROLL OBSERVER
-  //
-  // Every time this section enters viewport:
-  // CENTER → OUTWARD animation plays.
   // ======================================================
 
   useEffect(() => {
@@ -441,16 +450,13 @@ const Integrations = () => {
           if (
             entry.isIntersecting
           ) {
-            // Hide first
             setHeadingVisible(false);
 
-            // New animation instance
             setAnimationKey(
               (previous) =>
                 previous + 1
             );
 
-            // Force fresh animation
             requestAnimationFrame(
               () => {
                 requestAnimationFrame(
@@ -469,23 +475,12 @@ const Integrations = () => {
           // ================================================
 
           else {
-            /*
-              Reset so animation
-              plays again when user
-              comes back.
-            */
-
             setHeadingVisible(
               false
             );
           }
         },
         {
-          /*
-            Start animation when
-            25% of section is visible.
-          */
-
           threshold: 0.25,
         }
       );
@@ -502,9 +497,13 @@ const Integrations = () => {
       ref={sectionRef}
       className="
         relative
+
         min-h-[600px]
+
         overflow-hidden
+
         bg-white
+
         pb-[60px]
         pt-[80px]
 
@@ -522,10 +521,16 @@ const Integrations = () => {
         className={`
           relative
           z-20
+
           mx-auto
+
           mb-[35px]
-          max-w-4xl
+
+          w-full
+          max-w-[1100px]
+
           px-5
+
           text-center
 
           md:mb-[50px]
@@ -541,14 +546,26 @@ const Integrations = () => {
             SMALL HEADING
         ================================================= */}
 
-        <div className="mb-4">
+        <div
+          className="
+            mb-4
+
+            flex
+            w-full
+            justify-center
+          "
+        >
           <span
             className="
+              text-center
+
               text-[11px]
               font-bold
               uppercase
               tracking-[0.15em]
+
               text-violet-500
+
               sm:text-[13px]
             "
           >
@@ -562,29 +579,67 @@ const Integrations = () => {
 
         {/* =================================================
             MAIN HEADING
+
+            CENTERED PROPERLY
         ================================================= */}
 
         <h2
           className="
             m-0
+
+            mx-auto
+
             w-full
-            whitespace-nowrap
-            text-[clamp(1rem,5.5vw,3rem)]
+
+            text-center
+
+            text-[clamp(1.5rem,4.5vw,3rem)]
+
             font-bold
-            leading-none
+
+            leading-[1.12]
+
             tracking-[-0.02em]
+
             text-slate-900
+
+            sm:text-[clamp(1.8rem,4vw,3rem)]
+
+            md:text-[clamp(2rem,4vw,3rem)]
+
+            lg:max-w-[1050px]
+
+            max-[767px]:whitespace-normal
           "
         >
-          <AnimatedHeadingText
-            text="Incorporate our tool into"
-            delayStep={0.045}
-            animationKey={`main-${animationKey}`}
-          />
-          <span className="inline-block w-[0.25em]" aria-hidden="true">
+          <span
+            className="
+              inline
+            "
+          >
+            <AnimatedHeadingText
+              text="Incorporate our tool into"
+              delayStep={0.045}
+              animationKey={`main-${animationKey}`}
+            />
+          </span>
+
+          <span
+            className="
+              inline-block
+              w-[0.25em]
+            "
+            aria-hidden="true"
+          >
             &nbsp;
           </span>
-          <span className="text-blue-500">
+
+          <span
+            className="
+              inline
+              text-blue-500
+            "
+          >
             <AnimatedHeadingText
               text="your everyday tasks"
               delayStep={0.045}
@@ -601,10 +656,15 @@ const Integrations = () => {
       <div
         className="
           relative
+
           z-10
+
           mx-auto
+
           h-[270px]
+
           w-full
+
           overflow-hidden
 
           sm:h-[310px]
@@ -622,6 +682,7 @@ const Integrations = () => {
             absolute
             left-0
             top-0
+
             w-full
           "
         >
@@ -650,7 +711,9 @@ const Integrations = () => {
                   className="
                     !h-[130px]
                     !w-[80px]
+
                     sm:!w-[100px]
+
                     md:!w-[110px]
                   "
                 >
@@ -672,7 +735,9 @@ const Integrations = () => {
                   className="
                     !h-[130px]
                     !w-[80px]
+
                     sm:!w-[100px]
+
                     md:!w-[110px]
                   "
                 >
@@ -695,8 +760,10 @@ const Integrations = () => {
         <div
           className="
             absolute
+
             left-0
             top-[140px]
+
             w-full
 
             md:top-[180px]
@@ -728,7 +795,9 @@ const Integrations = () => {
                   className="
                     !h-[130px]
                     !w-[80px]
+
                     sm:!w-[100px]
+
                     md:!w-[110px]
                   "
                 >
@@ -750,7 +819,9 @@ const Integrations = () => {
                   className="
                     !h-[130px]
                     !w-[80px]
+
                     sm:!w-[100px]
+
                     md:!w-[110px]
                   "
                 >
@@ -772,23 +843,35 @@ const Integrations = () => {
         <div
           className="
             pointer-events-none
+
             absolute
+
             left-1/2
             top-1/2
+
             z-20
+
             hidden
+
             h-[220px]
             w-[220px]
+
             -translate-x-1/2
             -translate-y-1/2
+
             rounded-full
+
             border
             border-white/80
+
             bg-white/30
+
             shadow-[0_8px_32px_rgba(0,0,0,0.05),inset_0_0_20px_rgba(255,255,255,0.5)]
+
             backdrop-blur-[16px]
 
             sm:block
+
             sm:h-[250px]
             sm:w-[250px]
 
@@ -804,11 +887,16 @@ const Integrations = () => {
         <div
           className="
             pointer-events-none
+
             absolute
+
             left-1/2
             top-1/2
+
             z-30
+
             hidden
+
             -translate-x-1/2
             -translate-y-1/2
 
@@ -818,14 +906,19 @@ const Integrations = () => {
           <div
             className="
               flex
+
               h-[90px]
               w-[90px]
+
               items-center
               justify-center
+
               rounded-full
+
               bg-gradient-to-br
               from-blue-500
               to-violet-500
+
               shadow-[0_10px_25px_rgba(59,130,246,0.4)]
 
               md:h-[120px]
@@ -843,12 +936,18 @@ const Integrations = () => {
         <div
           className="
             pointer-events-none
+
             absolute
+
             left-0
             top-0
+
             z-40
+
             h-full
+
             w-[15%]
+
             bg-gradient-to-r
             from-white
             to-transparent
@@ -862,12 +961,18 @@ const Integrations = () => {
         <div
           className="
             pointer-events-none
+
             absolute
+
             right-0
             top-0
+
             z-40
+
             h-full
+
             w-[15%]
+
             bg-gradient-to-l
             from-white
             to-transparent
@@ -875,9 +980,9 @@ const Integrations = () => {
         />
       </div>
 
-      {/* =================================================
+      {/* =====================================================
           ANIMATION CSS
-      ================================================= */}
+      ===================================================== */}
 
       <style>{`
 
@@ -907,13 +1012,11 @@ const Integrations = () => {
 
         /* ================================================
            WORD
-
-           Prevents individual letters from
-           breaking word layout.
         ================================================= */
 
         .integration-heading-word {
           display: inline-block;
+
           white-space: nowrap;
         }
 
@@ -988,6 +1091,22 @@ const Integrations = () => {
             transform:
               translateY(0)
               scale(1);
+          }
+
+        }
+
+        /* ================================================
+           RESPONSIVE HEADING
+        ================================================= */
+
+        @media (max-width: 767px) {
+
+          .integration-heading-word {
+            white-space: normal;
+          }
+
+          .integration-heading-space {
+            width: 0.3em;
           }
 
         }

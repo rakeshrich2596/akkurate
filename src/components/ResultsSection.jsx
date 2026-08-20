@@ -97,8 +97,7 @@ function CountUpValue({
       return;
     }
 
-    // Faster count animation
-    const duration = 1200;
+    const duration = 3000;
 
     const startTime =
       performance.now();
@@ -120,11 +119,6 @@ function CountUpValue({
         elapsed / duration,
         1
       );
-
-      /*
-        Smooth ease-out
-        Fast initially -> slower near target
-      */
 
       const easeOut =
         1 -
@@ -167,8 +161,6 @@ function CountUpValue({
 
   /* =======================================================
      RANGE VALUE
-
-     3X – 5X
   ======================================================= */
 
   if (
@@ -200,10 +192,6 @@ function CountUpValue({
 
   /* =======================================================
      NORMAL VALUE
-
-     0 -> 40%
-     0 -> 60%
-     0 -> 100%
   ======================================================= */
 
   return (
@@ -286,9 +274,9 @@ function ResultsSection() {
           lg:px-8
         "
       >
-        {/* ==========================================
+        {/* =================================================
             HEADING
-        ========================================== */}
+        ================================================= */}
 
         <h3
           className="
@@ -388,25 +376,33 @@ function ResultsSection() {
           </span>
         </h3>
 
-        {/* ==========================================
+        {/* =================================================
             RESULTS GRID
-        ========================================== */}
+
+            MOBILE  → 1 COLUMN
+            TABLET  → 2 COLUMNS
+            LAPTOP  → 3 COLUMNS
+            DESKTOP → 3 COLUMNS
+        ================================================= */}
 
         <div
           className="
             grid
             w-full
+
             grid-cols-1
-            justify-items-center
             gap-4
 
             sm:grid-cols-2
             sm:gap-5
 
-            lg:flex
-            lg:flex-wrap
-            lg:justify-center
-            lg:gap-4
+            lg:grid-cols-3
+            lg:gap-5
+
+            xl:grid-cols-3
+            xl:gap-6
+
+            2xl:grid-cols-3
           "
         >
           {results.map(
@@ -420,13 +416,6 @@ function ResultsSection() {
 
                   flex
                   w-full
-                  ${result.width}
-
-                  ${
-                    index === 1
-                      ? "mt-2 sm:mt-3 lg:mt-4"
-                      : ""
-                  }
 
                   min-h-[150px]
 
@@ -442,10 +431,12 @@ function ResultsSection() {
                   sm:px-6
 
                   md:min-h-[175px]
-                  md:px-8
+                  md:px-7
 
                   lg:min-h-[184px]
-                  lg:px-10
+                  lg:px-7
+
+                  xl:px-8
 
                   transition-all
                   duration-700
@@ -489,7 +480,7 @@ function ResultsSection() {
                     result.type ===
                     "center"
                       ? "flex-col gap-2 text-center"
-                      : "flex-row gap-6 text-left"
+                      : "flex-row gap-4 text-left"
                   }
 
                   max-[767px]:flex-col
@@ -629,36 +620,26 @@ function ResultsSection() {
                       result.type ===
                       "center"
                         ? "flex-col gap-2 text-center"
-                        : "flex-row gap-6 text-left"
+                        : "flex-row gap-4 text-left"
                     }
 
                     max-[768px]:flex-col
                     max-[768px]:gap-3
                   `}
                 >
-                  {/* ======================================
-                      VALUE / COUNT UP
-                  ====================================== */}
+                  {/* =================================================
+                      VALUE
+                  ================================================= */}
 
                   <div
-                    className={`
+                    className="
                       flex
                       shrink-0
                       items-center
-
-                      ${
-                        result.type ===
-                        "center"
-                          ? "justify-center"
-                          : "justify-center"
-                      }
-                    `}
+                      justify-center
+                    "
                   >
-                    {/* ======================================
-                        GREEN INCREASE ARROW
-
-                        ↑ 40%
-                    ====================================== */}
+                    {/* GREEN ARROW */}
 
                     {result.arrow && (
                       <img
@@ -684,14 +665,12 @@ function ResultsSection() {
 
                           md:h-9
 
-                          lg:h-10
+                          lg:h-9
                         "
                       />
                     )}
 
-                    {/* ======================================
-                        COUNT VALUE
-                    ====================================== */}
+                    {/* COUNT */}
 
                     <h3
                       className={`
@@ -704,7 +683,9 @@ function ResultsSection() {
 
                         sm:text-6xl
 
-                        lg:text-6xl
+                        lg:text-[54px]
+
+                        xl:text-[58px]
 
                         ${
                           result.dark
@@ -727,13 +708,14 @@ function ResultsSection() {
                     </h3>
                   </div>
 
-                  {/* ======================================
+                  {/* =================================================
                       DESCRIPTION
-                  ====================================== */}
+                  ================================================= */}
 
                   <p
                     className={`
                       m-0
+
                       max-w-[250px]
 
                       text-sm
@@ -742,9 +724,13 @@ function ResultsSection() {
                       sm:max-w-[260px]
                       sm:text-base
 
-                      md:text-[17px]
+                      md:text-[15px]
 
-                      lg:text-base
+                      lg:max-w-[180px]
+                      lg:text-[14px]
+
+                      xl:max-w-[190px]
+                      xl:text-[15px]
 
                       ${
                         result.dark
@@ -755,7 +741,7 @@ function ResultsSection() {
                       ${
                         result.type ===
                         "row"
-                          ? "max-w-[260px] sm:max-w-[220px]"
+                          ? "sm:max-w-[230px]"
                           : "mx-auto"
                       }
                     `}
@@ -809,6 +795,18 @@ function ResultsSection() {
 
           .result-card {
             min-height: 170px;
+          }
+
+        }
+
+        /* =====================================================
+           LAPTOP
+        ===================================================== */
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+
+          .result-card {
+            min-height: 184px;
           }
 
         }

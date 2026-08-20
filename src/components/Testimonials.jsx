@@ -365,6 +365,8 @@ function Testimonials() {
                 text-black
                 font-normal
                 tracking-tight
+                flex
+                flex-wrap
 
                 ${
                   headingVisible
@@ -378,11 +380,11 @@ function Testimonials() {
                 <span className="text-[#1351D8]">
                   success stories
                 </span>{" "}
-                speak volumes about
+                speak volumes
               </span>
 
               <span>
-                the impact of our services
+                about the impact of our services
               </span>
             </h3>
           </div>

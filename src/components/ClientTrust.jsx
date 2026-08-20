@@ -136,7 +136,9 @@ const AnimatedTitle = ({
                         ${characterIndex}-
                         ${animationKey}
                       `}
-                      className="client-title-letter"
+                      className="
+                        client-title-letter
+                      "
                       style={{
                         animationDelay: `${
                           delayMap[
@@ -155,7 +157,9 @@ const AnimatedTitle = ({
             {wordIndex <
               words.length - 1 && (
               <span
-                className="client-title-space"
+                className="
+                  client-title-space
+                "
                 aria-hidden="true"
               >
                 &nbsp;
@@ -170,26 +174,36 @@ const AnimatedTitle = ({
 
 // =========================================================
 // LOGO CARD
-// ALL CARDS SAME LINE
 // =========================================================
 
-const LogoCard = ({ logo, index }) => {
+const LogoCard = ({
+  logo,
+  index,
+}) => {
   return (
     <div
       className="
         group
+
         flex
         h-[82px]
         w-[180px]
         shrink-0
+
         items-center
         justify-center
+
         rounded-[10px]
+
         border
         border-slate-200
+
         bg-[#f8fafc]
+
         px-4
+
         shadow-[0_3px_10px_rgba(0,0,0,0.08)]
+
         transition-all
         duration-300
 
@@ -210,8 +224,11 @@ const LogoCard = ({ logo, index }) => {
         className="
           h-[50px]
           w-full
+
           object-contain
+
           opacity-90
+
           transition-all
           duration-300
 
@@ -298,10 +315,15 @@ const ClientTrust = () => {
       ref={sectionRef}
       className="
         relative
+
         w-full
+
         overflow-hidden
+
         bg-[#020617]
+
         py-[55px]
+
         text-white
 
         sm:py-[65px]
@@ -309,38 +331,126 @@ const ClientTrust = () => {
         lg:py-[72px]
       "
     >
-
       {/* =====================================================
-          BACKGROUND GLOW
+          BACKGROUND GLOW - TOP
       ===================================================== */}
 
       <div
         className="
           pointer-events-none
+
           absolute
+
           left-1/2
           top-[-250px]
+
           h-[500px]
           w-[700px]
+
           -translate-x-1/2
+
           rounded-full
+
           bg-blue-600/10
+
           blur-[120px]
         "
       />
 
+      {/* =====================================================
+          BACKGROUND GLOW - CENTER/BOTTOM
+      ===================================================== */}
+
       <div
         className="
           pointer-events-none
+
           absolute
+
           bottom-[-250px]
           left-1/2
+
           h-[500px]
           w-[700px]
+
           -translate-x-1/2
+
           rounded-full
+
           bg-indigo-600/10
+
           blur-[120px]
+        "
+      />
+
+      {/* =====================================================
+          NEW: BOTTOM RIGHT BLUE GRADIENT
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          bottom-[-180px]
+          right-[-180px]
+
+          z-0
+
+          h-[520px]
+          w-[520px]
+
+          rounded-full
+
+          bg-gradient-to-br
+          from-blue-500/0
+          via-blue-500/15
+          to-[#2563eb]/45
+
+          blur-[100px]
+
+          sm:bottom-[-200px]
+          sm:right-[-160px]
+          sm:h-[600px]
+          sm:w-[600px]
+
+          lg:bottom-[-240px]
+          lg:right-[-180px]
+          lg:h-[700px]
+          lg:w-[700px]
+        "
+      />
+
+      {/* =====================================================
+          EXTRA BOTTOM RIGHT GRADIENT
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          bottom-0
+          right-0
+
+          z-0
+
+          h-[260px]
+          w-[55%]
+
+          bg-gradient-to-tl
+          from-blue-600/25
+          via-blue-500/8
+          to-transparent
+
+          blur-[25px]
+
+          sm:h-[320px]
+
+          lg:h-[380px]
+          lg:w-[45%]
         "
       />
 
@@ -349,28 +459,41 @@ const ClientTrust = () => {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
+
           mx-auto
+
           w-full
+
           max-w-[1500px]
+
           px-5
+
           text-center
 
           sm:px-8
+
           lg:px-12
-        "
+        `}
       >
         <h2
           className={`
             client-main-title
+
             mx-auto
+
             whitespace-nowrap
+
             font-bold
+
             leading-none
+
             tracking-[-0.045em]
+
             text-[clamp(1.15rem,3.7vw,3.5rem)]
+
             text-white
 
             ${
@@ -386,7 +509,11 @@ const ClientTrust = () => {
             animationKey={`built-${animationKey}`}
           />
 
-          <span className="inline-block">
+          <span
+            className="
+              inline-block
+            "
+          >
             {" "}
           </span>
 
@@ -403,16 +530,24 @@ const ClientTrust = () => {
               animationKey={`global-${animationKey}`}
             />
 
+            {/* BLUE UNDERLINE */}
+
             <span
               className="
                 pointer-events-none
+
                 absolute
+
                 bottom-[-5px]
                 left-0
+
                 -z-10
+
                 h-[5px]
                 w-full
+
                 rounded-full
+
                 bg-blue-500/30
               "
             />
@@ -426,11 +561,17 @@ const ClientTrust = () => {
         <p
           className="
             mx-auto
+
             mt-5
+
             max-w-[680px]
+
             px-2
+
             text-[13px]
+
             leading-[1.7]
+
             text-slate-400
 
             sm:text-[15px]
@@ -449,8 +590,11 @@ const ClientTrust = () => {
       <div
         className="
           relative
+
           z-10
+
           mt-[38px]
+
           w-full
 
           sm:mt-[42px]
@@ -458,20 +602,27 @@ const ClientTrust = () => {
           lg:mt-[48px]
         "
       >
-
         {/* LEFT FADE */}
 
         <div
           className="
             pointer-events-none
+
             absolute
+
             left-0
             top-0
+
             z-20
+
             h-full
+
             w-[45px]
+
             bg-gradient-to-r
+
             from-[#020617]
+
             to-transparent
 
             sm:w-[80px]
@@ -485,14 +636,22 @@ const ClientTrust = () => {
         <div
           className="
             pointer-events-none
+
             absolute
+
             right-0
             top-0
+
             z-20
+
             h-full
+
             w-[45px]
+
             bg-gradient-to-l
+
             from-[#020617]
+
             to-transparent
 
             sm:w-[80px]
@@ -503,14 +662,16 @@ const ClientTrust = () => {
 
         {/* ===================================================
             ROW 1
-            ALL CARDS SAME HORIZONTAL LINE
         =================================================== */}
 
         <div
           className="
             relative
+
             h-[90px]
+
             sm:h-[94px]
+
             lg:h-[96px]
           "
         >
@@ -534,7 +695,9 @@ const ClientTrust = () => {
               pauseOnMouseEnter: false,
               reverseDirection: true,
             }}
-            className="client-swiper-row"
+            className="
+              client-swiper-row
+            "
           >
             {[
               ...rowOneLogos,
@@ -568,13 +731,14 @@ const ClientTrust = () => {
 
         {/* ===================================================
             ROW 2
-            ALL CARDS SAME HORIZONTAL LINE
         =================================================== */}
 
         <div
           className="
             relative
+
             mt-[10px]
+
             h-[90px]
 
             sm:mt-[12px]
@@ -603,7 +767,9 @@ const ClientTrust = () => {
               pauseOnMouseEnter: false,
               reverseDirection: false,
             }}
-            className="client-swiper-row"
+            className="
+              client-swiper-row
+            "
           >
             {[
               ...rowTwoLogos,
@@ -650,7 +816,7 @@ const ClientTrust = () => {
 
         /* ================================================
            TITLE HIDDEN
-        ================================================ */
+        ================================================= */
 
         .client-title-hidden {
           opacity: 0;
@@ -658,7 +824,7 @@ const ClientTrust = () => {
 
         /* ================================================
            TITLE VISIBLE
-        ================================================ */
+        ================================================= */
 
         .client-title-visible {
           opacity: 1;
@@ -666,7 +832,7 @@ const ClientTrust = () => {
 
         /* ================================================
            TITLE TEXT
-        ================================================ */
+        ================================================= */
 
         .client-title-text {
           display: inline;
@@ -685,7 +851,7 @@ const ClientTrust = () => {
 
         /* ================================================
            LETTER ANIMATION
-        ================================================ */
+        ================================================= */
 
         .client-title-letter {
           display: inline-block;
@@ -716,7 +882,7 @@ const ClientTrust = () => {
 
         /* ================================================
            CENTER → OUTWARD
-        ================================================ */
+        ================================================= */
 
         @keyframes clientCenterLetterReveal {
 
@@ -748,7 +914,7 @@ const ClientTrust = () => {
 
         /* ================================================
            SWIPER
-        ================================================ */
+        ================================================= */
 
         .client-swiper-row {
           width: 100%;
@@ -761,6 +927,7 @@ const ClientTrust = () => {
           height: 100%;
           display: flex;
           align-items: flex-start;
+
           transition-timing-function:
             linear !important;
         }
@@ -769,13 +936,15 @@ const ClientTrust = () => {
         .swiper-slide {
           flex-shrink: 0;
           height: 100% !important;
+
           display: flex;
+
           align-items: flex-start;
         }
 
         /* ================================================
            MOBILE
-        ================================================ */
+        ================================================= */
 
         @media (max-width: 639px) {
 
@@ -798,7 +967,7 @@ const ClientTrust = () => {
 
         /* ================================================
            TABLET
-        ================================================ */
+        ================================================= */
 
         @media (
           min-width: 640px
@@ -819,7 +988,7 @@ const ClientTrust = () => {
 
         /* ================================================
            REDUCED MOTION
-        ================================================ */
+        ================================================= */
 
         @media (
           prefers-reduced-motion: reduce
