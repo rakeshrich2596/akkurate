@@ -70,13 +70,13 @@ function Navbar() {
         >
           {/* LOGO */}
           <img
-            src="/assets/images/logo/favicon.png"
+            src="/assets/images/logo/logo_1.png"
             alt="Akkurate Logo"
-            className="h-[52px] w-[52px] object-contain"
+            className="h-[220px] w-[300px] object-contain"
           />
 
           {/* COMPANY NAME */}
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <span className="text-[25px] font-extrabold leading-[25px] tracking-[-0.7px] text-[#151b2c]">
               AKKURATE
             </span>
@@ -84,7 +84,7 @@ function Navbar() {
             <span className="mt-[4px] text-[11px] font-bold leading-none tracking-[2.7px] text-[#151b2c]">
               DIGITAL SOLUTIONS
             </span>
-          </div>
+          </div> */}
         </a>
 
         {/* ==================================================

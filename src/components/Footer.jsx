@@ -10,12 +10,7 @@ import {
 
 import { FaXTwitter } from "react-icons/fa6";
 
-import {
-  FiPhone,
-  FiMail,
-  FiMapPin,
-  FiArrowUpRight,
-} from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin, FiArrowUpRight } from "react-icons/fi";
 
 /* =========================================================
    SOCIAL LINKS
@@ -81,12 +76,43 @@ const quickLinks = [
 ];
 
 /* =========================================================
-   WHAT WE DO
+   DIGITAL MARKETING
 ========================================================= */
 
 const serviceLinks = [
   {
-    label: "Digital Marketing",
+    label: "GEO",
+    href: "/services/digital-marketing",
+  },
+  {
+    label: "AEO",
+    href: "/services/website-development",
+  },
+  {
+    label: "SEO",
+    href: "/services/branding",
+  },
+  {
+    label: "Google Ads",
+    href: "/services/branding",
+  },
+  {
+    label: "Meta Ads",
+    href: "/services/branding",
+  },
+  {
+    label: "Linkedin Ads",
+    href: "/services/branding",
+  },
+];
+
+/* =========================================================
+   WEBSITE DEVELOPMENT
+========================================================= */
+
+const websiteDevelopmentLinks = [
+  {
+    label: "App Development",
     href: "/services/digital-marketing",
   },
   {
@@ -94,7 +120,50 @@ const serviceLinks = [
     href: "/services/website-development",
   },
   {
-    label: "Branding",
+    label: "Web App Development",
+    href: "/services/website-development",
+  },
+  {
+    label: "CMS Development",
+    href: "/services/website-development",
+  },
+  {
+    label: "E-Commerce Service",
+    href: "/services/website-development",
+  },
+  {
+    label: "Website Design",
+    href: "/services/website-development",
+  },
+];
+
+/* =========================================================
+   BRANDING
+========================================================= */
+
+const brandingLinks = [
+  {
+    label: "Logo Design",
+    href: "/services/digital-marketing",
+  },
+  {
+    label: "Content Creation",
+    href: "/services/website-development",
+  },
+  {
+    label: "UI/UX Design",
+    href: "/services/branding",
+  },
+  {
+    label: "Motion Graphics",
+    href: "/services/branding",
+  },
+  {
+    label: "Explainer Videos",
+    href: "/services/branding",
+  },
+  {
+    label: "Reels Making",
     href: "/services/branding",
   },
 ];
@@ -253,24 +322,22 @@ const Footer = () => {
           {/* =================================================
               FOUR COLUMN LAYOUT
           ================================================= */}
-
           <div
             className="
-              grid
+                grid
+                grid-cols-1
+                gap-6
 
-              grid-cols-1
+                sm:grid-cols-2
+                sm:gap-x-6
+                sm:gap-y-8
 
-              gap-9
+                lg:grid-cols-5
+                lg:gap-x-10
+                lg:gap-y-0
 
-              sm:grid-cols-2
-
-              sm:gap-x-10
-              sm:gap-y-10
-
-              lg:grid-cols-[1.45fr_1fr_0.8fr_1fr]
-
-              lg:gap-[42px]
-          "
+                xl:gap-x-10
+              "
           >
             {/* =================================================
                 COLUMN 1
@@ -371,11 +438,74 @@ const Footer = () => {
                   text-slate-300
                 "
               >
-                We help businesses build stronger
-                brands, create better digital
-                experiences, and achieve measurable
-                growth through technology and
-                marketing.
+                <div
+                  className="
+                  mt-4
+
+                  flex
+
+                  flex-wrap
+
+                  items-center
+
+                  gap-2.5
+                "
+                >
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+
+                    const isExternal = social.href.startsWith("http");
+
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.href}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        aria-label={social.name}
+                        title={social.name}
+                        className="
+                          flex
+
+                          h-[34px]
+                          w-[34px]
+
+                          shrink-0
+
+                          items-center
+                          justify-center
+
+                          rounded-full
+
+                          border
+                          border-white/15
+
+                          text-slate-300
+
+                          transition-all
+                          duration-300
+
+                          hover:-translate-y-1
+
+                          hover:border-blue-300
+
+                          hover:bg-blue-300/10
+
+                          hover:text-white
+
+                          sm:h-[36px]
+                          sm:w-[36px]
+                        "
+                      >
+                        <Icon
+                          className="
+                            text-[15px]
+                          "
+                        />
+                      </a>
+                    );
+                  })}
+                </div>
               </p>
 
               {/* PHONE */}
@@ -413,9 +543,7 @@ const Footer = () => {
                   "
                 />
 
-                <span>
-                  +91 9841663161
-                </span>
+                <span>+91 9841663161</span>
               </a>
 
               {/* EMAIL */}
@@ -453,9 +581,7 @@ const Footer = () => {
                   "
                 />
 
-                <span>
-                  growth@akkurate.in
-                </span>
+                <span>growth@akkurate.in</span>
               </a>
 
               {/* ADDRESS */}
@@ -499,12 +625,13 @@ const Footer = () => {
 
             {/* =================================================
                 COLUMN 2
-                WHAT WE DO
+                DIGITAL MARKETING
             ================================================= */}
 
             <div
               className="
                 min-w-0
+                lg:mt-[33px]
               "
             >
               <h3
@@ -520,7 +647,7 @@ const Footer = () => {
                   text-white
                 "
               >
-                What We Do
+                DIGITAL MARKETING
               </h3>
 
               <ul
@@ -536,18 +663,11 @@ const Footer = () => {
                   p-0
                 "
               >
-                {serviceLinks.map(
-                  (link) => (
-                    <li
-                      key={
-                        link.label
-                      }
-                    >
-                      <a
-                        href={
-                          link.href
-                        }
-                        className="
+                {serviceLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="
                           group
 
                           flex
@@ -571,15 +691,11 @@ const Footer = () => {
 
                           hover:text-white
                         "
-                      >
-                        <span>
-                          {
-                            link.label
-                          }
-                        </span>
+                    >
+                      <span>{link.label}</span>
 
-                        <FiArrowUpRight
-                          className="
+                      <FiArrowUpRight
+                        className="
                             text-[11px]
 
                             opacity-0
@@ -592,11 +708,194 @@ const Footer = () => {
 
                             group-hover:opacity-100
                           "
-                        />
-                      </a>
-                    </li>
-                  )
-                )}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* =================================================
+                COLUMN 2
+                WEBSITE DEVELOPMENT
+            ================================================= */}
+
+            <div
+              className="
+                min-w-0
+                lg:mt-[33px]
+              "
+            >
+              <h3
+                className="
+                  m-0
+
+                  text-[14px]
+
+                  font-bold
+
+                  tracking-[-0.01em]
+
+                  text-white
+                "
+              >
+                WEBSITE DEVELOPMENT
+              </h3>
+
+              <ul
+                className="
+                  m-0
+
+                  mt-4
+
+                  list-none
+
+                  space-y-2.5
+
+                  p-0
+                "
+              >
+                {websiteDevelopmentLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="
+                          group
+
+                          flex
+
+                          w-fit
+
+                          items-center
+
+                          gap-1.5
+
+                          text-[12px]
+
+                          text-slate-300
+
+                          no-underline
+
+                          transition-all
+                          duration-200
+
+                          hover:translate-x-1
+
+                          hover:text-white
+                        "
+                    >
+                      <span>{link.label}</span>
+
+                      <FiArrowUpRight
+                        className="
+                            text-[11px]
+
+                            opacity-0
+
+                            transition-all
+                            duration-200
+
+                            group-hover:translate-x-0.5
+                            group-hover:-translate-y-0.5
+
+                            group-hover:opacity-100
+                          "
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* =================================================
+                COLUMN 2
+                BRANDING
+            ================================================= */}
+
+            <div
+              className="
+                min-w-0
+                lg:mt-[33px]
+              "
+            >
+              <h3
+                className="
+                  m-0
+
+                  text-[14px]
+
+                  font-bold
+
+                  tracking-[-0.01em]
+
+                  text-white
+                "
+              >
+                BRANDING
+              </h3>
+
+              <ul
+                className="
+                  m-0
+
+                  mt-4
+
+                  list-none
+
+                  space-y-2.5
+
+                  p-0
+                "
+              >
+                {brandingLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="
+                          group
+
+                          flex
+
+                          w-fit
+
+                          items-center
+
+                          gap-1.5
+
+                          text-[12px]
+
+                          text-slate-300
+
+                          no-underline
+
+                          transition-all
+                          duration-200
+
+                          hover:translate-x-1
+
+                          hover:text-white
+                        "
+                    >
+                      <span>{link.label}</span>
+
+                      <FiArrowUpRight
+                        className="
+                            text-[11px]
+
+                            opacity-0
+
+                            transition-all
+                            duration-200
+
+                            group-hover:translate-x-0.5
+                            group-hover:-translate-y-0.5
+
+                            group-hover:opacity-100
+                          "
+                      />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -608,6 +907,7 @@ const Footer = () => {
             <div
               className="
                 min-w-0
+                lg:mt-[33px]
               "
             >
               <h3
@@ -639,18 +939,11 @@ const Footer = () => {
                   p-0
                 "
               >
-                {quickLinks.map(
-                  (link) => (
-                    <li
-                      key={
-                        link.label
-                      }
-                    >
-                      <a
-                        href={
-                          link.href
-                        }
-                        className="
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="
                           group
 
                           flex
@@ -674,15 +967,11 @@ const Footer = () => {
 
                           hover:text-white
                         "
-                      >
-                        <span>
-                          {
-                            link.label
-                          }
-                        </span>
+                    >
+                      <span>{link.label}</span>
 
-                        <FiArrowUpRight
-                          className="
+                      <FiArrowUpRight
+                        className="
                             text-[11px]
 
                             opacity-0
@@ -695,190 +984,11 @@ const Footer = () => {
 
                             group-hover:opacity-100
                           "
-                        />
-                      </a>
-                    </li>
-                  )
-                )}
+                      />
+                    </a>
+                  </li>
+                ))}
               </ul>
-            </div>
-
-            {/* =================================================
-                COLUMN 4
-                CONNECT WITH US
-            ================================================= */}
-
-            <div
-              className="
-                min-w-0
-              "
-            >
-              <h3
-                className="
-                  m-0
-
-                  text-[14px]
-
-                  font-bold
-
-                  tracking-[-0.01em]
-
-                  text-white
-                "
-              >
-                Connect With Us
-              </h3>
-
-              {/* SOCIAL ICONS */}
-
-              <div
-                className="
-                  mt-4
-
-                  flex
-
-                  flex-wrap
-
-                  items-center
-
-                  gap-2.5
-                "
-              >
-                {socialLinks.map(
-                  (social) => {
-                    const Icon =
-                      social.icon;
-
-                    const isExternal =
-                      social.href.startsWith(
-                        "http"
-                      );
-
-                    return (
-                      <a
-                        key={
-                          social.name
-                        }
-                        href={
-                          social.href
-                        }
-                        target={
-                          isExternal
-                            ? "_blank"
-                            : undefined
-                        }
-                        rel={
-                          isExternal
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                        aria-label={
-                          social.name
-                        }
-                        title={
-                          social.name
-                        }
-                        className="
-                          flex
-
-                          h-[34px]
-                          w-[34px]
-
-                          shrink-0
-
-                          items-center
-                          justify-center
-
-                          rounded-full
-
-                          border
-                          border-white/15
-
-                          text-slate-300
-
-                          transition-all
-                          duration-300
-
-                          hover:-translate-y-1
-
-                          hover:border-blue-300
-
-                          hover:bg-blue-300/10
-
-                          hover:text-white
-
-                          sm:h-[36px]
-                          sm:w-[36px]
-                        "
-                      >
-                        <Icon
-                          className="
-                            text-[15px]
-                          "
-                        />
-                      </a>
-                    );
-                  }
-                )}
-              </div>
-
-              <p
-                className="
-                  mt-4
-
-                  max-w-[250px]
-
-                  text-[11px]
-
-                  leading-[1.6]
-
-                  text-slate-400
-                "
-              >
-                Follow us for insights,
-                updates, and the latest
-                from Akkurate.
-              </p>
-
-              {/* WHATSAPP */}
-
-              <a
-                href="https://wa.me/919841663161"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  mt-4
-
-                  inline-flex
-
-                  items-center
-
-                  gap-2
-
-                  text-[12px]
-
-                  font-medium
-
-                  text-slate-300
-
-                  no-underline
-
-                  transition-colors
-                  duration-200
-
-                  hover:text-[#25D366]
-                "
-              >
-                <FaWhatsapp
-                  className="
-                    text-[17px]
-                  "
-                />
-
-                <span>
-                  Chat with us
-                </span>
-              </a>
             </div>
           </div>
 
@@ -934,8 +1044,7 @@ const Footer = () => {
                 sm:text-[11px]
               "
             >
-              © 2026 Akkurate.
-              All Rights Reserved.
+              © 2026 Akkurate. All Rights Reserved.
             </p>
 
             {/* LEGAL LINKS */}
