@@ -425,7 +425,7 @@ const Footer = () => {
 
               {/* DESCRIPTION */}
 
-              <p
+              <div
                 className="
                   mt-4
 
@@ -506,7 +506,7 @@ const Footer = () => {
                     );
                   })}
                 </div>
-              </p>
+              </div>
 
               {/* PHONE */}
 

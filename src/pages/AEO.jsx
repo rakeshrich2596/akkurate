@@ -1,194 +1,161 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Scroll animations are provided globally by ScrollAnimations.jsx in App.jsx.
 
 /* =========================================================
-   AEO SERVICES
+   AEO PAGE
+   Answer Engine Optimization
 ========================================================= */
 
 const aeoServices = [
   {
     number: "01",
-    title: "Question & Search Intent Research",
+    title: "Question & Intent Research",
     description:
-      "Identify the questions, problems and search intents your audience uses when looking for answers related to your business.",
+      "Research the questions customers ask before, during and after evaluating a service.",
   },
   {
     number: "02",
-    title: "Answer Opportunity Mapping",
+    title: "Direct Answer Architecture",
     description:
-      "Map important customer questions to the right pages, content formats and stages of the customer journey.",
+      "Place concise answers near relevant headings, followed by context, examples and deeper explanation.",
   },
   {
     number: "03",
-    title: "Answer-Ready Content",
+    title: "Featured-Snippet-Friendly Formatting",
     description:
-      "Create clear, useful and well-structured content designed to answer important customer questions directly.",
+      "Structure definitions, steps, lists and comparisons so users can scan and understand them quickly.",
   },
   {
     number: "04",
-    title: "FAQ & Knowledge Architecture",
+    title: "Conversational Content",
     description:
-      "Build connected FAQs, service information, guides and supporting content that make your expertise easier to understand.",
+      "Write in natural language that reflects real customer questions instead of forcing awkward keyword variants.",
   },
   {
     number: "05",
-    title: "Content Authority",
+    title: "Semantic & Entity Relationships",
     description:
-      "Strengthen topical depth and consistency so your website communicates useful expertise across important subject areas.",
+      "Connect related concepts, services, industries and entities so the site communicates context clearly.",
   },
   {
     number: "06",
-    title: "AEO Performance Monitoring",
+    title: "FAQ & Knowledge Content",
     description:
-      "Review search visibility, content performance, engagement and available answer-related signals to guide future improvements.",
+      "Create useful FAQs and knowledge content only where the questions genuinely help the audience.",
   },
 ];
 
-
-/* =========================================================
-   OUTCOMES
-========================================================= */
-
 const outcomes = [
-  "Better coverage of customer questions",
-  "Clearer and more useful answers",
-  "Stronger topical relevance",
-  "Improved content structure",
-  "More useful customer journeys",
-  "A stronger foundation for modern search",
+  "Better question-intent coverage",
+  "Clearer service explanations",
+  "Stronger topical depth",
+  "More useful service pages",
+  "Improved internal linking",
+  "Answer-oriented content architecture",
 ];
-
-
-/* =========================================================
-   PROCESS
-========================================================= */
 
 const processSteps = [
   {
     number: "01",
-    title: "Discovery & Audience Research",
+    title: "Question Discovery",
     description:
-      "Understand your business, audience, services, customers and the questions that matter most to your growth.",
+      "Understand the business objective, audience, current assets, constraints and success criteria before recommending the work.",
   },
   {
     number: "02",
-    title: "Question & Intent Mapping",
+    title: "Intent Classification",
     description:
-      "Identify important questions and connect them with search intent, topics, pages and customer journey stages.",
+      "Translate the objective into a practical strategy, scope, content/creative direction and measurement plan.",
   },
   {
     number: "03",
-    title: "Content Strategy",
+    title: "Answer Mapping",
     description:
-      "Develop a practical content structure that prioritizes useful answers, topical depth and business relevance.",
+      "Create, optimize, design, develop or launch the agreed work with brand and user requirements in mind.",
   },
   {
     number: "04",
-    title: "Optimization & Implementation",
+    title: "Content Development",
     description:
-      "Create or improve pages, FAQs, guides and supporting content with clarity, structure and user experience in mind.",
+      "Test the experience, tracking, messaging and key conversion paths before considering the work complete.",
   },
   {
     number: "05",
-    title: "Measurement & Iteration",
+    title: "Review & Refresh",
     description:
-      "Review performance and customer behavior, then continuously improve the content and answer strategy.",
+      "Review performance, feedback and business signals and use those learnings to prioritize the next improvement.",
   },
 ];
-
-
-/* =========================================================
-   WHY AKKURATE
-========================================================= */
 
 const whyChoose = [
   {
     number: "01",
     title: "Business-First Strategy",
     description:
-      "We start with your business objective and customer needs instead of creating content without a clear purpose.",
+      "We start with what the business needs to achieve and then choose the right digital activity.",
   },
   {
     number: "02",
     title: "Integrated Expertise",
     description:
-      "SEO, AEO, GEO, content, web development and branding capabilities can work together when your project needs them.",
+      "SEO, AEO, AEO, paid media, web, content and branding capabilities can work together when the project requires them.",
   },
   {
     number: "03",
-    title: "Useful Content",
+    title: "Clear Communication",
     description:
-      "We focus on clear, relevant and genuinely useful answers that help customers make better decisions.",
+      "The team should understand what is being done, why it matters and what the next priority is.",
   },
   {
     number: "04",
     title: "Continuous Improvement",
     description:
-      "Search behavior changes over time, so the answer strategy should evolve based on performance and customer needs.",
+      "Launch is not the end. Performance, feedback and changing customer behavior should guide the next iteration.",
   },
 ];
-
-
-/* =========================================================
-   FAQ
-========================================================= */
 
 const faqs = [
   {
     question:
-      "What is included in your Answer Engine Optimization (AEO) service?",
+      "What is included in your answer engine optimization (AEO) service?",
     answer:
-      "The service can include question research, search intent mapping, answer-ready content, FAQ architecture, topical content strategy, optimization and ongoing performance measurement.",
+      "The scope is customized around the objective. The six capability areas above form the standard framework, while the actual deliverables depend on the project.",
   },
   {
-    question: "How is AEO different from SEO?",
+    question: "How do you decide the right scope?",
     answer:
-      "SEO focuses broadly on improving organic search visibility. AEO places additional emphasis on understanding the questions users ask and making useful, direct answers easier to discover and understand.",
+      "We look at the business goal, audience, current performance, competition, assets, timeline and budget before recommending priorities.",
   },
   {
-    question: "Can AEO work together with SEO and GEO?",
+    question:
+      "Can this service be combined with SEO, paid media or website development?",
     answer:
-      "Yes. SEO, AEO and GEO can complement each other. SEO supports organic visibility, AEO focuses on answer opportunities, and GEO focuses on making brand and business information easier for generative systems to understand.",
+      "Yes. Connected services are often more effective when the customer journey crosses discovery, content, website experience and conversion.",
   },
   {
-    question: "How do you measure AEO success?",
+    question: "How do you measure success?",
     answer:
-      "Measurement depends on the project and can include organic visibility, qualified traffic, engagement, question coverage, leads, enquiries, conversions and other agreed business signals.",
+      "KPIs depend on the objective and may include qualified traffic, engagement, leads, enquiries, conversions, product usage or other agreed business signals.",
   },
   {
-    question: "Do you guarantee rankings or answer placements?",
+    question: "Do you guarantee results?",
     answer:
-      "No responsible agency can guarantee rankings, platform distribution or a fixed commercial outcome. We focus on a clear process, quality execution and transparent measurement.",
+      "No responsible agency can guarantee platform rankings, algorithmic distribution, exact lead volume or a fixed commercial outcome. We can commit to a clear process, quality execution and transparent measurement.",
   },
   {
-    question: "Can you optimize our existing website?",
+    question: "Can you work with an existing website, campaign or brand?",
     answer:
-      "Yes. Existing service pages, FAQs, guides and other useful content can be audited and improved when that is more practical than rebuilding everything.",
+      "Yes. We can audit and improve existing assets instead of rebuilding everything when that is the more practical approach.",
   },
 ];
 
-
-/* =========================================================
-   AEO PAGE
-========================================================= */
-
 function AEO() {
-
   const [openFaq, setOpenFaq] = useState(null);
 
-
   return (
-    <div
-      className="
-        w-full
-        overflow-hidden
-        bg-white
-        text-[#111827]
-      "
-    >
-
-
+    <div className="w-full overflow-hidden bg-white text-[#111827]">
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -199,17 +166,17 @@ function AEO() {
           overflow-hidden
           bg-[#f7faff]
 
-          px-14
-          py-14
+          px-20
+          pb-14
+          pt-14
 
-          sm:py-16
+          sm:pb-18
+          sm:pt-18
 
-          lg:py-20
-
-          xl:px-14
+          lg:pb-20
+          lg:pt-20
         "
       >
-
         {/* Background decoration */}
 
         <div
@@ -218,14 +185,10 @@ function AEO() {
             absolute
             -right-32
             -top-32
-
             h-[350px]
             w-[350px]
-
             rounded-full
-
             bg-blue-100/60
-
             blur-3xl
           "
         />
@@ -234,20 +197,17 @@ function AEO() {
           className="
             pointer-events-none
             absolute
-            -bottom-32
-            -left-32
-
+            -bottom-40
+            -left-40
             h-[300px]
             w-[300px]
-
             rounded-full
-
             bg-indigo-100/50
-
             blur-3xl
           "
         />
 
+        {/* FULL WIDTH CONTAINER */}
 
         <div
           className="
@@ -255,52 +215,48 @@ function AEO() {
             mx-auto
             w-full
             max-w-[1600px]
+
+            px-4
+
+            sm:px-6
+
+            lg:px-8
+
+            xl:px-10
           "
         >
-
           {/* Breadcrumb */}
 
           <div
             className="
-              mb-7
-
+              mb-8
               flex
-              flex-wrap
               items-center
               gap-2
 
               text-[11px]
               font-medium
               text-gray-500
+
+              sm:text-[12px]
             "
           >
-
-            <Link
-              to="/"
-              className="
-                transition
-                hover:text-[#1455d9]
-              "
-            >
+            <Link to="/" className="transition hover:text-[#1455d9]">
               Home
             </Link>
 
             <span>/</span>
 
-            <span>
-              Services
-            </span>
+            <span>Services</span>
 
             <span>/</span>
 
-            <span className="text-[#1455d9]">
-              AEO
-            </span>
-
+            <span className="text-[#1455d9]">AEO</span>
           </div>
 
-
-          {/* HERO GRID */}
+          {/* =================================================
+              HERO GRID
+          ================================================= */}
 
           <div
             className="
@@ -312,22 +268,24 @@ function AEO() {
 
               md:grid-cols-[1.05fr_0.95fr]
 
-              lg:gap-14
+              lg:gap-12
+
+              xl:grid-cols-[1fr_0.9fr]
+              xl:gap-16
             "
           >
-
-            {/* LEFT */}
+            {/* LEFT CONTENT */}
 
             <div
               className="
                 max-w-[760px]
               "
             >
+              {/* Label */}
 
               <div
                 className="
                   mb-4
-
                   inline-flex
                   items-center
 
@@ -348,13 +306,18 @@ function AEO() {
                   text-[#1455d9]
 
                   shadow-sm
+
+                  sm:text-[11px]
                 "
               >
                 Answer Engine Optimization
               </div>
 
+              {/* H1 */}
 
               <h1
+                data-animate="left"
+                data-delay="1"
                 className="
                   m-0
 
@@ -370,14 +333,15 @@ function AEO() {
 
                   md:text-[44px]
 
-                  lg:text-[50px]
+                  lg:text-[40px]
 
-                  xl:text-[56px]
+                  xl:text-[45px]
                 "
               >
-                Make Your Brand Easier to Find Through Better Answers
+                Get Found When Customers Ask the Question
               </h1>
 
+              {/* Description */}
 
               <p
                 className="
@@ -393,19 +357,20 @@ function AEO() {
                   sm:leading-7
 
                   lg:text-[16px]
+                  lg:leading-7
                 "
               >
-                Help your customers find clear, useful answers to the
-                questions they ask throughout their search journey with
-                strategic content, question mapping, topical authority and
-                strong search foundations.
+                Improve your brand's visibility across generative search with
+                original content, entity clarity, topical authority and strong
+                SEO foundations — built around your audience, business objective
+                and measurable customer journey.
               </p>
 
+              {/* CTA */}
 
               <div
                 className="
                   mt-7
-
                   flex
                   flex-col
                   gap-3
@@ -413,13 +378,11 @@ function AEO() {
                   sm:flex-row
                 "
               >
-
                 <Link
                   to="/contact"
                   className="
                     inline-flex
                     min-h-[48px]
-
                     items-center
                     justify-center
 
@@ -443,35 +406,30 @@ function AEO() {
                     hover:bg-[#052f75]
                   "
                 >
-                  Talk to Our AEO Team
-
-                  <span className="ml-2">
-                    →
-                  </span>
+                  Talk to Our Team
+                  <span className="ml-2">→</span>
                 </Link>
-
               </div>
-
             </div>
 
-
-            {/* RIGHT IMAGE */}
+            {/* =================================================
+                RIGHT IMAGE
+            ================================================= */}
 
             <div
               className="
                 relative
-
                 flex
                 min-h-[280px]
-
                 items-center
                 justify-center
 
-                md:min-h-[350px]
+                md:min-h-[360px]
 
-                lg:min-h-[420px]
+                lg:min-h-[430px]
               "
             >
+              {/* Image glow */}
 
               <div
                 className="
@@ -486,8 +444,10 @@ function AEO() {
                 "
               />
 
+              {/* Image */}
 
               <div
+                data-animate="right"
                 className="
                   relative
                   z-10
@@ -506,7 +466,6 @@ function AEO() {
                   shadow-[0_20px_60px_rgba(15,23,42,0.10)]
                 "
               >
-
                 <img
                   src="/assets/images/content_images/AEO.png"
                   alt="Answer Engine Optimization"
@@ -519,18 +478,11 @@ function AEO() {
                     object-cover
                   "
                 />
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           INTRODUCTION
@@ -546,7 +498,6 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -556,13 +507,18 @@ function AEO() {
 
             gap-8
 
+            px-4
+
+            sm:px-6
+
             lg:grid-cols-[0.8fr_1.2fr]
             lg:gap-14
+            lg:px-8
+
+            xl:px-10
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -572,13 +528,15 @@ function AEO() {
                 uppercase
                 tracking-[0.18em]
                 text-[#1455d9]
+
+                sm:text-[11px]
               "
             >
               Introduction
             </p>
 
-
             <h2
+              data-animate="left"
               className="
                 mt-3
                 m-0
@@ -594,14 +552,11 @@ function AEO() {
                 lg:text-[40px]
               "
             >
-              AEO Built Around Customer Questions
+              AEO Built Around Business Growth
             </h2>
-
           </div>
 
-
           <div>
-
             <p
               className="
                 m-0
@@ -611,14 +566,14 @@ function AEO() {
                 text-gray-600
 
                 sm:text-[15px]
+                sm:leading-7
               "
             >
-              Akkurate Digital Solutions approaches Answer Engine
-              Optimization as a practical way to improve how businesses
-              answer the questions their customers ask during discovery,
-              evaluation and decision-making.
+              Akkurate Digital Solutions provides generative engine optimization
+              (AEO) as part of an integrated digital growth system. We begin
+              with the business objective, audience and customer journey before
+              deciding what should be created, optimized or measured.
             </p>
-
 
             <p
               className="
@@ -629,20 +584,15 @@ function AEO() {
                 text-gray-600
 
                 sm:text-[15px]
+                sm:leading-7
               "
             >
-              We connect audience research, search intent, content strategy,
-              website structure and measurement to create a useful answer
-              ecosystem around your business.
+              The goal is not simply to deliver an asset or run a channel; it is
+              to make the work useful to the business.
             </p>
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           BUSINESS PROBLEM
@@ -660,18 +610,21 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
-
             w-full
             max-w-[1200px]
 
+            px-4
+
             text-center
+
+            sm:px-6
+
+            lg:px-8
           "
         >
-
           <p
             className="
               m-0
@@ -681,13 +634,15 @@ function AEO() {
               uppercase
               tracking-[0.18em]
               text-blue-300
+
+              sm:text-[11px]
             "
           >
             The Business Problem We Solve
           </p>
 
-
           <h2
+            data-animate="center"
             className="
               mt-4
               m-0
@@ -703,9 +658,8 @@ function AEO() {
               lg:text-[42px]
             "
           >
-            Give Customers Better Answers at the Right Moment
+            Help Customers Find Clear Answers When They Search
           </h2>
-
 
           <p
             className="
@@ -719,14 +673,14 @@ function AEO() {
               text-gray-300
 
               sm:text-[15px]
+              sm:leading-7
             "
           >
-            Customers search with questions. When websites do not clearly
-            address those questions, businesses can miss opportunities to
-            educate, build trust and move potential customers toward the next
-            step.
+            Generative search can synthesize information from multiple sources.
+            A business with thin service pages, unclear terminology,
+            inconsistent brand information or weak topical depth can be harder
+            for systems and customers to understand.
           </p>
-
 
           <p
             className="
@@ -740,17 +694,15 @@ function AEO() {
               text-gray-300
 
               sm:text-[15px]
+              sm:leading-7
             "
           >
-            Akkurate uses AEO to create a more useful connection between what
-            people want to know and what your business can genuinely answer.
+            Akkurate approaches AEO as a practical extension of SEO, content
+            strategy, brand clarity and digital authority — not as a shortcut or
+            ranking hack.
           </p>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           AEO SERVICES
@@ -766,18 +718,22 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
-
             w-full
             max-w-[1600px]
+
+            px-4
+
+            sm:px-6
+
+            lg:px-8
+
+            xl:px-10
           "
         >
-
-          <div className="max-w-[750px]">
-
+          <div className="max-w-[100%] text-center">
             <p
               className="
                 m-0
@@ -787,13 +743,15 @@ function AEO() {
                 uppercase
                 tracking-[0.18em]
                 text-[#1455d9]
+
+                sm:text-[11px]
               "
             >
               Our Services
             </p>
 
-
             <h2
+              data-animate="left"
               className="
                 mt-3
                 m-0
@@ -806,14 +764,12 @@ function AEO() {
 
                 sm:text-[36px]
 
-                lg:text-[44px]
+                lg:text-[36px]
               "
             >
               Our Answer Engine Optimization (AEO) Services
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -829,11 +785,11 @@ function AEO() {
               lg:grid-cols-3
             "
           >
-
-            {aeoServices.map((service) => (
-
+            {aeoServices.map((service, index) => (
               <article
                 key={service.number}
+                data-animate="card"
+                data-delay={(index % 6) + 1}
                 className="
                   group
 
@@ -858,7 +814,6 @@ function AEO() {
                   sm:p-6
                 "
               >
-
                 <div
                   className="
                     flex
@@ -866,7 +821,6 @@ function AEO() {
                     justify-between
                   "
                 >
-
                   <span
                     className="
                       text-[11px]
@@ -877,7 +831,6 @@ function AEO() {
                   >
                     {service.number}
                   </span>
-
 
                   <span
                     className="
@@ -891,9 +844,7 @@ function AEO() {
                   >
                     ↗
                   </span>
-
                 </div>
-
 
                 <h3
                   className="
@@ -911,7 +862,6 @@ function AEO() {
                   {service.title}
                 </h3>
 
-
                 <p
                   className="
                     mt-3
@@ -926,18 +876,11 @@ function AEO() {
                 >
                   {service.description}
                 </p>
-
               </article>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           OUTCOMES
@@ -955,7 +898,6 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -965,14 +907,19 @@ function AEO() {
 
             gap-10
 
+            px-4
+
+            sm:px-6
+
             lg:grid-cols-[0.8fr_1.2fr]
             lg:items-center
             lg:gap-14
+            lg:px-8
+
+            xl:px-10
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -982,13 +929,15 @@ function AEO() {
                 uppercase
                 tracking-[0.18em]
                 text-[#1455d9]
+
+                sm:text-[11px]
               "
             >
               What You Get
             </p>
 
-
             <h2
+              data-animate="left"
               className="
                 mt-3
                 m-0
@@ -1007,7 +956,6 @@ function AEO() {
               What You Get From Akkurate
             </h2>
 
-
             <p
               className="
                 mt-5
@@ -1020,14 +968,12 @@ function AEO() {
                 sm:text-[15px]
               "
             >
-              The exact outcome depends on your starting point, competition,
-              audience, implementation and business objective. We focus on
-              creating useful content systems that support measurable business
-              improvement.
+              The exact outcome depends on the starting point, competition,
+              audience, budget, implementation and business model. Our job is to
+              create the conditions for measurable improvement and to report
+              honestly on what is working.
             </p>
-
           </div>
-
 
           <div
             className="
@@ -1039,11 +985,11 @@ function AEO() {
               sm:grid-cols-2
             "
           >
-
             {outcomes.map((outcome, index) => (
-
               <div
                 key={outcome}
+                data-animate="card"
+                data-delay={(index % 6) + 1}
                 className="
                   flex
                   items-center
@@ -1062,7 +1008,6 @@ function AEO() {
                   shadow-sm
                 "
               >
-
                 <span
                   className="
                     flex
@@ -1084,7 +1029,6 @@ function AEO() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-
                 <span
                   className="
                     text-[13px]
@@ -1096,18 +1040,11 @@ function AEO() {
                 >
                   {outcome}
                 </span>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           WHO THIS SERVICE IS FOR
@@ -1123,18 +1060,21 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
-
             w-full
             max-w-[950px]
 
+            px-4
+
             text-center
+
+            sm:px-6
+
+            lg:px-8
           "
         >
-
           <p
             className="
               m-0
@@ -1149,8 +1089,8 @@ function AEO() {
             Who This Service Is For
           </p>
 
-
           <h2
+            data-animate="center"
             className="
               mt-3
               m-0
@@ -1166,9 +1106,8 @@ function AEO() {
               lg:text-[42px]
             "
           >
-            AEO Should Fit Your Customer Journey
+            AEO Should Fit Your Business
           </h2>
-
 
           <p
             className="
@@ -1180,13 +1119,13 @@ function AEO() {
               text-gray-600
 
               sm:text-[15px]
+              sm:leading-7
             "
           >
-            AEO is useful for businesses that have important customer
-            questions, complex services, educational content, products or
-            expertise that customers need to understand before taking action.
+            Answer Engine Optimization (AEO) is relevant to businesses that have
+            a clear reason to improve their digital presence, customer journey
+            or growth engine.
           </p>
-
 
           <p
             className="
@@ -1198,17 +1137,15 @@ function AEO() {
               text-gray-600
 
               sm:text-[15px]
+              sm:leading-7
             "
           >
-            The right scope depends on your existing content, audience,
-            competition, website and business objectives.
+            The right approach depends on the starting point. Akkurate can
+            recommend a focused scope, a broader integrated program or a
+            different service when that is more appropriate.
           </p>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           PROCESS
@@ -1226,18 +1163,22 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
-
             w-full
             max-w-[1600px]
+
+            px-4
+
+            sm:px-6
+
+            lg:px-8
+
+            xl:px-10
           "
         >
-
-          <div className="max-w-[750px]">
-
+          <div className="max-w-[100%] text-center">
             <p
               className="
                 m-0
@@ -1252,8 +1193,8 @@ function AEO() {
               Our Process
             </p>
 
-
             <h2
+              data-animate="left"
               className="
                 mt-3
                 m-0
@@ -1271,9 +1212,7 @@ function AEO() {
             >
               A Practical AEO Process
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -1289,11 +1228,11 @@ function AEO() {
               lg:grid-cols-5
             "
           >
-
-            {processSteps.map((step) => (
-
+            {processSteps.map((step, index) => (
               <div
                 key={step.number}
+                data-animate="card"
+                data-delay={(index % 5) + 1}
                 className="
                   rounded-[18px]
 
@@ -1311,7 +1250,6 @@ function AEO() {
                   sm:p-6
                 "
               >
-
                 <span
                   className="
                     text-[11px]
@@ -1322,7 +1260,6 @@ function AEO() {
                 >
                   {step.number}
                 </span>
-
 
                 <h3
                   className="
@@ -1338,7 +1275,6 @@ function AEO() {
                   {step.title}
                 </h3>
 
-
                 <p
                   className="
                     mt-3
@@ -1351,18 +1287,11 @@ function AEO() {
                 >
                   {step.description}
                 </p>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           WHY AKKURATE
@@ -1378,18 +1307,22 @@ function AEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
-
             w-full
             max-w-[1600px]
+
+            px-4
+
+            sm:px-6
+
+            lg:px-8
+
+            xl:px-10
           "
         >
-
           <div className="max-w-[750px]">
-
             <p
               className="
                 m-0
@@ -1404,8 +1337,8 @@ function AEO() {
               Why Choose Akkurate
             </p>
 
-
             <h2
+              data-animate="left"
               className="
                 mt-3
                 m-0
@@ -1423,9 +1356,7 @@ function AEO() {
             >
               Strategy Before Activity
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -1441,11 +1372,11 @@ function AEO() {
               lg:grid-cols-4
             "
           >
-
-            {whyChoose.map((item) => (
-
+            {whyChoose.map((item, index) => (
               <div
                 key={item.number}
+                data-animate="card"
+                data-delay={(index % 4) + 1}
                 className="
                   border-t
                   border-gray-200
@@ -1453,7 +1384,6 @@ function AEO() {
                   pt-5
                 "
               >
-
                 <span
                   className="
                     text-[11px]
@@ -1464,7 +1394,6 @@ function AEO() {
                 >
                   {item.number}
                 </span>
-
 
                 <h3
                   className="
@@ -1479,7 +1408,6 @@ function AEO() {
                   {item.title}
                 </h3>
 
-
                 <p
                   className="
                     mt-3
@@ -1492,18 +1420,11 @@ function AEO() {
                 >
                   {item.description}
                 </p>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           RELATED SERVICES
@@ -1511,363 +1432,306 @@ function AEO() {
 
       <section
         className="
-          bg-[#f7faff]
-
-          px-14
-          py-12
-
-          sm:py-16
-        "
+                    bg-[#f7faff]
+          
+                    px-14
+                    py-12
+          
+                    sm:py-16
+                  "
       >
-
         <div
           className="
-            mx-auto
-
-            flex
-            w-full
-            max-w-[1200px]
-
-            flex-col
-
-            gap-5
-
-            text-center
-
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-            sm:text-left
-          "
+                      mx-auto
+                      flex
+                      w-full
+                      max-w-[1200px]
+                      flex-col
+          
+                      gap-5
+          
+                      px-4
+          
+                      text-center
+          
+                      sm:flex-row
+                      sm:items-center
+                      sm:justify-between
+                      sm:px-6
+                      sm:text-left
+          
+                      lg:px-8
+                    "
         >
-
           <div>
-
             <p
               className="
-                m-0
-
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.16em]
-                text-[#1455d9]
-              "
+                          m-0
+          
+                          text-[10px]
+                          font-bold
+                          uppercase
+                          tracking-[0.16em]
+                          text-[#1455d9]
+                        "
             >
               Related Services
             </p>
 
-
             <h3
               className="
-                mt-2
-                m-0
-
-                text-[20px]
-                font-bold
-                text-[#101828]
-
-                sm:text-[23px]
-              "
+                          mt-2
+                          m-0
+          
+                          text-[20px]
+                          font-bold
+                          text-[#101828]
+          
+                          sm:text-[23px]
+                        "
             >
-              SEO ↔ AEO ↔ GEO
+              GEO ↔ AEO ↔ SEO
             </h3>
-
           </div>
-
 
           <div
             className="
-              flex
-              flex-wrap
-              justify-center
-              gap-2
-
-              sm:justify-end
-            "
+                        flex
+                        flex-wrap
+                        justify-center
+                        gap-2
+          
+                        sm:justify-end
+                      "
           >
-
-            <Link
-              to="/seo"
-              className="
-                rounded-full
-
-                border
-                border-gray-200
-
-                bg-white
-
-                px-4
-                py-2
-
-                text-[12px]
-                font-semibold
-                text-gray-700
-
-                transition
-
-                hover:border-[#1455d9]
-                hover:text-[#1455d9]
-              "
-            >
-              SEO
-            </Link>
-
-
-            <span
-              className="
-                rounded-full
-
-                bg-[#073b91]
-
-                px-4
-                py-2
-
-                text-[12px]
-                font-semibold
-                text-white
-              "
-            >
-              AEO
-            </span>
-
-
             <Link
               to="/geo"
               className="
-                rounded-full
-
-                border
-                border-gray-200
-
-                bg-white
-
-                px-4
-                py-2
-
-                text-[12px]
-                font-semibold
-                text-gray-700
-
-                transition
-
-                hover:border-[#1455d9]
-                hover:text-[#1455d9]
-              "
+                          rounded-full
+          
+                          border
+                          border-gray-200
+          
+                          bg-white
+          
+                          px-4
+                          py-2
+          
+                          text-[12px]
+                          font-semibold
+                          text-gray-700
+          
+                          transition
+          
+                          hover:border-[#1455d9]
+                          hover:text-[#1455d9]
+                        "
             >
               GEO
             </Link>
 
+            <span
+              className="
+                          rounded-full
+          
+                          bg-[#073b91]
+          
+                          px-4
+                          py-2
+          
+                          text-[12px]
+                          font-semibold
+                          text-white
+                        "
+            >
+              AEO
+            </span>
+
+            <Link
+              to="/seo"
+              className="
+                          rounded-full
+          
+                          border
+                          border-gray-200
+          
+                          bg-white
+          
+                          px-4
+                          py-2
+          
+                          text-[12px]
+                          font-semibold
+                          text-gray-700
+          
+                          transition
+          
+                          hover:border-[#1455d9]
+                          hover:text-[#1455d9]
+                        "
+            >
+              SEO
+            </Link>
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           FAQ
       ===================================================== */}
 
+      {/* AEO FAQ */}
       <section
         className="
-          px-14
-          py-16
-
-          sm:py-20
-
-          lg:py-24
-        "
+    px-14
+    py-16
+    sm:py-20
+    lg:py-24
+  "
       >
-
         <div
           className="
-            mx-auto
-
-            grid
-            w-full
-            max-w-[1200px]
-
-            gap-10
-
-            lg:grid-cols-[0.7fr_1.3fr]
-            lg:gap-14
-          "
+      mx-auto
+      grid
+      w-full
+      max-w-[1200px]
+      gap-10
+      px-4
+      sm:px-6
+      lg:grid-cols-[0.7fr_1.3fr]
+      lg:gap-14
+      lg:px-8
+    "
         >
-
+          {/* LEFT CONTENT */}
           <div>
-
             <p
               className="
-                m-0
-
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.18em]
-                text-[#1455d9]
-              "
-            >
-              FAQ
-            </p>
-
-
-            <h2
-              className="
-                mt-3
-                m-0
-
-                text-[29px]
-                font-bold
-                leading-tight
-                tracking-[-0.03em]
-                text-[#101828]
-
-                sm:text-[36px]
-
-                lg:text-[42px]
-              "
+          m-0
+          text-[10px]
+          font-bold
+          uppercase
+          tracking-[0.18em]
+          text-[#1455d9]
+        "
             >
               Frequently Asked Questions
-            </h2>
+            </p>
 
+            <h2
+              data-animate="center"
+              className="
+          mt-3
+          m-0
+          text-[29px]
+          font-bold
+          leading-tight
+          tracking-[-0.03em]
+          text-[#101828]
+          sm:text-[36px]
+          lg:text-[42px]
+        "
+            >
+              AEO FAQs
+            </h2>
           </div>
 
-
+          {/* RIGHT FAQ CONTENT */}
           <div
             className="
-              divide-y
-              divide-gray-200
-
-              border-y
-              border-gray-200
-            "
+        divide-y
+        divide-gray-200
+        border-y
+        border-gray-200
+      "
           >
-
             {faqs.map((faq, index) => {
-
               const isOpen = openFaq === index;
 
               return (
                 <div
                   key={faq.question}
+                  data-animate="up"
+                  data-delay={(index % 6) + 1}
                 >
-
+                  {/* QUESTION */}
                   <button
                     type="button"
-                    onClick={() =>
-                      setOpenFaq(
-                        isOpen
-                          ? null
-                          : index
-                      )
-                    }
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
                     className="
-                      flex
-                      w-full
-
-                      items-center
-                      justify-between
-
-                      gap-5
-
-                      py-4
-
-                      text-left
-
-                      sm:py-5
-                    "
+                flex
+                w-full
+                items-center
+                justify-between
+                gap-5
+                py-4
+                text-left
+                sm:py-5
+              "
                   >
-
                     <span
                       className="
-                        text-[13px]
-                        font-semibold
-                        leading-6
-                        text-[#101828]
-
-                        sm:text-[14px]
-                      "
+                  text-[13px]
+                  font-semibold
+                  leading-6
+                  text-[#101828]
+                  sm:text-[14px]
+                "
                     >
                       {faq.question}
                     </span>
 
-
+                    {/* PLUS ICON */}
                     <span
                       className={`
-                        flex
-                        h-7
-                        w-7
-                        shrink-0
-
-                        items-center
-                        justify-center
-
-                        rounded-full
-
-                        border
-                        border-gray-200
-
-                        text-[16px]
-                        text-gray-500
-
-                        transition-transform
-                        duration-200
-
-                        ${
-                          isOpen
-                            ? "rotate-45"
-                            : ""
-                        }
-                      `}
+                  flex
+                  h-7
+                  w-7
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-gray-200
+                  text-[16px]
+                  text-gray-500
+                  transition-transform
+                  duration-200
+                  ${isOpen ? "rotate-45" : ""}
+                `}
                     >
                       +
                     </span>
-
                   </button>
 
-
+                  {/* ANSWER */}
                   {isOpen && (
-
                     <div
                       className="
-                        pb-5
-                        pr-8
-                      "
+                  pb-5
+                  pr-8
+                "
                     >
-
                       <p
                         className="
-                          m-0
-
-                          text-[13px]
-                          leading-6
-                          text-gray-500
-
-                          sm:text-[14px]
-                          sm:leading-7
-                        "
+                    m-0
+                    text-[13px]
+                    leading-6
+                    text-gray-500
+                    sm:text-[14px]
+                    sm:leading-7
+                  "
                       >
                         {faq.answer}
                       </p>
-
                     </div>
-
                   )}
-
                 </div>
               );
-
             })}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           FINAL CTA
@@ -1883,35 +1747,30 @@ function AEO() {
           lg:pb-24
         "
       >
-
         <div
           className="
             relative
-
             mx-auto
-
             w-full
             max-w-[1500px]
-
             overflow-hidden
 
             rounded-[24px]
 
             bg-[#073b91]
 
-            px-6
-            py-12
+            px-5
+            py-10
 
             text-center
 
-            sm:px-10
+            sm:px-8
             sm:py-14
 
-            lg:px-14
-            lg:py-16
+            lg:px-12
+            lg:py-10
           "
-      >
-
+        >
           <div
             className="
               pointer-events-none
@@ -1931,7 +1790,6 @@ function AEO() {
             "
           />
 
-
           <div
             className="
               pointer-events-none
@@ -1941,7 +1799,7 @@ function AEO() {
               -left-20
 
               h-[200px]
-              w-[200px]
+              w-[300px]
 
               rounded-full
 
@@ -1951,9 +1809,7 @@ function AEO() {
             "
           />
 
-
           <div className="relative">
-
             <p
               className="
                 m-0
@@ -1968,17 +1824,15 @@ function AEO() {
               Start With The Right Next Step
             </p>
 
-
             <h2
+              data-animate="center"
               className="
                 mx-auto
-
                 mt-3
+                max-w-[1300px]
 
-                max-w-[850px]
-
-                text-[27px]
-                font-bold
+                text-[15px]
+                font-medium
                 leading-tight
                 tracking-[-0.03em]
                 text-white
@@ -1988,16 +1842,14 @@ function AEO() {
                 lg:text-[44px]
               "
             >
-              Give Your Customers Better Answers and a Clearer Path Forward
+              Help customers and modern search systems understand what your
+              business does, who it serves and why it is credible.
             </h2>
-
 
             <p
               className="
                 mx-auto
-
                 mt-5
-
                 max-w-[750px]
 
                 text-[13px]
@@ -2008,19 +1860,16 @@ function AEO() {
                 sm:leading-7
               "
             >
-              Tell us what your customers are searching for, what you are
-              trying to achieve and what content you already have. Akkurate
-              can recommend the most practical next step.
+              Tell us what you are trying to achieve, what you have already
+              tried and what outcome matters most. Akkurate can then recommend
+              the most practical next step.
             </p>
 
-
             <div className="mt-7">
-
               <Link
                 to="/contact"
                 className="
                   inline-flex
-
                   items-center
                   justify-center
 
@@ -2042,24 +1891,14 @@ function AEO() {
                 "
               >
                 Start a Conversation
-
-                <span className="ml-2">
-                  →
-                </span>
-
+                <span className="ml-2">→</span>
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </div>
   );
 }
-
 
 export default AEO;

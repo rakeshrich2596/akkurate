@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import CustomCursor from "./components/CustomCursor";
-
 import Hero from "./components/Hero";
 import BrandSlider from "./components/BrandSlider";
 import About from "./components/About";
@@ -16,9 +15,7 @@ import Integrations from "./components/Integrations";
 import Footer from "./components/Footer";
 import ResultsSection from "./components/ResultsSection";
 import ClientTrust from "./components/ClientTrust";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import FAQ from "./pages/FAQ";
 import ContactUs from "./pages/ContactUs";
 import SEO from "./pages/SEO";
@@ -26,6 +23,12 @@ import GEO from "./pages/GEO";
 import AEO from "./pages/AEO";
 import ScrollAnimations from "./components/ScrollAnimations";
 import ScrollToTop from "./components/ScrollToTop";
+import GoogleAds from "./pages/GoogleAds";
+import MetaAds from "./pages/MetaAds";
+import LinkedinAds from "./pages/LinkedinAds";
+import SMM from "./pages/SMM";
+import YoutubeMarketing from "./pages/YoutubeMarketing";
+import GoogleBusiness from "./pages/GoogleBusiness";
 
 /* =========================================================
    HOME PAGE
@@ -227,6 +230,107 @@ function AEOPage() {
   );
 }
 
+function GoogleAdsPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <GoogleAds />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+function MetaAdsPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <MetaAds />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+function LinkedinAdsPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <LinkedinAds />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+function SMMPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <SMM />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+function YoutubeMarketingPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <YoutubeMarketing />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+function GoogleBusinessPage() {
+  return (
+    <>
+      <CustomCursor />
+
+      <Navbar />
+
+      <main>
+        <GoogleBusiness />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+
+
+
+
+
 /* =========================================================
    APP
 ========================================================= */
@@ -289,6 +393,12 @@ function App() {
         <Route path="/seo" element={<SEOPage />} />
         <Route path="/geo" element={<GEOPage />} />
         <Route path="/aeo" element={<AEOPage />} />
+        <Route path="/google-ads" element={<GoogleAdsPage />} />
+        <Route path="/meta-ads" element={<MetaAdsPage />} />
+        <Route path="/linkedin-ads" element={<LinkedinAdsPage />} />
+        <Route path="/social-media-marketing" element={<SMMPage />} />
+        <Route path="/youtube-marketing" element={<YoutubeMarketingPage />} />
+        <Route path="/google-my-business" element={<GoogleBusinessPage />} />
       </Routes>
     </BrowserRouter>
   );

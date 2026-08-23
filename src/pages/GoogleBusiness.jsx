@@ -1,89 +1,88 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// Scroll animations are provided globally by ScrollAnimations.jsx in App.jsx.
+/*
+  Google Business Profile
+  Content follows the supplied Akkurate PDF.
+  Animations use the existing global ScrollAnimations.jsx.
+*/
 
-/* =========================================================
-   GOOGLE ADS PAGE
-   Google Ads Management
-========================================================= */
-
-const googleAdsServices = [
+const services = [
   {
     number: "01",
-    title: "Search Campaign Strategy",
+    title: "Profile Optimization",
     description:
-      "Build campaigns around commercial search intent, audience, geography, products and business priorities.",
+      "Review categories, services, descriptions, contact information, business details and other relevant profile fields.",
   },
   {
     number: "02",
-    title: "Keyword & Intent Management",
+    title: "Business Information Consistency",
     description:
-      "Separate high-intent terms from research traffic and continuously review search terms for quality.",
+      "Keep core business information consistent across the website and important digital properties.",
   },
   {
     number: "03",
-    title: "Ad Copy & Asset Testing",
+    title: "Local Content",
     description:
-      "Create multiple messaging angles and test relevance, offers and calls to action.",
+      "Create useful location-focused content that supports local intent rather than repeating city names unnaturally.",
   },
   {
     number: "04",
-    title: "Landing Page Alignment",
+    title: "Review Support",
     description:
-      "Align the landing page with the exact promise made in the ad to reduce friction and improve conversion potential.",
+      "Develop a practical process for encouraging genuine customer feedback and responding professionally.",
   },
   {
     number: "05",
-    title: "Conversion Tracking",
+    title: "Local Landing Pages",
     description:
-      "Set up meaningful conversion actions so optimization is based on business outcomes rather than clicks alone.",
+      "Connect the profile with relevant, useful location/service pages on the website.",
   },
   {
     number: "06",
-    title: "Optimization & Budget Management",
+    title: "Performance Monitoring",
     description:
-      "Review search terms, bids, budgets, creative, landing pages and conversion quality to improve efficiency over time.",
+      "Monitor visibility and customer actions where available and use findings to improve local strategy.",
   },
 ];
 
 const outcomes = [
-  "Faster visibility for high-intent searches",
-  "Better budget control",
-  "Stronger message-to-page alignment",
-  "Clearer conversion measurement",
-  "Ongoing campaign learning",
-  "Integrated paid + organic strategy",
+  "Stronger local relevance",
+  "Clearer business information",
+  "Better local customer journeys",
+  "More useful location pages",
+  "Improved review processes",
+  "Connected local SEO",
 ];
 
 const processSteps = [
   {
     number: "01",
-    title: "Discovery & Account Audit",
+    title: "Local Audit",
     description:
       "Understand the business objective, audience, current assets, constraints and success criteria before recommending the work.",
   },
   {
     number: "02",
-    title: "Campaign Architecture",
+    title: "Profile Optimization",
     description:
       "Translate the objective into a practical strategy, scope, content/creative direction and measurement plan.",
   },
   {
     number: "03",
-    title: "Creative & Landing Pages",
+    title: "Website & Local Content",
     description:
       "Create, optimize, design, develop or launch the agreed work with brand and user requirements in mind.",
   },
   {
     number: "04",
-    title: "Launch & Tracking",
+    title: "Review & Reputation Process",
     description:
       "Test the experience, tracking, messaging and key conversion paths before considering the work complete.",
   },
   {
     number: "05",
-    title: "Optimization & Reporting",
+    title: "Monitoring & Improvement",
     description:
       "Review performance, feedback and business signals and use those learnings to prioritize the next improvement.",
   },
@@ -118,7 +117,7 @@ const whyChoose = [
 
 const faqs = [
   {
-    question: "What is included in your Google Ads service?",
+    question: "What is included in your google business profile service?",
     answer:
       "The scope is customized around the objective. The six capability areas above form the standard framework, while the actual deliverables depend on the project.",
   },
@@ -129,7 +128,7 @@ const faqs = [
   },
   {
     question:
-      "Can this service be combined with SEO, paid media or website development?",
+      "Can your google business profile service be combined with SEO, paid media or website development?",
     answer:
       "Yes. Connected services are often more effective when the customer journey crosses discovery, content, website experience and conversion.",
   },
@@ -150,14 +149,11 @@ const faqs = [
   },
 ];
 
-function GoogleAds() {
+function GoogleBusiness() {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <div className="w-full overflow-hidden bg-white text-[#111827]">
-      {/* =====================================================
-          HERO
-      ===================================================== */}
       <section className="relative overflow-hidden bg-[#f7faff] px-14 pb-14 pt-14 sm:pb-18 sm:pt-18 lg:pb-20 lg:pt-20">
         <div className="pointer-events-none absolute -right-32 -top-32 h-[350px] w-[350px] rounded-full bg-blue-100/60 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-40 h-[300px] w-[300px] rounded-full bg-indigo-100/50 blur-3xl" />
@@ -170,28 +166,26 @@ function GoogleAds() {
             <span>/</span>
             <span>Services</span>
             <span>/</span>
-            <span className="text-[#1455d9]">Google Ads</span>
+            <span className="text-[#1455d9]">Google Business Profile</span>
           </div>
 
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.05fr_0.95fr] lg:gap-12 xl:grid-cols-[1fr_0.9fr] xl:gap-16">
-            {/* LEFT CONTENT */}
             <div className="max-w-[760px]">
               <div className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1455d9] shadow-sm sm:text-[11px]">
-                Google Ads Management
+                Google Business Profile
               </div>
 
               <h1
                 data-animate="left"
-                data-delay="1"
                 className="m-0 max-w-[720px] text-[32px] font-bold leading-[1.08] tracking-[-0.035em] text-[#101828] sm:text-[40px] md:text-[44px] lg:text-[40px] xl:text-[45px]"
               >
-                Turn High-Intent Searches Into Qualified Leads
+                Be Easier to Find in Local Search
               </h1>
 
               <p className="mt-5 max-w-[650px] text-[14px] leading-6 text-gray-600 sm:text-[15px] sm:leading-7 lg:text-[16px] lg:leading-7">
-                Reach high-intent customers with Google Ads campaigns built
-                around search intent, conversion tracking, landing pages and
-                continuous optimization — built around your audience, business
+                Improve local visibility with Google Business Profile
+                optimization, accurate business information, local content and
+                reputation support — built around your audience, business
                 objective and measurable customer journey.
               </p>
 
@@ -200,23 +194,20 @@ function GoogleAds() {
                   to="/contact"
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_10px_25px_rgba(7,59,145,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
                 >
-                  Talk to Our Team
-                  <span className="ml-2">→</span>
+                  Talk to Our Team <span className="ml-2">→</span>
                 </Link>
               </div>
             </div>
 
-            {/* RIGHT IMAGE */}
             <div className="relative flex min-h-[280px] items-center justify-center md:min-h-[360px] lg:min-h-[430px]">
               <div className="absolute inset-8 rounded-full bg-blue-100/60 blur-3xl" />
-
               <div
                 data-animate="right"
                 className="relative z-10 w-full max-w-[560px] overflow-hidden rounded-[24px] bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.10)]"
               >
                 <img
-                  src="/assets/images/content_images/GOOGLE-ADS.png"
-                  alt="Google Ads Management"
+                  src="/assets/images/content_images/GB-OPTI.png"
+                  alt="Google Business Profile"
                   className="h-auto w-full rounded-[18px] object-cover"
                 />
               </div>
@@ -225,32 +216,26 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          INTRODUCTION
-      ===================================================== */}
       <section className="px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:px-8 xl:px-10">
           <div>
             <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
               Introduction
             </p>
-
             <h2
               data-animate="left"
               className="mt-3 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[34px] lg:text-[40px]"
             >
-              Google Ads Built Around Business Growth
+              Google Business Profile Built Around Business Growth
             </h2>
           </div>
-
           <div>
             <p className="m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-              Akkurate Digital Solutions provides Google Ads as part of an
-              integrated digital growth system. We begin with the business
-              objective, audience and customer journey before deciding what
-              should be created, optimized or measured.
+              Akkurate Digital Solutions provides google business profile as
+              part of an integrated digital growth system. We begin with the
+              business objective, audience and customer journey before deciding
+              what should be created, optimized or measured.
             </p>
-
             <p className="mt-4 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
               The goal is not simply to deliver an asset or run a channel; it is
               to make the work useful to the business.
@@ -259,51 +244,43 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          BUSINESS PROBLEM
-      ===================================================== */}
       <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[1200px] px-4 text-center sm:px-6 lg:px-8">
           <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300 sm:text-[11px]">
             The Business Problem We Solve
           </p>
-
           <h2
             data-animate="center"
             className="mt-4 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[34px] lg:text-[42px]"
           >
-            Turn Paid Search Into a Clear Commercial Journey
+            Google Business Profile With a Clear Commercial Purpose
           </h2>
-
-          <p className="mx-auto mt-5 max-w-[850px] text-[14px] leading-7 text-gray-300 sm:text-[15px] sm:leading-7">
-            Paid search can produce immediate visibility, but buying clicks is
-            not the same as generating profitable business. Akkurate connects
-            campaign structure, intent, ad messaging, landing-page experience
-            and measurement so paid traffic has a clear commercial purpose.
+          <p className="mx-auto mt-5 max-w-[900px] text-[14px] leading-7 text-gray-300 sm:text-[15px] sm:leading-7">
+            Local search is often about trust and convenience. Customers want to
+            know whether a business is relevant, nearby, credible and easy to
+            contact. Akkurate connects the Business Profile with the website and
+            wider local SEO system rather than treating it as an isolated
+            listing.
           </p>
         </div>
       </section>
 
-      {/* =====================================================
-          GOOGLE ADS SERVICES
-      ===================================================== */}
       <section className="px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[100%] text-center">
+          <div className="text-center">
             <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
               Our Services
             </p>
-
             <h2
               data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[36px]"
+              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px]"
             >
-              Our Google Ads Services
+              Our Google Business Profile Services
             </h2>
           </div>
 
           <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {googleAdsServices.map((service, index) => (
+            {services.map((service, index) => (
               <article
                 key={service.number}
                 data-animate="card"
@@ -314,16 +291,13 @@ function GoogleAds() {
                   <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9]">
                     {service.number}
                   </span>
-
                   <span className="text-[19px] text-gray-300 transition group-hover:text-[#1455d9]">
                     ↗
                   </span>
                 </div>
-
                 <h3 className="mt-6 m-0 text-[18px] font-bold leading-snug text-[#101828] sm:text-[19px]">
                   {service.title}
                 </h3>
-
                 <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 sm:text-[14px]">
                   {service.description}
                 </p>
@@ -333,23 +307,18 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          OUTCOMES
-      ===================================================== */}
       <section className="bg-[#f7faff] px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto grid w-full max-w-[1600px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8 xl:px-10">
           <div>
             <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
               What You Get
             </p>
-
             <h2
               data-animate="left"
               className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
             >
               What You Get From Akkurate
             </h2>
-
             <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
               The exact outcome depends on the starting point, competition,
               audience, budget, implementation and business model. Our job is to
@@ -369,7 +338,6 @@ function GoogleAds() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#073b91] text-[10px] font-bold text-white">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-
                 <span className="text-[13px] font-semibold text-[#101828] sm:text-[14px]">
                   {outcome}
                 </span>
@@ -379,50 +347,39 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          WHO THIS SERVICE IS FOR
-      ===================================================== */}
       <section className="px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[950px] px-4 text-center sm:px-6 lg:px-8">
           <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9]">
             Who This Service Is For
           </p>
-
           <h2
             data-animate="center"
             className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
           >
-            Google Ads Should Fit Your Business
+            Google Business Profile Should Fit Your Business
           </h2>
-
           <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-            Google Ads is relevant to businesses that have a clear reason to
-            improve their digital presence, customer journey or growth engine.
-          </p>
-
-          <p className="mt-4 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-            The right approach depends on the starting point. Akkurate can
-            recommend a focused scope, a broader integrated program or a
-            different service when that is more appropriate.
+            Google Business Profile is relevant to businesses that have a clear
+            reason to improve their digital presence, customer journey or growth
+            engine. The page should qualify visitors rather than promise that
+            every business needs the same package. Akkurate can recommend a
+            focused scope, a broader integrated program or a different service
+            when that is more appropriate.
           </p>
         </div>
       </section>
 
-      {/* =====================================================
-          PROCESS
-      ===================================================== */}
       <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[100%] text-center">
+          <div className="text-center">
             <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300">
               Our Process
             </p>
-
             <h2
               data-animate="left"
               className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[36px] lg:text-[44px]"
             >
-              A Practical Google Ads Process
+              A Practical Google Business Profile Process
             </h2>
           </div>
 
@@ -437,11 +394,9 @@ function GoogleAds() {
                 <span className="text-[11px] font-bold tracking-[0.14em] text-blue-300">
                   {step.number}
                 </span>
-
                 <h3 className="mt-6 m-0 text-[17px] font-bold leading-snug text-white">
                   {step.title}
                 </h3>
-
                 <p className="mt-3 m-0 text-[13px] leading-6 text-gray-400">
                   {step.description}
                 </p>
@@ -451,21 +406,17 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          WHY AKKURATE
-      ===================================================== */}
       <section className="px-14 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-[750px]">
             <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
               Why Choose Akkurate
             </p>
-
             <h2
               data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[35px]"
+              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
             >
-              Paid Media With a Business-First Approach
+              A Business-First Approach
             </h2>
           </div>
 
@@ -480,11 +431,9 @@ function GoogleAds() {
                 <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9]">
                   {item.number}
                 </span>
-
                 <h3 className="mt-5 m-0 text-[18px] font-bold leading-snug text-[#101828]">
                   {item.title}
                 </h3>
-
                 <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500">
                   {item.description}
                 </p>
@@ -494,9 +443,6 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          RELATED SERVICES
-      ===================================================== */}
       <section
         className="
                           bg-[#f7faff]
@@ -557,7 +503,7 @@ function GoogleAds() {
                                 sm:text-[23px]
                               "
             >
-              SEO ↔ Google Ads ↔ Meta Ads
+              Youtube Marketing ↔ Google Business page
             </h3>
           </div>
 
@@ -572,7 +518,7 @@ function GoogleAds() {
                             "
           >
             <Link
-              to="/seo"
+              to="/youtube-marketing"
               className="
                                 rounded-full
                 
@@ -594,7 +540,7 @@ function GoogleAds() {
                                 hover:text-[#1455d9]
                               "
             >
-              SEO
+              Youtube Marketing
             </Link>
 
             <span
@@ -611,41 +557,12 @@ function GoogleAds() {
                                 text-white
                               "
             >
-              Google Ads
+              Google Business Page
             </span>
-
-            <Link
-              to="/meta-ads"
-              className="
-                                rounded-full
-                
-                                border
-                                border-gray-200
-                
-                                bg-white
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-gray-700
-                
-                                transition
-                
-                                hover:border-[#1455d9]
-                                hover:text-[#1455d9]
-                              "
-            >
-              Meta Ads
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          FAQ
-      ===================================================== */}
       <section
         className="
     px-14
@@ -698,7 +615,7 @@ function GoogleAds() {
           lg:text-[42px]
         "
             >
-              Google Ads FAQs
+              Google Business Profile FAQs
             </h2>
           </div>
 
@@ -793,38 +710,31 @@ function GoogleAds() {
         </div>
       </section>
 
-      {/* =====================================================
-          FINAL CTA
-      ===================================================== */}
       <section className="relative overflow-hidden bg-[#073b91] px-14 py-16 sm:py-20 lg:py-24">
         <div className="pointer-events-none absolute -right-24 -top-24 h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -left-24 h-[260px] w-[260px] rounded-full bg-blue-300/10 blur-3xl" />
-
         <div className="relative mx-auto w-full max-w-[1000px] px-4 text-center sm:px-6 lg:px-8">
           <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-200 sm:text-[11px]">
             Ready to Grow?
           </p>
-
           <h2
             data-animate="center"
-            className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px] lg:text-[35px]"
+            className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px] lg:text-[36px]"
           >
-            Turn High-Intent Searches Into Qualified Leads
+            Make your business information easier to find, understand and act on
+            when local customers are ready.
           </h2>
-
           <p className="mx-auto mt-5 max-w-[800px] text-[14px] leading-7 text-blue-100 sm:text-[15px] sm:leading-7">
-            Put your budget behind the searches and audiences most likely to
-            matter to the business. Tell us what you are trying to achieve, what
-            you have already tried and what outcome matters most.
+            Tell us what you are trying to achieve, what you have already tried
+            and what outcome matters most. Akkurate can then recommend the most
+            practical next step.
           </p>
-
           <div className="mt-8">
             <Link
               to="/contact"
               className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-bold text-[#073b91] transition duration-300 hover:-translate-y-1 hover:bg-gray-100"
             >
-              Talk to Our Team
-              <span className="ml-2">→</span>
+              Talk to Our Team <span className="ml-2">→</span>
             </Link>
           </div>
         </div>
@@ -833,4 +743,4 @@ function GoogleAds() {
   );
 }
 
-export default GoogleAds;
+export default GoogleBusiness;

@@ -433,7 +433,7 @@ function GEO() {
                     hover:bg-[#052f75]
                   "
                 >
-                  Talk to Our GEO Team
+                  Talk to Our Team
 
                   <span className="ml-2">
                     →
@@ -1639,7 +1639,7 @@ function GEO() {
                 sm:text-[23px]
               "
             >
-              SEO ↔ AEO ↔ GEO
+              GEO ↔ AEO ↔ SEO
             </h3>
 
           </div>
@@ -1656,32 +1656,22 @@ function GEO() {
             "
           >
 
-            <Link
-              to="/seo"
+            <span
               className="
                 rounded-full
 
-                border
-                border-gray-200
-
-                bg-white
+                bg-[#073b91]
 
                 px-4
                 py-2
 
                 text-[12px]
                 font-semibold
-                text-gray-700
-
-                transition
-
-                hover:border-[#1455d9]
-                hover:text-[#1455d9]
+                text-white
               "
             >
-              SEO
-            </Link>
-
+              GEO
+            </span>
 
             <Link
               to="/aeo"
@@ -1709,23 +1699,32 @@ function GEO() {
               AEO
             </Link>
 
-
-            <span
+            <Link
+              to="/seo"
               className="
                 rounded-full
 
-                bg-[#073b91]
+                border
+                border-gray-200
+
+                bg-white
 
                 px-4
                 py-2
 
                 text-[12px]
                 font-semibold
-                text-white
+                text-gray-700
+
+                transition
+
+                hover:border-[#1455d9]
+                hover:text-[#1455d9]
               "
             >
-              GEO
-            </span>
+              SEO
+            </Link>
+
 
           </div>
 
@@ -1782,7 +1781,7 @@ function GEO() {
                 text-[#1455d9]
               "
             >
-              FAQ
+              Frequently Asked Questions
             </p>
 
 
@@ -1803,7 +1802,7 @@ function GEO() {
                 lg:text-[42px]
               "
             >
-              Frequently Asked Questions
+              GEO FAQs
             </h2>
 
           </div>
