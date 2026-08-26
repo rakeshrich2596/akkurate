@@ -20,7 +20,6 @@ const testimonials = [
     text: "We needed our logo and brand name to be revisited as the initial ones were too long. Customers did not read our full names or pay attention to the brand. The team understood our requirements and helped us create a stronger, simpler brand identity that was easier for our customers to recognize and remember.",
     author: "Mr. Yuvaraj",
     client: "Managing Director",
-
   },
 
   {
@@ -293,300 +292,321 @@ function Testimonials() {
 
         <div
           className="
-            mb-10
-            flex
-            flex-col
-            gap-6
-            lg:mb-12
-            lg:flex-row
-            lg:items-end
-            lg:gap-8
-          "
+    mb-10
+    flex
+    flex-col
+    gap-5
+    lg:mb-12
+    lg:flex-row
+    lg:items-end
+    lg:gap-3
+  "
         >
           {/* =================================================
-              HEADING
-          ================================================= */}
+      LEFT — HEADING
+  ================================================= */}
 
           <div
             className={`
-              min-w-0
-              flex-1
-              overflow-hidden
-              transition-all
-              duration-[1200ms]
-              ease-[cubic-bezier(0.22,1,0.36,1)]
-              ${
-                headingVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-[120px] opacity-0"
-              }
-            `}
+      min-w-0
+      max-w-[700px]
+      overflow-hidden
+      transition-all
+      duration-[1200ms]
+      ease-[cubic-bezier(0.22,1,0.36,1)]
+      ${
+        headingVisible
+          ? "translate-x-0 opacity-100"
+          : "-translate-x-[120px] opacity-0"
+      }
+    `}
           >
             <h3
               className="
-                m-0
-                flex
-                flex-col
-                text-[28px]
-                font-normal
-                leading-[1.2]
-                tracking-tight
-                text-black
-                sm:text-[34px]
-                md:text-[38px]
-                lg:text-[40px]
-                xl:text-[44px]
-              "
+        m-0
+        text-[28px]
+        font-normal
+        leading-[1.2]
+        tracking-tight
+        text-black
+        sm:text-[34px]
+        md:text-[38px]
+        lg:text-[35px]
+        xl:text-[40px]
+      "
             >
-              <span>
+              <span className="inline">
                 Our client's{" "}
                 <span className="text-[#1351D8]">success stories</span> speak
-                volumes
+                volumes <span className="inline">about the impact of our services</span>
+
               </span>
 
-              <span>about the impact of our services</span>
             </h3>
           </div>
 
           {/* =================================================
-              TRUSTPILOT | COMPANY LOGO | GOOGLE
-
-              Starts immediately after heading
-          ================================================= */}
+      RIGHT — TRUSTPILOT + CLUTCH + GOOGLE + GOODFIRMS
+  ================================================= */}
 
           <div
             className="
-    flex
-    shrink-0
-    items-center
-    gap-0.5
-    self-start
-    lg:self-end
-    mr-30
-  "
+      flex
+      shrink-0
+      items-center
+      justify-start
+      lg:mb-1
+    "
           >
-            {/* =================================================
-      TRUSTPILOT
-  ================================================= */}
-
-            <a
-              href="https://www.trustpilot.com/review/akkurate.in?languages=all"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               className="
-      flex
-      shrink-0
-      items-center
-      gap-0.5
-      no-underline
-      transition-transform
-      duration-300
-      hover:scale-105
-    "
-            >
-              <img
-                src="/assets/images/icons/trustpilot-star.svg"
-                alt="Trustpilot"
-                className="
-        h-5
-        w-5
-        sm:h-6
-        sm:w-6
+        flex
+        h-[52px]
+        items-center
+        gap-3
+        rounded-xl
+        border
+        border-neutral-200
+        bg-white
+        px-3
+        shadow-[0_6px_20px_rgba(0,0,0,0.04)]
+        sm:gap-4
+        sm:px-4
       "
+            >
+              {/* =================================================
+          TRUSTPILOT
+      ================================================= */}
+
+              <a
+                href="https://www.trustpilot.com/review/akkurate.in?languages=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+          flex
+          h-9
+          min-w-[145px]
+          shrink-0
+          items-center
+          justify-center
+          gap-1.5
+          no-underline
+          transition-transform
+          duration-300
+          hover:scale-[1.03]
+        "
+              >
+                <img
+                  src="/assets/images/icons/trustpilot-star.svg"
+                  alt="Trustpilot"
+                  className="
+            h-5
+            w-5
+            shrink-0
+            object-contain
+            sm:h-6
+            sm:w-6
+          "
+                />
+
+                <span
+                  className="
+            whitespace-nowrap
+            text-[14px]
+            font-bold
+            leading-none
+            text-black
+            sm:text-[16px]
+            lg:text-[17px]
+          "
+                >
+                  Trustpilot
+                </span>
+
+                <span
+                  className="
+            text-[13px]
+            font-bold
+            leading-none
+            text-black
+            sm:text-[14px]
+          "
+                >
+                  4.8
+                </span>
+
+                <span
+                  className="
+            text-[15px]
+            leading-none
+            text-amber-500
+            sm:text-[16px]
+          "
+                >
+                  ★
+                </span>
+              </a>
+
+              {/* =================================================
+          DIVIDER
+      ================================================= */}
+
+              <div
+                className="
+          h-7
+          w-px
+          shrink-0
+          bg-neutral-300
+        "
               />
 
-              <span
+              {/* =================================================
+          CLUTCH
+      ================================================= */}
+
+              <div
                 className="
-        text-[14px]
-        font-bold
-        text-black
-        sm:text-[17px]
-        lg:text-[18px]
-      "
+          flex
+          h-9
+          w-[105px]
+          shrink-0
+          items-center
+          justify-center
+          overflow-hidden
+          sm:h-10
+          sm:w-[115px]
+        "
               >
-                Trustpilot
-              </span>
+                <img
+                  src="/assets/images/icons/clutch1.png"
+                  alt="Clutch"
+                  className="
+            h-full
+            w-full
+            object-contain
+            p-1
+          "
+                />
+              </div>
 
-              <span
+              {/* =================================================
+          DIVIDER
+      ================================================= */}
+
+              <div
                 className="
-        text-[13px]
-        font-bold
-        text-black
-        sm:text-[15px]
-      "
-              >
-                4.8
-              </span>
-
-              <span
-                className="
-        text-[15px]
-        text-amber-500
-        sm:text-[17px]
-      "
-              >
-                ★
-              </span>
-            </a>
-
-            {/* =================================================
-      DIVIDER
-  ================================================= */}
-
-            <div
-              className="
-      mx-0.5
-      h-6
-      w-px
-      shrink-0
-      bg-neutral-300
-      sm:h-7
-    "
-            />
-
-            {/* =================================================
-      CLUTCH LOGO
-  ================================================= */}
-
-            <div
-              className="
-    flex
-    h-10
-    w-[85px]
-    shrink-0
-    items-center
-    justify-center
-    overflow-hidden
-    bg-white
-    sm:h-12
-    sm:w-[90px]
-  "
-            >
-              <img
-                src="/assets/images/icons/clutch1.png"
-                alt="Clutch"
-                className="
-      h-full
-      w-full
-      object-contain
-      p-1
-    "
+          h-7
+          w-px
+          shrink-0
+          bg-neutral-300
+        "
               />
-            </div>
 
-            {/* =================================================
-      DIVIDER
-  ================================================= */}
+              {/* =================================================
+          GOOGLE
+      ================================================= */}
 
-            <div
-              className="
-      mx-0.5
-      h-6
-      w-px
-      shrink-0
-      bg-neutral-300
-      sm:h-7
-    "
-            />
-
-            {/* =================================================
-      GOOGLE
-  ================================================= */}
-
-            <a
-              href="https://g.page/r/CdytXHC_I2fLEAE/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-      flex
-      shrink-0
-      items-center
-      gap-0.5
-      no-underline
-      transition-transform
-      duration-300
-      hover:scale-105
-    "
-            >
-              <span
+              <a
+                href="https://g.page/r/CdytXHC_I2fLEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-        text-[15px]
-        font-bold
-        sm:text-[18px]
-      "
+          flex
+          h-9
+          min-w-[105px]
+          shrink-0
+          items-center
+          justify-center
+          gap-1.5
+          no-underline
+          transition-transform
+          duration-300
+          hover:scale-[1.03]
+          sm:min-w-[115px]
+        "
               >
-                <span className="text-blue-500">G</span>
-                <span className="text-red-500">o</span>
-                <span className="text-amber-500">o</span>
-                <span className="text-blue-500">g</span>
-                <span className="text-green-500">l</span>
-                <span className="text-red-500">e</span>
-              </span>
+                <span
+                  className="
+            whitespace-nowrap
+            text-[15px]
+            font-bold
+            leading-none
+            sm:text-[17px]
+          "
+                >
+                  <span className="text-blue-500">G</span>
+                  <span className="text-red-500">o</span>
+                  <span className="text-amber-500">o</span>
+                  <span className="text-blue-500">g</span>
+                  <span className="text-green-500">l</span>
+                  <span className="text-red-500">e</span>
+                </span>
 
-              <span
+                <span
+                  className="
+            text-[13px]
+            font-bold
+            leading-none
+            text-black
+            sm:text-[14px]
+          "
+                >
+                  4.9
+                </span>
+
+                <span
+                  className="
+            text-[15px]
+            leading-none
+            text-amber-500
+            sm:text-[16px]
+          "
+                >
+                  ★
+                </span>
+              </a>
+
+              {/* =================================================
+          DIVIDER
+      ================================================= */}
+
+              <div
                 className="
-        text-[13px]
-        font-bold
-        text-black
-        sm:text-[15px]
-      "
-              >
-                4.9
-              </span>
-
-              <span
-                className="
-        text-[15px]
-        text-amber-500
-        sm:text-[17px]
-      "
-              >
-                ★
-              </span>
-            </a>
-
-            {/* =================================================
-      DIVIDER
-  ================================================= */}
-
-            <div
-              className="
-      mx-0.5
-      h-6
-      w-px
-      shrink-0
-      bg-neutral-300
-      sm:h-7
-    "
-            />
-
-            {/* =================================================
-      GOODFIRMS LOGO
-  ================================================= */}
-            <div
-              className="
-    flex
-    h-10
-    w-[85px]
-    shrink-0
-    items-center
-    justify-center
-    overflow-hidden
-    bg-white
-    sm:h-12
-    sm:w-[100px]
-  "
-            >
-              <img
-                src="/assets/images/icons/goodfirm2.png"
-                alt="Clutch"
-                className="
-                  h-full
-                  w-full
-                  object-contain
-                  scale-100
-                "
+          h-7
+          w-px
+          shrink-0
+          bg-neutral-300
+        "
               />
+
+              {/* =================================================
+          GOODFIRMS
+      ================================================= */}
+
+              <div
+                className="
+          flex
+          h-9
+          w-[105px]
+          shrink-0
+          items-center
+          justify-center
+          overflow-hidden
+          sm:h-10
+          sm:w-[115px]
+        "
+              >
+                <img
+                  src="/assets/images/icons/goodfirm2.png"
+                  alt="GoodFirms"
+                  className="
+            h-full
+            w-full
+            object-contain
+            p-1
+          "
+                />
+              </div>
             </div>
           </div>
         </div>
