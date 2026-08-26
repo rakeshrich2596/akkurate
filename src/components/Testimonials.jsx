@@ -34,17 +34,16 @@ function TestimonialCard({ testimonial }) {
         relative
         flex
         h-full
-        min-h-[560px]
+        min-h-[600px]
         w-full
         flex-col
         rounded-[20px]
         border
         border-neutral-200
         bg-white
-        mt-7
         px-6
         pb-6
-        pt-15
+        pt-10
         shadow-[0_10px_35px_rgba(15,23,42,0.06)]
         transition-all
         duration-300
@@ -109,7 +108,7 @@ function TestimonialCard({ testimonial }) {
       </p>
 
       {/* Author */}
-      <div className="mt-5 border-t border-neutral-200 pt-5">
+      <div className="mt-4 border-t border-neutral-200 pt-4">
         <h6 className="mb-1 text-[15px] font-bold text-black sm:text-[16px]">
           {testimonial.author}
         </h6>
@@ -124,9 +123,27 @@ function TestimonialCard({ testimonial }) {
 
 export default function Testimonials() {
   const [headingVisible, setHeadingVisible] = useState(false);
-  const [page, setPage] = useState(0);
+
+  /*
+    slideIndex works with the cloned first page.
+
+    Desktop:
+    0 = Card 1 + 2
+    1 = Card 3 + 4
+    2 = Clone of Card 1 + 2
+
+    When it reaches 2, we instantly reset to 0
+    AFTER the animation finishes.
+
+    This creates:
+    1 + 2 → 3 + 4 → 1 + 2 → 3 + 4
+    without reverse animation.
+  */
+  const [slideIndex, setSlideIndex] = useState(0);
+
   const [isPaused, setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [enableTransition, setEnableTransition] = useState(true);
 
   /* =========================================================
      RESPONSIVE CHECK
@@ -160,7 +177,7 @@ export default function Testimonials() {
 
   /* =========================================================
      PAGE GROUPS
-     
+
      Desktop:
      [1,2]
      [3,4]
@@ -190,12 +207,38 @@ export default function Testimonials() {
     return result;
   }, [cardsPerPage]);
 
+  /*
+    Clone the first page.
+
+    Example desktop:
+
+    [1,2] [3,4] [1,2-clone]
+
+    Example mobile:
+
+    [1] [2] [3] [4] [1-clone]
+  */
+  const sliderPages = useMemo(() => {
+    if (pages.length <= 1) {
+      return pages;
+    }
+
+    return [...pages, pages[0]];
+  }, [pages]);
+
   /* =========================================================
-     RESET PAGE WHEN SCREEN SIZE CHANGES
+     RESET SLIDER WHEN SCREEN SIZE CHANGES
   ========================================================= */
 
   useEffect(() => {
-    setPage(0);
+    setEnableTransition(false);
+    setSlideIndex(0);
+
+    const timer = setTimeout(() => {
+      setEnableTransition(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [isMobile]);
 
   /* =========================================================
@@ -206,17 +249,49 @@ export default function Testimonials() {
     if (isPaused || pages.length <= 1) return;
 
     const timer = setInterval(() => {
-      setPage((current) => {
-        return current >= pages.length - 1
-          ? 0
-          : current + 1;
-      });
+      setSlideIndex((current) => current + 1);
     }, 3500);
 
     return () => {
       clearInterval(timer);
     };
   }, [isPaused, pages.length]);
+
+  /* =========================================================
+     RESET AFTER CLONED SLIDE
+
+     When the clone of the first slide is reached:
+
+     [1,2] → [3,4] → [1,2 CLONE]
+
+     We wait until the animation completes,
+     disable transition,
+     jump back to real [1,2],
+     then enable transition again.
+
+     User never sees a reverse animation.
+  ========================================================= */
+
+  useEffect(() => {
+    if (slideIndex !== pages.length || pages.length <= 1) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setEnableTransition(false);
+      setSlideIndex(0);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setEnableTransition(true);
+        });
+      });
+    }, 750);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [slideIndex, pages.length]);
 
   return (
     <section
@@ -507,7 +582,7 @@ export default function Testimonials() {
           </div>
 
           {/* =================================================
-              RIGHT — TWO TESTIMONIAL CARDS
+              RIGHT — TESTIMONIAL SLIDER
           ================================================= */}
 
           <div
@@ -518,21 +593,25 @@ export default function Testimonials() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="relative overflow-hidden">
+            {/* Slider viewport */}
+
+            <div className="relative overflow-hidden pt-7">
               {/* Slider track */}
 
               <div
-                className="
+                className={`
                   flex
-                  transition-transform
-                  duration-700
-                  ease-[cubic-bezier(0.22,1,0.36,1)]
-                "
+                  ${
+                    enableTransition
+                      ? "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                      : "transition-none"
+                  }
+                `}
                 style={{
-                  transform: `translateX(-${page * 100}%)`,
+                  transform: `translateX(-${slideIndex * 100}%)`,
                 }}
               >
-                {pages.map((pageItems, pageIndex) => (
+                {sliderPages.map((pageItems, pageIndex) => (
                   <div
                     key={`page-${pageIndex}`}
                     className="
@@ -561,7 +640,7 @@ export default function Testimonials() {
                       )
                     )}
 
-                    {/* Keep two columns balanced if mobile/last page has one item */}
+                    {/* Keep two columns balanced */}
                     {!isMobile &&
                       pageItems.length === 1 && (
                         <div className="hidden sm:block" />
@@ -572,10 +651,11 @@ export default function Testimonials() {
             </div>
 
             {/* =================================================
-                PAGINATION
+                OPTIONAL PAGINATION
             ================================================= */}
 
-            {/* <div className="mt-7 flex items-center justify-center gap-2">
+            {/*
+            <div className="mt-7 flex items-center justify-center gap-2">
               {pages.map((_, index) => (
                 <button
                   key={`pagination-${index}`}
@@ -583,34 +663,45 @@ export default function Testimonials() {
                   aria-label={`Go to testimonial page ${
                     index + 1
                   }`}
-                  onClick={() => setPage(index)}
+                  onClick={() => {
+                    setEnableTransition(true);
+                    setSlideIndex(index);
+                  }}
                   className={`
                     h-2.5
                     rounded-full
                     transition-all
                     duration-300
                     ${
-                      page === index
+                      slideIndex === index
                         ? "w-8 bg-[#1351D8]"
                         : "w-2.5 bg-slate-300 hover:bg-slate-400"
                     }
                   `}
                 />
               ))}
-            </div> */}
+            </div>
+            */}
 
-            {/* Optional arrows */}
+            {/* =================================================
+                OPTIONAL ARROWS
+            ================================================= */}
 
-            {/* <div className="mt-4 flex items-center justify-center gap-3">
+            {/*
+            <div className="mt-4 flex items-center justify-center gap-3">
               <button
                 type="button"
                 aria-label="Previous testimonials"
                 onClick={() => {
-                  setPage((current) =>
-                    current === 0
-                      ? pages.length - 1
-                      : current - 1
-                  );
+                  setEnableTransition(true);
+
+                  setSlideIndex((current) => {
+                    if (current === 0) {
+                      return pages.length - 1;
+                    }
+
+                    return current - 1;
+                  });
                 }}
                 className="
                   flex
@@ -637,11 +728,15 @@ export default function Testimonials() {
                 type="button"
                 aria-label="Next testimonials"
                 onClick={() => {
-                  setPage((current) =>
-                    current === pages.length - 1
-                      ? 0
-                      : current + 1
-                  );
+                  setEnableTransition(true);
+
+                  setSlideIndex((current) => {
+                    if (current >= pages.length - 1) {
+                      return 0;
+                    }
+
+                    return current + 1;
+                  });
                 }}
                 className="
                   flex
@@ -663,7 +758,8 @@ export default function Testimonials() {
               >
                 →
               </button>
-            </div> */}
+            </div>
+            */}
           </div>
         </div>
       </div>
