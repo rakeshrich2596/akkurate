@@ -295,11 +295,11 @@ function Testimonials() {
     mb-10
     flex
     flex-col
-    gap-5
+    gap-6
     lg:mb-12
     lg:flex-row
     lg:items-end
-    lg:gap-3
+    lg:gap-4
   "
         >
           {/* =================================================
@@ -309,7 +309,7 @@ function Testimonials() {
           <div
             className={`
       min-w-0
-      max-w-[700px]
+      w-full
       overflow-hidden
       transition-all
       duration-[1200ms]
@@ -319,29 +319,29 @@ function Testimonials() {
           ? "translate-x-0 opacity-100"
           : "-translate-x-[120px] opacity-0"
       }
+      lg:w-auto
+      lg:max-w-[700px]
+      lg:shrink-0
     `}
           >
             <h3
               className="
         m-0
-        text-[28px]
+        w-full
+        text-[24px]
         font-normal
         leading-[1.2]
         tracking-tight
         text-black
-        sm:text-[34px]
-        md:text-[38px]
-        lg:text-[35px]
-        xl:text-[40px]
+        sm:text-[28px]
+        md:text-[30px]
+        lg:text-[32px]
+        xl:text-[35px]
       "
             >
-              <span className="inline">
-                Our client's{" "}
-                <span className="text-[#1351D8]">success stories</span> speak
-                volumes <span className="inline">about the impact of our services</span>
-
-              </span>
-
+              Our client&apos;s{" "}
+              <span className="text-[#1351D8]">success stories</span> speak
+              volumes about the impact of our services
             </h3>
           </div>
 
@@ -352,26 +352,29 @@ function Testimonials() {
           <div
             className="
       flex
+      w-full
+      min-w-0
       shrink-0
-      items-center
       justify-start
-      lg:mb-1
+      lg:w-auto
+      lg:justify-start
     "
           >
             <div
               className="
         flex
-        h-[52px]
+        max-w-full
+        flex-wrap
         items-center
-        gap-3
+        justify-start
+        gap-x-3
+        gap-y-2
         rounded-xl
-        border
-        border-neutral-200
-        bg-white
-        px-3
-        shadow-[0_6px_20px_rgba(0,0,0,0.04)]
-        sm:gap-4
-        sm:px-4
+        px-0
+        py-1
+        sm:gap-x-4
+        lg:flex-nowrap
+        lg:gap-x-3
       "
             >
               {/* =================================================
@@ -385,15 +388,16 @@ function Testimonials() {
                 className="
           flex
           h-9
-          min-w-[145px]
           shrink-0
           items-center
           justify-center
           gap-1.5
+          whitespace-nowrap
           no-underline
           transition-transform
           duration-300
           hover:scale-[1.03]
+          sm:h-10
         "
               >
                 <img
@@ -411,13 +415,11 @@ function Testimonials() {
 
                 <span
                   className="
-            whitespace-nowrap
-            text-[14px]
+            text-[13px]
             font-bold
             leading-none
             text-black
-            sm:text-[16px]
-            lg:text-[17px]
+            sm:text-[15px]
           "
                 >
                   Trustpilot
@@ -425,11 +427,11 @@ function Testimonials() {
 
                 <span
                   className="
-            text-[13px]
+            text-[12px]
             font-bold
             leading-none
             text-black
-            sm:text-[14px]
+            sm:text-[13px]
           "
                 >
                   4.8
@@ -437,7 +439,7 @@ function Testimonials() {
 
                 <span
                   className="
-            text-[15px]
+            text-[14px]
             leading-none
             text-amber-500
             sm:text-[16px]
@@ -447,16 +449,17 @@ function Testimonials() {
                 </span>
               </a>
 
-              {/* =================================================
-          DIVIDER
-      ================================================= */}
+              {/* DIVIDER */}
 
               <div
                 className="
+          hidden
           h-7
           w-px
           shrink-0
           bg-neutral-300
+          sm:block
+          lg:h-8
         "
               />
 
@@ -468,13 +471,13 @@ function Testimonials() {
                 className="
           flex
           h-9
-          w-[105px]
+          w-[100px]
           shrink-0
           items-center
           justify-center
           overflow-hidden
           sm:h-10
-          sm:w-[115px]
+          sm:w-[110px]
         "
               >
                 <img
@@ -489,16 +492,17 @@ function Testimonials() {
                 />
               </div>
 
-              {/* =================================================
-          DIVIDER
-      ================================================= */}
+              {/* DIVIDER */}
 
               <div
                 className="
+          hidden
           h-7
           w-px
           shrink-0
           bg-neutral-300
+          sm:block
+          lg:h-8
         "
               />
 
@@ -513,25 +517,24 @@ function Testimonials() {
                 className="
           flex
           h-9
-          min-w-[105px]
           shrink-0
           items-center
           justify-center
           gap-1.5
+          whitespace-nowrap
           no-underline
           transition-transform
           duration-300
           hover:scale-[1.03]
-          sm:min-w-[115px]
+          sm:h-10
         "
               >
                 <span
                   className="
-            whitespace-nowrap
-            text-[15px]
+            text-[14px]
             font-bold
             leading-none
-            sm:text-[17px]
+            sm:text-[16px]
           "
                 >
                   <span className="text-blue-500">G</span>
@@ -544,11 +547,11 @@ function Testimonials() {
 
                 <span
                   className="
-            text-[13px]
+            text-[12px]
             font-bold
             leading-none
             text-black
-            sm:text-[14px]
+            sm:text-[13px]
           "
                 >
                   4.9
@@ -556,7 +559,7 @@ function Testimonials() {
 
                 <span
                   className="
-            text-[15px]
+            text-[14px]
             leading-none
             text-amber-500
             sm:text-[16px]
@@ -566,16 +569,17 @@ function Testimonials() {
                 </span>
               </a>
 
-              {/* =================================================
-          DIVIDER
-      ================================================= */}
+              {/* DIVIDER */}
 
               <div
                 className="
+          hidden
           h-7
           w-px
           shrink-0
           bg-neutral-300
+          sm:block
+          lg:h-8
         "
               />
 
@@ -587,13 +591,13 @@ function Testimonials() {
                 className="
           flex
           h-9
-          w-[105px]
+          w-[100px]
           shrink-0
           items-center
           justify-center
           overflow-hidden
           sm:h-10
-          sm:w-[115px]
+          sm:w-[110px]
         "
               >
                 <img

@@ -92,8 +92,8 @@ function HomePage() {
         <Showcase />
 
         <Testimonials />
-
-        <Blog />
+{/* 
+        <Blog /> */}
 
         <ClientTrust />
 

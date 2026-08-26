@@ -567,6 +567,8 @@ const Blog = () => {
           `}
         >
 
+          {/* OUR INSIGHTS */}
+
           <span
             className="
               block
@@ -584,6 +586,8 @@ const Blog = () => {
               animationKey={`our-${animationKey}`}
             />
           </span>
+
+          {/* LATEST BLOGS */}
 
           <h2
             className="
@@ -603,7 +607,6 @@ const Blog = () => {
               animationKey={`latest-${animationKey}`}
             />
           </h2>
-
         </div>
 
         {/* =================================================
@@ -683,8 +686,7 @@ const Blog = () => {
 
                 <div
                   className="
-                    relative
-                    aspect-[16/9]
+                    h-[220px]
                     w-full
                     overflow-hidden
                     bg-slate-100
@@ -699,14 +701,17 @@ const Blog = () => {
                         "Blog image not found:",
                         blog.image
                       );
+                      e.currentTarget.style.display =
+                        "none";
                     }}
                     className="
-                      absolute
-                      inset-0
+                      block
                       h-full
                       w-full
-                      object-contain
-                      p-0
+                      object-cover
+                      transition-transform
+                      duration-500
+                      group-hover:scale-105
                     "
                   />
                 </div>
@@ -808,14 +813,12 @@ const Blog = () => {
                   </a>
 
                 </div>
-
               </article>
 
             </SwiperSlide>
           ))}
 
         </Swiper>
-
       </div>
 
       {/* =================================================
@@ -881,7 +884,7 @@ const Blog = () => {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .animate-\\[blogLetterCenterReveal_0\\.55s_cubic-bezier\\(0\\.22\\,1,0\\.36\\,1\\)_forwards\\] {
+          .animate-\\[blogLetterCenterReveal_0\\.55s_cubic-bezier\\(0\\.22\\,1\\,0\\.36\\,1\\)_forwards\\] {
             opacity: 1 !important;
             transform: none !important;
             animation: none !important;
