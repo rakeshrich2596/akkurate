@@ -24,83 +24,287 @@ import "swiper/css/pagination";
 const blogs = [
   {
     id: 1,
+
     title:
-      "Decoding the future: AI's impact on the industries",
+      "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need?",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "A practical guide to SEO vs AEO vs GEO, including strategy, examples, common mistakes and actionable next steps for businesses.",
+
+    slug:
+      "/blog/seo-vs-aeo-vs-geo/",
+
+    focusKeyword:
+      "seo vs aeo vs geo",
+
+    metaTitle:
+      "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to seo vs aeo vs geo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Grow Your Business",
+      "/assets/images/blogs/blog1.png",
+
+    alt:
+      "SEO AEO GEO digital marketing strategy",
   },
 
   {
     id: 2,
+
     title:
-      "Innovation unleashed: behind the scenes our AI breakthroughs",
+      "How AI Search Is Changing Digital Marketing in 2026",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "Understand how AI search is changing digital marketing in 2026, with practical strategies, examples, common mistakes and actionable next steps.",
+
+    slug:
+      "/blog/ai-search-digital-marketing-2026/",
+
+    focusKeyword:
+      "ai search digital marketing",
+
+    metaTitle:
+      "How AI Search Is Changing Digital Marketing in 2026 | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to ai search digital marketing, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "SEO Tips",
+      "/assets/images/blogs/blog2.png",
+
+    alt:
+      "AI search and digital marketing",
   },
 
   {
     id: 3,
+
     title:
-      "Decoding the future: AI's impact on the industries",
+      "What Is Generative Engine Optimization (GEO)? A Practical Business Guide",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "Learn what Generative Engine Optimization is, why it matters for businesses, how GEO works and the practical steps needed to improve visibility.",
+
+    slug:
+      "/blog/generative-engine-optimization-guide/",
+
+    focusKeyword:
+      "generative engine optimization",
+
+    metaTitle:
+      "What Is Generative Engine Optimization (GEO)? A Practical Business Guide | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to generative engine optimization, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Marketing Trends",
+      "/assets/images/blogs/blog3.png",
+
+    alt:
+      "Generative engine optimization GEO",
   },
 
   {
     id: 4,
+
     title:
-      "Innovation unleashed: behind the scenes our AI breakthroughs",
+      "How to Improve Your Brand's Visibility in AI Search",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "Discover practical ways to improve your brand's visibility in AI search through better content, authority, structured information and search-focused strategy.",
+
+    slug:
+      "/blog/improve-ai-search-visibility/",
+
+    focusKeyword:
+      "ai search visibility",
+
+    metaTitle:
+      "How to Improve Your Brand's Visibility in AI Search | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to ai search visibility, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Content Strategy",
+      "/assets/images/blogs/blog4.png",
+
+    alt:
+      "Brand visibility in AI search",
   },
 
   {
     id: 5,
+
     title:
-      "Building a powerful brand identity in the modern era",
+      "Google Ads vs SEO: Which Is Better for Lead Generation?",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "Compare Google Ads and SEO for lead generation, understand when to use each channel and build a practical strategy for sustainable business growth.",
+
+    slug:
+      "/blog/google-ads-vs-seo/",
+
+    focusKeyword:
+      "google ads vs seo",
+
+    metaTitle:
+      "Google Ads vs SEO: Which Is Better for Lead Generation? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to google ads vs seo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Brand Identity",
+      "/assets/images/blogs/blog5.png",
+
+    alt:
+      "Google Ads versus SEO lead generation",
   },
 
   {
     id: 6,
+
     title:
-      "The role of teamwork in driving digital innovation",
+      "How to Build a B2B Digital Marketing Strategy in 2026",
+
     description:
-      "Our dedicated patent sit amet consectetur adipiscing elit Ut et massa me. Aliquam hendrerit urna vitae mattis...",
+      "Learn how to build a practical B2B digital marketing strategy in 2026 with clear goals, channels, content, lead generation and measurable next steps.",
+
+    slug:
+      "/blog/b2b-digital-marketing-strategy/",
+
+    focusKeyword:
+      "b2b digital marketing strategy",
+
+    metaTitle:
+      "How to Build a B2B Digital Marketing Strategy in 2026 | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to b2b digital marketing strategy, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
     image:
-      "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Team Collaboration",
+      "/assets/images/blogs/blog6.png",
+
+    alt:
+      "B2B digital marketing strategy",
+  },
+
+  {
+    id: 7,
+
+    title:
+      "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews",
+
+    description:
+      "A practical local SEO guide covering Google Business Profile, local content, reviews and the key steps businesses can take to improve local visibility.",
+
+    slug:
+      "/blog/local-seo-guide/",
+
+    focusKeyword:
+      "local seo guide",
+
+    metaTitle:
+      "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to local seo guide, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog7.png",
+
+    alt:
+      "Local SEO guide for businesses",
+  },
+
+  {
+    id: 8,
+
+    title:
+      "How Much Should a Business Invest in Digital Marketing?",
+
+    description:
+      "Understand digital marketing budgets, what influences investment decisions, how to allocate resources and how businesses can plan their next steps.",
+
+    slug:
+      "/blog/digital-marketing-budget-guide/",
+
+    focusKeyword:
+      "digital marketing budget",
+
+    metaTitle:
+      "How Much Should a Business Invest in Digital Marketing? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to digital marketing budget, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog8.png",
+
+    alt:
+      "Digital marketing budget planning",
+  },
+
+  {
+    id: 9,
+
+    title:
+      "Website Redesign Checklist: SEO, UX, Performance & Conversion",
+
+    description:
+      "Use this website redesign checklist to review SEO, UX, website performance and conversion factors before launching your redesigned website.",
+
+    slug:
+      "/blog/website-redesign-checklist/",
+
+    focusKeyword:
+      "website redesign checklist",
+
+    metaTitle:
+      "Website Redesign Checklist: SEO, UX, Performance & Conversion | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to website redesign checklist, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog9.png",
+
+    alt:
+      "Website redesign checklist",
+  },
+
+  {
+    id: 10,
+
+    title:
+      "How to Create Content That Performs in Google Search and AI Experiences",
+
+    description:
+      "Learn how to create useful content that performs across Google Search and AI experiences through better structure, relevance, authority and user-focused strategy.",
+
+    slug:
+      "/blog/content-for-ai-search/",
+
+    focusKeyword:
+      "content for ai search",
+
+    metaTitle:
+      "How to Create Content That Performs in Google Search and AI Experiences | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to content for ai search, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog10.png",
+
+    alt:
+      "Content strategy for Google and AI search",
   },
 ];
 
 /* =====================================================
    ANIMATED HEADING
-
-   CENTER → OUTWARD
-
-   Example:
-
-             L A T E S T
-                 ↑
-              CENTER
-                 ↓
-             O U T W A R D
 ===================================================== */
 
 function AnimatedHeadingText({
@@ -108,73 +312,37 @@ function AnimatedHeadingText({
   delayStep = 0.045,
   animationKey,
 }) {
-  /* -----------------------------------------------------
-     Split text into words
-  ----------------------------------------------------- */
-
   const words = text.split(" ");
-
-  /* -----------------------------------------------------
-     Store every letter
-  ----------------------------------------------------- */
 
   const letters = [];
 
-  words.forEach(
-    (word, wordIndex) => {
-      [...word].forEach(
-        (
+  words.forEach((word, wordIndex) => {
+    [...word].forEach(
+      (character, characterIndex) => {
+        letters.push({
           character,
-          characterIndex
-        ) => {
-          letters.push({
-            character,
-            wordIndex,
-            characterIndex,
-            globalIndex:
-              letters.length,
-          });
-        }
-      );
-    }
-  );
-
-  /* -----------------------------------------------------
-     Calculate exact center
-  ----------------------------------------------------- */
+          wordIndex,
+          characterIndex,
+          globalIndex: letters.length,
+        });
+      }
+    );
+  });
 
   const center =
     (letters.length - 1) / 2;
 
-  /* -----------------------------------------------------
-     Sort from center → outside
-  ----------------------------------------------------- */
-
   const animationOrder = letters
     .map((letter) => ({
       ...letter,
-
       distance: Math.abs(
-        letter.globalIndex -
-          center
+        letter.globalIndex - center
       ),
     }))
     .sort((a, b) => {
-      /* Closest to center first */
-
-      if (
-        a.distance !==
-        b.distance
-      ) {
-        return (
-          a.distance -
-          b.distance
-        );
+      if (a.distance !== b.distance) {
+        return a.distance - b.distance;
       }
-
-      /* If equal distance,
-         reveal both sides
-         in stable order */
 
       return (
         a.globalIndex -
@@ -182,44 +350,30 @@ function AnimatedHeadingText({
       );
     });
 
-  /* -----------------------------------------------------
-     Create animation delay
-  ----------------------------------------------------- */
-
   const delayMap = {};
 
   animationOrder.forEach(
     (letter, order) => {
       delayMap[
         letter.globalIndex
-      ] =
-        order * delayStep;
+      ] = order * delayStep;
     }
   );
-
-  /* -----------------------------------------------------
-     Render
-  ----------------------------------------------------- */
 
   return (
     <span
       key={animationKey}
-      className="
-        blog-heading-text
-      "
+      className="inline"
     >
       {words.map(
         (word, wordIndex) => (
           <React.Fragment
             key={`${wordIndex}-${animationKey}`}
           >
-            {/* =========================================
-                WORD
-            ========================================= */}
-
             <span
               className="
-                blog-heading-word
+                inline-block
+                whitespace-nowrap
               "
             >
               {[...word].map(
@@ -244,13 +398,14 @@ function AnimatedHeadingText({
                         ${animationKey}
                       `}
                       className="
-                        blog-heading-letter
+                        inline-block
+                        opacity-0
+                        animate-[blogLetterCenterReveal_0.55s_cubic-bezier(0.22,1,0.36,1)_forwards]
                       "
                       style={{
                         animationDelay: `${
                           delayMap[
-                            letter
-                              .globalIndex
+                            letter.globalIndex
                           ]
                         }s`,
                       }}
@@ -262,15 +417,12 @@ function AnimatedHeadingText({
               )}
             </span>
 
-            {/* =========================================
-                WORD SPACE
-            ========================================= */}
-
             {wordIndex <
               words.length - 1 && (
               <span
                 className="
-                  blog-heading-word-space
+                  inline-block
+                  w-[0.45em]
                 "
                 aria-hidden="true"
               >
@@ -292,18 +444,10 @@ const Blog = () => {
   const sectionRef =
     useRef(null);
 
-  /* -----------------------------------------------------
-     Controls whether heading is visible
-  ----------------------------------------------------- */
-
   const [
     headingVisible,
     setHeadingVisible,
   ] = useState(false);
-
-  /* -----------------------------------------------------
-     Forces fresh animation
-  ----------------------------------------------------- */
 
   const [
     animationKey,
@@ -312,15 +456,6 @@ const Blog = () => {
 
   /* =====================================================
      SCROLL TRIGGER
-
-     Animation happens when user scrolls INTO
-     the Blog section.
-
-     When they scroll away:
-       → reset
-
-     When they come back:
-       → animate again
   ===================================================== */
 
   useEffect(() => {
@@ -332,36 +467,13 @@ const Blog = () => {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          /* =============================================
-             USER SCROLLED INTO BLOG SECTION
-          ============================================= */
-
-          if (
-            entry.isIntersecting
-          ) {
-            /*
-              First hide the title.
-            */
-
-            setHeadingVisible(
-              false
-            );
-
-            /*
-              Create a new animation
-              instance.
-            */
+          if (entry.isIntersecting) {
+            setHeadingVisible(false);
 
             setAnimationKey(
               (previous) =>
                 previous + 1
             );
-
-            /*
-              Wait for browser to
-              render hidden state,
-              then show it.
-            */
 
             requestAnimationFrame(
               () => {
@@ -374,32 +486,11 @@ const Blog = () => {
                 );
               }
             );
-          }
-
-          /* =============================================
-             USER SCROLLED AWAY
-          ============================================= */
-
-          else {
-            /*
-              Reset title.
-
-              Next time the user
-              scrolls here, animation
-              starts again.
-            */
-
-            setHeadingVisible(
-              false
-            );
+          } else {
+            setHeadingVisible(false);
           }
         },
         {
-          /*
-            Start when approximately
-            25% of Blog section is visible.
-          */
-
           threshold: 0.25,
         }
       );
@@ -424,6 +515,7 @@ const Blog = () => {
         lg:py-24
       "
     >
+
       {/* =================================================
           BACKGROUND SHAPE
       ================================================= */}
@@ -455,6 +547,7 @@ const Blog = () => {
           lg:px-8
         "
       >
+
         {/* =================================================
             TOP TITLE
         ================================================= */}
@@ -463,18 +556,16 @@ const Blog = () => {
           className={`
             mb-10
             text-center
+            transition-opacity
+            duration-300
             sm:mb-12
-
             ${
               headingVisible
-                ? "blog-heading-visible"
-                : "blog-heading-hidden"
+                ? "opacity-100"
+                : "opacity-0"
             }
           `}
         >
-          {/* =================================================
-              OUR INSIGHTS
-          ================================================= */}
 
           <span
             className="
@@ -494,10 +585,6 @@ const Blog = () => {
             />
           </span>
 
-          {/* =================================================
-              LATEST BLOGS & ARTICLES
-          ================================================= */}
-
           <h2
             className="
               mt-2
@@ -516,6 +603,7 @@ const Blog = () => {
               animationKey={`latest-${animationKey}`}
             />
           </h2>
+
         </div>
 
         {/* =================================================
@@ -556,252 +644,188 @@ const Blog = () => {
             clickable: true,
             dynamicBullets: false,
           }}
-          className="
-            blog-swiper
-            !pb-14
-          "
+          className="!pb-14"
         >
-          {blogs.map(
-            (blog) => (
-              <SwiperSlide
-                key={blog.id}
-                className="!h-auto"
+
+          {blogs.map((blog) => (
+            <SwiperSlide
+              key={blog.id}
+              className="!h-auto"
+            >
+
+              {/* =================================================
+                  BLOG CARD
+              ================================================= */}
+
+              <article
+                className="
+                  group
+                  flex
+                  h-full
+                  min-h-[470px]
+                  flex-col
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  shadow-sm
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
               >
+
                 {/* =================================================
-                    BLOG CARD
+                    IMAGE
                 ================================================= */}
 
-                <article
+                <div
                   className="
-                    group
-                    flex
-                    h-full
-                    min-h-[470px]
-                    flex-col
+                    relative
+                    aspect-[16/9]
+                    w-full
                     overflow-hidden
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    bg-white
-                    shadow-sm
-                    transition-all
-                    duration-300
-                    hover:-translate-y-2
-                    hover:shadow-xl
+                    bg-slate-100
                   "
                 >
-                  {/* ===============================================
-                      IMAGE
-                  =============================================== */}
-
-                  <div
+                  <img
+                    src={blog.image}
+                    alt={blog.alt}
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error(
+                        "Blog image not found:",
+                        blog.image
+                      );
+                    }}
                     className="
-                      h-[220px]
-                      overflow-hidden
+                      absolute
+                      inset-0
+                      h-full
+                      w-full
+                      object-contain
+                      p-0
+                    "
+                  />
+                </div>
+
+                {/* =================================================
+                    CONTENT
+                ================================================= */}
+
+                <div
+                  className="
+                    flex
+                    flex-1
+                    flex-col
+                    p-5
+                    sm:p-6
+                  "
+                >
+
+                  {/* CATEGORY */}
+
+                  <span
+                    className="
+                      mb-3
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.15em]
+                      text-blue-600
+                      sm:text-[11px]
                     "
                   >
-                    <img
-                      src={blog.image}
-                      alt={blog.alt}
-                      className="
-                        h-full
-                        w-full
-                        object-cover
-                        transition-transform
-                        duration-500
-                        group-hover:scale-105
-                      "
-                    />
-                  </div>
+                    Digital Marketing
+                  </span>
 
-                  {/* ===============================================
-                      CONTENT
-                  =============================================== */}
+                  {/* TITLE */}
 
-                  <div
+                  <h3
                     className="
-                      flex
+                      mb-3
+                      text-lg
+                      font-bold
+                      leading-snug
+                      text-slate-900
+                      sm:text-xl
+                    "
+                  >
+                    {blog.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+
+                  <p
+                    className="
+                      mb-6
                       flex-1
-                      flex-col
-                      p-5
-                      sm:p-6
+                      text-[14px]
+                      leading-relaxed
+                      text-slate-500
+                      sm:text-[15px]
                     "
                   >
-                    {/* TITLE */}
+                    {blog.description}
+                  </p>
 
-                    <h3
+                  {/* BUTTON */}
+
+                  <a
+                    href={blog.slug}
+                    className="
+                      mt-auto
+                      inline-flex
+                      w-fit
+                      items-center
+                      gap-2
+                      rounded-lg
+                      bg-blue-600
+                      px-5
+                      py-2.5
+                      text-sm
+                      font-semibold
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:-translate-y-0.5
+                      hover:bg-blue-700
+                    "
+                  >
+                    Read more
+
+                    <span
                       className="
-                        mb-3
-                        text-lg
-                        font-bold
-                        leading-snug
-                        text-slate-900
-                        sm:text-xl
-                      "
-                    >
-                      {blog.title}
-                    </h3>
-
-                    {/* DESCRIPTION */}
-
-                    <p
-                      className="
-                        mb-6
-                        flex-1
-                        text-[14px]
-                        leading-relaxed
-                        text-slate-500
-                        sm:text-[15px]
-                      "
-                    >
-                      {blog.description}
-                    </p>
-
-                    {/* BUTTON */}
-
-                    <a
-                      href="/blog"
-                      className="
-                        mt-auto
-                        inline-flex
-                        w-fit
-                        items-center
-                        gap-2
-                        rounded-lg
-                        bg-blue-600
-                        px-5
-                        py-2.5
-                        text-sm
-                        font-semibold
-                        text-white
-                        transition-all
+                        transition-transform
                         duration-300
-                        hover:-translate-y-0.5
-                        hover:bg-blue-700
+                        group-hover:translate-x-1
                       "
                     >
-                      Read more
+                      →
+                    </span>
+                  </a>
 
-                      <span
-                        className="
-                          transition-transform
-                          duration-300
-                          group-hover:translate-x-1
-                        "
-                      >
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </SwiperSlide>
-            )
-          )}
+                </div>
+
+              </article>
+
+            </SwiperSlide>
+          ))}
+
         </Swiper>
+
       </div>
 
       {/* =================================================
-          CUSTOM CSS
+          ANIMATION
       ================================================= */}
 
       <style>{`
-
-        /* =================================================
-           TITLE INITIAL STATE
-        ================================================= */
-
-        .blog-heading-hidden {
-          opacity: 0;
-        }
-
-        /* =================================================
-           TITLE ACTIVE STATE
-        ================================================= */
-
-        .blog-heading-visible {
-          opacity: 1;
-        }
-
-        /* =================================================
-           COMPLETE HEADING
-        ================================================= */
-
-        .blog-heading-text {
-          display: inline;
-        }
-
-        /* =================================================
-           WORD
-
-           Keeps every word together.
-        ================================================= */
-
-        .blog-heading-word {
-          display: inline-block;
-
-          white-space: nowrap;
-        }
-
-        /* =================================================
-           WORD SPACE
-
-           Gives clear spacing:
-
-           Our   Insights
-
-           Latest   Blogs   &   Articles
-        ================================================= */
-
-        .blog-heading-word-space {
-          display: inline-block;
-
-          width: 0.45em;
-
-          white-space: normal;
-        }
-
-        /* =================================================
-           LETTER
-
-           Starts slightly below and smaller.
-        ================================================= */
-
-        .blog-heading-letter {
-          display: inline-block;
-
-          opacity: 0;
-
-          transform:
-            translateY(16px)
-            scale(0.82);
-
-          animation-name:
-            blogLetterCenterReveal;
-
-          animation-duration:
-            0.55s;
-
-          animation-timing-function:
-            cubic-bezier(
-              0.22,
-              1,
-              0.36,
-              1
-            );
-
-          animation-fill-mode:
-            forwards;
-        }
-
-        /* =================================================
-           CENTER → OUTWARD ANIMATION
-        ================================================= */
-
         @keyframes blogLetterCenterReveal {
-
           0% {
             opacity: 0;
-
             transform:
               translateY(16px)
               scale(0.82);
@@ -809,7 +833,6 @@ const Blog = () => {
 
           60% {
             opacity: 1;
-
             transform:
               translateY(-2px)
               scale(1.04);
@@ -817,107 +840,55 @@ const Blog = () => {
 
           100% {
             opacity: 1;
-
             transform:
               translateY(0)
               scale(1);
           }
-
         }
 
-        /* =================================================
-           REDUCED MOTION
-        ================================================= */
-
-        @media (
-          prefers-reduced-motion: reduce
-        ) {
-
-          .blog-heading-letter {
-            opacity: 1;
-
-            transform: none;
-
-            animation: none;
-          }
-
+        .swiper-pagination {
+          bottom: 0 !important;
         }
 
-        /* =================================================
-           SWIPER PAGINATION
-        ================================================= */
-
-        .blog-swiper
-          .swiper-pagination {
-          bottom: 0px !important;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          gap: 6px;
-        }
-
-        /* =================================================
-           NORMAL DOT
-        ================================================= */
-
-        .blog-swiper
-          .swiper-pagination-bullet {
+        .swiper-pagination-bullet {
           width: 9px;
-
           height: 9px;
-
           margin: 0 !important;
-
           opacity: 1;
-
           background: #cbd5e1;
-
           border-radius: 999px;
-
           transition:
             width 0.3s ease,
             background-color 0.3s ease,
             transform 0.3s ease;
         }
 
-        /* =================================================
-           ACTIVE DOT
-        ================================================= */
-
-        .blog-swiper
-          .swiper-pagination-bullet-active {
+        .swiper-pagination-bullet-active {
           width: 28px;
-
           background: #2563eb;
-
           transform: scale(1);
         }
 
-        /* =================================================
-           MOBILE
-        ================================================= */
-
         @media (max-width: 639px) {
-
-          .blog-swiper
-            .swiper-pagination-bullet {
+          .swiper-pagination-bullet {
             width: 8px;
-
             height: 8px;
           }
 
-          .blog-swiper
-            .swiper-pagination-bullet-active {
+          .swiper-pagination-bullet-active {
             width: 24px;
           }
-
         }
 
+        @media (prefers-reduced-motion: reduce) {
+          .animate-\\[blogLetterCenterReveal_0\\.55s_cubic-bezier\\(0\\.22\\,1,0\\.36\\,1\\)_forwards\\] {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+          }
+        }
       `}</style>
+
     </section>
   );
 };

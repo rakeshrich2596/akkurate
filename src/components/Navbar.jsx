@@ -123,16 +123,46 @@ const serviceGroups = [
 ========================================================= */
 
 const industries = [
-  "B2B Marketing",
-  "Education",
-  "Healthcare",
-  "Hospitality",
-  "Real Estate",
-  "Jewellery",
-  "Travel",
-  "Food",
-  "Clothing",
-  "Manufacture",
+  {
+    label: "B2B Marketing",
+    href: "/b2b-marketing",
+  },
+  {
+    label: "Education",
+    href: "/education",
+  },
+  {
+    label: "Healthcare",
+    href: "/healthcare",
+  },
+  {
+    label: "Hospitality",
+    href: "/hospitality",
+  },
+  {
+    label: "Real Estate",
+    href: "/real-estate",
+  },
+  {
+    label: "Jewellery",
+    href: "/jewellery",
+  },
+  {
+    label: "Travel",
+    href: "/travel",
+  },
+  {
+    label: "Food",
+    href: "/food",
+  },
+  {
+    label: "Clothing",
+    href: "/clothing",
+  },
+  {
+    label: "Manufacture",
+    href: "/manufacture",
+  },
 ];
 
 
@@ -157,6 +187,9 @@ function Navbar() {
   const [mobileBranding, setMobileBranding] =
     useState(false);
 
+  const [mobileIndustries, setMobileIndustries] =
+    useState(false);
+
 
   /* =======================================================
      CLOSE MOBILE MENU
@@ -168,6 +201,7 @@ function Navbar() {
     setMobileDigitalMarketing(false);
     setMobileWebsiteDevelopment(false);
     setMobileBranding(false);
+    setMobileIndustries(false);
   };
 
 
@@ -589,12 +623,16 @@ function Navbar() {
 
                 {industries.map((industry) => (
 
-                  <span
-                    key={industry}
+                  <Link
+                    key={industry.href}
+                    to={industry.href}
+                    onClick={closeMobileMenu}
                     className="
-                      block
+                      group/industry
 
-                      cursor-default
+                      flex
+                      items-center
+                      justify-between
 
                       rounded-lg
 
@@ -604,10 +642,31 @@ function Navbar() {
                       text-sm
 
                       text-gray-600
+                      no-underline
+
+                      transition-all
+                      duration-200
+
+                      hover:translate-x-1
+                      hover:bg-gray-50
+                      hover:text-[#1455d9]
                     "
                   >
-                    {industry}
-                  </span>
+                    <span>{industry.label}</span>
+
+                    <span
+                      className="
+                        text-[12px]
+                        opacity-0
+                        transition-all
+                        duration-200
+                        group-hover/industry:translate-x-0.5
+                        group-hover/industry:opacity-100
+                      "
+                    >
+                      →
+                    </span>
+                  </Link>
 
                 ))}
 
@@ -623,7 +682,7 @@ function Navbar() {
           ================================================= */}
 
           <Link
-            to="/showcase"
+            to="/our-work"
             onClick={closeMobileMenu}
             className="
               text-[15px]
@@ -1313,7 +1372,15 @@ function Navbar() {
 
             <button
               type="button"
+              onClick={() =>
+                setMobileIndustries((prev) => !prev)
+              }
               className="
+                flex
+                w-full
+                items-center
+                justify-between
+
                 rounded-xl
 
                 px-4
@@ -1325,10 +1392,68 @@ function Navbar() {
                 font-medium
 
                 text-gray-800
+
+                transition
+
+                hover:bg-gray-50
               "
             >
-              Industries
+              <span>Industries</span>
+
+              <span
+                className={`
+                  text-lg
+                  transition-transform
+                  duration-200
+                  ${
+                    mobileIndustries
+                      ? "rotate-180"
+                      : ""
+                  }
+                `}
+              >
+                ↓
+              </span>
             </button>
+
+            {mobileIndustries && (
+              <div
+                className="
+                  ml-3
+                  space-y-1
+                  rounded-xl
+                  border
+                  border-gray-100
+                  bg-gray-50
+                  p-3
+                "
+              >
+                {industries.map((industry) => (
+                  <Link
+                    key={industry.href}
+                    to={industry.href}
+                    onClick={closeMobileMenu}
+                    className="
+                      flex
+                      items-center
+                      justify-between
+                      rounded-lg
+                      px-3
+                      py-2.5
+                      text-[13px]
+                      text-gray-600
+                      no-underline
+                      transition
+                      hover:bg-white
+                      hover:text-[#1455d9]
+                    "
+                  >
+                    <span>{industry.label}</span>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            )}
 
 
             {/* =================================================

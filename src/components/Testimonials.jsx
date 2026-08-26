@@ -2,27 +2,32 @@ import React, { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    logo: "/assets/images/brand_logo/brand01.png",
+    logo: "/assets/images/brand_logo/happy.png",
     text: "Their SEO team was great and helped us start from scratch. No matter what product you search for on any medium, our website and products turn up. The team understood our business, improved our online visibility, and helped us reach more customers through organic search.",
     author: "Mr. Ansel Nishan",
+    client: "Managing Director",
   },
 
   {
-    logo: "/assets/images/brand_logo/brand02.png",
+    logo: "/assets/images/brand_logo/lensmen.png",
     text: "We wanted our business and website to pop up when people searched online. With good SEO and website optimization, the team helped us accurately rank high. Their approach was professional, consistent, and focused on improving our online presence and visibility.",
     author: "Mr. Indrakumar",
+    client: "Manager",
   },
 
   {
-    logo: "/assets/images/brand_logo/brand03.png",
+    logo: "/assets/images/brand_logo/rhythmic.png",
     text: "We needed our logo and brand name to be revisited as the initial ones were too long. Customers did not read our full names or pay attention to the brand. The team understood our requirements and helped us create a stronger, simpler brand identity that was easier for our customers to recognize and remember.",
     author: "Mr. Yuvaraj",
+    client: "Managing Director",
+
   },
 
   {
-    logo: "/assets/images/brand_logo/brand04.png",
+    logo: "/assets/images/brand_logo/grt.png",
     text: "We have 2 hotel chains in Madurai, India and we found it hard to rank both of them online. Akkurate helped us optimize our Google My Business pages and improve our local online visibility. Their support helped us strengthen our presence in search results and make it easier for customers to find our hotels.",
     author: "Mr. Ravi Balakrishnan",
+    client: "General Manager",
   },
 ];
 
@@ -30,11 +35,7 @@ const testimonials = [
    TESTIMONIAL CARD
 ========================================================= */
 
-function TestimonialCard({
-  testimonial,
-  onHoverStart,
-  onHoverEnd,
-}) {
+function TestimonialCard({ testimonial, onHoverStart, onHoverEnd }) {
   return (
     <article
       onMouseEnter={onHoverStart}
@@ -43,63 +44,46 @@ function TestimonialCard({
         relative
         flex
         h-[530px]
-
-        w-[calc(100vw-48px)]
-        max-w-[360px]
-
+        w-full
         shrink-0
         snap-center
-
         flex-col
-
         rounded-[20px]
         border
         border-neutral-200
         bg-white
-
         px-6
         pb-6
         pt-12
-
         shadow-[0_10px_35px_rgba(15,23,42,0.06)]
-
         transition-all
         duration-300
-
         hover:-translate-y-1
         hover:border-[#1351D8]/30
         hover:shadow-[0_20px_45px_rgba(15,23,42,0.10)]
-
-        sm:w-[380px]
-        sm:max-w-none
-
-        lg:w-[390px]
       "
     >
-      {/* LOGO */}
+      {/* =================================================
+          CLIENT LOGO
+      ================================================= */}
 
       <div
         className="
           absolute
           left-1/2
           top-[-30px]
-
+          z-10
           flex
           h-[60px]
           w-[60px]
-
           -translate-x-1/2
-
           items-center
           justify-center
-
           overflow-hidden
-
           rounded-full
           border-4
           border-neutral-300
           bg-white
-
           shadow-md
         "
       >
@@ -114,7 +98,9 @@ function TestimonialCard({
         />
       </div>
 
-      {/* QUOTE */}
+      {/* =================================================
+          QUOTE
+      ================================================= */}
 
       <div
         className="
@@ -128,26 +114,31 @@ function TestimonialCard({
         “
       </div>
 
-      {/* TESTIMONIAL */}
+      {/* =================================================
+          TESTIMONIAL TEXT
+      ================================================= */}
 
       <p
         className="
           flex-1
           overflow-hidden
-          text-[15px]
+          text-[14px]
           font-normal
           leading-[1.75]
           text-[#1f2937]
+          sm:text-[15px]
         "
       >
         {testimonial.text}
       </p>
 
-      {/* AUTHOR */}
+      {/* =================================================
+          AUTHOR
+      ================================================= */}
 
       <div
         className="
-          mb-5
+          mt-5
           border-t
           border-neutral-200
           pt-5
@@ -156,9 +147,10 @@ function TestimonialCard({
         <h6
           className="
             mb-1
-            text-[16px]
+            text-[15px]
             font-bold
             text-black
+            sm:text-[16px]
           "
         >
           {testimonial.author}
@@ -166,11 +158,12 @@ function TestimonialCard({
 
         <p
           className="
-            text-[13px]
+            text-[12px]
             text-neutral-500
+            sm:text-[13px]
           "
         >
-          Verified Client
+          {testimonial.client}
         </p>
       </div>
     </article>
@@ -178,7 +171,7 @@ function TestimonialCard({
 }
 
 /* =========================================================
-   TESTIMONIALS SECTION
+   TESTIMONIALS
 ========================================================= */
 
 function Testimonials() {
@@ -186,11 +179,10 @@ function Testimonials() {
   const scrollContainerRef = useRef(null);
 
   const [isPaused, setIsPaused] = useState(false);
-  const [headingVisible, setHeadingVisible] =
-    useState(false);
+  const [headingVisible, setHeadingVisible] = useState(false);
 
   /* =========================================================
-     HEADING INTERSECTION OBSERVER
+     HEADING ANIMATION
   ========================================================= */
 
   useEffect(() => {
@@ -213,8 +205,8 @@ function Testimonials() {
         }
       },
       {
-        threshold: 0.25,
-      }
+        threshold: 0.2,
+      },
     );
 
     observer.observe(section);
@@ -225,7 +217,7 @@ function Testimonials() {
   }, []);
 
   /* =========================================================
-     AUTO SCROLL REVIEW CARDS
+     AUTO SLIDER
   ========================================================= */
 
   useEffect(() => {
@@ -236,77 +228,41 @@ function Testimonials() {
     const interval = setInterval(() => {
       if (isPaused) return;
 
-      const isMobile =
-        window.innerWidth < 640;
+      const firstCard = container.querySelector("[data-testimonial-card]");
 
-      /* MOBILE */
+      if (!firstCard) return;
 
-      if (isMobile) {
-        const firstCard =
-          container.querySelector(
-            "[data-testimonial-card]"
-          );
+      const cardWidth = firstCard.getBoundingClientRect().width;
 
-        if (!firstCard) return;
+      const gap = 20;
 
-        const cardWidth =
-          firstCard.getBoundingClientRect().width;
+      const scrollAmount = cardWidth + gap;
 
-        const gap = 20;
+      const maxScroll = container.scrollWidth - container.clientWidth;
 
-        const scrollAmount =
-          cardWidth + gap;
+      /* END → START */
 
-        const maxScroll =
-          container.scrollWidth -
-          container.clientWidth;
-
-        if (
-          container.scrollLeft >=
-          maxScroll - 10
-        ) {
-          container.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          container.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth",
-          });
-        }
-
-        return;
-      }
-
-      /* DESKTOP */
-
-      const maxScroll =
-        container.scrollWidth -
-        container.clientWidth;
-
-      if (
-        container.scrollLeft >=
-        maxScroll - 10
-      ) {
+      if (container.scrollLeft >= maxScroll - 10) {
         container.scrollTo({
           left: 0,
           behavior: "smooth",
         });
-      } else {
-        container.scrollBy({
-          left: 410,
-          behavior: "smooth",
-        });
+
+        return;
       }
-    }, 3000);
 
-    return () => clearInterval(interval);
+      /* MOVE ONE CARD */
+
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }, 3500);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [isPaused]);
-
-  /* =========================================================
-     RETURN
-  ========================================================= */
 
   return (
     <section
@@ -316,294 +272,371 @@ function Testimonials() {
         z-[1]
         overflow-hidden
         bg-white
-        py-20
+        py-14
+        sm:py-16
+        lg:py-20
       "
     >
       <div
         className="
           mx-auto
           w-full
-          max-w-[1400px]
+          max-w-[1600px]
           px-4
-
           sm:px-6
-
           lg:px-8
         "
       >
-        {/* =================================================
-            TOP ROW
-        ================================================= */}
+        {/* =====================================================
+            HEADING + REVIEWS
+        ===================================================== */}
 
         <div
           className="
-            mb-12
-            grid
-            grid-cols-1
-            items-center
-            gap-8
-
-            lg:grid-cols-[minmax(0,1fr)_auto]
+            mb-10
+            flex
+            flex-col
+            gap-6
+            lg:mb-12
+            lg:flex-row
+            lg:items-end
             lg:gap-8
           "
         >
           {/* =================================================
               HEADING
-
-              EXACTLY 2 LINES
           ================================================= */}
 
           <div
-            className="
+            className={`
               min-w-0
+              flex-1
               overflow-hidden
-            "
+              transition-all
+              duration-[1200ms]
+              ease-[cubic-bezier(0.22,1,0.36,1)]
+              ${
+                headingVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-[120px] opacity-0"
+              }
+            `}
           >
             <h3
-              className={`
-                testimonials-title
-                text-black
-                font-normal
-                tracking-tight
+              className="
+                m-0
                 flex
-                flex-wrap
-
-                ${
-                  headingVisible
-                    ? "testimonials-heading-enter"
-                    : "testimonials-heading-hidden"
-                }
-              `}
+                flex-col
+                text-[28px]
+                font-normal
+                leading-[1.2]
+                tracking-tight
+                text-black
+                sm:text-[34px]
+                md:text-[38px]
+                lg:text-[40px]
+                xl:text-[44px]
+              "
             >
               <span>
-                Our clients'{" "}
-                <span className="text-[#1351D8]">
-                  success stories
-                </span>{" "}
-                speak volumes
+                Our client's{" "}
+                <span className="text-[#1351D8]">success stories</span> speak
+                volumes
               </span>
 
-              <span>
-                about the impact of our services
-              </span>
+              <span>about the impact of our services</span>
             </h3>
           </div>
 
           {/* =================================================
-              TRUSTPILOT + GOOGLE
+              TRUSTPILOT | COMPANY LOGO | GOOGLE
 
-              STRAIGHT OPPOSITE HEADING
+              Starts immediately after heading
           ================================================= */}
 
           <div
             className="
-              flex
-              w-full
-              items-center
-              justify-start
-              gap-4
-
-              sm:gap-6
-
-              lg:w-auto
-              lg:justify-end
-            "
+    flex
+    shrink-0
+    items-center
+    gap-0.5
+    self-start
+    lg:self-end
+    mr-30
+  "
           >
-            {/* TRUSTPILOT */}
+            {/* =================================================
+      TRUSTPILOT
+  ================================================= */}
 
             <a
               href="https://www.trustpilot.com/review/akkurate.in?languages=all"
               target="_blank"
               rel="noopener noreferrer"
               className="
-                flex
-                shrink-0
-                items-center
-                gap-2
-                no-underline
-
-                transition-transform
-                duration-300
-                hover:scale-105
-              "
+      flex
+      shrink-0
+      items-center
+      gap-0.5
+      no-underline
+      transition-transform
+      duration-300
+      hover:scale-105
+    "
             >
               <img
                 src="/assets/images/icons/trustpilot-star.svg"
                 alt="Trustpilot"
                 className="
-                  h-[24px]
-                  w-[24px]
-
-                  sm:h-[28px]
-                  sm:w-[28px]
-                "
+        h-5
+        w-5
+        sm:h-6
+        sm:w-6
+      "
               />
 
               <span
                 className="
-                  text-[18px]
-                  font-bold
-                  text-black
-
-                  sm:text-[22px]
-                "
+        text-[14px]
+        font-bold
+        text-black
+        sm:text-[17px]
+        lg:text-[18px]
+      "
               >
                 Trustpilot
               </span>
 
               <span
                 className="
-                  text-[16px]
-                  font-bold
-                  text-black
-
-                  sm:text-[19px]
-                "
+        text-[13px]
+        font-bold
+        text-black
+        sm:text-[15px]
+      "
               >
                 4.8
               </span>
 
               <span
                 className="
-                  text-[18px]
-                  text-amber-500
-
-                  sm:text-[22px]
-                "
+        text-[15px]
+        text-amber-500
+        sm:text-[17px]
+      "
               >
                 ★
               </span>
             </a>
 
-            {/* DIVIDER */}
+            {/* =================================================
+      DIVIDER
+  ================================================= */}
 
             <div
               className="
-                h-[28px]
-                w-px
-                shrink-0
-                bg-neutral-300
-
-                sm:h-[32px]
-              "
+      mx-0.5
+      h-6
+      w-px
+      shrink-0
+      bg-neutral-300
+      sm:h-7
+    "
             />
 
-            {/* GOOGLE */}
+            {/* =================================================
+      CLUTCH LOGO
+  ================================================= */}
+
+            <div
+              className="
+    flex
+    h-10
+    w-[85px]
+    shrink-0
+    items-center
+    justify-center
+    overflow-hidden
+    bg-white
+    sm:h-12
+    sm:w-[90px]
+  "
+            >
+              <img
+                src="/assets/images/icons/clutch1.png"
+                alt="Clutch"
+                className="
+      h-full
+      w-full
+      object-contain
+      p-1
+    "
+              />
+            </div>
+
+            {/* =================================================
+      DIVIDER
+  ================================================= */}
+
+            <div
+              className="
+      mx-0.5
+      h-6
+      w-px
+      shrink-0
+      bg-neutral-300
+      sm:h-7
+    "
+            />
+
+            {/* =================================================
+      GOOGLE
+  ================================================= */}
 
             <a
               href="https://g.page/r/CdytXHC_I2fLEAE/review"
               target="_blank"
               rel="noopener noreferrer"
               className="
-                flex
-                shrink-0
-                items-center
-                gap-2
-                no-underline
-
-                transition-transform
-                duration-300
-                hover:scale-105
-              "
+      flex
+      shrink-0
+      items-center
+      gap-0.5
+      no-underline
+      transition-transform
+      duration-300
+      hover:scale-105
+    "
             >
               <span
                 className="
-                  text-[18px]
-                  font-bold
-
-                  sm:text-[20px]
-                "
+        text-[15px]
+        font-bold
+        sm:text-[18px]
+      "
               >
-                <span className="text-blue-500">
-                  G
-                </span>
-                <span className="text-red-500">
-                  o
-                </span>
-                <span className="text-amber-500">
-                  o
-                </span>
-                <span className="text-blue-500">
-                  g
-                </span>
-                <span className="text-green-500">
-                  l
-                </span>
-                <span className="text-red-500">
-                  e
-                </span>
+                <span className="text-blue-500">G</span>
+                <span className="text-red-500">o</span>
+                <span className="text-amber-500">o</span>
+                <span className="text-blue-500">g</span>
+                <span className="text-green-500">l</span>
+                <span className="text-red-500">e</span>
               </span>
 
               <span
                 className="
-                  text-[16px]
-                  font-bold
-                  text-black
-
-                  sm:text-[19px]
-                "
+        text-[13px]
+        font-bold
+        text-black
+        sm:text-[15px]
+      "
               >
                 4.9
               </span>
 
               <span
                 className="
-                  text-[18px]
-                  text-amber-500
-
-                  sm:text-[20px]
-                "
+        text-[15px]
+        text-amber-500
+        sm:text-[17px]
+      "
               >
                 ★
               </span>
             </a>
+
+            {/* =================================================
+      DIVIDER
+  ================================================= */}
+
+            <div
+              className="
+      mx-0.5
+      h-6
+      w-px
+      shrink-0
+      bg-neutral-300
+      sm:h-7
+    "
+            />
+
+            {/* =================================================
+      GOODFIRMS LOGO
+  ================================================= */}
+            <div
+              className="
+    flex
+    h-10
+    w-[85px]
+    shrink-0
+    items-center
+    justify-center
+    overflow-hidden
+    bg-white
+    sm:h-12
+    sm:w-[100px]
+  "
+            >
+              <img
+                src="/assets/images/icons/goodfirm2.png"
+                alt="Clutch"
+                className="
+                  h-full
+                  w-full
+                  object-contain
+                  scale-100
+                "
+              />
+            </div>
           </div>
         </div>
 
-        {/* =================================================
+        {/* =====================================================
             MAIN CONTENT
-        ================================================= */}
+        ===================================================== */}
 
         <div
           className="
             grid
             grid-cols-1
-            gap-8
-
+            gap-7
             lg:grid-cols-12
-            lg:items-stretch
-            lg:gap-10
+            lg:gap-8
           "
         >
-          {/* VIDEO */}
+          {/* =================================================
+              VIDEO
+          ================================================= */}
 
           <div
             className="
-              flex
-
-              lg:col-span-4
-            "
+            min-w-0
+            lg:col-span-4
+          "
           >
             <div
               className="
-                relative
-                h-[530px]
-                w-full
-                overflow-hidden
-                rounded-[20px]
-                bg-black
-                shadow-[0_15px_45px_rgba(15,23,42,0.10)]
-              "
+      relative
+      mt-5
+      w-[400px]
+      h-[550px]
+      overflow-hidden
+      rounded-[20px]
+      bg-black
+      shadow-[0_15px_45px_rgba(15,23,42,0.10)]
+      aspect-video
+    "
             >
               <video
                 id="customerVideo"
                 className="
-                  h-full
-                  w-full
-                  object-cover
-                  object-top
-                "
-                autoPlay
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-contain
+        object-center
+      "
                 loop
                 muted
                 playsInline
@@ -614,283 +647,88 @@ function Testimonials() {
                   src="/assets/video/customer_review.mp4"
                   type="video/mp4"
                 />
-
-                Your browser does not support
-                the video tag.
+                Your browser does not support the video tag.
               </video>
             </div>
           </div>
 
-          {/* REVIEW CARDS */}
+          {/* =================================================
+              TESTIMONIAL SLIDER
+          ================================================= */}
 
           <div
             className="
               min-w-0
-
-              lg:col-span-8
-              lg:pl-4
+              lg:col-span-7
             "
           >
             <div
               ref={scrollContainerRef}
               className="
                 flex
-                h-[530px]
+                h-[570px]
+                w-full
                 items-stretch
                 gap-5
-
                 overflow-x-auto
                 overflow-y-hidden
-
                 scroll-smooth
-
-                px-2
+                px-0
                 pb-4
                 pt-8
-
+                
                 snap-x
                 snap-mandatory
-
                 [scrollbar-width:none]
                 [-ms-overflow-style:none]
                 [&::-webkit-scrollbar]:hidden
               "
             >
-              {/* ORIGINAL CARDS */}
-
-              {testimonials.map(
-                (testimonial, index) => (
-                  <div
-                    key={`testimonial-${index}`}
-                    data-testimonial-card
-                    className="
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={`testimonial-${index}`}
+                  data-testimonial-card
+                  className="
+                      w-full
                       shrink-0
                       snap-center
+                      sm:w-[calc((100%-20px)/2)]
                     "
-                  >
-                    <TestimonialCard
-                      testimonial={testimonial}
-                      onHoverStart={() =>
-                        setIsPaused(true)
-                      }
-                      onHoverEnd={() =>
-                        setIsPaused(false)
-                      }
-                    />
-                  </div>
-                )
-              )}
+                >
+                  <TestimonialCard
+                    testimonial={testimonial}
+                    onHoverStart={() => setIsPaused(true)}
+                    onHoverEnd={() => setIsPaused(false)}
+                  />
+                </div>
+              ))}
 
-              {/* DUPLICATE CARDS */}
+              {/* =================================================
+                  DUPLICATE CARDS
+              ================================================= */}
 
-              {testimonials.map(
-                (testimonial, index) => (
-                  <div
-                    key={`testimonial-copy-${index}`}
-                    data-testimonial-card
-                    className="
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={`testimonial-copy-${index}`}
+                  data-testimonial-card
+                  className="
+                      w-full
                       shrink-0
                       snap-center
+                      sm:w-[calc((100%-20px)/2)]
                     "
-                  >
-                    <TestimonialCard
-                      testimonial={testimonial}
-                      onHoverStart={() =>
-                        setIsPaused(true)
-                      }
-                      onHoverEnd={() =>
-                        setIsPaused(false)
-                      }
-                    />
-                  </div>
-                )
-              )}
+                >
+                  <TestimonialCard
+                    testimonial={testimonial}
+                    onHoverStart={() => setIsPaused(true)}
+                    onHoverEnd={() => setIsPaused(false)}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-
-      {/* =========================================================
-          CUSTOM RESPONSIVE HEADING CSS
-      ========================================================= */}
-
-      <style>{`
-
-        /* ================================
-           HEADING
-           ALWAYS 2 LINES
-        ================================= */
-
-        .testimonials-title {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 0;
-
-          font-size: 38px;
-          line-height: 1.18;
-        }
-
-        .testimonials-title > span {
-          display: block;
-          white-space: nowrap;
-        }
-
-        /* ================================
-           LARGE DESKTOP
-        ================================= */
-
-        @media (min-width: 1280px) {
-
-          .testimonials-title {
-            font-size: 44px;
-            line-height: 1.15;
-          }
-
-        }
-
-        /* ================================
-           DESKTOP
-        ================================= */
-
-        @media (min-width: 1024px) and (max-width: 1279px) {
-
-          .testimonials-title {
-            font-size: 34px;
-            line-height: 1.18;
-          }
-
-        }
-
-        /* ================================
-           TABLET
-        ================================= */
-
-        @media (min-width: 768px) and (max-width: 1023px) {
-
-          .testimonials-title {
-            font-size: 32px;
-            line-height: 1.2;
-          }
-
-          .testimonials-title > span {
-            white-space: normal;
-          }
-
-        }
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media (max-width: 767px) {
-
-          .testimonials-title {
-            font-size: 27px;
-            line-height: 1.25;
-          }
-
-          .testimonials-title > span {
-            white-space: normal;
-          }
-
-        }
-
-        /* ================================
-           SMALL MOBILE
-        ================================= */
-
-        @media (max-width: 480px) {
-
-          .testimonials-title {
-            font-size: 23px;
-            line-height: 1.3;
-          }
-
-        }
-
-        /* ================================
-           HEADING ANIMATION
-        ================================= */
-
-        .testimonials-heading-hidden {
-          opacity: 0;
-          transform: translateX(-120px);
-        }
-
-        .testimonials-heading-enter {
-          opacity: 1;
-          transform: translateX(0);
-
-          animation:
-            testimonialsHeadingSlide
-            1.2s
-            cubic-bezier(0.22, 1, 0.36, 1)
-            forwards;
-        }
-
-        @keyframes testimonialsHeadingSlide {
-
-          0% {
-            opacity: 0;
-            transform: translateX(-120px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-
-        }
-
-        /* ================================
-           MOBILE CARD WIDTH
-        ================================= */
-
-        @media (max-width: 639px) {
-
-          [data-testimonial-card] {
-            width: calc(100vw - 48px);
-          }
-
-          [data-testimonial-card] article {
-            width: 100%;
-            max-width: none;
-          }
-
-        }
-
-        /* ================================
-           DESKTOP CARD WIDTH
-        ================================= */
-
-        @media (min-width: 640px) {
-
-          [data-testimonial-card] {
-            width: auto;
-          }
-
-        }
-
-        /* ================================
-           REDUCED MOTION
-        ================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-          .testimonials-heading-hidden {
-            opacity: 1;
-            transform: translateX(0);
-          }
-
-          .testimonials-heading-enter {
-            animation: none;
-            opacity: 1;
-            transform: translateX(0);
-          }
-
-        }
-
-      `}</style>
     </section>
   );
 }

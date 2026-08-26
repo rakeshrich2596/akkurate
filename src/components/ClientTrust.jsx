@@ -11,48 +11,307 @@ import {
 
 import {
   Autoplay,
-  FreeMode,
+  Pagination,
 } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/pagination";
 
-// =========================================================
-// CLIENT LOGOS
-// =========================================================
+/* =====================================================
+   BLOG DATA
+===================================================== */
 
-const rowOneLogos = [
-  "/assets/images/brand_logo/brand/1.png",
-  "/assets/images/brand_logo/brand/2.png",
-  "/assets/images/brand_logo/brand/3.png",
-  "/assets/images/brand_logo/brand/4.png",
-  "/assets/images/brand_logo/brand/5.png",
-  "/assets/images/brand_logo/brand/6.png",
-  "/assets/images/brand_logo/brand/7.png",
-  "/assets/images/brand_logo/brand/8.png",
+const blogs = [
+  {
+    id: 1,
+
+    title:
+      "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need?",
+
+    description:
+      "A practical guide to SEO vs AEO vs GEO, including strategy, examples, common mistakes and actionable next steps for businesses.",
+
+    slug:
+      "/blog/seo-vs-aeo-vs-geo/",
+
+    focusKeyword:
+      "seo vs aeo vs geo",
+
+    metaTitle:
+      "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to seo vs aeo vs geo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog1.png",
+
+    alt:
+      "SEO AEO GEO digital marketing strategy",
+  },
+
+  {
+    id: 2,
+
+    title:
+      "How AI Search Is Changing Digital Marketing in 2026",
+
+    description:
+      "Understand how AI search is changing digital marketing in 2026, with practical strategies, examples, common mistakes and actionable next steps.",
+
+    slug:
+      "/blog/ai-search-digital-marketing-2026/",
+
+    focusKeyword:
+      "ai search digital marketing",
+
+    metaTitle:
+      "How AI Search Is Changing Digital Marketing in 2026 | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to ai search digital marketing, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog2.png",
+
+    alt:
+      "AI search and digital marketing",
+  },
+
+  {
+    id: 3,
+
+    title:
+      "What Is Generative Engine Optimization (GEO)? A Practical Business Guide",
+
+    description:
+      "Learn what Generative Engine Optimization is, why it matters for businesses, how GEO works and the practical steps needed to improve visibility.",
+
+    slug:
+      "/blog/generative-engine-optimization-guide/",
+
+    focusKeyword:
+      "generative engine optimization",
+
+    metaTitle:
+      "What Is Generative Engine Optimization (GEO)? A Practical Business Guide | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to generative engine optimization, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog3.png",
+
+    alt:
+      "Generative engine optimization GEO",
+  },
+
+  {
+    id: 4,
+
+    title:
+      "How to Improve Your Brand's Visibility in AI Search",
+
+    description:
+      "Discover practical ways to improve your brand's visibility in AI search through better content, authority, structured information and search-focused strategy.",
+
+    slug:
+      "/blog/improve-ai-search-visibility/",
+
+    focusKeyword:
+      "ai search visibility",
+
+    metaTitle:
+      "How to Improve Your Brand's Visibility in AI Search | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to ai search visibility, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog4.png",
+
+    alt:
+      "Brand visibility in AI search",
+  },
+
+  {
+    id: 5,
+
+    title:
+      "Google Ads vs SEO: Which Is Better for Lead Generation?",
+
+    description:
+      "Compare Google Ads and SEO for lead generation, understand when to use each channel and build a practical strategy for sustainable business growth.",
+
+    slug:
+      "/blog/google-ads-vs-seo/",
+
+    focusKeyword:
+      "google ads vs seo",
+
+    metaTitle:
+      "Google Ads vs SEO: Which Is Better for Lead Generation? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to google ads vs seo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog5.png",
+
+    alt:
+      "Google Ads versus SEO lead generation",
+  },
+
+  {
+    id: 6,
+
+    title:
+      "How to Build a B2B Digital Marketing Strategy in 2026",
+
+    description:
+      "Learn how to build a practical B2B digital marketing strategy in 2026 with clear goals, channels, content, lead generation and measurable next steps.",
+
+    slug:
+      "/blog/b2b-digital-marketing-strategy/",
+
+    focusKeyword:
+      "b2b digital marketing strategy",
+
+    metaTitle:
+      "How to Build a B2B Digital Marketing Strategy in 2026 | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to b2b digital marketing strategy, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog6.png",
+
+    alt:
+      "B2B digital marketing strategy",
+  },
+
+  {
+    id: 7,
+
+    title:
+      "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews",
+
+    description:
+      "A practical local SEO guide covering Google Business Profile, local content, reviews and the key steps businesses can take to improve local visibility.",
+
+    slug:
+      "/blog/local-seo-guide/",
+
+    focusKeyword:
+      "local seo guide",
+
+    metaTitle:
+      "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to local seo guide, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog7.png",
+
+    alt:
+      "Local SEO guide for businesses",
+  },
+
+  {
+    id: 8,
+
+    title:
+      "How Much Should a Business Invest in Digital Marketing?",
+
+    description:
+      "Understand digital marketing budgets, what influences investment decisions, how to allocate resources and how businesses can plan their next steps.",
+
+    slug:
+      "/blog/digital-marketing-budget-guide/",
+
+    focusKeyword:
+      "digital marketing budget",
+
+    metaTitle:
+      "How Much Should a Business Invest in Digital Marketing? | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to digital marketing budget, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog8.png",
+
+    alt:
+      "Digital marketing budget planning",
+  },
+
+  {
+    id: 9,
+
+    title:
+      "Website Redesign Checklist: SEO, UX, Performance & Conversion",
+
+    description:
+      "Use this website redesign checklist to review SEO, UX, website performance and conversion factors before launching your redesigned website.",
+
+    slug:
+      "/blog/website-redesign-checklist/",
+
+    focusKeyword:
+      "website redesign checklist",
+
+    metaTitle:
+      "Website Redesign Checklist: SEO, UX, Performance & Conversion | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to website redesign checklist, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog9.png",
+
+    alt:
+      "Website redesign checklist",
+  },
+
+  {
+    id: 10,
+
+    title:
+      "How to Create Content That Performs in Google Search and AI Experiences",
+
+    description:
+      "Learn how to create useful content that performs across Google Search and AI experiences through better structure, relevance, authority and user-focused strategy.",
+
+    slug:
+      "/blog/content-for-ai-search/",
+
+    focusKeyword:
+      "content for ai search",
+
+    metaTitle:
+      "How to Create Content That Performs in Google Search and AI Experiences | Akkurate Digital Solutions",
+
+    metaDescription:
+      "A practical guide to content for ai search, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
+
+    image:
+      "/assets/images/blogs/blog10.png",
+
+    alt:
+      "Content strategy for Google and AI search",
+  },
 ];
 
-const rowTwoLogos = [
-  "/assets/images/brand_logo/brand/9.png",
-  "/assets/images/brand_logo/brand/10.png",
-  "/assets/images/brand_logo/brand/11.png",
-  "/assets/images/brand_logo/brand/12.png",
-  "/assets/images/brand_logo/brand/13.png",
-  "/assets/images/brand_logo/brand/14.png",
-  "/assets/images/brand_logo/brand/15.avif",
-  "/assets/images/brand_logo/brand/16.png",
-];
+/* =====================================================
+   ANIMATED HEADING
+===================================================== */
 
-// =========================================================
-// ANIMATED TITLE
-// CENTER → OUTWARD
-// =========================================================
-
-const AnimatedTitle = ({
+function AnimatedHeadingText({
   text,
   delayStep = 0.045,
   animationKey,
-}) => {
+}) {
   const words = text.split(" ");
 
   const letters = [];
@@ -82,9 +341,7 @@ const AnimatedTitle = ({
     }))
     .sort((a, b) => {
       if (a.distance !== b.distance) {
-        return (
-          a.distance - b.distance
-        );
+        return a.distance - b.distance;
       }
 
       return (
@@ -99,22 +356,26 @@ const AnimatedTitle = ({
     (letter, order) => {
       delayMap[
         letter.globalIndex
-      ] =
-        order * delayStep;
+      ] = order * delayStep;
     }
   );
 
   return (
     <span
       key={animationKey}
-      className="client-title-text"
+      className="inline"
     >
       {words.map(
         (word, wordIndex) => (
           <React.Fragment
             key={`${wordIndex}-${animationKey}`}
           >
-            <span className="client-title-word">
+            <span
+              className="
+                inline-block
+                whitespace-nowrap
+              "
+            >
               {[...word].map(
                 (
                   character,
@@ -137,7 +398,9 @@ const AnimatedTitle = ({
                         ${animationKey}
                       `}
                       className="
-                        client-title-letter
+                        inline-block
+                        opacity-0
+                        animate-[blogLetterCenterReveal_0.55s_cubic-bezier(0.22,1,0.36,1)_forwards]
                       "
                       style={{
                         animationDelay: `${
@@ -158,11 +421,12 @@ const AnimatedTitle = ({
               words.length - 1 && (
               <span
                 className="
-                  client-title-space
+                  inline-block
+                  w-[0.45em]
                 "
                 aria-hidden="true"
               >
-                &nbsp;
+                {" "}
               </span>
             )}
           </React.Fragment>
@@ -170,89 +434,19 @@ const AnimatedTitle = ({
       )}
     </span>
   );
-};
+}
 
-// =========================================================
-// LOGO CARD
-// =========================================================
+/* =====================================================
+   BLOG COMPONENT
+===================================================== */
 
-const LogoCard = ({
-  logo,
-  index,
-}) => {
-  return (
-    <div
-      className="
-        group
-
-        flex
-        h-[82px]
-        w-[180px]
-        shrink-0
-
-        items-center
-        justify-center
-
-        rounded-[10px]
-
-        border
-        border-slate-200
-
-        bg-[#f8fafc]
-
-        px-4
-
-        shadow-[0_3px_10px_rgba(0,0,0,0.08)]
-
-        transition-all
-        duration-300
-
-        hover:-translate-y-1
-        hover:bg-white
-        hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]
-
-        sm:h-[86px]
-        sm:w-[200px]
-
-        lg:h-[88px]
-        lg:w-[215px]
-      "
-    >
-      <img
-        src={logo}
-        alt={`Client ${index + 1}`}
-        className="
-          h-[50px]
-          w-full
-
-          object-contain
-
-          opacity-90
-
-          transition-all
-          duration-300
-
-          group-hover:scale-105
-          group-hover:opacity-100
-
-          sm:h-[54px]
-        "
-      />
-    </div>
-  );
-};
-
-// =========================================================
-// CLIENT TRUST
-// =========================================================
-
-const ClientTrust = () => {
+const Blog = () => {
   const sectionRef =
     useRef(null);
 
   const [
-    titleVisible,
-    setTitleVisible,
+    headingVisible,
+    setHeadingVisible,
   ] = useState(false);
 
   const [
@@ -260,9 +454,9 @@ const ClientTrust = () => {
     setAnimationKey,
   ] = useState(0);
 
-  // =======================================================
-  // SCROLL INTO VIEW
-  // =======================================================
+  /* =====================================================
+     SCROLL TRIGGER
+  ===================================================== */
 
   useEffect(() => {
     const section =
@@ -273,10 +467,8 @@ const ClientTrust = () => {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          if (
-            entry.isIntersecting
-          ) {
-            setTitleVisible(false);
+          if (entry.isIntersecting) {
+            setHeadingVisible(false);
 
             setAnimationKey(
               (previous) =>
@@ -287,7 +479,7 @@ const ClientTrust = () => {
               () => {
                 requestAnimationFrame(
                   () => {
-                    setTitleVisible(
+                    setHeadingVisible(
                       true
                     );
                   }
@@ -295,7 +487,7 @@ const ClientTrust = () => {
               }
             );
           } else {
-            setTitleVisible(false);
+            setHeadingVisible(false);
           }
         },
         {
@@ -315,580 +507,325 @@ const ClientTrust = () => {
       ref={sectionRef}
       className="
         relative
-
-        w-full
-
+        z-[1]
         overflow-hidden
-
-        bg-[#020617]
-
-        py-[55px]
-
-        text-white
-
-        sm:py-[65px]
-
-        lg:py-[72px]
+        bg-slate-50
+        py-16
+        sm:py-20
+        lg:py-24
       "
     >
-      {/* =====================================================
-          BACKGROUND GLOW - TOP
-      ===================================================== */}
 
-      <div
+      {/* =================================================
+          BACKGROUND SHAPE
+      ================================================= */}
+
+      <img
+        src="/assets/images/shapes/shape-image.png"
+        alt=""
         className="
           pointer-events-none
-
           absolute
-
-          left-1/2
-          top-[-250px]
-
-          h-[500px]
-          w-[700px]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-blue-600/10
-
-          blur-[120px]
-        "
-      />
-
-      {/* =====================================================
-          BACKGROUND GLOW - CENTER/BOTTOM
-      ===================================================== */}
-
-      <div
-        className="
-          pointer-events-none
-
-          absolute
-
-          bottom-[-250px]
-          left-1/2
-
-          h-[500px]
-          w-[700px]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-indigo-600/10
-
-          blur-[120px]
-        "
-      />
-
-      {/* =====================================================
-          NEW: BOTTOM RIGHT BLUE GRADIENT
-      ===================================================== */}
-
-      <div
-        className="
-          pointer-events-none
-
-          absolute
-
-          bottom-[-180px]
-          right-[-180px]
-
-          z-0
-
-          h-[520px]
-          w-[520px]
-
-          rounded-full
-
-          bg-gradient-to-br
-          from-blue-500/0
-          via-blue-500/15
-          to-[#2563eb]/45
-
-          blur-[100px]
-
-          sm:bottom-[-200px]
-          sm:right-[-160px]
-          sm:h-[600px]
-          sm:w-[600px]
-
-          lg:bottom-[-240px]
-          lg:right-[-180px]
-          lg:h-[700px]
-          lg:w-[700px]
-        "
-      />
-
-      {/* =====================================================
-          EXTRA BOTTOM RIGHT GRADIENT
-      ===================================================== */}
-
-      <div
-        className="
-          pointer-events-none
-
-          absolute
-
           bottom-0
-          right-0
-
-          z-0
-
-          h-[260px]
-          w-[55%]
-
-          bg-gradient-to-tl
-          from-blue-600/25
-          via-blue-500/8
-          to-transparent
-
-          blur-[25px]
-
-          sm:h-[320px]
-
-          lg:h-[380px]
-          lg:w-[45%]
+          left-0
+          -z-[1]
+          w-full
+          opacity-60
         "
       />
 
-      {/* =====================================================
-          TITLE
-      ===================================================== */}
+      {/* =================================================
+          CONTAINER
+      ================================================= */}
 
       <div
-        className={`
-          relative
-          z-10
-
+        className="
           mx-auto
-
-          w-full
-
-          max-w-[1500px]
-
-          px-5
-
-          text-center
-
-          sm:px-8
-
-          lg:px-12
-        `}
+          max-w-7xl
+          px-4
+          sm:px-6
+          lg:px-8
+        "
       >
-        <h2
+
+        {/* =================================================
+            TOP TITLE
+        ================================================= */}
+
+        <div
           className={`
-            client-main-title
-
-            mx-auto
-
-            whitespace-nowrap
-
-            font-bold
-
-            leading-none
-
-            tracking-[-0.045em]
-
-            text-[clamp(1.15rem,3.7vw,3.5rem)]
-
-            text-white
+            mb-10
+            text-center
+            transition-opacity
+            duration-300
+            sm:mb-12
 
             ${
-              titleVisible
-                ? "client-title-visible"
-                : "client-title-hidden"
+              headingVisible
+                ? "opacity-100"
+                : "opacity-0"
             }
           `}
         >
-          <AnimatedTitle
-            text="Built on Trust."
-            delayStep={0.045}
-            animationKey={`built-${animationKey}`}
-          />
 
           <span
             className="
-              inline-block
+              block
+              text-xs
+              font-bold
+              uppercase
+              tracking-[0.15em]
+              text-[#002c7d]
+              sm:text-sm
             "
           >
-            {" "}
+            <AnimatedHeadingText
+              text="Our Insights"
+              delayStep={0.07}
+              animationKey={`our-${animationKey}`}
+            />
           </span>
 
-          <span
+          <h2
             className="
-              relative
-              inline
-              text-blue-400
+              mt-2
+              text-3xl
+              font-bold
+              leading-tight
+              tracking-tight
+              text-slate-900
+              sm:text-4xl
+              lg:text-[42px]
             "
           >
-            <AnimatedTitle
-              text="Globally Proven Through Results."
-              delayStep={0.035}
-              animationKey={`global-${animationKey}`}
+            <AnimatedHeadingText
+              text="Latest Blogs & Articles"
+              delayStep={0.045}
+              animationKey={`latest-${animationKey}`}
             />
+          </h2>
 
-            {/* BLUE UNDERLINE */}
-
-            <span
-              className="
-                pointer-events-none
-
-                absolute
-
-                bottom-[-5px]
-                left-0
-
-                -z-10
-
-                h-[5px]
-                w-full
-
-                rounded-full
-
-                bg-blue-500/30
-              "
-            />
-          </span>
-        </h2>
+        </div>
 
         {/* =================================================
-            DESCRIPTION
+            BLOG SWIPER
         ================================================= */}
 
-        <p
-          className="
-            mx-auto
+        <Swiper
+          modules={[
+            Autoplay,
+            Pagination,
+          ]}
+          slidesPerView={1}
+          spaceBetween={20}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 16,
+            },
 
-            mt-5
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
 
-            max-w-[680px]
-
-            px-2
-
-            text-[13px]
-
-            leading-[1.7]
-
-            text-slate-400
-
-            sm:text-[15px]
-          "
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+          }}
+          loop={true}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={800}
+          pagination={{
+            clickable: true,
+            dynamicBullets: false,
+          }}
+          className="!pb-14"
         >
-          The best measure of our work isn't what we say.
-          It's the businesses that continue to trust us
-          with their transformation.
-        </p>
-      </div>
 
-      {/* =====================================================
-          CLIENT LOGO SLIDER
-      ===================================================== */}
+          {blogs.map((blog) => (
+            <SwiperSlide
+              key={blog.id}
+              className="!h-auto"
+            >
 
-      <div
-        className="
-          relative
+              {/* =================================================
+                  BLOG CARD
+              ================================================= */}
 
-          z-10
+              <article
+                className="
+                  group
+                  flex
+                  h-full
+                  min-h-[500px]
+                  flex-col
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  shadow-sm
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+              >
 
-          mt-[38px]
+                {/* =================================================
+                    IMAGE
+                ================================================= */}
 
-          w-full
-
-          sm:mt-[42px]
-
-          lg:mt-[48px]
-        "
-      >
-        {/* LEFT FADE */}
-
-        <div
-          className="
-            pointer-events-none
-
-            absolute
-
-            left-0
-            top-0
-
-            z-20
-
-            h-full
-
-            w-[45px]
-
-            bg-gradient-to-r
-
-            from-[#020617]
-
-            to-transparent
-
-            sm:w-[80px]
-
-            lg:w-[150px]
-          "
-        />
-
-        {/* RIGHT FADE */}
-
-        <div
-          className="
-            pointer-events-none
-
-            absolute
-
-            right-0
-            top-0
-
-            z-20
-
-            h-full
-
-            w-[45px]
-
-            bg-gradient-to-l
-
-            from-[#020617]
-
-            to-transparent
-
-            sm:w-[80px]
-
-            lg:w-[150px]
-          "
-        />
-
-        {/* ===================================================
-            ROW 1
-        =================================================== */}
-
-        <div
-          className="
-            relative
-
-            h-[90px]
-
-            sm:h-[94px]
-
-            lg:h-[96px]
-          "
-        >
-          <Swiper
-            modules={[
-              Autoplay,
-              FreeMode,
-            ]}
-            slidesPerView="auto"
-            spaceBetween={18}
-            loop={true}
-            freeMode={{
-              enabled: true,
-              momentum: false,
-            }}
-            allowTouchMove={false}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: false,
-              reverseDirection: true,
-            }}
-            className="
-              client-swiper-row
-            "
-          >
-            {[
-              ...rowOneLogos,
-              ...rowOneLogos,
-              ...rowOneLogos,
-              ...rowOneLogos,
-            ].map(
-              (logo, index) => (
-                <SwiperSlide
-                  key={`row1-${index}`}
+                <div
                   className="
-                    !h-[90px]
-                    !w-[180px]
-
-                    sm:!h-[94px]
-                    sm:!w-[200px]
-
-                    lg:!h-[96px]
-                    lg:!w-[215px]
+                    relative
+                    h-[250px]
+                    w-full
+                    shrink-0
+                    overflow-hidden
+                    bg-slate-100
+                    sm:h-[270px]
+                    lg:h-[280px]
                   "
                 >
-                  <LogoCard
-                    logo={logo}
-                    index={index}
+                  <img
+                    src={blog.image}
+                    alt={blog.alt}
+                    loading="lazy"
+                    className="
+                      block
+                      h-full
+                      w-full
+                      object-cover
+                      object-center
+                      transition-transform
+                      duration-500
+                      group-hover:scale-[1.03]
+                    "
                   />
-                </SwiperSlide>
-              )
-            )}
-          </Swiper>
-        </div>
+                </div>
 
-        {/* ===================================================
-            ROW 2
-        =================================================== */}
+                {/* =================================================
+                    CONTENT
+                ================================================= */}
 
-        <div
-          className="
-            relative
-
-            mt-[10px]
-
-            h-[90px]
-
-            sm:mt-[12px]
-            sm:h-[94px]
-
-            lg:h-[96px]
-          "
-        >
-          <Swiper
-            modules={[
-              Autoplay,
-              FreeMode,
-            ]}
-            slidesPerView="auto"
-            spaceBetween={18}
-            loop={true}
-            freeMode={{
-              enabled: true,
-              momentum: false,
-            }}
-            allowTouchMove={false}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: false,
-              reverseDirection: false,
-            }}
-            className="
-              client-swiper-row
-            "
-          >
-            {[
-              ...rowTwoLogos,
-              ...rowTwoLogos,
-              ...rowTwoLogos,
-              ...rowTwoLogos,
-            ].map(
-              (logo, index) => (
-                <SwiperSlide
-                  key={`row2-${index}`}
+                <div
                   className="
-                    !h-[90px]
-                    !w-[180px]
-
-                    sm:!h-[94px]
-                    sm:!w-[200px]
-
-                    lg:!h-[96px]
-                    lg:!w-[215px]
+                    flex
+                    flex-1
+                    flex-col
+                    p-5
+                    sm:p-6
                   "
                 >
-                  <LogoCard
-                    logo={logo}
-                    index={index}
-                  />
-                </SwiperSlide>
-              )
-            )}
-          </Swiper>
-        </div>
+
+                  {/* CATEGORY */}
+
+                  <span
+                    className="
+                      mb-3
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.15em]
+                      text-blue-600
+                      sm:text-[11px]
+                    "
+                  >
+                    Digital Marketing
+                  </span>
+
+                  {/* TITLE */}
+
+                  <h3
+                    className="
+                      mb-3
+                      text-lg
+                      font-bold
+                      leading-snug
+                      text-slate-900
+                      sm:text-xl
+                    "
+                  >
+                    {blog.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+
+                  <p
+                    className="
+                      mb-6
+                      flex-1
+                      text-[14px]
+                      leading-relaxed
+                      text-slate-500
+                      sm:text-[15px]
+                    "
+                  >
+                    {blog.description}
+                  </p>
+
+                  {/* BUTTON */}
+
+                  <a
+                    href={blog.slug}
+                    className="
+                      mt-auto
+                      inline-flex
+                      w-fit
+                      items-center
+                      gap-2
+                      rounded-lg
+                      bg-blue-600
+                      px-5
+                      py-2.5
+                      text-sm
+                      font-semibold
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:-translate-y-0.5
+                      hover:bg-blue-700
+                    "
+                  >
+                    Read more
+
+                    <span
+                      className="
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    >
+                      →
+                    </span>
+                  </a>
+
+                </div>
+
+              </article>
+
+            </SwiperSlide>
+          ))}
+
+        </Swiper>
+
       </div>
 
-      {/* =====================================================
-          BOTTOM SPACE
-      ===================================================== */}
-
-      <div className="h-[8px]" />
-
-      {/* =====================================================
-          CSS
-      ===================================================== */}
+      {/* =================================================
+          ANIMATION
+      ================================================= */}
 
       <style>{`
-
-        /* ================================================
-           TITLE HIDDEN
-        ================================================= */
-
-        .client-title-hidden {
-          opacity: 0;
-        }
-
-        /* ================================================
-           TITLE VISIBLE
-        ================================================= */
-
-        .client-title-visible {
-          opacity: 1;
-        }
-
-        /* ================================================
-           TITLE TEXT
-        ================================================= */
-
-        .client-title-text {
-          display: inline;
-        }
-
-        .client-title-word {
-          display: inline-block;
-          white-space: nowrap;
-        }
-
-        .client-title-space {
-          display: inline-block;
-          width: 0.32em;
-          white-space: normal;
-        }
-
-        /* ================================================
-           LETTER ANIMATION
-        ================================================= */
-
-        .client-title-letter {
-          display: inline-block;
-
-          opacity: 0;
-
-          transform:
-            translateY(16px)
-            scale(0.82);
-
-          animation-name:
-            clientCenterLetterReveal;
-
-          animation-duration:
-            0.55s;
-
-          animation-timing-function:
-            cubic-bezier(
-              0.22,
-              1,
-              0.36,
-              1
-            );
-
-          animation-fill-mode:
-            forwards;
-        }
-
-        /* ================================================
-           CENTER → OUTWARD
-        ================================================= */
-
-        @keyframes clientCenterLetterReveal {
-
+        @keyframes blogLetterCenterReveal {
           0% {
             opacity: 0;
-
             transform:
               translateY(16px)
               scale(0.82);
@@ -896,7 +833,6 @@ const ClientTrust = () => {
 
           60% {
             opacity: 1;
-
             transform:
               translateY(-2px)
               scale(1.04);
@@ -904,107 +840,57 @@ const ClientTrust = () => {
 
           100% {
             opacity: 1;
-
             transform:
               translateY(0)
               scale(1);
           }
-
         }
 
-        /* ================================================
-           SWIPER
-        ================================================= */
-
-        .client-swiper-row {
-          width: 100%;
-          height: 100%;
-          overflow: visible !important;
+        .swiper-pagination {
+          bottom: 0 !important;
         }
 
-        .client-swiper-row
-        .swiper-wrapper {
-          height: 100%;
-          display: flex;
-          align-items: flex-start;
-
-          transition-timing-function:
-            linear !important;
+        .swiper-pagination-bullet {
+          width: 9px;
+          height: 9px;
+          margin: 0 !important;
+          opacity: 1;
+          background: #cbd5e1;
+          border-radius: 999px;
+          transition:
+            width 0.3s ease,
+            background-color 0.3s ease,
+            transform 0.3s ease;
         }
 
-        .client-swiper-row
-        .swiper-slide {
-          flex-shrink: 0;
-          height: 100% !important;
-
-          display: flex;
-
-          align-items: flex-start;
+        .swiper-pagination-bullet-active {
+          width: 28px;
+          background: #2563eb;
+          transform: scale(1);
         }
-
-        /* ================================================
-           MOBILE
-        ================================================= */
 
         @media (max-width: 639px) {
-
-          .client-main-title {
-            font-size: clamp(
-              0.9rem,
-              4.4vw,
-              1.35rem
-            );
-
-            letter-spacing:
-              -0.045em;
+          .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
           }
 
-          .client-title-space {
-            width: 0.22em;
+          .swiper-pagination-bullet-active {
+            width: 24px;
           }
-
         }
 
-        /* ================================================
-           TABLET
-        ================================================= */
-
-        @media (
-          min-width: 640px
-        ) and (
-          max-width: 1023px
-        ) {
-
-          .client-main-title {
-            font-size:
-              clamp(
-                1.7rem,
-                4.2vw,
-                2.7rem
-              );
+        @media (prefers-reduced-motion: reduce) {
+          .animate-\\[blogLetterCenterReveal_0\\.55s_cubic-bezier\\(0\\.22\\,1\\,0\\.36\\,1\\)_forwards\\] {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
           }
-
         }
-
-        /* ================================================
-           REDUCED MOTION
-        ================================================= */
-
-        @media (
-          prefers-reduced-motion: reduce
-        ) {
-
-          .client-title-letter {
-            opacity: 1;
-            transform: none;
-            animation: none;
-          }
-
-        }
-
       `}</style>
+
     </section>
   );
 };
 
-export default ClientTrust;
+export default Blog;

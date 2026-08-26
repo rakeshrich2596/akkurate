@@ -1358,69 +1358,26 @@ function AEO() {
             </h2>
           </div>
 
-          <div
-            className="
-              mt-9
-
-              grid
-              grid-cols-1
-
-              gap-5
-
-              sm:grid-cols-2
-
-              lg:grid-cols-4
-            "
-          >
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {whyChoose.map((item, index) => (
-              <div
+              <article
                 key={item.number}
                 data-animate="card"
                 data-delay={(index % 4) + 1}
-                className="
-                  border-t
-                  border-gray-200
-
-                  pt-5
-                "
+                className="group rounded-[20px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9] hover:bg-[#1455d9] hover:shadow-[0_15px_40px_rgba(20,85,217,0.25)]"
               >
-                <span
-                  className="
-                    text-[11px]
-                    font-bold
-                    tracking-[0.14em]
-                    text-[#1455d9]
-                  "
-                >
+                <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9] transition-colors duration-300 group-hover:text-white">
                   {item.number}
                 </span>
 
-                <h3
-                  className="
-                    mt-4
-                    m-0
-
-                    text-[18px]
-                    font-bold
-                    text-[#101828]
-                  "
-                >
+                <h3 className="mt-5 m-0 text-[18px] font-bold leading-snug text-[#101828] transition-colors duration-300 group-hover:text-white">
                   {item.title}
                 </h3>
 
-                <p
-                  className="
-                    mt-3
-                    m-0
-
-                    text-[13px]
-                    leading-6
-                    text-gray-500
-                  "
-                >
+                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white/90">
                   {item.description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

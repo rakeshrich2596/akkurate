@@ -54,7 +54,7 @@ const services = [
       "Lead generation and retargeting",
       "ROI-focused campaign optimization",
     ],
-    image: "/assets/images/content_images/GOOGLE ADS.png",
+    image: "/assets/images/content_images/GOOGLE-ADS.png",
     color: "bg-[#e9f8f3]",
   },
 
@@ -395,7 +395,7 @@ function Services() {
               key={service.number}
               className="
         sticky
-        top-6
+        top-[100px]
         mb-6
 
         min-h-[620px]

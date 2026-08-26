@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 // Scroll animations are provided globally by ScrollAnimations.jsx in App.jsx.
 
-
 /* =========================================================
    GEO PAGE
    Generative Engine Optimization
@@ -48,7 +47,6 @@ const geoServices = [
   },
 ];
 
-
 const outcomes = [
   "Clearer brand and service context",
   "Stronger topical depth",
@@ -57,7 +55,6 @@ const outcomes = [
   "More useful customer journeys",
   "A durable foundation for evolving search",
 ];
-
 
 const processSteps = [
   {
@@ -92,7 +89,6 @@ const processSteps = [
   },
 ];
 
-
 const whyChoose = [
   {
     number: "01",
@@ -119,7 +115,6 @@ const whyChoose = [
       "Launch is not the end. Performance, feedback and changing customer behavior should guide the next iteration.",
   },
 ];
-
 
 const faqs = [
   {
@@ -150,21 +145,17 @@ const faqs = [
       "No responsible agency can guarantee platform rankings, algorithmic distribution, exact lead volume or a fixed commercial outcome. We can commit to a clear process, quality execution and transparent measurement.",
   },
   {
-    question:
-      "Can you work with an existing website, campaign or brand?",
+    question: "Can you work with an existing website, campaign or brand?",
     answer:
       "Yes. We can audit and improve existing assets instead of rebuilding everything when that is the more practical approach.",
   },
 ];
-
 
 function GEO() {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <div className="w-full overflow-hidden bg-white text-[#111827]">
-
-
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -186,7 +177,6 @@ function GEO() {
           lg:pt-20
         "
       >
-
         {/* Background decoration */}
 
         <div
@@ -217,7 +207,6 @@ function GEO() {
           "
         />
 
-
         {/* FULL WIDTH CONTAINER */}
 
         <div
@@ -236,7 +225,6 @@ function GEO() {
             xl:px-10
           "
         >
-
           {/* Breadcrumb */}
 
           <div
@@ -253,11 +241,7 @@ function GEO() {
               sm:text-[12px]
             "
           >
-
-            <Link
-              to="/"
-              className="transition hover:text-[#1455d9]"
-            >
+            <Link to="/" className="transition hover:text-[#1455d9]">
               Home
             </Link>
 
@@ -267,12 +251,8 @@ function GEO() {
 
             <span>/</span>
 
-            <span className="text-[#1455d9]">
-              GEO
-            </span>
-
+            <span className="text-[#1455d9]">GEO</span>
           </div>
-
 
           {/* =================================================
               HERO GRID
@@ -294,8 +274,6 @@ function GEO() {
               xl:gap-16
             "
           >
-
-
             {/* LEFT CONTENT */}
 
             <div
@@ -303,7 +281,6 @@ function GEO() {
                 max-w-[760px]
               "
             >
-
               {/* Label */}
 
               <div
@@ -336,7 +313,6 @@ function GEO() {
                 Generative Engine Optimization
               </div>
 
-
               {/* H1 */}
 
               <h1
@@ -365,7 +341,6 @@ function GEO() {
                 Make Your Brand Easier for AI-Powered Search to Understand
               </h1>
 
-
               {/* Description */}
 
               <p
@@ -387,10 +362,9 @@ function GEO() {
               >
                 Improve your brand's visibility across generative search with
                 original content, entity clarity, topical authority and strong
-                SEO foundations — built around your audience, business
-                objective and measurable customer journey.
+                SEO foundations — built around your audience, business objective
+                and measurable customer journey.
               </p>
-
 
               {/* CTA */}
 
@@ -404,7 +378,6 @@ function GEO() {
                   sm:flex-row
                 "
               >
-
                 <Link
                   to="/contact"
                   className="
@@ -434,16 +407,10 @@ function GEO() {
                   "
                 >
                   Talk to Our Team
-
-                  <span className="ml-2">
-                    →
-                  </span>
+                  <span className="ml-2">→</span>
                 </Link>
-
               </div>
-
             </div>
-
 
             {/* =================================================
                 RIGHT IMAGE
@@ -462,7 +429,6 @@ function GEO() {
                 lg:min-h-[430px]
               "
             >
-
               {/* Image glow */}
 
               <div
@@ -477,7 +443,6 @@ function GEO() {
                   blur-3xl
                 "
               />
-
 
               {/* Image */}
 
@@ -501,7 +466,6 @@ function GEO() {
                   shadow-[0_20px_60px_rgba(15,23,42,0.10)]
                 "
               >
-
                 <img
                   src="/assets/images/content_images/GEO.png"
                   alt="Generative Engine Optimization"
@@ -514,18 +478,11 @@ function GEO() {
                     object-cover
                   "
                 />
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           INTRODUCTION
@@ -541,7 +498,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -562,9 +518,7 @@ function GEO() {
             xl:px-10
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -600,12 +554,9 @@ function GEO() {
             >
               GEO Built Around Business Growth
             </h2>
-
           </div>
 
-
           <div>
-
             <p
               className="
                 m-0
@@ -618,11 +569,10 @@ function GEO() {
                 sm:leading-7
               "
             >
-              Akkurate Digital Solutions provides generative engine
-              optimization (GEO) as part of an integrated digital growth
-              system. We begin with the business objective, audience and
-              customer journey before deciding what should be created,
-              optimized or measured.
+              Akkurate Digital Solutions provides generative engine optimization
+              (GEO) as part of an integrated digital growth system. We begin
+              with the business objective, audience and customer journey before
+              deciding what should be created, optimized or measured.
             </p>
 
             <p
@@ -637,17 +587,12 @@ function GEO() {
                 sm:leading-7
               "
             >
-              The goal is not simply to deliver an asset or run a channel;
-              it is to make the work useful to the business.
+              The goal is not simply to deliver an asset or run a channel; it is
+              to make the work useful to the business.
             </p>
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           BUSINESS PROBLEM
@@ -665,7 +610,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -681,7 +625,6 @@ function GEO() {
             lg:px-8
           "
         >
-
           <p
             className="
               m-0
@@ -698,10 +641,9 @@ function GEO() {
             The Business Problem We Solve
           </p>
 
-
           <h2
             data-animate="center"
-              className="
+            className="
               mt-4
               m-0
 
@@ -719,7 +661,6 @@ function GEO() {
             Help AI Systems and Customers Understand Your Business
           </h2>
 
-
           <p
             className="
               mx-auto
@@ -735,12 +676,11 @@ function GEO() {
               sm:leading-7
             "
           >
-            Generative search can synthesize information from multiple
-            sources. A business with thin service pages, unclear terminology,
+            Generative search can synthesize information from multiple sources.
+            A business with thin service pages, unclear terminology,
             inconsistent brand information or weak topical depth can be harder
             for systems and customers to understand.
           </p>
-
 
           <p
             className="
@@ -758,15 +698,11 @@ function GEO() {
             "
           >
             Akkurate approaches GEO as a practical extension of SEO, content
-            strategy, brand clarity and digital authority — not as a shortcut
-            or ranking hack.
+            strategy, brand clarity and digital authority — not as a shortcut or
+            ranking hack.
           </p>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           GEO SERVICES
@@ -782,7 +718,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -798,9 +733,7 @@ function GEO() {
             xl:px-10
           "
         >
-
           <div className="max-w-[100%] text-center">
-
             <p
               className="
                 m-0
@@ -836,9 +769,7 @@ function GEO() {
             >
               Our Generative Engine Optimization (GEO) Services
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -854,9 +785,7 @@ function GEO() {
               lg:grid-cols-3
             "
           >
-
             {geoServices.map((service, index) => (
-
               <article
                 key={service.number}
                 data-animate="card"
@@ -885,7 +814,6 @@ function GEO() {
                   sm:p-6
                 "
               >
-
                 <div
                   className="
                     flex
@@ -893,7 +821,6 @@ function GEO() {
                     justify-between
                   "
                 >
-
                   <span
                     className="
                       text-[11px]
@@ -917,9 +844,7 @@ function GEO() {
                   >
                     ↗
                   </span>
-
                 </div>
-
 
                 <h3
                   className="
@@ -937,7 +862,6 @@ function GEO() {
                   {service.title}
                 </h3>
 
-
                 <p
                   className="
                     mt-3
@@ -952,18 +876,11 @@ function GEO() {
                 >
                   {service.description}
                 </p>
-
               </article>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           OUTCOMES
@@ -981,7 +898,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -1003,9 +919,7 @@ function GEO() {
             xl:px-10
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -1021,7 +935,6 @@ function GEO() {
             >
               What You Get
             </p>
-
 
             <h2
               data-animate="left"
@@ -1043,7 +956,6 @@ function GEO() {
               What You Get From Akkurate
             </h2>
 
-
             <p
               className="
                 mt-5
@@ -1057,13 +969,11 @@ function GEO() {
               "
             >
               The exact outcome depends on the starting point, competition,
-              audience, budget, implementation and business model. Our job is
-              to create the conditions for measurable improvement and to
-              report honestly on what is working.
+              audience, budget, implementation and business model. Our job is to
+              create the conditions for measurable improvement and to report
+              honestly on what is working.
             </p>
-
           </div>
-
 
           <div
             className="
@@ -1075,9 +985,7 @@ function GEO() {
               sm:grid-cols-2
             "
           >
-
             {outcomes.map((outcome, index) => (
-
               <div
                 key={outcome}
                 data-animate="card"
@@ -1100,7 +1008,6 @@ function GEO() {
                   shadow-sm
                 "
               >
-
                 <span
                   className="
                     flex
@@ -1133,18 +1040,11 @@ function GEO() {
                 >
                   {outcome}
                 </span>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           WHO THIS SERVICE IS FOR
@@ -1160,7 +1060,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -1176,7 +1075,6 @@ function GEO() {
             lg:px-8
           "
         >
-
           <p
             className="
               m-0
@@ -1191,10 +1089,9 @@ function GEO() {
             Who This Service Is For
           </p>
 
-
           <h2
             data-animate="center"
-              className="
+            className="
               mt-3
               m-0
 
@@ -1212,7 +1109,6 @@ function GEO() {
             GEO Should Fit Your Business
           </h2>
 
-
           <p
             className="
               mt-5
@@ -1226,11 +1122,10 @@ function GEO() {
               sm:leading-7
             "
           >
-            Generative Engine Optimization (GEO) is relevant to businesses
-            that have a clear reason to improve their digital presence,
-            customer journey or growth engine.
+            Generative Engine Optimization (GEO) is relevant to businesses that
+            have a clear reason to improve their digital presence, customer
+            journey or growth engine.
           </p>
-
 
           <p
             className="
@@ -1249,12 +1144,8 @@ function GEO() {
             recommend a focused scope, a broader integrated program or a
             different service when that is more appropriate.
           </p>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           PROCESS
@@ -1272,7 +1163,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -1288,9 +1178,7 @@ function GEO() {
             xl:px-10
           "
         >
-
           <div className="max-w-[100%] text-center">
-
             <p
               className="
                 m-0
@@ -1304,7 +1192,6 @@ function GEO() {
             >
               Our Process
             </p>
-
 
             <h2
               data-animate="left"
@@ -1325,9 +1212,7 @@ function GEO() {
             >
               A Practical GEO Process
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -1343,9 +1228,7 @@ function GEO() {
               lg:grid-cols-5
             "
           >
-
             {processSteps.map((step, index) => (
-
               <div
                 key={step.number}
                 data-animate="card"
@@ -1367,7 +1250,6 @@ function GEO() {
                   sm:p-6
                 "
               >
-
                 <span
                   className="
                     text-[11px]
@@ -1378,7 +1260,6 @@ function GEO() {
                 >
                   {step.number}
                 </span>
-
 
                 <h3
                   className="
@@ -1394,7 +1275,6 @@ function GEO() {
                   {step.title}
                 </h3>
 
-
                 <p
                   className="
                     mt-3
@@ -1407,18 +1287,11 @@ function GEO() {
                 >
                   {step.description}
                 </p>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           WHY AKKURATE
@@ -1434,7 +1307,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -1450,9 +1322,7 @@ function GEO() {
             xl:px-10
           "
         >
-
           <div className="max-w-[750px]">
-
             <p
               className="
                 m-0
@@ -1466,7 +1336,6 @@ function GEO() {
             >
               Why Choose Akkurate
             </p>
-
 
             <h2
               data-animate="left"
@@ -1487,89 +1356,32 @@ function GEO() {
             >
               Strategy Before Activity
             </h2>
-
           </div>
 
-
-          <div
-            className="
-              mt-9
-
-              grid
-              grid-cols-1
-
-              gap-5
-
-              sm:grid-cols-2
-
-              lg:grid-cols-4
-            "
-          >
-
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {whyChoose.map((item, index) => (
-
-              <div
+              <article
                 key={item.number}
                 data-animate="card"
                 data-delay={(index % 4) + 1}
-                className="
-                  border-t
-                  border-gray-200
-
-                  pt-5
-                "
+                className="group rounded-[20px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9] hover:bg-[#1455d9] hover:shadow-[0_15px_40px_rgba(20,85,217,0.25)]"
               >
-
-                <span
-                  className="
-                    text-[11px]
-                    font-bold
-                    tracking-[0.14em]
-                    text-[#1455d9]
-                  "
-                >
+                <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9] transition-colors duration-300 group-hover:text-white">
                   {item.number}
                 </span>
 
-
-                <h3
-                  className="
-                    mt-4
-                    m-0
-
-                    text-[18px]
-                    font-bold
-                    text-[#101828]
-                  "
-                >
+                <h3 className="mt-5 m-0 text-[18px] font-bold leading-snug text-[#101828] transition-colors duration-300 group-hover:text-white">
                   {item.title}
                 </h3>
 
-
-                <p
-                  className="
-                    mt-3
-                    m-0
-
-                    text-[13px]
-                    leading-6
-                    text-gray-500
-                  "
-                >
+                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white/90">
                   {item.description}
                 </p>
-
-              </div>
-
+              </article>
             ))}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           RELATED SERVICES
@@ -1585,7 +1397,6 @@ function GEO() {
           sm:py-16
         "
       >
-
         <div
           className="
             mx-auto
@@ -1609,9 +1420,7 @@ function GEO() {
             lg:px-8
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -1625,7 +1434,6 @@ function GEO() {
             >
               Related Services
             </p>
-
 
             <h3
               className="
@@ -1641,9 +1449,7 @@ function GEO() {
             >
               GEO ↔ AEO ↔ SEO
             </h3>
-
           </div>
-
 
           <div
             className="
@@ -1655,7 +1461,6 @@ function GEO() {
               sm:justify-end
             "
           >
-
             <span
               className="
                 rounded-full
@@ -1724,15 +1529,9 @@ function GEO() {
             >
               SEO
             </Link>
-
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           FAQ
@@ -1748,7 +1547,6 @@ function GEO() {
           lg:py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -1767,9 +1565,7 @@ function GEO() {
             lg:px-8
           "
         >
-
           <div>
-
             <p
               className="
                 m-0
@@ -1783,7 +1579,6 @@ function GEO() {
             >
               Frequently Asked Questions
             </p>
-
 
             <h2
               data-animate="center"
@@ -1804,9 +1599,7 @@ function GEO() {
             >
               GEO FAQs
             </h2>
-
           </div>
-
 
           <div
             className="
@@ -1817,9 +1610,7 @@ function GEO() {
               border-gray-200
             "
           >
-
             {faqs.map((faq, index) => {
-
               const isOpen = openFaq === index;
 
               return (
@@ -1828,14 +1619,9 @@ function GEO() {
                   data-animate="up"
                   data-delay={(index % 6) + 1}
                 >
-
                   <button
                     type="button"
-                    onClick={() =>
-                      setOpenFaq(
-                        isOpen ? null : index
-                      )
-                    }
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
                     className="
                       flex
                       w-full
@@ -1851,7 +1637,6 @@ function GEO() {
                       sm:py-5
                     "
                   >
-
                     <span
                       className="
                         text-[13px]
@@ -1864,7 +1649,6 @@ function GEO() {
                     >
                       {faq.question}
                     </span>
-
 
                     <span
                       className={`
@@ -1886,28 +1670,20 @@ function GEO() {
                         transition-transform
                         duration-200
 
-                        ${
-                          isOpen
-                            ? "rotate-45"
-                            : ""
-                        }
+                        ${isOpen ? "rotate-45" : ""}
                       `}
                     >
                       +
                     </span>
-
                   </button>
 
-
                   {isOpen && (
-
                     <div
                       className="
                         pb-5
                         pr-8
                       "
                     >
-
                       <p
                         className="
                           m-0
@@ -1922,23 +1698,14 @@ function GEO() {
                       >
                         {faq.answer}
                       </p>
-
                     </div>
-
                   )}
-
                 </div>
               );
-
             })}
-
           </div>
-
         </div>
-
       </section>
-
-
 
       {/* =====================================================
           FINAL CTA
@@ -1954,7 +1721,6 @@ function GEO() {
           lg:pb-24
         "
       >
-
         <div
           className="
             relative
@@ -1979,7 +1745,6 @@ function GEO() {
             lg:py-10
           "
         >
-
           <div
             className="
               pointer-events-none
@@ -1998,7 +1763,6 @@ function GEO() {
               blur-2xl
             "
           />
-
 
           <div
             className="
@@ -2019,9 +1783,7 @@ function GEO() {
             "
           />
 
-
           <div className="relative">
-
             <p
               className="
                 m-0
@@ -2035,7 +1797,6 @@ function GEO() {
             >
               Start With The Right Next Step
             </p>
-
 
             <h2
               data-animate="center"
@@ -2059,7 +1820,6 @@ function GEO() {
               business does, who it serves and why it is credible.
             </h2>
 
-
             <p
               className="
                 mx-auto
@@ -2079,9 +1839,7 @@ function GEO() {
               the most practical next step.
             </p>
 
-
             <div className="mt-7">
-
               <Link
                 to="/contact"
                 className="
@@ -2107,24 +1865,14 @@ function GEO() {
                 "
               >
                 Start a Conversation
-
-                <span className="ml-2">
-                  →
-                </span>
+                <span className="ml-2">→</span>
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
     </div>
   );
 }
-
 
 export default GEO;
