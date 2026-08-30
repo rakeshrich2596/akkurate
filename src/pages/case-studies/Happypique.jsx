@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "../../index.css";
 
 const pageTitle = "Happypique Case Study | Akkurate Digital Solutions";
 
@@ -123,15 +124,13 @@ export default function Happypique() {
 
             <h1 className="max-w-[720px] text-4xl font-bold leading-[1.03] tracking-[-0.045em] sm:text-5xl lg:text-[45px]">
               400% organic growth for an{" "}
-              <span className="text-[#5da7ff]">
-                antique jewellery brand
-              </span>
+              <span className="text-[#5da7ff]">antique jewellery brand</span>
             </h1>
 
             <p className="mt-6 max-w-[650px] text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
               How a 2.5-year eCommerce SEO strategy took Happypique from low
-              organic visibility to over a million monthly search impressions
-              — without leaning on paid ads.
+              organic visibility to over a million monthly search impressions —
+              without leaning on paid ads.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -181,9 +180,7 @@ export default function Happypique() {
 
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
                 <div>
-                  <div className="text-lg font-bold text-white">
-                    Happypique
-                  </div>
+                  <div className="text-lg font-bold text-white">Happypique</div>
                   <div className="mt-1 text-[9px] font-medium uppercase tracking-[0.15em] text-white/60">
                     Antique Jewellery & Accessories
                   </div>
@@ -243,23 +240,23 @@ export default function Happypique() {
               About Happypique
             </div>
 
-            <h2 className="max-w-[700px] text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
+            <h2 className="max-w-[700px] text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-3xl">
               An eCommerce brand competing on visibility
             </h2>
 
             <p className="mt-5 max-w-[720px] text-[15px] leading-8 text-[#59677f]">
-              Happypique sells antique jewellery and fashion accessories
-              online — a category where buyers research extensively before
-              purchasing and trust is built through search presence as much as
-              product photography. The brand had a strong catalog but a thin
-              organic footprint, in a market where established players already
-              dominated the obvious keywords.
+              Happypique sells antique jewellery and fashion accessories online
+              — a category where buyers research extensively before purchasing
+              and trust is built through search presence as much as product
+              photography. The brand had a strong catalog but a thin organic
+              footprint, in a market where established players already dominated
+              the obvious keywords.
             </p>
 
             <p className="mt-5 max-w-[720px] text-[15px] leading-8 text-[#59677f]">
               Over a 2.5-year engagement, Akkurate Digital Solutions has run
-              their full eCommerce SEO program — covering technical SEO,
-              product and category optimization, content, and shopping search
+              their full eCommerce SEO program — covering technical SEO, product
+              and category optimization, content, and shopping search
               visibility.
             </p>
           </div>
@@ -365,7 +362,7 @@ export default function Happypique() {
       {/* RESULTS */}
       <section
         id="results"
-        className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-15"
+        className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-10"
       >
         <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-[720px]">
@@ -450,6 +447,7 @@ export default function Happypique() {
       {/* GROWTH CHART */}
       <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-10">
         <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
+          {/* Heading */}
           <div className="mb-10 max-w-[720px]">
             <div className="mb-4 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1455d9]">
               <span className="h-px w-7 bg-[#1455d9]" />
@@ -461,137 +459,292 @@ export default function Happypique() {
             </h2>
           </div>
 
+          {/* Chart Card */}
           <div className="rounded-[22px] border border-[#062b72]/10 bg-white p-5 shadow-[0_8px_30px_rgba(7,35,82,0.06)] sm:p-7">
             <div className="mb-5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#59677f]">
               Google Search Console impressions — over 2.5 years
             </div>
 
-            <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-[#f8fbff] to-white">
-              <svg
-                viewBox="0 0 760 280"
-                className="h-auto w-full"
-                role="img"
-                aria-label="Search impressions climbing from 10,000 to over 1 million"
-              >
-                <line
-                  x1="50"
-                  y1="20"
-                  x2="50"
-                  y2="230"
-                  stroke="#002C7D"
-                  strokeOpacity="0.18"
-                  strokeWidth="1"
-                />
+            {/* Animated Chart */}
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#f8fbff] to-white p-4 sm:p-6">
+              {/* Chart Header */}
+              <div className="mb-6 flex items-end justify-between">
+                <div>
+                  <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-[#59677f]">
+                    Search Impressions
+                  </p>
 
-                <line
-                  x1="50"
-                  y1="230"
-                  x2="730"
-                  y2="230"
-                  stroke="#002C7D"
-                  strokeOpacity="0.18"
-                  strokeWidth="1"
-                />
+                  <div className="mt-1 flex items-baseline gap-2">
+                    <span className="text-3xl font-bold tracking-[-0.04em] text-[#002C7D] sm:text-4xl">
+                      1M+
+                    </span>
 
-                <text
-                  x="40"
-                  y="232"
-                  textAnchor="end"
-                  fontSize="11"
-                  fill="#5b6477"
+                    <span className="text-[10px] font-bold text-[#1455d9]">
+                      ↑ Growth
+                    </span>
+                  </div>
+                </div>
+
+                {/* Live Indicator */}
+                <div className="flex items-center gap-2 rounded-full border border-[#1455d9]/10 bg-[#1455d9]/5 px-3 py-1.5">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1455d9] opacity-50" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1455d9]" />
+                  </span>
+
+                  <span className="font-mono text-[8px] font-bold uppercase tracking-[0.08em] text-[#1455d9]">
+                    Trajectory
+                  </span>
+                </div>
+              </div>
+
+              {/* Chart */}
+              <div className="relative h-[280px] w-full overflow-hidden rounded-xl bg-white">
+                {/* Horizontal Grid */}
+                <div className="pointer-events-none absolute inset-0 flex flex-col justify-between py-5">
+                  <span className="h-px w-full bg-[#002C7D]/[.07]" />
+
+                  <span className="h-px w-full border-t border-dashed border-[#002C7D]/[.07]" />
+
+                  <span className="h-px w-full border-t border-dashed border-[#002C7D]/[.07]" />
+
+                  <span className="h-px w-full border-t border-dashed border-[#002C7D]/[.07]" />
+
+                  <span className="h-px w-full bg-[#002C7D]/[.10]" />
+                </div>
+
+                {/* Y Axis */}
+                <div className="absolute left-0 top-0 flex h-full flex-col justify-between py-4 font-mono text-[8px] text-[#5b6477] sm:text-[9px]">
+                  <span>1M+</span>
+                  <span>750K</span>
+                  <span>500K</span>
+                  <span>250K</span>
+                  <span>0</span>
+                </div>
+
+                {/* SVG */}
+                <svg
+                  viewBox="0 0 900 300"
+                  preserveAspectRatio="none"
+                  className="absolute inset-0 h-full w-full pl-7"
+                  role="img"
+                  aria-label="Search impressions climbing from 10,000 to over 1 million"
                 >
-                  0
-                </text>
+                  <defs>
+                    <linearGradient
+                      id="impressionGradient"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#1455d9"
+                        stopOpacity="0.20"
+                      />
 
-                <text
-                  x="40"
-                  y="135"
-                  textAnchor="end"
-                  fontSize="11"
-                  fill="#5b6477"
-                >
-                  500K
-                </text>
+                      <stop offset="100%" stopColor="#1455d9" stopOpacity="0" />
+                    </linearGradient>
 
-                <text
-                  x="40"
-                  y="28"
-                  textAnchor="end"
-                  fontSize="11"
-                  fill="#5b6477"
-                >
-                  1M+
-                </text>
+                    <filter id="chartGlow">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
 
-                <polyline
-                  points="50,222 190,210 330,188 470,140 610,80 730,30"
-                  fill="none"
-                  stroke="#002C7D"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
 
-                <polygon
-                  points="50,222 190,210 330,188 470,140 610,80 730,30 730,230 50,230"
-                  fill="#002C7D"
-                  fillOpacity="0.08"
-                />
+                  {/* Filled Area */}
+                  <path
+                    d="
+                M0 275
+                L130 268
+                L260 250
+                L390 220
+                L520 165
+                L650 90
+                L780 45
+                L900 20
+                L900 300
+                L0 300
+                Z
+              "
+                    fill="url(#impressionGradient)"
+                    className="animate-[chartArea_.8s_ease-out_forwards]"
+                  />
 
-                <circle cx="50" cy="222" r="5" fill="#002C7D" />
-                <circle cx="730" cy="30" r="5" fill="#002C7D" />
+                  {/* Main Growth Line */}
+                  <path
+                    d="
+                M0 275
+                L130 268
+                L260 250
+                L390 220
+                L520 165
+                L650 90
+                L780 45
+                L900 20
+              "
+                    fill="none"
+                    stroke="#002C7D"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    pathLength="1"
+                    strokeDasharray="1"
+                    strokeDashoffset="1"
+                    filter="url(#chartGlow)"
+                    className="animate-[drawGrowthLine_2.8s_cubic-bezier(.65,0,.35,1)_forwards]"
+                  />
 
-                <text
-                  x="50"
-                  y="250"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fill="#11151c"
-                >
-                  Month 1
-                </text>
+                  {/* Chart Points */}
+                  <g>
+                    <circle
+                      cx="0"
+                      cy="275"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_.2s_both]"
+                    />
 
-                <text
-                  x="50"
-                  y="265"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fontWeight="700"
-                  fill="#002C7D"
-                >
-                  10K
-                </text>
+                    <circle
+                      cx="130"
+                      cy="268"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_.5s_both]"
+                    />
 
-                <text
-                  x="730"
-                  y="250"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fill="#11151c"
-                >
-                  Month 30
-                </text>
+                    <circle
+                      cx="260"
+                      cy="250"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_.8s_both]"
+                    />
 
-                <text
-                  x="730"
-                  y="265"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fontWeight="700"
-                  fill="#002C7D"
-                >
-                  1M+
-                </text>
-              </svg>
-            </div>
+                    <circle
+                      cx="390"
+                      cy="220"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_1.1s_both]"
+                    />
 
-            <div className="mt-5 border-t border-[#062b72]/10 pt-4 text-xs leading-6 text-[#59677f]">
-              Trend line illustrates the overall trajectory reported by the
-              client across the 2.5-year engagement. Share monthly export data
-              and we&apos;ll plot the exact curve.
+                    <circle
+                      cx="520"
+                      cy="165"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_1.4s_both]"
+                    />
+
+                    <circle
+                      cx="650"
+                      cy="90"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_1.7s_both]"
+                    />
+
+                    <circle
+                      cx="780"
+                      cy="45"
+                      r="5"
+                      fill="#1455d9"
+                      className="animate-[chartPoint_.4s_ease-out_2s_both]"
+                    />
+
+                    <circle
+                      cx="900"
+                      cy="20"
+                      r="8"
+                      fill="#002C7D"
+                      className="animate-[finalPointPulse_2s_ease-in-out_infinite]"
+                    />
+                  </g>
+                </svg>
+
+                {/* Animated Final Glow */}
+                <div className="pointer-events-none absolute right-[1%] top-[3%]">
+                  <div className="relative">
+                    <div className="absolute -inset-4 animate-ping rounded-full bg-[#1455d9]/10" />
+
+                    <div className="relative flex h-4 w-4 items-center justify-center rounded-full bg-[#002C7D] shadow-[0_0_20px_rgba(20,85,125,.30)]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* X Axis Labels */}
+                <div className="absolute bottom-1 left-9 right-0 grid grid-cols-4 text-center font-mono text-[8px] text-[#59677f] sm:text-[9px]">
+                  <span>Month 1</span>
+                  <span>Year 1</span>
+                  <span>Year 2</span>
+                  <span>Month 30</span>
+                </div>
+              </div>
+
+              {/* Milestone Cards */}
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {[
+                  ["01", "Starting Point", "10K"],
+                  ["02", "First Growth", "250K"],
+                  ["03", "Scale", "500K+"],
+                  ["04", "Peak", "1M+"],
+                ].map(([number, label, value], index) => (
+                  <div
+                    key={number}
+                    className="group rounded-[14px] border border-[#062b72]/10 bg-[#f8fbff] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9]/20 hover:shadow-[0_8px_20px_rgba(20,85,217,.08)]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[8px] font-bold text-[#1455d9]">
+                        {number}
+                      </span>
+
+                      <span className="text-[10px] font-bold text-[#002C7D]">
+                        {value}
+                      </span>
+                    </div>
+
+                    <p className="mt-2 m-0 text-[9px] font-semibold text-[#59677f]">
+                      {label}
+                    </p>
+
+                    <div className="mt-2 h-1 overflow-hidden rounded-full bg-[#002C7D]/[.07]">
+                      <div
+                        className="h-full rounded-full bg-[#1455d9]"
+                        style={{
+                          width:
+                            value === "10K"
+                              ? "8%"
+                              : value === "250K"
+                                ? "25%"
+                                : value === "500K+"
+                                  ? "55%"
+                                  : "100%",
+                          animation: `progressGrow 1.4s ease-out ${index * 0.15}s both`,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Existing Description */}
+              <div className="mt-5 border-t border-[#062b72]/10 pt-4 text-xs leading-6 text-[#59677f]">
+                Trend line illustrates the overall trajectory reported by the
+                client across the 2.5-year engagement. Share monthly export data
+                and we&apos;ll plot the exact curve.
+              </div>
             </div>
           </div>
         </div>
+
+        
       </section>
 
       {/* TESTIMONIAL */}
@@ -607,8 +760,8 @@ export default function Happypique() {
 
               <blockquote className="max-w-[900px] text-xl font-medium leading-relaxed tracking-[-0.02em] text-[#101a2e] sm:text-2xl lg:text-[29px]">
                 The SEO growth achieved by Akkurate Digital Solutions has been
-                phenomenal. The increase in visibility, traffic, and revenue
-                has transformed our business.
+                phenomenal. The increase in visibility, traffic, and revenue has
+                transformed our business.
               </blockquote>
 
               <div className="mt-5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#59677f]">
@@ -632,8 +785,7 @@ export default function Happypique() {
 
             <div className="relative z-10 flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center">
               <h3 className="max-w-[700px] text-2xl font-bold leading-tight tracking-[-0.035em] text-white sm:text-3xl">
-                Want organic search to carry more of your store&apos;s
-                revenue?
+                Want organic search to carry more of your store&apos;s revenue?
               </h3>
 
               <a
@@ -674,9 +826,7 @@ export default function Happypique() {
                 DR Multi Speciality Hospital
               </h3>
 
-              <div className="mt-6 text-2xl font-bold text-[#1455d9]">
-                10M+
-              </div>
+              <div className="mt-6 text-2xl font-bold text-[#1455d9]">10M+</div>
 
               <div className="mt-1 text-xs text-[#59677f]">
                 Video reach generated
@@ -699,9 +849,7 @@ export default function Happypique() {
                 Alpine Coach Tree
               </h3>
 
-              <div className="mt-6 text-2xl font-bold text-[#1455d9]">
-                0→1
-              </div>
+              <div className="mt-6 text-2xl font-bold text-[#1455d9]">0→1</div>
 
               <div className="mt-1 text-xs text-[#59677f]">
                 Platform built from scratch
@@ -724,13 +872,9 @@ export default function Happypique() {
                 Browse every case study
               </h3>
 
-              <div className="mt-6 text-2xl font-bold text-[#1455d9]">
-                5
-              </div>
+              <div className="mt-6 text-2xl font-bold text-[#1455d9]">5</div>
 
-              <div className="mt-1 text-xs text-[#59677f]">
-                Client stories
-              </div>
+              <div className="mt-1 text-xs text-[#59677f]">Client stories</div>
 
               <div className="mt-5 text-xs font-bold text-[#1455d9] transition-transform duration-300 group-hover:translate-x-1">
                 View All Work →

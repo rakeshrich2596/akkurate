@@ -23,3 +23,196 @@ img {
 a {
   text-decoration: none;
 }
+
+@keyframes youtubeGraph {
+  0% {
+    stroke-dasharray: 0 1000;
+  }
+
+  50% {
+    stroke-dasharray: 500 1000;
+  }
+
+  100% {
+    stroke-dasharray: 1000 1000;
+  }
+}
+
+@keyframes smmOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes smmCounterOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes googleFlow {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(350%);
+  }
+}
+
+@keyframes googleProgress {
+  0% {
+    transform: scaleX(0.35);
+    transform-origin: left;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: scaleX(0.35);
+    transform-origin: right;
+  }
+}
+
+@keyframes metaFeedCompact {
+  0% {
+    transform: translateY(0);
+  }
+
+  12% {
+    transform: translateY(0);
+  }
+
+  28% {
+    transform: translateY(-82px);
+  }
+
+  42% {
+    transform: translateY(-82px);
+  }
+
+  58% {
+    transform: translateY(-160px);
+  }
+
+  72% {
+    transform: translateY(-160px);
+  }
+
+  88% {
+    transform: translateY(-238px);
+  }
+
+  100% {
+    transform: translateY(-315px);
+  }
+}
+
+@keyframes metaProgress {
+  0% {
+    transform: scaleX(0.45);
+    transform-origin: left;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: scaleX(0.45);
+    transform-origin: right;
+  }
+}
+
+@keyframes aeoFlow {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(420%);
+  }
+}
+
+@keyframes aeoBrand {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.05);
+  }
+
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.18);
+  }
+}
+
+
+
+
+
+    @keyframes drawGrowthLine {
+      from {
+        stroke-dashoffset: 1;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes chartArea {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes chartPoint {
+      from {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: center;
+      }
+    }
+
+    @keyframes finalPointPulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.35);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes progressGrow {
+      from {
+        width: 0;
+      }
+    }
+  

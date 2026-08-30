@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-// Scroll animations are provided globally by ScrollAnimations.jsx in App.jsx.
+import "../index.css";
 
 /* =========================================================
    GOOGLE ADS PAGE
-   Google Ads Management
+   GEO PAGE DESIGN / LAYOUT / COLOUR
+   GOOGLE ADS CONTENT
+
+   React + Tailwind CSS only
 ========================================================= */
 
 const googleAdsServices = [
@@ -150,6 +152,46 @@ const faqs = [
   },
 ];
 
+/* =========================================================
+   RELATED SERVICES
+========================================================= */
+
+const relatedServices = [
+  {
+    title: "Meta Ads",
+    description:
+      "Reach relevant audiences with paid social campaigns designed around awareness, consideration and conversion.",
+    href: "/meta-ads",
+    type: "META",
+    glow: "bg-blue-500/15",
+    border: "hover:border-blue-400/30",
+    text: "text-blue-300",
+    iconBg: "bg-[#101f38]",
+  },
+  {
+    title: "LinkedIn Ads",
+    description:
+      "Reach professional audiences with targeted campaigns built around industries, roles, businesses and B2B objectives.",
+    href: "/linkedin-ads",
+    type: "LINKEDIN",
+    glow: "bg-cyan-500/15",
+    border: "hover:border-cyan-400/30",
+    text: "text-cyan-300",
+    iconBg: "bg-[#10232e]",
+  },
+  {
+    title: "Social Media Marketing",
+    description:
+      "Build an integrated social presence with content, campaigns and community-focused digital marketing.",
+    href: "/social-media-marketing",
+    type: "SOCIAL",
+    glow: "bg-violet-500/15",
+    border: "hover:border-violet-400/30",
+    text: "text-violet-300",
+    iconBg: "bg-[#211a35]",
+  },
+];
+
 function GoogleAds() {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -157,68 +199,589 @@ function GoogleAds() {
     <div className="w-full overflow-hidden bg-white text-[#111827]">
       {/* =====================================================
           HERO
+          GEO DESIGN
       ===================================================== */}
-      <section className="relative overflow-hidden bg-[#f7faff] px-14 pb-14 pt-14 sm:pb-18 sm:pt-18 lg:pb-20 lg:pt-20">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[350px] w-[350px] rounded-full bg-blue-100/60 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-40 h-[300px] w-[300px] rounded-full bg-indigo-100/50 blur-3xl" />
 
-        <div className="relative mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="mb-8 flex items-center gap-2 text-[11px] font-medium text-gray-500 sm:text-[12px]">
-            <Link to="/" className="transition hover:text-[#1455d9]">
-              Home
-            </Link>
-            <span>/</span>
-            <span>Services</span>
-            <span>/</span>
-            <span className="text-[#1455d9]">Google Ads</span>
-          </div>
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-10 lg:px-14 lg:pb-24 lg:pt-12">
+        {/* Background glow */}
 
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.05fr_0.95fr] lg:gap-12 xl:grid-cols-[1fr_0.9fr] xl:gap-16">
-            {/* LEFT CONTENT */}
+        <div className="pointer-events-none absolute -right-48 -top-48 h-[520px] w-[520px] rounded-full bg-blue-100/70 blur-3xl" />
+
+        <div className="pointer-events-none absolute -bottom-48 -left-48 h-[420px] w-[420px] rounded-full bg-indigo-100/50 blur-3xl" />
+
+        <div className="relative mx-auto w-full max-w-[1600px] px-1 sm:px-2 lg:px-4 xl:px-6">
+          {/* =================================================
+        LEFT + RIGHT — EQUAL WIDTH
+    ================================================= */}
+
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:gap-10 xl:gap-14">
+            {/* =================================================
+          LEFT HERO
+      ================================================= */}
+
             <div className="max-w-[760px]">
-              <div className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1455d9] shadow-sm sm:text-[11px]">
+              {/* =================================================
+            BREADCRUMB
+            MOVED INSIDE LEFT CONTENT
+        ================================================= */}
+
+              <div className="mb-5 flex flex-wrap items-center gap-2 text-[10px] font-medium text-gray-500 sm:mb-6 sm:text-[11px]">
+                <a href="/" className="transition hover:text-[#1455d9]">
+                  Home
+                </a>
+
+                <span>/</span>
+
+                <span>Services</span>
+
+                <span>/</span>
+
+                <span className="text-[#1455d9]">Google Ads</span>
+              </div>
+
+              {/* =================================================
+            SERVICE BADGE
+        ================================================= */}
+
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[.16em] text-[#1455d9] shadow-sm sm:text-[11px]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#1455d9]" />
                 Google Ads Management
               </div>
 
-              <h1
-                data-animate="left"
-                data-delay="1"
-                className="m-0 max-w-[720px] text-[32px] font-bold leading-[1.08] tracking-[-0.035em] text-[#101828] sm:text-[40px] md:text-[44px] lg:text-[40px] xl:text-[45px]"
-              >
-                Turn High-Intent Searches Into Qualified Leads
+              {/* =================================================
+            HEADING
+        ================================================= */}
+
+              <h1 className="m-0 max-w-[760px] text-[35px] font-bold leading-[1.04] tracking-[-.045em] text-[#101828] sm:text-[44px] md:text-[45px] lg:text-[45px] xl:text-[45px]">
+                Turn High-Intent Searches Into{" "}
+                <span className="inline-block text-[#1455d9]">
+                  Qualified Leads.
+                </span>
               </h1>
 
-              <p className="mt-5 max-w-[650px] text-[14px] leading-6 text-gray-600 sm:text-[15px] sm:leading-7 lg:text-[16px] lg:leading-7">
+              {/* =================================================
+            DESCRIPTION
+        ================================================= */}
+
+              <p className="mt-6 max-w-[660px] text-[14px] leading-7 text-gray-600 sm:text-[15px] lg:text-[16px]">
                 Reach high-intent customers with Google Ads campaigns built
                 around search intent, conversion tracking, landing pages and
                 continuous optimization — built around your audience, business
                 objective and measurable customer journey.
               </p>
 
+              {/* =================================================
+            CTA BUTTONS
+        ================================================= */}
+
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  to="/contact"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_10px_25px_rgba(7,59,145,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
+                <a
+                  href="/contact"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_12px_30px_rgba(7,59,145,.18)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
                 >
                   Talk to Our Team
                   <span className="ml-2">→</span>
-                </Link>
+                </a>
+
+                <a
+                  href="#google-ads-services"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-gray-200 bg-white px-6 py-3 text-[13px] font-semibold text-gray-700 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:text-[#1455d9]"
+                >
+                  Explore Services
+                </a>
+              </div>
+
+              {/* =================================================
+            TRUST ROW
+        ================================================= */}
+
+              <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 border-t border-gray-200/80 pt-5 text-[11px] font-medium text-gray-500">
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  Strategy-led
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-blue-500" />
+                  Performance-focused
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-violet-500" />
+                  Measurable
+                </span>
               </div>
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="relative flex min-h-[280px] items-center justify-center md:min-h-[360px] lg:min-h-[430px]">
-              <div className="absolute inset-8 rounded-full bg-blue-100/60 blur-3xl" />
+            {/* =================================================
+          RIGHT HERO — DISTINCT CAMPAIGN CONTROL ROOM
+      ================================================= */}
 
-              <div
-                data-animate="right"
-                className="relative z-10 w-full max-w-[560px] overflow-hidden rounded-[24px] bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.10)]"
-              >
-                <img
-                  src="/assets/images/content_images/GOOGLE-ADS.png"
-                  alt="Google Ads Management"
-                  className="h-auto w-full rounded-[18px] object-cover"
-                />
+            <div className="relative mx-auto min-h-[380px] w-full max-w-[560px] sm:min-h-[420px] sm:max-w-[610px]">
+              {/* =========================
+            AMBIENT GLOW
+        ========================== */}
+
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[80px]" />
+
+              <div className="pointer-events-none absolute right-5 top-8 h-28 w-28 rounded-full bg-cyan-400/10 blur-[60px]" />
+
+              {/* =========================
+            MAIN CARD
+        ========================== */}
+
+              <div className="absolute left-1/2 top-1/2 z-10 w-[92%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[22px] border border-white/10 bg-[#080b19]/95 p-3 shadow-[0_25px_70px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-4">
+                {/* =========================
+              HEADER
+          ========================== */}
+
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500/10 ring-1 ring-blue-400/20">
+                      <span className="text-[10px] font-bold text-blue-300">
+                        G
+                      </span>
+                    </div>
+
+                    <div>
+                      <p className="text-[6px] uppercase tracking-[0.16em] text-white/25">
+                        Paid Search
+                      </p>
+
+                      <h3 className="text-xs font-semibold text-white/70">
+                        Live Ad Campaign
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Live */}
+
+                  <div className="flex items-center gap-1.5 rounded-full border border-emerald-400/15 bg-emerald-400/[0.035] px-2 py-1">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+
+                    <span className="text-[6px] text-emerald-300/70">Live</span>
+                  </div>
+                </div>
+
+                {/* =========================
+              SEARCH BAR
+          ========================== */}
+
+                <div className="rounded-xl border border-white/10 bg-white/[0.025] p-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-white/[0.04]">
+                      <span className="text-[10px] text-white/40">⌕</span>
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center">
+                        <span className="overflow-hidden whitespace-nowrap text-[8px] text-white/60 sm:text-[9px]">
+                          web development
+                        </span>
+
+                        <span className="ml-1 h-3 w-px animate-pulse bg-blue-400" />
+                      </div>
+                    </div>
+
+                    <div className="hidden rounded-md bg-blue-500/15 px-2 py-1 sm:block">
+                      <span className="text-[6px] font-medium text-blue-300">
+                        Search
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =========================
+              SEARCH RESULT
+          ========================== */}
+
+                <div className="mt-2.5 rounded-xl border border-white/10 bg-[#060914] p-2.5">
+                  {/* Result Header */}
+
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="text-[6px] text-white/25">
+                      Search results
+                    </span>
+
+                    <span className="text-[5px] text-white/20">
+                      2,840 results
+                    </span>
+                  </div>
+
+                  {/* =========================
+                SPONSORED AD
+            ========================== */}
+
+                  <div className="relative overflow-hidden rounded-xl border border-blue-400/20 bg-blue-400/[0.035] p-2.5 shadow-[0_0_30px_rgba(59,130,246,0.08)]">
+                    {/* Animated Glow */}
+
+                    <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-blue-400/10 blur-2xl animate-pulse" />
+
+                    {/* Sponsored */}
+
+                    <div className="mb-1.5 flex items-center gap-1.5">
+                      <span className="rounded border border-white/15 bg-white/[0.035] px-1 py-0.5 text-[5px] font-medium text-white/45">
+                        Sponsored
+                      </span>
+
+                      <span className="text-[5px] text-white/20">Ad</span>
+                    </div>
+
+                    {/* Business */}
+
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex min-w-0 items-center gap-2">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-400/20 to-cyan-400/10 ring-1 ring-blue-400/15">
+                          <span className="text-[8px] font-bold text-blue-200">
+                            A
+                          </span>
+                        </div>
+
+                        <div className="min-w-0">
+                          <p className="text-[8px] font-semibold text-white/70">
+                            Your Business
+                          </p>
+
+                          <p className="text-[5px] text-blue-300/45">
+                            yourbusiness.com
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Position */}
+
+                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-400/10">
+                        <span className="text-[7px] font-bold text-emerald-300">
+                          #1
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Title */}
+
+                    <p className="mt-2 text-[9px] font-semibold text-blue-300/90 sm:text-[10px]">
+                      Professional Web Development Services
+                    </p>
+
+                    {/* Description */}
+
+                    <div className="mt-1.5 space-y-1">
+                      <div className="h-1 w-[90%] rounded-full bg-white/10" />
+
+                      <div className="h-1 w-[70%] rounded-full bg-white/5" />
+                    </div>
+
+                    {/* Rating */}
+
+                    <div className="mt-2 flex items-center gap-1.5">
+                      <div className="flex items-center gap-0.5">
+                        <span className="text-[6px] text-amber-300">★</span>
+
+                        <span className="text-[6px] text-amber-300">★</span>
+
+                        <span className="text-[6px] text-amber-300">★</span>
+
+                        <span className="text-[6px] text-amber-300">★</span>
+
+                        <span className="text-[6px] text-amber-300">★</span>
+                      </div>
+
+                      <span className="text-[5px] text-white/25">4.9</span>
+
+                      <span className="text-[5px] text-white/15">
+                        Trusted agency
+                      </span>
+                    </div>
+
+                    {/* CTA */}
+
+                    <div className="mt-2 flex items-center justify-between">
+                      <div className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
+
+                        <span className="text-[5px] text-white/20">
+                          Active campaign
+                        </span>
+                      </div>
+
+                      <div className="rounded-md bg-blue-500/20 px-2 py-1 ring-1 ring-blue-400/20 transition-all duration-300 hover:bg-blue-500/30">
+                        <span className="text-[6px] font-medium text-blue-200">
+                          Learn More →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Organic Result */}
+
+                  <div className="mt-2 space-y-1.5 opacity-30">
+                    <div className="rounded-lg border border-white/5 p-2">
+                      <div className="h-1 w-[52%] rounded-full bg-white/10" />
+
+                      <div className="mt-1 h-1 w-[75%] rounded-full bg-white/5" />
+                    </div>
+
+                    <div className="rounded-lg border border-white/5 p-2">
+                      <div className="h-1 w-[45%] rounded-full bg-white/10" />
+
+                      <div className="mt-1 h-1 w-[68%] rounded-full bg-white/5" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* =========================
+              PERFORMANCE FLOW
+          ========================== */}
+
+                <div className="mt-3">
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="text-[6px] uppercase tracking-[0.16em] text-white/25">
+                      Campaign Performance
+                    </span>
+
+                    <span className="text-[6px] text-blue-300/45">
+                      Live tracking
+                    </span>
+                  </div>
+
+                  <div className="relative">
+                    {/* Animated Flow Line */}
+
+                    <div className="absolute left-[13%] right-[13%] top-4 h-px overflow-hidden bg-white/5">
+                      <div className="h-full w-1/3 bg-gradient-to-r from-transparent via-blue-400/70 to-transparent animate-[googleFlow_2s_linear_infinite]" />
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2">
+                      {/* =================================================
+                    IMPRESSIONS
+                ================================================= */}
+
+                      <div className="relative z-10 rounded-lg border border-blue-400/10 bg-blue-400/[0.025] p-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[5px] text-white/30">
+                            Impressions
+                          </span>
+
+                          <span className="text-[7px] text-blue-300">◉</span>
+                        </div>
+
+                        <div className="mt-1 flex items-end gap-1">
+                          <span className="text-[12px] font-bold text-white/75">
+                            24.8K
+                          </span>
+
+                          <span className="text-[5px] text-emerald-300/60">
+                            +18%
+                          </span>
+                        </div>
+
+                        {/* Animated Bars */}
+
+                        <div className="mt-2 flex h-5 items-end gap-0.5">
+                          <span className="h-1.5 flex-1 rounded-t bg-blue-400/10" />
+
+                          <span className="h-2.5 flex-1 rounded-t bg-blue-400/15" />
+
+                          <span className="h-3 flex-1 rounded-t bg-blue-400/20" />
+
+                          <span className="h-4 flex-1 rounded-t bg-blue-400/25" />
+
+                          <span className="h-5 flex-1 rounded-t bg-blue-400/40 animate-pulse" />
+                        </div>
+                      </div>
+
+                      {/* =================================================
+                    CLICKS
+                ================================================= */}
+
+                      <div className="relative z-10 rounded-lg border border-violet-400/10 bg-violet-400/[0.025] p-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[5px] text-white/30">
+                            Clicks
+                          </span>
+
+                          <span className="text-[7px] text-violet-300">↗</span>
+                        </div>
+
+                        <div className="mt-1 flex items-end gap-1">
+                          <span className="text-[12px] font-bold text-white/75">
+                            1,842
+                          </span>
+
+                          <span className="text-[5px] text-emerald-300/60">
+                            +14%
+                          </span>
+                        </div>
+
+                        <div className="mt-2 flex items-center gap-1">
+                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/5">
+                            <div className="h-full w-[68%] rounded-full bg-violet-400/40 animate-[googleProgress_2s_ease-in-out_infinite]" />
+                          </div>
+
+                          <span className="text-[5px] text-violet-300/50">
+                            7.4%
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* =================================================
+                    CONVERSIONS
+                ================================================= */}
+
+                      <div className="relative z-10 rounded-lg border border-emerald-400/10 bg-emerald-400/[0.025] p-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[5px] text-white/30">
+                            Conversion
+                          </span>
+
+                          <span className="text-[7px] text-emerald-300">✓</span>
+                        </div>
+
+                        <div className="mt-1 flex items-end gap-1">
+                          <span className="text-[12px] font-bold text-white/75">
+                            126
+                          </span>
+
+                          <span className="text-[5px] text-emerald-300/60">
+                            +22%
+                          </span>
+                        </div>
+
+                        <div className="mt-2 flex items-center gap-1">
+                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/5">
+                            <div className="h-full w-[82%] rounded-full bg-emerald-400/50 animate-[googleProgress_2s_ease-in-out_infinite]" />
+                          </div>
+
+                          <span className="text-[5px] text-emerald-300/60">
+                            6.8%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =========================
+              SMALL METRICS
+          ========================== */}
+
+                <div className="mt-3 grid grid-cols-3 gap-1.5">
+                  {/* CTR */}
+
+                  <div className="rounded-lg border border-white/10 bg-white/[0.018] p-2">
+                    <p className="text-[5px] text-white/25">CTR</p>
+
+                    <p className="mt-0.5 text-[9px] font-semibold text-white/65">
+                      7.4%
+                    </p>
+
+                    <span className="text-[5px] text-emerald-300/50">
+                      ↑ 1.2%
+                    </span>
+                  </div>
+
+                  {/* CPC */}
+
+                  <div className="rounded-lg border border-white/10 bg-white/[0.018] p-2">
+                    <p className="text-[5px] text-white/25">CPC</p>
+
+                    <p className="mt-0.5 text-[9px] font-semibold text-white/65">
+                      ₹42
+                    </p>
+
+                    <span className="text-[5px] text-blue-300/50">
+                      Optimized
+                    </span>
+                  </div>
+
+                  {/* ROAS */}
+
+                  <div className="rounded-lg border border-white/10 bg-white/[0.018] p-2">
+                    <p className="text-[5px] text-white/25">ROAS</p>
+
+                    <p className="mt-0.5 text-[9px] font-semibold text-white/65">
+                      4.8x
+                    </p>
+
+                    <span className="text-[5px] text-emerald-300/50">
+                      ↑ 16%
+                    </span>
+                  </div>
+                </div>
+
+                {/* =========================
+              BOTTOM FLOW
+          ========================== */}
+
+                <div className="mt-3 flex justify-center">
+                  <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5">
+                    <span className="text-[5px] text-blue-300/60">
+                      IMPRESSIONS
+                    </span>
+
+                    <span className="text-[6px] text-white/20">→</span>
+
+                    <span className="text-[5px] text-violet-300/60">
+                      CLICKS
+                    </span>
+
+                    <span className="text-[6px] text-white/20">→</span>
+
+                    <span className="text-[5px] text-emerald-300/60">
+                      CONVERSION
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* =========================
+            LEFT FLOATING CARD
+        ========================== */}
+
+              <div className="absolute bottom-5 left-0 z-30 hidden rounded-lg border border-white/10 bg-[#090c1b]/95 px-2.5 py-1.5 shadow-xl backdrop-blur-xl sm:block">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[8px] text-blue-300">↑</span>
+
+                  <div>
+                    <p className="text-[6px] text-white/55">Ad Visibility</p>
+
+                    <p className="text-[5px] text-blue-300/40">
+                      24.8K impressions
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* =========================
+            RIGHT FLOATING CARD
+        ========================== */}
+
+              <div className="absolute bottom-5 right-0 z-30 hidden rounded-lg border border-white/10 bg-[#090c1b]/95 px-2.5 py-1.5 shadow-xl backdrop-blur-xl sm:block">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[8px] text-emerald-300">✓</span>
+
+                  <div>
+                    <p className="text-[6px] text-white/55">Conversions</p>
+
+                    <p className="text-[5px] text-emerald-300/40">
+                      126 leads generated
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* =========================
+            ANIMATED PARTICLES
+        ========================== */}
+
+              <div className="pointer-events-none absolute inset-0">
+                <span className="absolute left-[15%] top-[22%] h-1 w-1 animate-ping rounded-full bg-blue-400/60" />
+
+                <span className="absolute right-[17%] top-[27%] h-1 w-1 animate-pulse rounded-full bg-cyan-400/60" />
+
+                <span className="absolute left-[22%] bottom-[20%] h-1 w-1 animate-pulse rounded-full bg-violet-400/60" />
+
+                <span className="absolute right-[23%] bottom-[22%] h-1 w-1 animate-ping rounded-full bg-emerald-400/60" />
               </div>
             </div>
           </div>
@@ -228,33 +791,99 @@ function GoogleAds() {
       {/* =====================================================
           INTRODUCTION
       ===================================================== */}
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:px-8 xl:px-10">
-          <div>
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
+
+      <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
+        <div className="pointer-events-none absolute right-0 top-0 h-[320px] w-[320px] rounded-full bg-blue-50 blur-3xl" />
+
+        <div className="relative mx-auto grid w-full max-w-[1500px] gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end lg:gap-20">
+          <div className="mb-10">
+            <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
               Introduction
             </p>
 
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[34px] lg:text-[40px]"
-            >
-              Google Ads Built Around Business Growth
+            <h2 className="mt-4 m-0 max-w-[600px] text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[40px]">
+              Google Ads Built Around Business Growth.
             </h2>
           </div>
 
-          <div>
-            <p className="m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-              Akkurate Digital Solutions provides Google Ads as part of an
-              integrated digital growth system. We begin with the business
-              objective, audience and customer journey before deciding what
-              should be created, optimized or measured.
-            </p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-gray-200 bg-[#f8faff] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,.07)]">
+              <span className="text-[11px] font-bold text-[#1455d9]">
+                01 / STRATEGY
+              </span>
 
-            <p className="mt-4 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-              The goal is not simply to deliver an asset or run a channel; it is
-              to make the work useful to the business.
-            </p>
+              <h3 className="mt-5 m-0 text-[20px] font-bold tracking-[-.025em] text-[#101828]">
+                Start with the business objective.
+              </h3>
+
+              <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500">
+                Akkurate begins with the business objective, audience and
+                customer journey before deciding what should be created,
+                optimized or measured.
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_10px_35px_rgba(15,23,42,.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,.08)]">
+              <span className="text-[11px] font-bold text-[#1455d9]">
+                02 / PERFORMANCE
+              </span>
+
+              <h3 className="mt-5 m-0 text-[20px] font-bold tracking-[-.025em] text-[#101828]">
+                Make paid traffic useful.
+              </h3>
+
+              <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500">
+                The goal is not simply to deliver an asset or run a channel; it
+                is to make the work useful to the business.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Akkurate approach */}
+
+        <div className="relative mx-auto mt-10 max-w-[1500px] rounded-[28px] border border-gray-200 bg-[#101828] p-6 shadow-[0_25px_70px_rgba(15,23,42,.12)] sm:p-8 lg:p-10">
+          <div className="grid gap-7 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-blue-300">
+                The Akkurate approach
+              </p>
+
+              <h3 className="mt-3 m-0 max-w-[650px] text-[25px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[25px]">
+                Intent first. Campaigns second. Measurement throughout.
+              </h3>
+
+              <p className="mt-4 max-w-[650px] text-[13px] leading-7 text-gray-300 sm:text-[14px]">
+                We connect campaign structure, search intent, ad messaging,
+                landing-page experience and measurement so paid traffic has a
+                clear commercial purpose.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                ["01", "Understand", "Business + audience"],
+                ["02", "Build", "Campaign + creative"],
+                ["03", "Improve", "Data + iteration"],
+              ].map(([num, title, copy]) => (
+                <div
+                  key={num}
+                  className="rounded-2xl border border-white/10 bg-white/[.05] p-4"
+                >
+                  <span className="text-[10px] font-bold text-blue-300">
+                    {num}
+                  </span>
+
+                  <p className="mt-5 m-0 text-[13px] font-bold text-white">
+                    {title}
+                  </p>
+
+                  <p className="mt-1 m-0 text-[9px] leading-4 text-gray-400">
+                    {copy}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -262,70 +891,295 @@ function GoogleAds() {
       {/* =====================================================
           BUSINESS PROBLEM
       ===================================================== */}
-      <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
+
+      <section className="bg-[#101828] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
         <div className="mx-auto w-full max-w-[1200px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300 sm:text-[11px]">
+          <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-blue-300 sm:text-[11px]">
             The Business Problem We Solve
           </p>
 
-          <h2
-            data-animate="center"
-            className="mt-4 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[34px] lg:text-[42px]"
-          >
+          <h2 className="mt-4 m-0 text-[27px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[34px] lg:text-[42px]">
             Turn Paid Search Into a Clear Commercial Journey
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[850px] text-[14px] leading-7 text-gray-300 sm:text-[15px] sm:leading-7">
+          <p className="mx-auto mt-5 max-w-[850px] text-[14px] leading-7 text-gray-300 sm:text-[15px]">
             Paid search can produce immediate visibility, but buying clicks is
             not the same as generating profitable business. Akkurate connects
             campaign structure, intent, ad messaging, landing-page experience
             and measurement so paid traffic has a clear commercial purpose.
           </p>
+          <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+            {[
+              ["01", "Clarity", "Help the audience understand what matters."],
+              [
+                "02",
+                "Confidence",
+                "Make the experience feel credible and relevant.",
+              ],
+              ["03", "Action", "Make the next meaningful step easier."],
+            ].map(([n, t, c]) => (
+              <div
+                key={n}
+                className="rounded-[20px] border border-white/10 bg-white/[.045] p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/[.07]"
+              >
+                <span className="text-[9px] font-black tracking-[.15em] text-blue-300">
+                  {n}
+                </span>
+                <h3 className="mt-4 m-0 text-[16px] font-bold text-white">
+                  {t}
+                </h3>
+                <p className="mt-2 m-0 text-[11px] leading-5 text-gray-400">
+                  {c}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* =====================================================
-          GOOGLE ADS SERVICES
+          ANALYTICS / PERFORMANCE
       ===================================================== */}
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[100%] text-center">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              Our Services
-            </p>
 
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[36px]"
-            >
-              Our Google Ads Services
-            </h2>
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-10 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
+        <div className="mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16">
+            {/* LEFT */}
+
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
+                Performance / Analytics
+              </p>
+
+              <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[37px]">
+                Measure what matters beyond the click.
+              </h2>
+
+              <p className="mt-5 max-w-[560px] text-[14px] leading-7 text-gray-600">
+                Google Ads performance should be evaluated against business
+                outcomes. We look at search terms, bids, budgets, creative,
+                landing pages and conversion quality to improve efficiency over
+                time.
+              </p>
+
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                {[
+                  ["78%", "Campaign signal"],
+                  ["126", "Search terms"],
+                  ["92", "Tracking quality"],
+                  ["84%", "Optimization"],
+                ].map(([value, label]) => (
+                  <div
+                    key={label}
+                    className="rounded-[18px] border border-gray-200 bg-white p-4 shadow-[0_8px_28px_rgba(15,23,42,.04)]"
+                  >
+                    <p className="m-0 text-[22px] font-bold tracking-[-.03em] text-[#101828]">
+                      {value}
+                    </p>
+
+                    <p className="mt-1 m-0 text-[10px] font-medium text-gray-400">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* PERFORMANCE BOARD — NOT A STANDARD GRAPH */}
+
+            <div className="relative overflow-hidden rounded-[30px] border border-gray-200 bg-white p-4 shadow-[0_25px_70px_rgba(15,23,42,.08)] sm:p-6">
+              <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-blue-100/50 blur-3xl" />
+
+              <div className="relative">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-5">
+                  <div>
+                    <p className="m-0 text-[13px] font-bold text-[#101828]">
+                      Campaign health board
+                    </p>
+                    <p className="mt-1 m-0 text-[10px] text-gray-400">
+                      A decision view for the next optimization cycle
+                    </p>
+                  </div>
+
+                  <span className="rounded-full bg-emerald-50 px-2.5 py-1.5 text-[7px] font-bold uppercase tracking-[.1em] text-emerald-600">
+                    Healthy
+                  </span>
+                </div>
+
+                {/* Main score */}
+                <div className="mt-5 grid gap-4 sm:grid-cols-[.72fr_1.28fr]">
+                  <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden rounded-[24px] bg-[#101828]">
+                    <div className="absolute inset-6 rounded-full border border-white/10" />
+                    <div className="absolute inset-10 rounded-full border border-dashed border-blue-300/20" />
+
+                    <div className="relative flex h-[128px] w-[128px] flex-col items-center justify-center rounded-full border-[8px] border-blue-400/20 border-t-blue-300 border-r-blue-300 shadow-[0_0_45px_rgba(20,85,217,.2)]">
+                      <span className="text-[30px] font-bold tracking-[-.05em] text-white">
+                        91
+                      </span>
+                      <span className="mt-0.5 text-[7px] font-bold uppercase tracking-[.16em] text-blue-300">
+                        Health score
+                      </span>
+                    </div>
+
+                    <span className="absolute bottom-4 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[7px] font-semibold text-white/50">
+                      4 signals monitored
+                    </span>
+                  </div>
+
+                  {/* Signal stack */}
+                  <div className="grid gap-2.5">
+                    {[
+                      ["Search quality", "94%", "Strong", "bg-blue-500"],
+                      ["Landing relevance", "89%", "Good", "bg-violet-400"],
+                      ["Tracking", "97%", "Excellent", "bg-emerald-500"],
+                      ["Optimization", "84%", "Active", "bg-indigo-400"],
+                    ].map(([label, value, status, bar]) => (
+                      <div
+                        key={label}
+                        className="rounded-[18px] border border-gray-100 bg-[#fbfcff] p-3.5"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-[9px] font-bold text-[#101828]">
+                            {label}
+                          </span>
+                          <span className="text-[10px] font-bold text-[#1455d9]">
+                            {value}
+                          </span>
+                        </div>
+
+                        <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-gray-100">
+                          <div
+                            className={`h-full rounded-full ${bar}`}
+                            style={{ width: value }}
+                          />
+                        </div>
+
+                        <p className="mt-1.5 m-0 text-[7px] font-medium uppercase tracking-[.1em] text-gray-400">
+                          {status}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Optimization queue */}
+                <div className="mt-4 rounded-[22px] border border-gray-100 bg-[#f8faff] p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="m-0 text-[9px] font-bold uppercase tracking-[.12em] text-[#1455d9]">
+                        Next optimization queue
+                      </p>
+                      <p className="mt-1 m-0 text-[11px] font-bold text-[#101828]">
+                        3 actions ready for review
+                      </p>
+                    </div>
+
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[12px] font-bold text-[#1455d9] shadow-sm">
+                      →
+                    </span>
+                  </div>
+
+                  <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                    {[
+                      ["01", "Search terms", "Refine"],
+                      ["02", "Ad message", "Test"],
+                      ["03", "Budget mix", "Review"],
+                    ].map(([num, label, action]) => (
+                      <div
+                        key={num}
+                        className="flex items-center gap-2.5 rounded-xl border border-gray-100 bg-white px-3 py-2.5"
+                      >
+                        <span className="text-[8px] font-black text-[#1455d9]">
+                          {num}
+                        </span>
+
+                        <div className="min-w-0">
+                          <p className="m-0 truncate text-[8px] font-bold text-gray-600">
+                            {label}
+                          </p>
+                          <p className="mt-0.5 m-0 text-[7px] text-gray-400">
+                            {action}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom decision strip */}
+                <div className="mt-4 flex flex-col gap-2 rounded-[18px] border border-blue-100 bg-blue-50/60 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="text-[8px] font-semibold text-gray-600">
+                    Recommendation: protect high-intent traffic and improve weak
+                    search terms.
+                  </span>
+                  <span className="shrink-0 text-[8px] font-bold text-[#1455d9]">
+                    Review →
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section
+        id="google-ads-services"
+        className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-5"
+      >
+        <div className="mx-auto w-full max-w-[1500px]">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-[760px]">
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
+                Our Services
+              </p>
+
+              <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[37px]">
+                Our Google Ads Services
+              </h2>
+            </div>
+
+            <p className="max-w-[420px] text-[13px] leading-6 text-gray-500">
+              Build, manage and optimize campaigns around search intent,
+              customer journeys and measurable business outcomes.
+            </p>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {googleAdsServices.map((service, index) => (
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {googleAdsServices.map((service) => (
               <article
                 key={service.number}
-                data-animate="card"
-                data-delay={(index % 6) + 1}
-                className="group rounded-[20px] border border-gray-200 bg-white p-5 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_15px_40px_rgba(0,0,0,0.07)] sm:p-6"
+                className="group relative overflow-hidden rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.035)] transition-all duration-500 hover:-translate-y-2 hover:border-blue-100 hover:shadow-[0_25px_60px_rgba(15,23,42,.09)] sm:p-7"
               >
-                <div className="flex items-start justify-between">
-                  <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9]">
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-blue-50 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
+
+                <div className="relative flex items-start justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9]">
                     {service.number}
                   </span>
 
-                  <span className="text-[19px] text-gray-300 transition group-hover:text-[#1455d9]">
+                  <span className="text-[20px] text-gray-300 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#1455d9]">
                     ↗
                   </span>
                 </div>
 
-                <h3 className="mt-6 m-0 text-[18px] font-bold leading-snug text-[#101828] sm:text-[19px]">
+                <h3 className="relative mt-7 m-0 text-[20px] font-bold leading-snug tracking-[-.02em] text-[#101828]">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 sm:text-[14px]">
+                <p className="relative mt-3 m-0 text-[13px] leading-6 text-gray-500 sm:text-[14px]">
                   {service.description}
+                </p>
+
+                <div className="relative mt-6 h-px overflow-hidden bg-gray-100">
+                  <div className="h-full w-1/3 bg-[#1455d9] transition-all duration-500 group-hover:w-full" />
+                </div>
+
+                <p className="relative mt-4 m-0 text-[9px] font-bold uppercase tracking-[.14em] text-gray-400 transition group-hover:text-[#1455d9]">
+                  Explore capability →
                 </p>
               </article>
             ))}
@@ -336,45 +1190,51 @@ function GoogleAds() {
       {/* =====================================================
           OUTCOMES
       ===================================================== */}
-      <section className="bg-[#f7faff] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid w-full max-w-[1600px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8 xl:px-10">
-          <div>
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              What You Get
-            </p>
 
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
-            >
-              What You Get From Akkurate
-            </h2>
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
+        <div className="mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
+                What You Get
+              </p>
 
-            <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
-              The exact outcome depends on the starting point, competition,
-              audience, budget, implementation and business model. Our job is to
-              create the conditions for measurable improvement and to report
-              honestly on what is working.
-            </p>
-          </div>
+              <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[40px] lg:text-[48px]">
+                What You Get From Akkurate.
+              </h2>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {outcomes.map((outcome, index) => (
-              <div
-                key={outcome}
-                data-animate="card"
-                data-delay={(index % 6) + 1}
-                className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm"
+              <p className="mt-5 m-0 max-w-[540px] text-[14px] leading-7 text-gray-600">
+                The exact outcome depends on the starting point, competition,
+                audience, budget, implementation and business model. Our job is
+                to create the conditions for measurable improvement and to
+                report honestly on what is working.
+              </p>
+
+              <a
+                href="/contact"
+                className="mt-7 inline-flex items-center rounded-full bg-[#073b91] px-5 py-3 text-[12px] font-bold text-white transition hover:-translate-y-1 hover:bg-[#052f75]"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#073b91] text-[10px] font-bold text-white">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                Discuss your growth goal
+                <span className="ml-2">→</span>
+              </a>
+            </div>
 
-                <span className="text-[13px] font-semibold text-[#101828] sm:text-[14px]">
-                  {outcome}
-                </span>
-              </div>
-            ))}
+            <div className="grid gap-3 sm:grid-cols-2">
+              {outcomes.map((outcome, index) => (
+                <div
+                  key={outcome}
+                  className="group flex items-center gap-4 rounded-[18px] border border-gray-200 bg-white p-5 shadow-[0_7px_25px_rgba(15,23,42,.035)] transition duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_18px_40px_rgba(15,23,42,.07)]"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9] transition group-hover:bg-[#073b91] group-hover:text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="text-[13px] font-bold leading-5 text-[#101828] sm:text-[14px]">
+                    {outcome}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -382,25 +1242,23 @@ function GoogleAds() {
       {/* =====================================================
           WHO THIS SERVICE IS FOR
       ===================================================== */}
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
+
+      <section className="relative px-5 py-16 sm:px-8 sm:py-20 lg:py-15">
         <div className="mx-auto w-full max-w-[950px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9]">
+          <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-[#1455d9]">
             Who This Service Is For
           </p>
 
-          <h2
-            data-animate="center"
-            className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
-          >
+          <h2 className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-.03em] text-[#101828] sm:text-[36px] lg:text-[42px]">
             Google Ads Should Fit Your Business
           </h2>
 
-          <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
+          <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
             Google Ads is relevant to businesses that have a clear reason to
             improve their digital presence, customer journey or growth engine.
           </p>
 
-          <p className="mt-4 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
+          <p className="mt-4 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
             The right approach depends on the starting point. Akkurate can
             recommend a focused scope, a broader integrated program or a
             different service when that is more appropriate.
@@ -411,40 +1269,52 @@ function GoogleAds() {
       {/* =====================================================
           PROCESS
       ===================================================== */}
-      <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[100%] text-center">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300">
+
+      <section className="relative overflow-hidden bg-[#101828] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-5">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-900/20 blur-3xl" />
+
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          <div className="mx-auto max-w-[800px] text-center">
+            <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-blue-300">
               Our Process
             </p>
 
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[36px] lg:text-[44px]"
-            >
+            <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-white sm:text-[40px] lg:text-[48px]">
               A Practical Google Ads Process
             </h2>
+
+            <p className="mt-5 text-[13px] leading-7 text-gray-400 sm:text-[14px]">
+              A structured process keeps strategy, campaigns, landing pages and
+              measurement connected.
+            </p>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="relative mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {/* Connecting line */}
+
+            <div className="pointer-events-none absolute left-[10%] right-[10%] top-[42px] hidden h-px bg-gradient-to-r from-blue-500/10 via-blue-400/50 to-blue-500/10 lg:block" />
+
             {processSteps.map((step, index) => (
               <div
                 key={step.number}
-                data-animate="card"
-                data-delay={(index % 5) + 1}
-                className="rounded-[18px] border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07] sm:p-6"
+                className="group relative rounded-[22px] border border-white/10 bg-white/[.045] p-5 transition duration-500 hover:-translate-y-2 hover:border-blue-400/30 hover:bg-white/[.07] sm:p-6"
               >
-                <span className="text-[11px] font-bold tracking-[0.14em] text-blue-300">
+                <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-blue-400/20 bg-[#101b31] text-[10px] font-black text-blue-300 shadow-[0_0_0_7px_rgba(20,85,217,.04)]">
                   {step.number}
-                </span>
+                </div>
 
-                <h3 className="mt-6 m-0 text-[17px] font-bold leading-snug text-white">
+                <h3 className="mt-6 m-0 text-[18px] font-bold leading-snug text-white">
                   {step.title}
                 </h3>
 
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-400">
+                <p className="mt-3 m-0 text-[12px] leading-6 text-gray-400">
                   {step.description}
                 </p>
+
+                <div className="mt-6 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[.12em] text-blue-300 opacity-60 transition group-hover:opacity-100">
+                  Step {String(index + 1).padStart(2, "0")}
+                  <span className="h-px w-8 bg-blue-400/40" />
+                </div>
               </div>
             ))}
           </div>
@@ -454,190 +1324,487 @@ function GoogleAds() {
       {/* =====================================================
           WHY AKKURATE
       ===================================================== */}
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[750px]">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              Why Choose Akkurate
-            </p>
 
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[35px]"
-            >
-              Paid Media With a Business-First Approach
-            </h2>
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
+        <div className="pointer-events-none absolute -right-32 top-10 h-[360px] w-[360px] rounded-full bg-blue-100/50 blur-3xl" />
+
+        <div className="pointer-events-none absolute -bottom-40 -left-32 h-[320px] w-[320px] rounded-full bg-indigo-100/40 blur-3xl" />
+
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-[#1455d9]" />
+
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
+                  Why Choose Akkurate
+                </p>
+              </div>
+
+              <h2 className="m-0 max-w-[650px] text-[32px] font-bold leading-[1.05] tracking-[-.045em] text-[#101828] sm:text-[40px] lg:text-[40px]">
+                Paid Media With a
+                <span className="block text-[#1455d9]">
+                  Business-First Approach.
+                </span>
+              </h2>
+            </div>
+
+            <div>
+              <p className="m-0 max-w-[650px] text-[14px] leading-7 text-gray-600 sm:text-[15px]">
+                Digital growth rarely depends on one channel. We bring strategy,
+                search, content, web and technology together when the customer
+                journey needs a connected approach.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Strategy", "Search", "Paid Media", "Content", "Digital"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.12em] text-gray-500"
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChoose.map((item, index) => (
-              <article
-                key={item.number}
-                data-animate="card"
-                data-delay={(index % 4) + 1}
-                className="group rounded-[20px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9] hover:bg-[#1455d9] hover:shadow-[0_15px_40px_rgba(20,85,217,0.25)]"
-              >
-                <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9] transition-colors duration-300 group-hover:text-white">
-                  {item.number}
-                </span>
+          <div className="mt-12 grid gap-5 lg:grid-cols-[0.7fr_1.3fr]">
+            {/* LEFT DARK PANEL */}
 
-                <h3 className="mt-5 m-0 text-[18px] font-bold leading-snug text-[#101828] transition-colors duration-300 group-hover:text-white">
-                  {item.title}
-                </h3>
+            <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[#101828] p-7 shadow-[0_25px_70px_rgba(15,23,42,.12)] sm:p-9">
+              <div className="pointer-events-none absolute -right-24 -top-24 h-[260px] w-[260px] rounded-full border border-white/10" />
 
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white/90">
-                  {item.description}
-                </p>
-              </article>
-            ))}
+              <div className="pointer-events-none absolute -right-12 -top-12 h-[180px] w-[180px] rounded-full border border-white/10" />
+
+              <div className="pointer-events-none absolute -bottom-28 -left-24 h-[250px] w-[250px] rounded-full bg-blue-600/10 blur-3xl" />
+
+              <div className="relative z-10 flex h-full flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.14em] text-blue-300">
+                      Akkurate Method
+                    </span>
+
+                    <span className="flex items-center gap-2 text-[9px] font-semibold text-white/40">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      Connected
+                    </span>
+                  </div>
+
+                  <h3 className="mt-8 max-w-[390px] text-[27px] font-bold leading-tight tracking-[-.035em] text-white sm:text-[32px]">
+                    One strategy.
+                    <br />
+                    Multiple growth levers.
+                  </h3>
+
+                  <p className="mt-4 max-w-[400px] text-[12px] leading-6 text-gray-400 sm:text-[13px]">
+                    Instead of treating every digital activity separately, we
+                    connect the right capabilities around your business
+                    objective and customer journey.
+                  </p>
+                </div>
+
+                {/* Strategy diagram */}
+
+                <div className="relative mt-10 h-[180px]">
+                  <div className="absolute left-[22%] top-[50%] h-px w-[58%] bg-gradient-to-r from-blue-400/20 via-blue-400/70 to-blue-400/20" />
+
+                  <div className="absolute left-[50%] top-[15%] h-[70%] w-px bg-gradient-to-b from-transparent via-blue-400/50 to-transparent" />
+
+                  {/* Center */}
+
+                  <div className="absolute left-1/2 top-1/2 flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-blue-300/30 bg-[#15233d] shadow-[0_0_40px_rgba(20,85,217,.2)]">
+                    <div className="text-center">
+                      <p className="m-0 text-[8px] font-bold uppercase tracking-[.12em] text-blue-300">
+                        Growth
+                      </p>
+
+                      <p className="mt-1 m-0 text-[11px] font-bold text-white">
+                        Core
+                      </p>
+                    </div>
+                  </div>
+
+                  {[
+                    ["ADS", "top-[5%] left-[15%]"],
+                    ["CONTENT", "top-[5%] right-[15%]"],
+                    ["SEO", "bottom-[5%] left-[15%]"],
+                    ["DATA", "bottom-[5%] right-[15%]"],
+                  ].map(([label, position]) => (
+                    <div
+                      key={label}
+                      className={`absolute ${position} rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 backdrop-blur-md`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+
+                        <span className="text-[8px] font-bold tracking-[.08em] text-white/80">
+                          {label}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-5">
+                  <div className="flex -space-x-1.5">
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-blue-200" />
+
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-indigo-200" />
+
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-violet-200" />
+                  </div>
+
+                  <p className="m-0 text-[9px] leading-4 text-white/40">
+                    Strategy connects the right
+                    <br />
+                    digital capabilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT CARDS */}
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {whyChoose.map((item) => (
+                <article
+                  key={item.number}
+                  className="group relative overflow-hidden rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.035)] transition-all duration-500 hover:-translate-y-2 hover:border-[#1455d9] hover:shadow-[0_25px_55px_rgba(20,85,217,.14)]"
+                >
+                  <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-blue-50 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100" />
+
+                  <div className="relative flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9] transition duration-300 group-hover:bg-[#1455d9] group-hover:text-white">
+                      {item.number}
+                    </div>
+
+                    <span className="text-[20px] text-gray-300 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#1455d9]">
+                      ↗
+                    </span>
+                  </div>
+
+                  <h3 className="relative mt-7 m-0 text-[19px] font-bold leading-snug tracking-[-.02em] text-[#101828]">
+                    {item.title}
+                  </h3>
+
+                  <p className="relative mt-3 m-0 text-[12px] leading-6 text-gray-500 sm:text-[13px]">
+                    {item.description}
+                  </p>
+
+                  <div className="relative mt-7 flex items-center justify-between border-t border-gray-100 pt-4">
+                    <span className="text-[8px] font-bold uppercase tracking-[.14em] text-gray-400 transition group-hover:text-[#1455d9]">
+                      Akkurate capability
+                    </span>
+
+                    <span className="h-1.5 w-1.5 rounded-full bg-gray-200 transition group-hover:bg-[#1455d9]" />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom strip */}
+
+          <div className="mt-6 flex flex-col gap-4 rounded-[22px] border border-gray-200 bg-white px-6 py-5 shadow-[0_8px_30px_rgba(15,23,42,.035)] sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#073b91] text-white">
+                ✓
+              </span>
+
+              <p className="m-0 text-[12px] font-semibold text-[#101828] sm:text-[13px]">
+                Every recommendation starts with the business objective.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="inline-flex items-center text-[11px] font-bold text-[#1455d9] transition hover:gap-2"
+            >
+              Talk to our team
+              <span className="ml-2">→</span>
+            </a>
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          RELATED SERVICES
+          RELATED SERVICES — DISTINCT CHANNEL CARDS
       ===================================================== */}
-      <section
-        className="
-                          bg-[#f7faff]
-                
-                          px-14
-                          py-12
-                
-                          sm:py-16
-                        "
-      >
-        <div
-          className="
-                            mx-auto
-                            flex
-                            w-full
-                            max-w-[1200px]
-                            flex-col
-                
-                            gap-5
-                
-                            px-4
-                
-                            text-center
-                
-                            sm:flex-row
-                            sm:items-center
-                            sm:justify-between
-                            sm:px-6
-                            sm:text-left
-                
-                            lg:px-8
-                          "
-        >
-          <div>
-            <p
-              className="
-                                m-0
-                
-                                text-[10px]
-                                font-bold
-                                uppercase
-                                tracking-[0.16em]
-                                text-[#1455d9]
-                              "
-            >
-              Related Services
-            </p>
 
-            <h3
-              className="
-                                mt-2
-                                m-0
-                
-                                text-[20px]
-                                font-bold
-                                text-[#101828]
-                
-                                sm:text-[23px]
-                              "
-            >
-              SEO ↔ Google Ads ↔ Meta Ads
-            </h3>
+      {/* =====================================================
+    RELATED SERVICES
+===================================================== */}
+
+      <section className="relative overflow-hidden bg-[#050713] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-5">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute -left-40 top-10 h-[350px] w-[350px] rounded-full bg-violet-600/10 blur-[110px]" />
+
+        <div className="pointer-events-none absolute -right-40 top-[30%] h-[420px] w-[420px] rounded-full bg-blue-600/10 blur-[120px]" />
+
+        <div className="pointer-events-none absolute left-[42%] bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-500/5 blur-[100px]" />
+
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          {/* HEADER */}
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-500 shadow-[0_0_12px_rgba(139,92,246,.8)]" />
+
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[0.22em] text-gray-400 sm:text-[11px]">
+                  Related Services
+                </p>
+              </div>
+            </div>
+
+            <p className="max-w-[470px] text-[12px] leading-6 text-gray-400 sm:text-[13px] lg:pb-1">
+              Expand your digital advertising strategy with connected social
+              media solutions that build awareness, engagement and business
+              growth.
+            </p>
           </div>
 
-          <div
-            className="
-                              flex
-                              flex-wrap
-                              justify-center
-                              gap-2
-                
-                              sm:justify-end
-                            "
-          >
-            <Link
-              to="/seo"
-              className="
-                                rounded-full
-                
-                                border
-                                border-gray-200
-                
-                                bg-white
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-gray-700
-                
-                                transition
-                
-                                hover:border-[#1455d9]
-                                hover:text-[#1455d9]
-                              "
-            >
-              SEO
-            </Link>
-
-            <span
-              className="
-                                rounded-full
-                
-                                bg-[#073b91]
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-white
-                              "
-            >
-              Google Ads
-            </span>
+          {/* CARDS */}
+          <div className="mt-9 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {/* =====================================================
+          META ADS CARD
+      ===================================================== */}
 
             <Link
               to="/meta-ads"
               className="
-                                rounded-full
-                
-                                border
-                                border-gray-200
-                
-                                bg-white
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-gray-700
-                
-                                transition
-                
-                                hover:border-[#1455d9]
-                                hover:text-[#1455d9]
-                              "
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#151d2b]
+          via-[#101724]
+          to-[#0b111c]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-cyan-400/30
+          hover:shadow-[0_25px_60px_rgba(6,182,212,.15)]
+          sm:h-[180px]
+          sm:p-6
+        "
             >
-              Meta Ads
+              {/* Cyan glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-cyan-500/15 blur-[65px] transition duration-700 group-hover:bg-cyan-400/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    Meta Ads
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[270px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Reach the right audience with targeted Meta advertising
+                    campaigns designed to increase visibility, leads and
+                    conversions.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-cyan-300/60 transition group-hover:text-cyan-300">
+                  Explore service
+                  <span className="h-px w-5 bg-cyan-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* META ADS ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Glow */}
+                <div className="absolute left-1/2 top-1/2 h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-2xl" />
+
+                {/* Main orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_8s_linear_infinite] rounded-full border border-cyan-400/20 border-t-cyan-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,.9)]" />
+                </div>
+
+                {/* Inner orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[82px] w-[82px] -translate-x-1/2 -translate-y-1/2 animate-[spin_5s_linear_infinite_reverse] rounded-full border border-dashed border-cyan-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-cyan-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[56px] w-[56px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[17px] border border-cyan-300/25 bg-[#10202b] shadow-[0_0_35px_rgba(6,182,212,.25)]">
+                  <span className="text-[9px] font-bold uppercase tracking-[.04em] text-cyan-300/70">
+                    Meta Ads
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-500/10 text-[13px] text-cyan-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-cyan-500 group-hover:text-white">
+                →
+              </div>
+            </Link>
+
+            {/* =====================================================
+          LINKEDIN ADS CARD
+      ===================================================== */}
+
+            <Link
+              to="/linkedin-ads"
+              className="
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#17192a]
+          via-[#121525]
+          to-[#0c101d]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-violet-400/30
+          hover:shadow-[0_25px_60px_rgba(124,58,237,.16)]
+          sm:h-[180px]
+          sm:p-6
+        "
+            >
+              {/* Violet glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-violet-600/15 blur-[65px] transition duration-700 group-hover:bg-violet-500/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    LinkedIn Ads
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[270px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Connect with professional audiences through focused LinkedIn
+                    campaigns built for awareness, leads and B2B growth.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-violet-300/60 transition group-hover:text-violet-300">
+                  Explore service
+                  <span className="h-px w-5 bg-violet-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* LINKEDIN ADS ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Outer glow */}
+                <div className="absolute left-1/2 top-1/2 h-[115px] w-[115px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-2xl" />
+
+                {/* Rotating orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_9s_linear_infinite] rounded-full border border-violet-400/20 border-t-violet-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-violet-400 shadow-[0_0_14px_rgba(167,139,250,.9)]" />
+                </div>
+
+                {/* Reverse orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 animate-[spin_6s_linear_infinite_reverse] rounded-full border border-dashed border-violet-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-purple-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[55px] w-[65px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-300/30 bg-[#17152b] shadow-[0_0_35px_rgba(139,92,246,.3)]">
+                  <span className="text-[8px] font-black uppercase tracking-[.04em] text-violet-300">
+                    LinkedIn
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-violet-400/20 bg-violet-500/10 text-[13px] text-violet-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-violet-500 group-hover:text-white">
+                →
+              </div>
+            </Link>
+
+            {/* =====================================================
+          SOCIAL MEDIA MARKETING CARD
+      ===================================================== */}
+
+            <Link
+              to="/social-media-marketing"
+              className="
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#1c1920]
+          via-[#15151d]
+          to-[#0e1018]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-orange-400/30
+          hover:shadow-[0_25px_60px_rgba(249,115,22,.14)]
+          sm:h-[180px]
+          sm:p-6
+        "
+            >
+              {/* Orange glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-orange-500/15 blur-[65px] transition duration-700 group-hover:bg-orange-400/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    Social Media Marketing
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[275px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Build a consistent social presence with strategic content,
+                    audience engagement and campaigns that grow your brand.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-orange-300/60 transition group-hover:text-orange-300">
+                  Explore service
+                  <span className="h-px w-5 bg-orange-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* SOCIAL MEDIA MARKETING ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Glow */}
+                <div className="absolute left-1/2 top-1/2 h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-400/10 blur-2xl" />
+
+                {/* Orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_10s_linear_infinite] rounded-full border border-orange-400/20 border-t-orange-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-orange-400 shadow-[0_0_14px_rgba(251,146,60,.9)]" />
+                </div>
+
+                {/* Reverse orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[85px] w-[85px] -translate-x-1/2 -translate-y-1/2 animate-[spin_6s_linear_infinite_reverse] rounded-full border border-dashed border-orange-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-orange-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[58px] w-[75px] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border border-orange-300/25 bg-[#1a1719] shadow-[0_0_35px_rgba(249,115,22,.22)]">
+                  <span className="text-[8px] font-black uppercase tracking-[.04em] text-orange-300">
+                    SMM
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/20 bg-orange-500/10 text-[13px] text-orange-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-orange-500 group-hover:text-white">
+                →
+              </div>
             </Link>
           </div>
         </div>
@@ -646,149 +1813,197 @@ function GoogleAds() {
       {/* =====================================================
           FAQ
       ===================================================== */}
-      <section
-        className="
-    px-14
-    py-16
-    sm:py-20
-    lg:py-24
-  "
-      >
-        <div
-          className="
-      mx-auto
-      grid
-      w-full
-      max-w-[1200px]
-      gap-10
-      px-4
-      sm:px-6
-      lg:grid-cols-[0.7fr_1.3fr]
-      lg:gap-14
-      lg:px-8
-    "
-        >
-          {/* LEFT CONTENT */}
-          <div>
-            <p
-              className="
-          m-0
-          text-[10px]
-          font-bold
-          uppercase
-          tracking-[0.18em]
-          text-[#1455d9]
-          sm:text-[11px]
-        "
-            >
-              Frequently Asked Questions
-            </p>
 
-            <h2
-              data-animate="center"
-              className="
-          mt-3
-          m-0
-          text-[29px]
-          font-bold
-          leading-tight
-          tracking-[-0.03em]
-          text-[#101828]
-          sm:text-[36px]
-          lg:text-[42px]
-        "
-            >
-              Google Ads FAQs
-            </h2>
-          </div>
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-15">
+        <div className="pointer-events-none absolute -left-32 top-20 h-[300px] w-[300px] rounded-full bg-blue-100/60 blur-3xl" />
 
-          {/* RIGHT FAQ CONTENT */}
-          <div className="space-y-3">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-[350px] w-[350px] rounded-full bg-indigo-100/50 blur-3xl" />
 
-              return (
-                <div
-                  key={faq.question}
-                  data-animate="card"
-                  data-delay={(index % 6) + 1}
-                  className="
-              overflow-hidden
-              rounded-[16px]
-              border
-              border-gray-200
-              bg-white
-            "
-                >
-                  {/* QUESTION */}
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="
-                flex
-                w-full
-                items-center
-                justify-between
-                gap-5
-                px-5
-                py-5
-                text-left
-                sm:px-6
-              "
-                  >
-                    <span
-                      className="
-                  text-[14px]
-                  font-bold
-                  text-[#101828]
-                  sm:text-[15px]
-                "
-                    >
-                      {faq.question}
-                    </span>
+        <div className="relative mx-auto w-full max-w-[1250px]">
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+            {/* LEFT */}
 
-                    {/* PLUS ICON */}
-                    <span
-                      className={`
-                  shrink-0
-                  text-[20px]
-                  text-[#1455d9]
-                  transition-transform
-                  duration-300
-                  ${isOpen ? "rotate-45" : ""}
-                `}
-                    >
-                      +
-                    </span>
-                  </button>
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <div className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1455d9] shadow-[0_0_12px_rgba(20,85,217,.5)]" />
 
-                  {/* ANSWER */}
-                  <div
-                    className={`
-                grid
-                transition-all
-                duration-300
-                ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
-              `}
-                  >
-                    <div className="overflow-hidden">
-                      <p
-                        className="
-                    px-5
-                    pb-5
-                    text-[13px]
-                    leading-6
-                    text-gray-600
-                    sm:px-6
-                  "
-                      >
-                        {faq.answer}
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
+                  Frequently Asked Questions
+                </p>
+              </div>
+
+              <h2 className="mt-4 m-0 max-w-[430px] text-[32px] font-bold leading-[1.05] tracking-[-.045em] text-[#101828] sm:text-[40px] lg:text-[35px]">
+                Everything you need
+                <span className="block text-[#1455d9]">
+                  to know about Google Ads.
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-[430px] text-[12px] leading-6 text-gray-500 sm:text-[13px] sm:leading-7">
+                Have questions about campaign management, optimization,
+                measurement or how Google Ads fits into your digital strategy?
+                Find the answers below.
+              </p>
+
+              {/* Question card */}
+
+              <div className="mt-8 overflow-hidden rounded-[20px] border border-gray-200 bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,.04)]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#073b91] text-white">
+                      <span className="text-[16px] font-bold">?</span>
+                    </div>
+
+                    <div>
+                      <p className="m-0 text-[11px] font-bold text-[#101828]">
+                        Still have questions?
+                      </p>
+
+                      <p className="mt-1 m-0 text-[9px] text-gray-400">
+                        Our team can help.
                       </p>
                     </div>
                   </div>
+
+                  <a
+                    href="/contact"
+                    className="group flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-[13px] text-gray-500 transition-all duration-300 hover:border-[#1455d9] hover:bg-[#1455d9] hover:text-white"
+                  >
+                    →
+                  </a>
                 </div>
-              );
-            })}
+
+                <div className="mt-5 border-t border-gray-100 pt-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] font-bold uppercase tracking-[.15em] text-gray-400">
+                      Google Ads
+                    </span>
+
+                    <span className="flex items-center gap-1.5 text-[8px] font-semibold text-emerald-500">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                      Available
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                <div className="rounded-[18px] border border-gray-200 bg-white px-4 py-4">
+                  <p className="m-0 text-[20px] font-bold tracking-[-.03em] text-[#101828]">
+                    PPC
+                  </p>
+
+                  <p className="mt-1 m-0 text-[8px] font-medium uppercase tracking-[.12em] text-gray-400">
+                    Paid Search
+                  </p>
+                </div>
+
+                <div className="rounded-[18px] border border-gray-200 bg-white px-4 py-4">
+                  <p className="m-0 text-[20px] font-bold tracking-[-.03em] text-[#1455d9]">
+                    ROI
+                  </p>
+
+                  <p className="mt-1 m-0 text-[8px] font-medium uppercase tracking-[.12em] text-gray-400">
+                    Business Focus
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT FAQ */}
+
+            <div className="space-y-3">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+
+                return (
+                  <div
+                    key={faq.question}
+                    className={`group overflow-hidden rounded-[20px] border transition-all duration-500 ${
+                      isOpen
+                        ? "border-[#1455d9] bg-[#073b91] shadow-[0_18px_45px_rgba(20,85,217,.15)]"
+                        : "border-gray-200 bg-white hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_12px_35px_rgba(15,23,42,.05)]"
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="flex w-full items-center gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
+                    >
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[9px] font-black transition-all duration-300 ${
+                          isOpen
+                            ? "bg-white/10 text-blue-100"
+                            : "bg-[#f0f5ff] text-[#1455d9]"
+                        }`}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span
+                        className={`flex-1 text-[12px] font-bold leading-6 transition-colors duration-300 sm:text-[13px] ${
+                          isOpen ? "text-white" : "text-[#101828]"
+                        }`}
+                      >
+                        {faq.question}
+                      </span>
+
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[17px] transition-all duration-300 ${
+                          isOpen
+                            ? "rotate-45 border-white/20 bg-white/10 text-white"
+                            : "border-gray-200 bg-gray-50 text-gray-500 group-hover:border-[#1455d9] group-hover:text-[#1455d9]"
+                        }`}
+                      >
+                        +
+                      </span>
+                    </button>
+
+                    {/* Answer */}
+
+                    <div
+                      className={`grid transition-all duration-500 ${
+                        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 pb-6 pl-[68px] pr-6 sm:px-6 sm:pb-7 sm:pl-[77px]">
+                          <div className="mb-4 h-px bg-white/10" />
+
+                          <p className="m-0 max-w-[680px] text-[11px] leading-6 text-blue-100/85 sm:text-[12px] sm:leading-7">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Bottom strip */}
+
+          <div className="mt-10 flex flex-col gap-4 rounded-[20px] border border-gray-200 bg-white px-5 py-4 shadow-[0_8px_30px_rgba(15,23,42,.035)] sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f0f5ff] text-[#1455d9]">
+                ✓
+              </div>
+
+              <p className="m-0 text-[10px] font-semibold text-gray-600 sm:text-[11px]">
+                Can&apos;t find the answer you&apos;re looking for?
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="group inline-flex items-center text-[10px] font-bold text-[#1455d9]"
+            >
+              Talk to our team
+              <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -796,36 +2011,102 @@ function GoogleAds() {
       {/* =====================================================
           FINAL CTA
       ===================================================== */}
-      <section className="relative overflow-hidden bg-[#073b91] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-24 h-[260px] w-[260px] rounded-full bg-blue-300/10 blur-3xl" />
 
-        <div className="relative mx-auto w-full max-w-[1000px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-200 sm:text-[11px]">
-            Ready to Grow?
-          </p>
+      <section className="px-5 pb-14 sm:px-8 sm:pb-16 lg:px-14 lg:pb-20">
+        <div className="relative mt-20 overflow-hidden rounded-[26px] bg-gradient-to-r from-[#0b2443] via-[#7434e8] to-[#245fe5] px-6 py-9 shadow-[0_25px_80px_rgba(91,45,190,.22)] sm:px-9 sm:py-10 lg:px-11 lg:py-11">
+          <div className="pointer-events-none absolute -right-20 -top-28 h-[260px] w-[260px] rounded-full bg-white/10 blur-3xl" />
 
-          <h2
-            data-animate="center"
-            className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px] lg:text-[35px]"
-          >
-            Turn High-Intent Searches Into Qualified Leads
-          </h2>
+          <div className="relative grid gap-8 lg:grid-cols-[1fr_auto_auto] lg:items-center">
+            <div>
+              <p className="m-0 text-[9px] font-bold uppercase tracking-[.18em] text-white/70">
+                Ready to Grow?
+              </p>
 
-          <p className="mx-auto mt-5 max-w-[800px] text-[14px] leading-7 text-blue-100 sm:text-[15px] sm:leading-7">
-            Put your budget behind the searches and audiences most likely to
-            matter to the business. Tell us what you are trying to achieve, what
-            you have already tried and what outcome matters most.
-          </p>
+              <h3 className="mt-2 m-0 max-w-[600px] text-[26px] font-bold leading-[1.12] tracking-[-.035em] text-white sm:text-[27px]">
+                Turn High-Intent Searches Into Qualified Leads.
+              </h3>
 
-          <div className="mt-8">
-            <Link
-              to="/contact"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-bold text-[#073b91] transition duration-300 hover:-translate-y-1 hover:bg-gray-100"
+              <p className="mt-3 m-0 text-[12px] text-white/75 sm:text-[13px]">
+                Put your budget behind the searches and audiences most likely to
+                matter to the business.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-[11px] font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#073b91]"
             >
-              Talk to Our Team
-              <span className="ml-2">→</span>
-            </Link>
+              Start Your Campaign
+              <span className="ml-2 text-[15px]">→</span>
+            </a>
+
+            <div className="flex items-center gap-6 border-t border-white/20 pt-5 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">500+</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Projects</p>
+              </div>
+
+              <div className="h-9 w-px bg-white/20" />
+
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">100+</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Clients</p>
+              </div>
+
+              <div className="h-9 w-px bg-white/20" />
+
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">24/7</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-4">
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                01
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Discovery
+              </span>
+            </div>
+
+            <span className="h-3 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                02
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Campaign
+              </span>
+            </div>
+
+            <span className="h-3 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                03
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Optimize
+              </span>
+            </div>
+
+            <div className="ml-auto hidden items-center gap-2 sm:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.7)]" />
+
+              <span className="text-[9px] font-medium text-white/45">
+                Let&apos;s talk about your next campaign
+              </span>
+            </div>
           </div>
         </div>
       </section>

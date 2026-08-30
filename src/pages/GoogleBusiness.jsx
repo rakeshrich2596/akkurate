@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 /*
-  Google Business Profile
-  Content follows the supplied Akkurate PDF.
-  Animations use the existing global ScrollAnimations.jsx.
+  Google Business Profile Page
+  AEO-inspired layout + Google/local-search visual language
+  ReactJS + Tailwind CSS only
 */
 
 const services = [
@@ -154,152 +154,982 @@ function GoogleBusiness() {
 
   return (
     <div className="w-full overflow-hidden bg-white text-[#111827]">
-      <section className="relative overflow-hidden bg-[#f7faff] px-14 pb-14 pt-14 sm:pb-18 sm:pt-18 lg:pb-20 lg:pt-20">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[350px] w-[350px] rounded-full bg-blue-100/60 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-40 h-[300px] w-[300px] rounded-full bg-indigo-100/50 blur-3xl" />
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-10 lg:px-14 lg:pb-24 lg:pt-12">
+        {/* =================================================
+      BACKGROUND GLOW
+  ================================================= */}
 
-        <div className="relative mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="mb-8 flex items-center gap-2 text-[11px] font-medium text-gray-500 sm:text-[12px]">
-            <Link to="/" className="transition hover:text-[#1455d9]">
-              Home
-            </Link>
-            <span>/</span>
-            <span>Services</span>
-            <span>/</span>
-            <span className="text-[#1455d9]">Google Business Profile</span>
-          </div>
+        <div className="pointer-events-none absolute -right-52 -top-52 h-[620px] w-[620px] rounded-full bg-blue-200/50 blur-[110px]" />
 
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.05fr_0.95fr] lg:gap-12 xl:grid-cols-[1fr_0.9fr] xl:gap-16">
+        <div className="pointer-events-none absolute -bottom-48 -left-48 h-[480px] w-[480px] rounded-full bg-violet-200/40 blur-[100px]" />
+
+        <div className="relative mx-auto w-full max-w-[1600px] px-1 sm:px-2 lg:px-4 xl:px-6">
+          {/* =================================================
+        EQUAL LEFT + RIGHT GRID
+    ================================================= */}
+
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:gap-10 xl:gap-14">
+            {/* =================================================
+          LEFT CONTENT
+      ================================================= */}
+
             <div className="max-w-[760px]">
-              <div className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1455d9] shadow-sm sm:text-[11px]">
+              {/* =================================================
+            BREADCRUMB
+            MOVED INSIDE LEFT CONTENT
+        ================================================= */}
+
+              <div className="mb-5 flex flex-wrap items-center gap-2 text-[10px] font-medium text-gray-500 sm:mb-6 sm:text-[11px]">
+                <Link to="/" className="transition hover:text-[#1455d9]">
+                  Home
+                </Link>
+
+                <span>/</span>
+
+                <span>Services</span>
+
+                <span>/</span>
+
+                <span className="font-semibold text-[#1455d9]">
+                  Google Business Profile
+                </span>
+              </div>
+
+              {/* =================================================
+            SERVICE BADGE
+        ================================================= */}
+
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[.16em] text-[#1455d9] shadow-[0_8px_25px_rgba(20,85,217,.06)] sm:text-[11px]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#1455d9]" />
                 Google Business Profile
               </div>
 
-              <h1
-                data-animate="left"
-                className="m-0 max-w-[720px] text-[32px] font-bold leading-[1.08] tracking-[-0.035em] text-[#101828] sm:text-[40px] md:text-[44px] lg:text-[40px] xl:text-[45px]"
-              >
+              {/* =================================================
+            HEADING
+        ================================================= */}
+
+              <h1 className="m-0 max-w-[760px] text-[35px] font-bold leading-[1.04] tracking-[-.045em] text-[#101828] sm:text-[44px] md:text-[48px] xl:text-[40px]">
                 Be Easier to Find in Local Search
               </h1>
 
-              <p className="mt-5 max-w-[650px] text-[14px] leading-6 text-gray-600 sm:text-[15px] sm:leading-7 lg:text-[16px] lg:leading-7">
+              {/* =================================================
+            DESCRIPTION
+        ================================================= */}
+
+              <p className="mt-6 max-w-[660px] text-[14px] leading-7 text-gray-600 sm:text-[15px] lg:text-[16px]">
                 Improve local visibility with Google Business Profile
                 optimization, accurate business information, local content and
                 reputation support — built around your audience, business
                 objective and measurable customer journey.
               </p>
 
+              {/* =================================================
+            CTA BUTTONS
+        ================================================= */}
+
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/contact"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_10px_25px_rgba(7,59,145,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_12px_30px_rgba(7,59,145,.18)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
                 >
-                  Talk to Our Team <span className="ml-2">→</span>
+                  Talk to Our Team
+                  <span className="ml-2">→</span>
                 </Link>
+
+                <a
+                  href="#google-business-services"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-gray-200 bg-white px-6 py-3 text-[13px] font-semibold text-gray-700 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:text-[#1455d9]"
+                >
+                  Explore Services
+                </a>
+              </div>
+
+              {/* =================================================
+            TRUST ROW
+        ================================================= */}
+
+              <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 border-t border-gray-200/80 pt-5 text-[11px] font-medium text-gray-500">
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+                  Local-first
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500 [animation-delay:300ms]" />
+                  Search-ready
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-violet-500 [animation-delay:600ms]" />
+                  Measurable
+                </span>
               </div>
             </div>
 
-            <div className="relative flex min-h-[280px] items-center justify-center md:min-h-[360px] lg:min-h-[430px]">
-              <div className="absolute inset-8 rounded-full bg-blue-100/60 blur-3xl" />
-              <div
-                data-animate="right"
-                className="relative z-10 w-full max-w-[560px] overflow-hidden rounded-[24px] bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.10)]"
-              >
-                <img
-                  src="/assets/images/content_images/GB-OPTI.png"
-                  alt="Google Business Profile"
-                  className="h-auto w-full rounded-[18px] object-cover"
-                />
+            {/* =================================================
+          RIGHT — LOCAL SEARCH EXPERIENCE
+      ================================================= */}
+
+            <div className="relative mx-auto min-h-[470px] w-full max-w-[680px] sm:min-h-[540px]">
+              {/* =================================================
+            AMBIENT GLOW
+        ================================================= */}
+
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[110px]" />
+
+              <div className="pointer-events-none absolute left-[18%] top-[20%] h-32 w-32 rounded-full bg-cyan-400/10 blur-[80px]" />
+
+              {/* =================================================
+            MAIN LOCAL GROWTH CARD
+        ================================================= */}
+
+              <div className="absolute left-1/2 top-1/2 z-10 w-[94%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[26px] border border-white/10 bg-[#080b19]/95 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-5">
+                {/* =================================================
+              HEADER
+          ================================================= */}
+
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20">
+                      <span className="text-[11px] text-blue-300">📍</span>
+                    </div>
+
+                    <div>
+                      <p className="text-[7px] uppercase tracking-[0.18em] text-white/25">
+                        Local Visibility
+                      </p>
+
+                      <h3 className="mt-0.5 text-sm font-semibold text-white/75 sm:text-base">
+                        Business Growth
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Live Status */}
+
+                  <div className="flex items-center gap-1.5 rounded-full border border-emerald-400/15 bg-emerald-400/[0.035] px-2.5 py-1.5">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+
+                    <span className="text-[7px] text-emerald-300/70">
+                      Profile Active
+                    </span>
+                  </div>
+                </div>
+
+                {/* =================================================
+              MAP
+          ================================================= */}
+
+                <div className="relative h-[225px] overflow-hidden rounded-2xl border border-white/10 bg-[#07101a]">
+                  {/* Map Background */}
+
+                  <div className="absolute inset-0">
+                    {/* Roads */}
+
+                    <div className="absolute left-[10%] top-[20%] h-px w-[80%] rotate-[18deg] bg-white/[0.07]" />
+
+                    <div className="absolute left-[5%] top-[48%] h-px w-[90%] -rotate-[12deg] bg-white/[0.08]" />
+
+                    <div className="absolute left-[15%] top-[72%] h-px w-[75%] rotate-[8deg] bg-white/[0.06]" />
+
+                    <div className="absolute left-[28%] top-[5%] h-[90%] w-px rotate-[17deg] bg-white/[0.06]" />
+
+                    <div className="absolute left-[65%] top-[3%] h-[94%] w-px -rotate-[21deg] bg-white/[0.06]" />
+
+                    <div className="absolute left-[48%] top-[10%] h-[80%] w-px rotate-[5deg] bg-white/[0.045]" />
+
+                    {/* Map Blocks */}
+
+                    <div className="absolute left-[8%] top-[15%] h-12 w-20 rounded-lg border border-white/[0.04] bg-white/[0.015]" />
+
+                    <div className="absolute right-[8%] top-[17%] h-14 w-24 rounded-lg border border-white/[0.04] bg-white/[0.015]" />
+
+                    <div className="absolute bottom-[12%] left-[12%] h-12 w-24 rounded-lg border border-white/[0.04] bg-white/[0.015]" />
+
+                    <div className="absolute bottom-[15%] right-[15%] h-10 w-20 rounded-lg border border-white/[0.04] bg-white/[0.015]" />
+
+                    {/* Water Area */}
+
+                    <div className="absolute -right-16 top-[35%] h-24 w-44 rotate-[25deg] rounded-full bg-blue-400/[0.025] blur-xl" />
+                  </div>
+
+                  {/* Map Label */}
+
+                  <div className="absolute left-3 top-3 rounded-full border border-white/10 bg-[#090c1b]/80 px-2.5 py-1.5 backdrop-blur-xl">
+                    <span className="text-[6px] uppercase tracking-[0.15em] text-white/30">
+                      Local Search Map
+                    </span>
+                  </div>
+
+                  {/* =================================================
+                OUTER PINS
+            ================================================= */}
+
+                  {/* Pin 1 */}
+
+                  <div className="absolute left-[23%] top-[27%]">
+                    <div className="relative">
+                      <span className="absolute -inset-2 animate-ping rounded-full bg-blue-400/10" />
+
+                      <div className="relative flex h-7 w-7 items-center justify-center rounded-full border border-blue-400/20 bg-blue-400/[0.08]">
+                        <span className="text-[9px] text-blue-300">📍</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Pin 2 */}
+
+                  <div className="absolute right-[23%] top-[31%]">
+                    <div className="relative">
+                      <span className="absolute -inset-2 animate-pulse rounded-full bg-violet-400/10" />
+
+                      <div className="relative flex h-7 w-7 items-center justify-center rounded-full border border-violet-400/20 bg-violet-400/[0.08]">
+                        <span className="text-[9px] text-violet-300">📍</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Pin 3 */}
+
+                  <div className="absolute bottom-[23%] left-[18%]">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/[0.08]">
+                      <span className="text-[9px] text-cyan-300">📍</span>
+                    </div>
+                  </div>
+
+                  {/* Pin 4 */}
+
+                  <div className="absolute bottom-[25%] right-[18%]">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full border border-blue-400/20 bg-blue-400/[0.08]">
+                      <span className="text-[9px] text-blue-300">📍</span>
+                    </div>
+                  </div>
+
+                  {/* =================================================
+                CONNECTION LINES
+            ================================================= */}
+
+                  <svg
+                    className="pointer-events-none absolute inset-0 h-full w-full"
+                    viewBox="0 0 650 225"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path
+                      d="M145 67 C220 75 270 105 325 112"
+                      stroke="rgba(96,165,250,0.25)"
+                      strokeWidth="1.5"
+                      strokeDasharray="5 6"
+                    />
+
+                    <path
+                      d="M505 72 C430 80 375 103 325 112"
+                      stroke="rgba(139,92,246,0.25)"
+                      strokeWidth="1.5"
+                      strokeDasharray="5 6"
+                    />
+
+                    <path
+                      d="M125 172 C210 155 270 130 325 112"
+                      stroke="rgba(34,211,238,0.22)"
+                      strokeWidth="1.5"
+                      strokeDasharray="5 6"
+                    />
+
+                    <path
+                      d="M525 170 C440 155 380 130 325 112"
+                      stroke="rgba(96,165,250,0.22)"
+                      strokeWidth="1.5"
+                      strokeDasharray="5 6"
+                    />
+
+                    {/* Moving Particles */}
+
+                    <circle r="3" fill="#60a5fa">
+                      <animateMotion
+                        dur="2.2s"
+                        repeatCount="indefinite"
+                        path="M145 67 C220 75 270 105 325 112"
+                      />
+                    </circle>
+
+                    <circle r="3" fill="#8b5cf6">
+                      <animateMotion
+                        dur="2.5s"
+                        begin="0.4s"
+                        repeatCount="indefinite"
+                        path="M505 72 C430 80 375 103 325 112"
+                      />
+                    </circle>
+
+                    <circle r="3" fill="#22d3ee">
+                      <animateMotion
+                        dur="2.4s"
+                        begin="0.8s"
+                        repeatCount="indefinite"
+                        path="M125 172 C210 155 270 130 325 112"
+                      />
+                    </circle>
+
+                    <circle r="3" fill="#60a5fa">
+                      <animateMotion
+                        dur="2.6s"
+                        begin="1.1s"
+                        repeatCount="indefinite"
+                        path="M525 170 C440 155 380 130 325 112"
+                      />
+                    </circle>
+                  </svg>
+
+                  {/* =================================================
+                CENTRAL BUSINESS PIN
+            ================================================= */}
+
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    {/* Pulse Rings */}
+
+                    <div className="absolute -inset-7 animate-ping rounded-full border border-emerald-400/10" />
+
+                    <div className="absolute -inset-4 rounded-full bg-emerald-400/10 blur-xl" />
+
+                    {/* Main Pin */}
+
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/[0.09] shadow-[0_0_40px_rgba(52,211,153,0.18)]">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-400/10">
+                        <span className="text-[15px]">📍</span>
+                      </div>
+                    </div>
+
+                    {/* Business Label */}
+
+                    <div className="absolute left-1/2 top-[70px] -translate-x-1/2 whitespace-nowrap rounded-full border border-emerald-400/15 bg-[#090c1b]/90 px-3 py-1.5 backdrop-blur-xl">
+                      <span className="text-[7px] font-medium text-emerald-300/70">
+                        YOUR BUSINESS
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Location Count */}
+
+                  <div className="absolute bottom-3 left-3 rounded-lg border border-white/10 bg-[#090c1b]/85 px-2.5 py-1.5 backdrop-blur-xl">
+                    <span className="text-[6px] text-white/25">
+                      5 nearby searches
+                    </span>
+                  </div>
+
+                  {/* Visibility */}
+
+                  <div className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-lg border border-blue-400/15 bg-blue-400/[0.04] px-2.5 py-1.5 backdrop-blur-xl">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
+
+                    <span className="text-[6px] text-blue-300/60">
+                      Top local visibility
+                    </span>
+                  </div>
+                </div>
+
+                {/* =================================================
+              MAP → PROFILE FLOW
+          ================================================= */}
+
+                <div className="my-4 flex items-center justify-center">
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2">
+                    <span className="text-[6px] text-blue-300/60">MAP</span>
+
+                    <span className="text-[7px] text-white/20">→</span>
+
+                    <span className="text-[6px] text-emerald-300/60">
+                      BUSINESS
+                    </span>
+
+                    <span className="text-[7px] text-white/20">→</span>
+
+                    <span className="text-[6px] text-violet-300/60">
+                      GROWTH
+                    </span>
+                  </div>
+                </div>
+
+                {/* =================================================
+              BUSINESS PROFILE
+          ================================================= */}
+
+                <div className="rounded-2xl border border-white/10 bg-[#060914] p-3">
+                  <div className="flex items-start gap-3">
+                    {/* Business Logo */}
+
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-400/15 to-emerald-400/10 ring-1 ring-white/10">
+                      <span className="text-[12px] font-bold text-white/60">
+                        A
+                      </span>
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div>
+                          <p className="text-[9px] font-semibold text-white/70">
+                            Your Business
+                          </p>
+
+                          <p className="mt-0.5 text-[6px] text-white/25">
+                            Digital Services • Open
+                          </p>
+                        </div>
+
+                        <span className="rounded-full border border-emerald-400/15 bg-emerald-400/[0.04] px-2 py-1 text-[6px] text-emerald-300/60">
+                          VERIFIED
+                        </span>
+                      </div>
+
+                      {/* Rating */}
+
+                      <div className="mt-2 flex items-center gap-2">
+                        <div className="flex items-center gap-0.5">
+                          <span className="text-[8px] text-amber-300">★</span>
+
+                          <span className="text-[8px] text-amber-300">★</span>
+
+                          <span className="text-[8px] text-amber-300">★</span>
+
+                          <span className="text-[8px] text-amber-300">★</span>
+
+                          <span className="text-[8px] text-amber-300">★</span>
+                        </div>
+
+                        <span className="text-[8px] font-semibold text-white/60">
+                          4.9
+                        </span>
+
+                        <span className="text-[6px] text-white/20">
+                          286 reviews
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* =================================================
+                PROFILE ACTIONS
+            ================================================= */}
+
+                  <div className="mt-3 grid grid-cols-3 gap-2">
+                    {/* Reviews */}
+
+                    <div className="rounded-xl border border-amber-400/10 bg-amber-400/[0.025] p-2.5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[6px] text-white/25">
+                          Reviews
+                        </span>
+
+                        <span className="text-[8px] text-amber-300">★</span>
+                      </div>
+
+                      <p className="mt-1 text-[10px] font-semibold text-white/70">
+                        +32
+                      </p>
+
+                      <span className="text-[6px] text-emerald-300/60">
+                        This month
+                      </span>
+                    </div>
+
+                    {/* Directions */}
+
+                    <div className="rounded-xl border border-blue-400/10 bg-blue-400/[0.025] p-2.5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[6px] text-white/25">
+                          Directions
+                        </span>
+
+                        <span className="text-[8px] text-blue-300">↗</span>
+                      </div>
+
+                      <p className="mt-1 text-[10px] font-semibold text-white/70">
+                        +184
+                      </p>
+
+                      <span className="text-[6px] text-emerald-300/60">
+                        +18.4%
+                      </span>
+                    </div>
+
+                    {/* Calls */}
+
+                    <div className="rounded-xl border border-emerald-400/10 bg-emerald-400/[0.025] p-2.5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[6px] text-white/25">Calls</span>
+
+                        <span className="text-[8px] text-emerald-300">☎</span>
+                      </div>
+
+                      <p className="mt-1 text-[10px] font-semibold text-white/70">
+                        +96
+                      </p>
+
+                      <span className="text-[6px] text-emerald-300/60">
+                        +24.1%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+              GROWTH BAR
+          ================================================= */}
+
+                <div className="mt-4">
+                  <div className="mb-1.5 flex items-center justify-between">
+                    <span className="text-[6px] text-white/25">
+                      Local Business Visibility
+                    </span>
+
+                    <span className="text-[7px] text-emerald-300/60">91%</span>
+                  </div>
+
+                  <div className="h-1.5 overflow-hidden rounded-full bg-white/5">
+                    <div className="h-full w-[91%] rounded-full bg-gradient-to-r from-blue-400/50 via-cyan-400/60 to-emerald-400/70 animate-pulse" />
+                  </div>
+                </div>
+
+                {/* =================================================
+              BOTTOM STATUS
+          ================================================= */}
+
+                <div className="mt-4 flex items-center justify-center">
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+
+                    <span className="text-[7px] text-white/30">
+                      Map → Pin → Profile → Business Growth
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* =================================================
+            LEFT FLOATING CARD
+        ================================================= */}
+
+              <div className="absolute bottom-9 left-0 z-30 hidden rounded-xl border border-white/10 bg-[#090c1b]/95 px-3 py-2 shadow-xl backdrop-blur-xl sm:block">
+                <div className="flex items-center gap-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400/10">
+                    <span className="text-[10px] text-amber-300">★</span>
+                  </div>
+
+                  <div>
+                    <p className="text-[8px] font-medium text-white/60">
+                      Reviews
+                    </p>
+
+                    <p className="text-[7px] text-amber-300/50">4.9 rating</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* =================================================
+            RIGHT FLOATING CARD
+        ================================================= */}
+
+              <div className="absolute bottom-8 right-0 z-30 hidden rounded-xl border border-white/10 bg-[#090c1b]/95 px-3 py-2 shadow-xl backdrop-blur-xl sm:block">
+                <div className="flex items-center gap-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-400/10">
+                    <span className="text-[10px] text-emerald-300">↑</span>
+                  </div>
+
+                  <div>
+                    <p className="text-[8px] font-medium text-white/60">
+                      Local Actions
+                    </p>
+
+                    <p className="text-[7px] text-emerald-300/50">
+                      Calls +24.1%
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* =================================================
+            FLOATING PARTICLES
+        ================================================= */}
+
+              <div className="pointer-events-none absolute inset-0">
+                <span className="absolute left-[14%] top-[25%] h-1 w-1 animate-ping rounded-full bg-blue-400/60" />
+
+                <span className="absolute right-[18%] top-[29%] h-1 w-1 animate-pulse rounded-full bg-cyan-400/60" />
+
+                <span className="absolute bottom-[22%] left-[24%] h-1 w-1 animate-pulse rounded-full bg-emerald-400/60" />
+
+                <span className="absolute bottom-[24%] right-[25%] h-1 w-1 animate-ping rounded-full bg-violet-400/60" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:px-8 xl:px-10">
-          <div>
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              Introduction
+      {/* =====================================================
+          INTRODUCTION — AEO STYLE
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="pointer-events-none absolute right-0 top-0 h-[320px] w-[320px] rounded-full bg-blue-50 blur-3xl" />
+
+        <div className="relative mx-auto  grid w-full max-w-[1500px] gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end lg:gap-20">
+          <div className="mb-10">
+            <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
+              Built for local discovery
             </p>
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[34px] lg:text-[40px]"
-            >
-              Google Business Profile Built Around Business Growth
+
+            <h2 className="mt-4 m-0 max-w-[600px] text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[34px]">
+              A Google Business Profile that connects discovery with growth.
             </h2>
           </div>
-          <div>
-            <p className="m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-              Akkurate Digital Solutions provides google business profile as
-              part of an integrated digital growth system. We begin with the
-              business objective, audience and customer journey before deciding
-              what should be created, optimized or measured.
-            </p>
-            <p className="mt-4 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
-              The goal is not simply to deliver an asset or run a channel; it is
-              to make the work useful to the business.
-            </p>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-gray-200 bg-[#f8faff] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,.07)]">
+              <span className="text-[11px] font-bold text-[#1455d9]">
+                01 / VISIBILITY
+              </span>
+
+              <h3 className="mt-5 m-0 text-[20px] font-bold tracking-[-.025em] text-[#101828]">
+                Make local relevance easier to understand.
+              </h3>
+
+              <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500">
+                Keep your business information, services, location signals and
+                customer journey connected across important digital properties.
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_10px_35px_rgba(15,23,42,.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,.08)]">
+              <span className="text-[11px] font-bold text-[#1455d9]">
+                02 / TRUST
+              </span>
+
+              <h3 className="mt-5 m-0 text-[20px] font-bold tracking-[-.025em] text-[#101828]">
+                Turn local search into useful customer action.
+              </h3>
+
+              <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500">
+                Connect profile information, reviews, local pages and contact
+                paths so customers can understand, trust and act.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Akkurate approach */}
+        <div className="relative mx-auto mt-10 max-w-[1500px] overflow-hidden rounded-[28px] bg-[#101828] p-6 shadow-[0_25px_70px_rgba(15,23,42,.12)] sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -right-32 -top-32 h-[330px] w-[330px] rounded-full border border-white/10" />
+          <div className="pointer-events-none absolute -right-12 -top-12 h-[210px] w-[210px] rounded-full border border-white/10 animate-[spin_20s_linear_infinite]" />
+          <div className="pointer-events-none absolute -bottom-32 -left-24 h-[280px] w-[280px] rounded-full bg-blue-600/10 blur-3xl" />
+
+          <div className="relative grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-blue-300">
+                The Akkurate approach
+              </p>
+
+              <h3 className="mt-3 max-w-[650px] text-[26px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[26px]">
+                Local visibility first. Customer action throughout.
+              </h3>
+
+              <p className="mt-4 max-w-[650px] text-[13px] leading-7 text-gray-300 sm:text-[14px]">
+                We start with the business objective, audience and local
+                customer journey, then decide what should be optimized, created
+                and measured.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                ["01", "Discover", "Local intent"],
+                ["02", "Build", "Profile + pages"],
+                ["03", "Improve", "Signals + action"],
+              ].map(([num, title, copy]) => (
+                <div
+                  key={num}
+                  className="rounded-2xl border border-white/10 bg-white/[.05] p-4 transition duration-300 hover:-translate-y-1 hover:bg-white/[.08]"
+                >
+                  <span className="text-[10px] font-bold text-blue-300">
+                    {num}
+                  </span>
+                  <p className="mt-5 m-0 text-[13px] font-bold text-white">
+                    {title}
+                  </p>
+                  <p className="mt-1 m-0 text-[9px] leading-4 text-gray-400">
+                    {copy}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1200px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300 sm:text-[11px]">
+      {/* =====================================================
+          BUSINESS PROBLEM
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#101828] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-900/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-[1050px] text-center">
+          <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-blue-300 sm:text-[11px]">
             The Business Problem We Solve
           </p>
-          <h2
-            data-animate="center"
-            className="mt-4 m-0 text-[27px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[34px] lg:text-[42px]"
-          >
+
+          <h2 className="mt-4 m-0 text-[29px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[36px] lg:text-[40px]">
             Google Business Profile With a Clear Commercial Purpose
           </h2>
-          <p className="mx-auto mt-5 max-w-[900px] text-[14px] leading-7 text-gray-300 sm:text-[15px] sm:leading-7">
+
+          <p className="mx-auto mt-5 max-w-[900px] text-[14px] leading-7 text-gray-300 sm:text-[15px]">
             Local search is often about trust and convenience. Customers want to
             know whether a business is relevant, nearby, credible and easy to
             contact. Akkurate connects the Business Profile with the website and
             wider local SEO system rather than treating it as an isolated
             listing.
           </p>
+
+          <div className="mx-auto mt-8 grid max-w-[850px] gap-3 sm:grid-cols-3">
+            {[
+              ["Relevant", "Match local intent"],
+              ["Credible", "Build customer trust"],
+              ["Actionable", "Make contact easier"],
+            ].map(([title, copy]) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-white/10 bg-white/[.045] p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/[.07]"
+              >
+                <span className="text-[9px] font-bold uppercase tracking-[.13em] text-blue-300">
+                  {title}
+                </span>
+                <p className="mt-2 m-0 text-[11px] font-semibold text-white">
+                  {copy}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="text-center">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              Our Services
+      {/* =====================================================
+          LOCAL PERFORMANCE / ANALYTICS
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16">
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
+                Performance / Analytics
+              </p>
+
+              <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[35px]">
+                See how your local presence is getting stronger.
+              </h2>
+
+              <p className="mt-5 max-w-[560px] text-[14px] leading-7 text-gray-600">
+                Local optimization should not be treated as a one-time listing
+                task. Track the signals that matter — visibility, profile
+                completeness, customer trust and action — then use them to
+                prioritize the next improvement.
+              </p>
+
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                {[
+                  ["84%", "Local visibility"],
+                  ["4.9", "Trust signal"],
+                  ["92", "Profile health"],
+                  ["126", "Actions tracked"],
+                ].map(([value, label]) => (
+                  <div
+                    key={label}
+                    className="rounded-[18px] border border-gray-200 bg-white p-4 shadow-[0_8px_28px_rgba(15,23,42,.04)] transition duration-300 hover:-translate-y-1"
+                  >
+                    <p className="m-0 text-[22px] font-bold tracking-[-.03em] text-[#101828]">
+                      {value}
+                    </p>
+                    <p className="mt-1 m-0 text-[10px] font-medium text-gray-400">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Analytics visual */}
+            <div className="rounded-[30px] border border-gray-200 bg-white p-4 shadow-[0_25px_70px_rgba(15,23,42,.08)] sm:p-6">
+              <div className="flex flex-col gap-3 border-b border-gray-100 pb-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[13px] font-bold text-[#4285F4]">
+                    G
+                  </span>
+                  <div>
+                    <p className="m-0 text-[13px] font-bold text-[#101828]">
+                      Local Presence
+                    </p>
+                    <p className="mt-1 m-0 text-[9px] text-gray-400">
+                      Illustrative Google Business view
+                    </p>
+                  </div>
+                </div>
+
+                <span className="flex w-fit items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-[8px] font-bold text-emerald-600">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                  Improving
+                </span>
+              </div>
+
+              {/* Signal bars */}
+              <div className="mt-7 space-y-5">
+                {[
+                  ["Local discovery", "88%", "bg-[#4285F4]"],
+                  ["Profile health", "92%", "bg-[#34A853]"],
+                  ["Customer trust", "82%", "bg-[#FBBC05]"],
+                  ["Action readiness", "74%", "bg-[#EA4335]"],
+                ].map(([label, value, color]) => (
+                  <div key={label}>
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="text-[10px] font-semibold text-[#101828]">
+                        {label}
+                      </span>
+                      <span className="text-[10px] font-bold text-gray-500">
+                        {value}
+                      </span>
+                    </div>
+
+                    <div className="h-3 overflow-hidden rounded-full bg-gray-100">
+                      <div
+                        className={`h-full rounded-full ${color} animate-pulse`}
+                        style={{ width: value }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Customer journey */}
+              <div className="mt-8 rounded-[20px] bg-[#f7faff] p-4">
+                <p className="m-0 text-[8px] font-bold uppercase tracking-[.14em] text-gray-400">
+                  Local customer journey
+                </p>
+
+                <div className="mt-4 flex items-center justify-between">
+                  {[
+                    ["⌕", "Search", "bg-blue-100", "text-[#4285F4]"],
+                    ["G", "Profile", "bg-violet-100", "text-violet-500"],
+                    ["★", "Trust", "bg-yellow-100", "text-yellow-600"],
+                    ["✓", "Action", "bg-emerald-100", "text-emerald-500"],
+                  ].map(([icon, label, bg, color], index) => (
+                    <React.Fragment key={label}>
+                      <div className="text-center">
+                        <div
+                          className={`mx-auto flex h-9 w-9 items-center justify-center rounded-full ${bg} text-[11px] font-bold ${color} transition duration-300 hover:scale-110`}
+                        >
+                          {icon}
+                        </div>
+                        <p className="mt-2 m-0 text-[8px] font-bold text-gray-500">
+                          {label}
+                        </p>
+                      </div>
+
+                      {index < 3 && (
+                        <span className="h-px flex-1 bg-gradient-to-r from-blue-100 via-violet-100 to-emerald-100" />
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom stats */}
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                {[
+                  ["Visibility", "84%"],
+                  ["Reviews", "4.9"],
+                  ["Health", "92"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="rounded-xl border border-gray-100 bg-white p-3"
+                  >
+                    <p className="m-0 text-[8px] font-medium text-gray-400">
+                      {label}
+                    </p>
+                    <p className="mt-1 m-0 text-[15px] font-bold text-[#101828]">
+                      {value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+      <section
+        id="google-business-services"
+        className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10"
+      >
+        <div className="mx-auto w-full max-w-[1500px]">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-[760px]">
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
+                Our Services
+              </p>
+
+              <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[33px]">
+                A complete local capability, not a single listing task.
+              </h2>
+            </div>
+
+            <p className="max-w-[420px] text-[13px] leading-6 text-gray-500">
+              Each capability can work independently or as part of a connected
+              local search, content and digital-growth program.
             </p>
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px]"
-            >
-              Our Google Business Profile Services
-            </h2>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <article
                 key={service.number}
-                data-animate="card"
-                data-delay={(index % 6) + 1}
-                className="group rounded-[20px] border border-gray-200 bg-white p-5 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_15px_40px_rgba(0,0,0,0.07)] sm:p-6"
+                className="group relative overflow-hidden rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.035)] transition-all duration-500 hover:-translate-y-2 hover:border-blue-100 hover:shadow-[0_25px_60px_rgba(15,23,42,.09)]"
               >
-                <div className="flex items-start justify-between">
-                  <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9]">
+                <div className="pointer-events-none absolute right-[-40px] top-[-40px] h-36 w-36 rounded-full bg-blue-50 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100" />
+
+                <div className="relative flex items-start justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9] transition duration-300 group-hover:bg-[#1455d9] group-hover:text-white">
                     {service.number}
                   </span>
-                  <span className="text-[19px] text-gray-300 transition group-hover:text-[#1455d9]">
+
+                  <span className="text-[20px] text-gray-300 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#1455d9]">
                     ↗
                   </span>
                 </div>
-                <h3 className="mt-6 m-0 text-[18px] font-bold leading-snug text-[#101828] sm:text-[19px]">
+
+                <h3 className="relative mt-7 m-0 text-[20px] font-bold leading-snug tracking-[-.02em] text-[#101828]">
                   {service.title}
                 </h3>
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 sm:text-[14px]">
+
+                <p className="relative mt-3 m-0 text-[13px] leading-6 text-gray-500 sm:text-[14px]">
                   {service.description}
+                </p>
+
+                <div className="relative mt-6 h-px overflow-hidden bg-gray-100">
+                  <div
+                    className={`h-full rounded-full bg-[#1455d9] transition-all duration-700 group-hover:w-full ${
+                      index % 3 === 0
+                        ? "w-[28%]"
+                        : index % 3 === 1
+                          ? "w-[44%]"
+                          : "w-[62%]"
+                    }`}
+                  />
+                </div>
+
+                <p className="relative mt-4 m-0 text-[9px] font-bold uppercase tracking-[.14em] text-gray-400 transition group-hover:text-[#1455d9]">
+                  Explore capability →
                 </p>
               </article>
             ))}
@@ -307,321 +1137,644 @@ function GoogleBusiness() {
         </div>
       </section>
 
-      <section className="bg-[#f7faff] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid w-full max-w-[1600px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8 xl:px-10">
-          <div>
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              What You Get
-            </p>
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
-            >
-              What You Get From Akkurate
-            </h2>
-            <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
-              The exact outcome depends on the starting point, competition,
-              audience, budget, implementation and business model. Our job is to
-              create the conditions for measurable improvement and to report
-              honestly on what is working.
-            </p>
-          </div>
+      {/* =====================================================
+          OUTCOMES
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="pointer-events-none absolute -right-32 top-10 h-[360px] w-[360px] rounded-full bg-blue-100/50 blur-3xl" />
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {outcomes.map((outcome, index) => (
-              <div
-                key={outcome}
-                data-animate="card"
-                data-delay={(index % 6) + 1}
-                className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm"
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
+                What You Get
+              </p>
+
+              <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[40px] lg:text-[40px]">
+                Build the conditions for stronger local discovery.
+              </h2>
+
+              <p className="mt-5 m-0 max-w-[540px] text-[14px] leading-7 text-gray-600">
+                The exact outcome depends on the starting point, competition,
+                audience, budget, implementation and business model. Our job is
+                to create the conditions for measurable improvement and report
+                honestly on what is working.
+              </p>
+
+              <Link
+                to="/contact"
+                className="mt-7 inline-flex items-center rounded-full bg-[#073b91] px-5 py-3 text-[12px] font-bold text-white transition hover:-translate-y-1 hover:bg-[#052f75]"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#073b91] text-[10px] font-bold text-white">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="text-[13px] font-semibold text-[#101828] sm:text-[14px]">
-                  {outcome}
-                </span>
-              </div>
-            ))}
+                Discuss your growth goal
+                <span className="ml-2">→</span>
+              </Link>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {outcomes.map((outcome, index) => (
+                <div
+                  key={outcome}
+                  className="group flex items-center gap-4 rounded-[18px] border border-gray-200 bg-white p-5 shadow-[0_7px_25px_rgba(15,23,42,.035)] transition duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_18px_40px_rgba(15,23,42,.07)]"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9] transition group-hover:bg-[#073b91] group-hover:text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="text-[13px] font-bold leading-5 text-[#101828] sm:text-[14px]">
+                    {outcome}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[950px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9]">
+      {/* =====================================================
+          WHO THIS IS FOR
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="mx-auto w-full max-w-[950px] text-center">
+          <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-[#1455d9]">
             Who This Service Is For
           </p>
-          <h2
-            data-animate="center"
-            className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
-          >
+
+          <h2 className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-.03em] text-[#101828] sm:text-[38px] lg:text-[40px]">
             Google Business Profile Should Fit Your Business
           </h2>
-          <p className="mt-5 m-0 text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-7">
+
+          <p className="mt-5 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
             Google Business Profile is relevant to businesses that have a clear
             reason to improve their digital presence, customer journey or growth
             engine. The page should qualify visitors rather than promise that
-            every business needs the same package. Akkurate can recommend a
-            focused scope, a broader integrated program or a different service
-            when that is more appropriate.
+            every business needs the same package.
           </p>
+
+          <p className="mt-4 text-[14px] leading-7 text-gray-600 sm:text-[15px]">
+            Akkurate can recommend a focused scope, a broader integrated program
+            or a different service when that is more appropriate.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-2">
+            {[
+              "Local visibility",
+              "Customer trust",
+              "Useful pages",
+              "Action",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-gray-200 bg-[#f8faff] px-4 py-2 text-[9px] font-bold uppercase tracking-[.12em] text-gray-500 transition hover:-translate-y-1 hover:border-blue-200 hover:text-[#1455d9]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#101828] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="text-center">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300">
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#101828] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-900/20 blur-3xl" />
+
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          <div className="mx-auto max-w-[800px] text-center">
+            <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-blue-300">
               Our Process
             </p>
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[36px] lg:text-[44px]"
-            >
+
+            <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-white sm:text-[40px] lg:text-[40px]">
               A Practical Google Business Profile Process
             </h2>
+
+            <p className="mt-5 text-[13px] leading-7 text-gray-400 sm:text-[14px]">
+              A structured process keeps local strategy, profile optimization,
+              content, reputation and measurement connected.
+            </p>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="relative mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="pointer-events-none absolute left-[10%] right-[10%] top-[42px] hidden h-px bg-gradient-to-r from-blue-500/10 via-blue-400/50 to-blue-500/10 lg:block" />
+
             {processSteps.map((step, index) => (
               <div
                 key={step.number}
-                data-animate="card"
-                data-delay={(index % 5) + 1}
-                className="rounded-[18px] border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07] sm:p-6"
+                className="group relative rounded-[22px] border border-white/10 bg-white/[.045] p-5 transition duration-500 hover:-translate-y-2 hover:border-blue-400/30 hover:bg-white/[.07] sm:p-6"
               >
-                <span className="text-[11px] font-bold tracking-[0.14em] text-blue-300">
+                <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-blue-400/20 bg-[#101b31] text-[10px] font-black text-blue-300 shadow-[0_0_0_7px_rgba(20,85,217,.04)] transition duration-300 group-hover:scale-110">
                   {step.number}
-                </span>
-                <h3 className="mt-6 m-0 text-[17px] font-bold leading-snug text-white">
+                </div>
+
+                <h3 className="mt-6 m-0 text-[18px] font-bold leading-snug text-white">
                   {step.title}
                 </h3>
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-400">
+
+                <p className="mt-3 m-0 text-[12px] leading-6 text-gray-400">
                   {step.description}
                 </p>
+
+                <div className="mt-6 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[.12em] text-blue-300 opacity-60 transition group-hover:opacity-100">
+                  Step {String(index + 1).padStart(2, "0")}
+                  <span className="h-px w-8 bg-blue-400/40" />
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-14 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="max-w-[750px]">
-            <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1455d9] sm:text-[11px]">
-              Why Choose Akkurate
-            </p>
-            <h2
-              data-animate="left"
-              className="mt-3 m-0 text-[29px] font-bold leading-tight tracking-[-0.03em] text-[#101828] sm:text-[36px] lg:text-[42px]"
-            >
-              A Business-First Approach
-            </h2>
-          </div>
+      {/* =====================================================
+          WHY AKKURATE
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="pointer-events-none absolute -right-32 top-10 h-[360px] w-[360px] rounded-full bg-blue-100/50 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -left-32 h-[320px] w-[320px] rounded-full bg-indigo-100/40 blur-3xl" />
 
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChoose.map((item, index) => (
-              <article
-                key={item.number}
-                data-animate="card"
-                data-delay={(index % 4) + 1}
-                className="group rounded-[20px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9] hover:bg-[#1455d9] hover:shadow-[0_15px_40px_rgba(20,85,217,0.25)]"
-              >
-                <span className="text-[11px] font-bold tracking-[0.14em] text-[#1455d9] transition-colors duration-300 group-hover:text-white">
-                  {item.number}
-                </span>
-
-                <h3 className="mt-5 m-0 text-[18px] font-bold leading-snug text-[#101828] transition-colors duration-300 group-hover:text-white">
-                  {item.title}
-                </h3>
-
-                <p className="mt-3 m-0 text-[13px] leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white/90">
-                  {item.description}
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end lg:gap-20">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-[#1455d9]" />
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
+                  Why Choose Akkurate
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
 
-      <section
-        className="
-                          bg-[#f7faff]
-                
-                          px-14
-                          py-12
-                
-                          sm:py-16
-                        "
-      >
-        <div
-          className="
-                            mx-auto
-                            flex
-                            w-full
-                            max-w-[1200px]
-                            flex-col
-                
-                            gap-5
-                
-                            px-4
-                
-                            text-center
-                
-                            sm:flex-row
-                            sm:items-center
-                            sm:justify-between
-                            sm:px-6
-                            sm:text-left
-                
-                            lg:px-8
-                          "
-        >
-          <div>
-            <p
-              className="
-                                m-0
-                
-                                text-[10px]
-                                font-bold
-                                uppercase
-                                tracking-[0.16em]
-                                text-[#1455d9]
-                              "
-            >
-              Related Services
-            </p>
+              <h2 className="m-0 max-w-[650px] text-[32px] font-bold leading-[1.05] tracking-[-.045em] text-[#101828] sm:text-[40px] lg:text-[50px]">
+                More than a listing.
+                <span className="block text-[#1455d9]">
+                  A local growth system.
+                </span>
+              </h2>
+            </div>
 
-            <h3
-              className="
-                                mt-2
-                                m-0
-                
-                                text-[20px]
-                                font-bold
-                                text-[#101828]
-                
-                                sm:text-[23px]
-                              "
-            >
-              Youtube Marketing ↔ Google Business page
-            </h3>
+            <div>
+              <p className="m-0 max-w-[650px] text-[14px] leading-7 text-gray-600 sm:text-[15px]">
+                Digital growth rarely depends on one channel. We bring local
+                search, content, web and technology together when the customer
+                journey needs a connected approach.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Local", "Search", "Reviews", "Content", "Digital"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.12em] text-gray-500"
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
 
-          <div
-            className="
-                              flex
-                              flex-wrap
-                              justify-center
-                              gap-2
-                
-                              sm:justify-end
-                            "
-          >
+          <div className="mt-12 grid gap-5 lg:grid-cols-[.7fr_1.3fr]">
+            {/* Dark method panel */}
+            <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[#101828] p-7 shadow-[0_25px_70px_rgba(15,23,42,.12)] sm:p-9">
+              <div className="pointer-events-none absolute -right-24 -top-24 h-[260px] w-[260px] rounded-full border border-white/10" />
+              <div className="pointer-events-none absolute -right-12 -top-12 h-[180px] w-[180px] rounded-full border border-white/10 animate-[spin_18s_linear_infinite]" />
+              <div className="pointer-events-none absolute -bottom-28 -left-24 h-[250px] w-[250px] rounded-full bg-blue-600/10 blur-3xl" />
+
+              <div className="relative z-10 flex h-full flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.14em] text-blue-300">
+                      Akkurate Method
+                    </span>
+
+                    <span className="flex items-center gap-2 text-[9px] font-semibold text-white/40">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                      Connected
+                    </span>
+                  </div>
+
+                  <h3 className="mt-8 max-w-[390px] text-[27px] font-bold leading-tight tracking-[-.035em] text-white sm:text-[32px]">
+                    One local strategy.
+                    <br />
+                    Multiple growth levers.
+                  </h3>
+
+                  <p className="mt-4 max-w-[400px] text-[12px] leading-6 text-gray-400 sm:text-[13px]">
+                    Instead of treating every digital activity separately, we
+                    connect the right capabilities around your business
+                    objective and local customer journey.
+                  </p>
+                </div>
+
+                {/* Local strategy diagram */}
+                <div className="relative mt-10 h-[180px]">
+                  <div className="absolute left-[22%] top-1/2 h-px w-[58%] bg-gradient-to-r from-blue-400/20 via-blue-400/70 to-blue-400/20" />
+                  <div className="absolute left-1/2 top-[15%] h-[70%] w-px bg-gradient-to-b from-transparent via-blue-400/50 to-transparent" />
+
+                  <div className="absolute left-1/2 top-1/2 flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-blue-300/30 bg-[#15233d] shadow-[0_0_40px_rgba(20,85,217,.2)]">
+                    <div className="text-center">
+                      <p className="m-0 text-[8px] font-bold uppercase tracking-[.12em] text-blue-300">
+                        Local
+                      </p>
+                      <p className="mt-1 m-0 text-[11px] font-bold text-white">
+                        Core
+                      </p>
+                    </div>
+                  </div>
+
+                  {[
+                    ["PROFILE", "top-[5%] left-[12%]"],
+                    ["REVIEWS", "top-[5%] right-[12%]"],
+                    ["LOCAL SEO", "bottom-[5%] left-[10%]"],
+                    ["WEBSITE", "bottom-[5%] right-[10%]"],
+                  ].map(([label, position]) => (
+                    <div
+                      key={label}
+                      className={`absolute ${position} rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 backdrop-blur-md transition duration-300 hover:bg-white/[.1]`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
+                        <span className="text-[8px] font-bold tracking-[.08em] text-white/80">
+                          {label}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-5">
+                  <div className="flex -space-x-1.5">
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-blue-200" />
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-indigo-200" />
+                    <span className="h-6 w-6 rounded-full border-2 border-[#101828] bg-violet-200" />
+                  </div>
+
+                  <p className="m-0 text-[9px] leading-4 text-white/40">
+                    Strategy connects the right
+                    <br />
+                    digital capabilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right cards */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {whyChoose.map((item) => (
+                <article
+                  key={item.number}
+                  className="group relative overflow-hidden rounded-[24px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.035)] transition-all duration-500 hover:-translate-y-2 hover:border-[#1455d9] hover:shadow-[0_25px_55px_rgba(20,85,217,.14)]"
+                >
+                  <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-blue-50 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100" />
+
+                  <div className="relative flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f0f5ff] text-[10px] font-black text-[#1455d9] transition duration-300 group-hover:bg-[#1455d9] group-hover:text-white">
+                      {item.number}
+                    </div>
+
+                    <span className="text-[20px] text-gray-300 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#1455d9]">
+                      ↗
+                    </span>
+                  </div>
+
+                  <h3 className="relative mt-7 m-0 text-[19px] font-bold leading-snug tracking-[-.02em] text-[#101828]">
+                    {item.title}
+                  </h3>
+
+                  <p className="relative mt-3 m-0 text-[12px] leading-6 text-gray-500 sm:text-[13px]">
+                    {item.description}
+                  </p>
+
+                  <div className="relative mt-7 flex items-center justify-between border-t border-gray-100 pt-4">
+                    <span className="text-[8px] font-bold uppercase tracking-[.14em] text-gray-400 transition group-hover:text-[#1455d9]">
+                      Akkurate capability
+                    </span>
+
+                    <span className="h-1.5 w-1.5 rounded-full bg-gray-200 transition group-hover:bg-[#1455d9]" />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-4 rounded-[22px] border border-gray-200 bg-white px-6 py-5 shadow-[0_8px_30px_rgba(15,23,42,.035)] sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#073b91] text-white">
+                ✓
+              </span>
+
+              <p className="m-0 text-[12px] font-semibold text-[#101828] sm:text-[13px]">
+                Every recommendation starts with the business objective.
+              </p>
+            </div>
+
             <Link
-              to="/youtube-marketing"
-              className="
-                                rounded-full
-                
-                                border
-                                border-gray-200
-                
-                                bg-white
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-gray-700
-                
-                                transition
-                
-                                hover:border-[#1455d9]
-                                hover:text-[#1455d9]
-                              "
+              to="/contact"
+              className="inline-flex items-center text-[11px] font-bold text-[#1455d9] transition hover:gap-2"
             >
-              Youtube Marketing
+              Talk to our team
+              <span className="ml-2">→</span>
             </Link>
-
-            <span
-              className="
-                                rounded-full
-                
-                                bg-[#073b91]
-                
-                                px-4
-                                py-2
-                
-                                text-[12px]
-                                font-semibold
-                                text-white
-                              "
-            >
-              Google Business Page
-            </span>
           </div>
         </div>
       </section>
 
-      <section
-        className="
-    px-14
-    py-16
-    sm:py-20
-    lg:py-24
-  "
-      >
-        <div
-          className="
-      mx-auto
-      grid
-      w-full
-      max-w-[1200px]
-      gap-10
-      px-4
-      sm:px-6
-      lg:grid-cols-[0.7fr_1.3fr]
-      lg:gap-14
-      lg:px-8
-    "
-        >
-          {/* LEFT CONTENT */}
-          <div>
-            <p
+      {/* =====================================================
+          RELATED SERVICES
+      ===================================================== */}
+      {/* =====================================================
+    RELATED SERVICES
+===================================================== */}
+
+      <section className="relative overflow-hidden bg-[#050713] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-5">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute -left-40 top-10 h-[350px] w-[350px] rounded-full bg-violet-600/10 blur-[110px]" />
+
+        <div className="pointer-events-none absolute -right-40 top-[30%] h-[420px] w-[420px] rounded-full bg-blue-600/10 blur-[120px]" />
+
+        <div className="pointer-events-none absolute left-[42%] bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-500/5 blur-[100px]" />
+
+        <div className="relative mx-auto w-full max-w-[1500px]">
+          {/* HEADER */}
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-500 shadow-[0_0_12px_rgba(139,92,246,.8)]" />
+
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[0.22em] text-gray-400 sm:text-[11px]">
+                  Related Services
+                </p>
+              </div>
+            </div>
+
+            <p className="max-w-[470px] text-[12px] leading-6 text-gray-400 sm:text-[13px] lg:pb-1">
+              Extend your digital presence with connected development solutions
+              designed to support your business, users and long-term growth.
+            </p>
+          </div>
+
+          {/* CARDS */}
+          <div className="mt-9 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {/* =====================================================
+          APP DEVELOPMENT CARD
+      ===================================================== */}
+
+            <Link
+              to="/app-development"
               className="
-          m-0
-          text-[10px]
-          font-bold
-          uppercase
-          tracking-[0.18em]
-          text-[#1455d9]
-          sm:text-[11px]
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#151d2b]
+          via-[#101724]
+          to-[#0b111c]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-cyan-400/30
+          hover:shadow-[0_25px_60px_rgba(6,182,212,.15)]
+          sm:h-[180px]
+          sm:p-6
         "
             >
+              {/* Cyan glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-cyan-500/15 blur-[65px] transition duration-700 group-hover:bg-cyan-400/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    App Development
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[270px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Build reliable and engaging mobile apps that deliver smooth
+                    experiences across modern devices and platforms.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-cyan-300/60 transition group-hover:text-cyan-300">
+                  Explore service
+                  <span className="h-px w-5 bg-cyan-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* APP DEVELOPMENT ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Glow */}
+                <div className="absolute left-1/2 top-1/2 h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-2xl" />
+
+                {/* Main orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_8s_linear_infinite] rounded-full border border-cyan-400/20 border-t-cyan-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,.9)]" />
+                </div>
+
+                {/* Inner orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[82px] w-[82px] -translate-x-1/2 -translate-y-1/2 animate-[spin_5s_linear_infinite_reverse] rounded-full border border-dashed border-cyan-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-cyan-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[56px] w-[56px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[17px] border border-cyan-300/25 bg-[#10202b] shadow-[0_0_35px_rgba(6,182,212,.25)]">
+                  <span className="text-[9px] font-bold uppercase tracking-[.04em] text-cyan-300/70">
+                    App
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-500/10 text-[13px] text-cyan-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-cyan-500 group-hover:text-white">
+                →
+              </div>
+            </Link>
+
+            {/* =====================================================
+          WEBSITE DEVELOPMENT CARD
+      ===================================================== */}
+
+            <Link
+              to="/website-development"
+              className="
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#17192a]
+          via-[#121525]
+          to-[#0c101d]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-violet-400/30
+          hover:shadow-[0_25px_60px_rgba(124,58,237,.16)]
+          sm:h-[180px]
+          sm:p-6
+        "
+            >
+              {/* Violet glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-violet-600/15 blur-[65px] transition duration-700 group-hover:bg-violet-500/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    Website Development
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[270px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Develop fast, responsive and scalable websites with clean
+                    architecture, smooth performance and modern user
+                    experiences.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-violet-300/60 transition group-hover:text-violet-300">
+                  Explore service
+                  <span className="h-px w-5 bg-violet-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* WEBSITE DEVELOPMENT ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Outer glow */}
+                <div className="absolute left-1/2 top-1/2 h-[115px] w-[115px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-2xl" />
+
+                {/* Rotating orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_9s_linear_infinite] rounded-full border border-violet-400/20 border-t-violet-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-violet-400 shadow-[0_0_14px_rgba(167,139,250,.9)]" />
+                </div>
+
+                {/* Reverse orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 animate-[spin_6s_linear_infinite_reverse] rounded-full border border-dashed border-violet-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-purple-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[55px] w-[68px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-300/30 bg-[#17152b] shadow-[0_0_35px_rgba(139,92,246,.3)]">
+                  <span className="text-[8px] font-black uppercase tracking-[.04em] text-violet-300">
+                    Website
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-violet-400/20 bg-violet-500/10 text-[13px] text-violet-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-violet-500 group-hover:text-white">
+                →
+              </div>
+            </Link>
+
+            {/* =====================================================
+          WEB APPLICATION CARD
+      ===================================================== */}
+
+            <Link
+              to="/web-application"
+              className="
+          group
+          relative
+          h-[175px]
+          overflow-hidden
+          rounded-[20px]
+          border
+          border-white/10
+          bg-gradient-to-br
+          from-[#1c1920]
+          via-[#15151d]
+          to-[#0e1018]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-1.5
+          hover:border-orange-400/30
+          hover:shadow-[0_25px_60px_rgba(249,115,22,.14)]
+          sm:h-[180px]
+          sm:p-6
+        "
+            >
+              {/* Orange glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-[190px] w-[190px] rounded-full bg-orange-500/15 blur-[65px] transition duration-700 group-hover:bg-orange-400/25" />
+
+              {/* Content */}
+              <div className="relative z-20 flex h-full w-[58%] flex-col justify-between">
+                <div>
+                  <h3 className="mt-4 m-0 text-[17px] font-bold tracking-[-.025em] text-white sm:text-[18px]">
+                    Web Application
+                  </h3>
+
+                  <p className="mt-2 m-0 max-w-[275px] text-[10px] leading-[1.6] text-gray-400 sm:text-[11px]">
+                    Build powerful web applications with interactive features,
+                    scalable systems and seamless experiences for your users.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-[8px] font-bold uppercase tracking-[.12em] text-orange-300/60 transition group-hover:text-orange-300">
+                  Explore service
+                  <span className="h-px w-5 bg-orange-400/30 transition-all duration-300 group-hover:w-8" />
+                </div>
+              </div>
+
+              {/* WEB APPLICATION ORBIT */}
+              <div className="pointer-events-none absolute right-[-4px] top-1/2 h-[150px] w-[150px] -translate-y-1/2 transition duration-700 group-hover:scale-110">
+                {/* Glow */}
+                <div className="absolute left-1/2 top-1/2 h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-400/10 blur-2xl" />
+
+                {/* Orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 animate-[spin_10s_linear_infinite] rounded-full border border-orange-400/20 border-t-orange-400/80">
+                  <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-orange-400 shadow-[0_0_14px_rgba(251,146,60,.9)]" />
+                </div>
+
+                {/* Reverse orbit */}
+                <div className="absolute left-1/2 top-1/2 h-[85px] w-[85px] -translate-x-1/2 -translate-y-1/2 animate-[spin_6s_linear_infinite_reverse] rounded-full border border-dashed border-orange-300/20">
+                  <span className="absolute -top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-orange-300" />
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 top-1/2 flex h-[58px] w-[75px] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border border-orange-300/25 bg-[#1a1719] shadow-[0_0_35px_rgba(249,115,22,.22)]">
+                  <span className="text-[8px] font-black uppercase tracking-[.04em] text-orange-300">
+                    Web App
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="absolute bottom-4 right-4 z-30 flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/20 bg-orange-500/10 text-[13px] text-orange-300 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-orange-500 group-hover:text-white">
+                →
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FAQ
+      ===================================================== */}
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-10">
+        <div className="mx-auto grid w-full max-w-[1200px] gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-14">
+          <div>
+            <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-[#1455d9]">
               Frequently Asked Questions
             </p>
 
-            <h2
-              data-animate="center"
-              className="
-          mt-3
-          m-0
-          text-[29px]
-          font-bold
-          leading-tight
-          tracking-[-0.03em]
-          text-[#101828]
-          sm:text-[36px]
-          lg:text-[42px]
-        "
-            >
+            <h2 className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-.03em] text-[#101828] sm:text-[38px] lg:text-[44px]">
               Google Business Profile FAQs
             </h2>
+
+            <p className="mt-5 max-w-[380px] text-[13px] leading-6 text-gray-500">
+              Clear answers help set the right expectations before a local
+              growth project begins.
+            </p>
           </div>
 
-          {/* RIGHT FAQ CONTENT */}
           <div className="space-y-3">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
@@ -629,78 +1782,33 @@ function GoogleBusiness() {
               return (
                 <div
                   key={faq.question}
-                  data-animate="card"
-                  data-delay={(index % 6) + 1}
-                  className="
-              overflow-hidden
-              rounded-[16px]
-              border
-              border-gray-200
-              bg-white
-            "
+                  className="overflow-hidden rounded-[18px] border border-gray-200 bg-white transition duration-300 hover:border-blue-100 hover:shadow-[0_12px_30px_rgba(15,23,42,.05)]"
                 >
-                  {/* QUESTION */}
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="
-                flex
-                w-full
-                items-center
-                justify-between
-                gap-5
-                px-5
-                py-5
-                text-left
-                sm:px-6
-              "
+                    className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6"
                   >
-                    <span
-                      className="
-                  text-[14px]
-                  font-bold
-                  text-[#101828]
-                  sm:text-[15px]
-                "
-                    >
+                    <span className="text-[14px] font-bold text-[#101828] sm:text-[15px]">
                       {faq.question}
                     </span>
 
-                    {/* PLUS ICON */}
                     <span
-                      className={`
-                  shrink-0
-                  text-[20px]
-                  text-[#1455d9]
-                  transition-transform
-                  duration-300
-                  ${isOpen ? "rotate-45" : ""}
-                `}
+                      className={`shrink-0 text-[20px] text-[#1455d9] transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
                     >
                       +
                     </span>
                   </button>
 
-                  {/* ANSWER */}
                   <div
-                    className={`
-                grid
-                transition-all
-                duration-300
-                ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
-              `}
+                    className={`grid transition-all duration-300 ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
                   >
                     <div className="overflow-hidden">
-                      <p
-                        className="
-                    px-5
-                    pb-5
-                    text-[13px]
-                    leading-6
-                    text-gray-600
-                    sm:px-6
-                  "
-                      >
+                      <p className="px-5 pb-5 text-[13px] leading-6 text-gray-600 sm:px-6">
                         {faq.answer}
                       </p>
                     </div>
@@ -712,32 +1820,103 @@ function GoogleBusiness() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#073b91] px-14 py-16 sm:py-20 lg:py-24">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-24 h-[260px] w-[260px] rounded-full bg-blue-300/10 blur-3xl" />
-        <div className="relative mx-auto w-full max-w-[1000px] px-4 text-center sm:px-6 lg:px-8">
-          <p className="m-0 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-200 sm:text-[11px]">
-            Ready to Grow?
-          </p>
-          <h2
-            data-animate="center"
-            className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px] lg:text-[36px]"
-          >
-            Make your business information easier to find, understand and act on
-            when local customers are ready.
-          </h2>
-          <p className="mx-auto mt-5 max-w-[800px] text-[14px] leading-7 text-blue-100 sm:text-[15px] sm:leading-7">
-            Tell us what you are trying to achieve, what you have already tried
-            and what outcome matters most. Akkurate can then recommend the most
-            practical next step.
-          </p>
-          <div className="mt-8">
-            <Link
-              to="/contact"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-bold text-[#073b91] transition duration-300 hover:-translate-y-1 hover:bg-gray-100"
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+      <section className="px-5 pb-14 sm:px-8 sm:pb-16 lg:px-14 lg:pb-15">
+        <div className="relative mt-20 overflow-hidden rounded-[26px] bg-gradient-to-r from-[#0b2443] via-[#7434e8] to-[#245fe5] px-6 py-9 shadow-[0_25px_80px_rgba(91,45,190,.22)] sm:px-9 sm:py-10 lg:px-11 lg:py-11">
+          <div className="pointer-events-none absolute -right-20 -top-28 h-[260px] w-[260px] rounded-full bg-white/10 blur-3xl" />
+
+          <div className="relative grid gap-8 lg:grid-cols-[1fr_auto_auto] lg:items-center">
+            <div>
+              <p className="m-0 text-[9px] font-bold uppercase tracking-[.18em] text-white/70">
+                Ready to grow?
+              </p>
+
+              <h3 className="mt-2 m-0 max-w-[600px] text-[26px] font-bold leading-[1.12] tracking-[-.035em] text-white sm:text-[32px]">
+                Let&apos;s build your answer growth system.
+              </h3>
+
+              <p className="mt-3 m-0 text-[12px] text-white/75 sm:text-[13px]">
+                Strategy, Marketing and digital growth — connected.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-[11px] font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#073b91]"
             >
-              Talk to Our Team <span className="ml-2">→</span>
-            </Link>
+              Start Your Project
+              <span className="ml-2 text-[15px]">→</span>
+            </a>
+
+            <div className="flex items-center gap-6 border-t border-white/20 pt-5 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">500+</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Projects</p>
+              </div>
+
+              <div className="h-9 w-px bg-white/20" />
+
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">100+</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Clients</p>
+              </div>
+
+              <div className="h-9 w-px bg-white/20" />
+
+              <div>
+                <p className="m-0 text-[22px] font-bold text-white">24/7</p>
+
+                <p className="mt-1 m-0 text-[8px] text-white/65">Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-4">
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                01
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Discovery
+              </span>
+            </div>
+
+            <span className="h-3 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                02
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Strategy
+              </span>
+            </div>
+
+            <span className="h-3 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[8px] text-blue-200">
+                03
+              </span>
+
+              <span className="text-[9px] font-medium text-white/55">
+                Answers
+              </span>
+            </div>
+
+            <div className="ml-auto hidden items-center gap-2 sm:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.7)]" />
+
+              <span className="text-[9px] font-medium text-white/45">
+                Let&apos;s talk about your next move
+              </span>
+            </div>
           </div>
         </div>
       </section>

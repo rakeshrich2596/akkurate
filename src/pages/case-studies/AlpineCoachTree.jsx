@@ -186,7 +186,7 @@ export default function AlpineCoachTree() {
               Education · Website Development · LMS
             </div>
 
-            <h1 className="max-w-[700px] text-[40px] font-bold leading-[1.02] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
+            <h1 className="max-w-[700px] text-[40px] font-bold leading-[1.02] tracking-[-0.04em] sm:text-[52px] lg:text-[50px]">
               From no website to a full learning platform
             </h1>
 
@@ -296,7 +296,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           ABOUT + SCOPE
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto grid w-[min(100%-32px,1180px)] grid-cols-1 gap-9 sm:w-[min(100%-48px,1180px)] lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:gap-[68px]">
           <div>
             <div className="mb-5 max-w-[700px]">
@@ -305,11 +305,11 @@ export default function AlpineCoachTree() {
                 About Alpine Coach Tree
               </div>
 
-              <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-                A coaching brand with
-                <span className="block text-[#1455d9]">
+              <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[32px]">
+                A coaching brand with <span className="inline-block text-[#1455d9]">
                   nothing to build on
                 </span>
+                
               </h2>
             </div>
 
@@ -350,7 +350,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           CHALLENGES
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -359,10 +359,10 @@ export default function AlpineCoachTree() {
             </div>
 
             <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              Starting with nothing
-              <span className="block text-[#1455d9]">
+              Starting with nothing <span className="inline-block text-[#1455d9]">
                 to build on
               </span>
+              
             </h2>
           </div>
 
@@ -394,7 +394,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           SOLUTION
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -402,11 +402,11 @@ export default function AlpineCoachTree() {
               Our Solution
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              Built end to end,
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[32px]">
+              Built end to end, <span className="inline-block text-[#1455d9]">
                 design and SEO together
               </span>
+              
             </h2>
           </div>
 
@@ -431,7 +431,7 @@ export default function AlpineCoachTree() {
       ========================================================== */}
       <section
         id="results"
-        className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]"
+        className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[10px]"
       >
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
@@ -440,11 +440,11 @@ export default function AlpineCoachTree() {
               Results
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              A platform that
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[22px]">
+              A platform that <span className="inline-block text-[#1455d9]">
                 launched and performed
               </span>
+              
             </h2>
           </div>
 
@@ -486,7 +486,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           GRAPH — inline SVG, no chart library
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -494,11 +494,11 @@ export default function AlpineCoachTree() {
               Growth Trajectory
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              From a blank slate to
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[32px]">
+              From a blank slate to <span className="inline-block text-[#1455d9]">
                 a working learning ecosystem
               </span>
+              
             </h2>
           </div>
 
@@ -692,7 +692,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           BEFORE / AFTER
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -762,7 +762,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           TESTIMONIAL
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="relative overflow-hidden rounded-[24px] border border-[#1455d9]/15 bg-gradient-to-br from-[#f0f5ff] to-[#e6efff] p-7 shadow-[0_8px_30px_rgba(7,35,82,.06)] sm:p-[45px]">
             <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#1455d9]/[0.07]" />
@@ -795,7 +795,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           CTA
       ========================================================== */}
-      <section className="py-16 sm:py-20 lg:py-[86px]">
+      <section className="py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#031a46] to-[#1455d9] p-7 shadow-[0_18px_55px_rgba(7,35,82,.1)] sm:p-[46px]">
             <div className="absolute -right-24 -top-36 h-[280px] w-[280px] rounded-full bg-white/[0.07]" />
@@ -819,7 +819,7 @@ export default function AlpineCoachTree() {
       {/* =========================================================
           RELATED WORK
       ========================================================== */}
-      <section className="border-t border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-t border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[10px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">

@@ -294,8 +294,8 @@ export default function PentagonTaxCorp() {
           leading-[1.03]
           tracking-[-0.04em]
           sm:text-[50px]
-          lg:text-[60px]
-          xl:text-[64px]
+          lg:text-[50px]
+          xl:text-[50px]
         "
             >
               A premium site their team can actually manage
@@ -691,7 +691,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           ABOUT + SCOPE
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto grid w-[min(100%-32px,1180px)] grid-cols-1 gap-9 sm:w-[min(100%-48px,1180px)] lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:gap-[68px]">
           <div>
             <div className="mb-5 max-w-[700px]">
@@ -700,9 +700,11 @@ export default function PentagonTaxCorp() {
                 About Pentagon Tax Corp
               </div>
 
-              <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
+              <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[35px]">
                 Professional presence,
-                <span className="block text-[#1455d9]">practical control</span>
+                <span className="inline-block text-[#1455d9]">
+                  practical control
+                </span>
               </h2>
             </div>
 
@@ -744,7 +746,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           CHALLENGES
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -752,9 +754,12 @@ export default function PentagonTaxCorp() {
               Client's Challenges
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[40px]">
               Professional presence,
-              <span className="block text-[#1455d9]">practical control</span>
+              <span className="inline-block text-[#1455d9]">
+                {" "}
+                practical control
+              </span>
             </h2>
           </div>
 
@@ -786,7 +791,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           SOLUTION
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -794,9 +799,11 @@ export default function PentagonTaxCorp() {
               Our Solution
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              Built for performance,
-              <span className="block text-[#1455d9]">scale, and search</span>
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[35px]">
+              Built for performance,{" "}
+              <span className="inline-block text-[#1455d9]">
+                scale, and search
+              </span>
             </h2>
           </div>
 
@@ -822,7 +829,7 @@ export default function PentagonTaxCorp() {
       ========================================================== */}
       <section
         id="results"
-        className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]"
+        className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]"
       >
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
@@ -832,8 +839,8 @@ export default function PentagonTaxCorp() {
             </div>
 
             <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              A foundation the team
-              <span className="block text-[#1455d9]">can build on</span>
+              A foundation the team{" "}
+              <span className="inline-block text-[#1455d9]">can build on</span>
             </h2>
           </div>
 
@@ -875,182 +882,326 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           GRAPH — inline SVG, no chart library
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
+          {/* Section Heading */}
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
               <span className="h-px w-7 bg-current opacity-70" />
               Growth Foundation
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              From corporate presentation
-              <span className="block text-[#1455d9]">to scalable platform</span>
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl lg:text-[30px]">
+              From corporate presentation{" "}
+              <span className="inline-block text-[#1455d9]">
+                to scalable platform
+              </span>
             </h2>
           </div>
 
+          {/* Animated Chart Container */}
           <div className="rounded-[22px] border border-[#062b72]/10 bg-white p-5 shadow-[0_8px_30px_rgba(7,35,82,.06)] sm:p-[30px]">
-            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#59677f]">
+            <div className="mb-6 font-mono text-[10px] uppercase tracking-[0.1em] text-[#59677f]">
               Website transformation — structure, performance &amp; search
               readiness
             </div>
 
-            <div className="overflow-hidden rounded-[15px] bg-gradient-to-b from-[#f8fbff] to-white">
-              <svg
-                viewBox="0 0 760 280"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Illustrative website transformation from basic presence to a premium scalable CMS platform"
-                className="block h-auto w-full"
-              >
-                <defs>
-                  <linearGradient id="pentagonArea" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#1455d9" stopOpacity=".18" />
-                    <stop offset="100%" stopColor="#1455d9" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
+            {/* Chart */}
+            <div className="relative overflow-hidden rounded-[18px] border border-[#062b72]/10 bg-gradient-to-b from-[#f8fbff] to-white p-4 sm:p-6">
+              {/* Top Metric */}
+              <div className="mb-6 flex items-end justify-between gap-4">
+                <div>
+                  <p className="m-0 text-[10px] font-bold uppercase tracking-[.14em] text-[#59677f]">
+                    Platform Maturity
+                  </p>
 
-                <line
-                  x1="60"
-                  y1="230"
-                  x2="700"
-                  y2="230"
-                  stroke="#062b72"
-                  strokeOpacity=".15"
-                />
+                  <div className="mt-1 flex items-end gap-2">
+                    <span className="text-3xl font-bold tracking-[-.04em] text-[#062b72] sm:text-4xl">
+                      92%
+                    </span>
 
-                <line
-                  x1="60"
-                  y1="175"
-                  x2="700"
-                  y2="175"
-                  stroke="#062b72"
-                  strokeOpacity=".07"
-                  strokeDasharray="4 5"
-                />
+                    <span className="mb-1 text-[10px] font-semibold text-[#1455d9]">
+                      Growth Ready
+                    </span>
+                  </div>
+                </div>
 
-                <line
-                  x1="60"
-                  y1="120"
-                  x2="700"
-                  y2="120"
-                  stroke="#062b72"
-                  strokeOpacity=".07"
-                  strokeDasharray="4 5"
-                />
+                {/* Animated Pulse */}
+                <div className="flex items-center gap-2 rounded-full border border-[#1455d9]/10 bg-[#1455d9]/5 px-3 py-1.5">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1455d9] opacity-50" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1455d9]" />
+                  </span>
 
-                <line
-                  x1="60"
-                  y1="65"
-                  x2="700"
-                  y2="65"
-                  stroke="#062b72"
-                  strokeOpacity=".07"
-                  strokeDasharray="4 5"
-                />
+                  <span className="font-mono text-[9px] font-bold uppercase tracking-[.08em] text-[#1455d9]">
+                    Improving
+                  </span>
+                </div>
+              </div>
 
-                <polyline
-                  points="60,215 220,190 380,150 540,95 700,42"
-                  fill="none"
-                  stroke="#062b72"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              {/* Chart Area */}
+              <div className="relative h-[270px] overflow-hidden rounded-[14px] bg-white">
+                {/* Horizontal Grid */}
+                <div className="pointer-events-none absolute inset-0 flex flex-col justify-between py-5">
+                  <span className="h-px w-full bg-[#062b72]/[.06]" />
+                  <span className="h-px w-full border-t border-dashed border-[#062b72]/[.07]" />
+                  <span className="h-px w-full border-t border-dashed border-[#062b72]/[.07]" />
+                  <span className="h-px w-full border-t border-dashed border-[#062b72]/[.07]" />
+                  <span className="h-px w-full bg-[#062b72]/[.08]" />
+                </div>
 
-                <polygon
-                  points="60,215 220,190 380,150 540,95 700,42 700,230 60,230"
-                  fill="url(#pentagonArea)"
-                />
+                {/* Y Axis Labels */}
+                <div className="absolute left-0 top-0 flex h-full flex-col justify-between py-3 font-mono text-[8px] text-[#7a879b]">
+                  <span>100</span>
+                  <span>75</span>
+                  <span>50</span>
+                  <span>25</span>
+                  <span>0</span>
+                </div>
 
-                <circle cx="60" cy="215" r="5" fill="#1455d9" />
-                <circle cx="220" cy="190" r="5" fill="#1455d9" />
-                <circle cx="380" cy="150" r="5" fill="#1455d9" />
-                <circle cx="540" cy="95" r="5" fill="#1455d9" />
-                <circle cx="700" cy="42" r="6" fill="#062b72" />
-
-                <text
-                  x="60"
-                  y="253"
-                  textAnchor="middle"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="12"
-                  fill="#59677f"
+                {/* Animated SVG */}
+                <svg
+                  viewBox="0 0 900 300"
+                  preserveAspectRatio="none"
+                  className="absolute inset-0 h-full w-full pl-7"
                 >
-                  Foundation
-                </text>
+                  <defs>
+                    <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="0%"
+                        stopColor="#1455d9"
+                        stopOpacity="0.18"
+                      />
 
-                <text
-                  x="220"
-                  y="253"
-                  textAnchor="middle"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="12"
-                  fill="#59677f"
-                >
-                  CMS
-                </text>
+                      <stop offset="100%" stopColor="#1455d9" stopOpacity="0" />
+                    </linearGradient>
 
-                <text
-                  x="380"
-                  y="253"
-                  textAnchor="middle"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="12"
-                  fill="#59677f"
-                >
-                  Performance
-                </text>
+                    <filter id="softGlow">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
 
-                <text
-                  x="540"
-                  y="253"
-                  textAnchor="middle"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="12"
-                  fill="#59677f"
-                >
-                  SEO
-                </text>
+                  {/* Area */}
+                  <path
+                    d="M0 250
+                 L180 215
+                 L360 170
+                 L540 105
+                 L720 65
+                 L900 25
+                 L900 300
+                 L0 300 Z"
+                    fill="url(#growthFill)"
+                    className="animate-[chartFade_1.5s_ease-out_forwards]"
+                  />
 
-                <text
-                  x="700"
-                  y="253"
-                  textAnchor="middle"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="12"
-                  fill="#59677f"
-                >
-                  Growth Ready
-                </text>
+                  {/* Main Line */}
+                  <path
+                    d="M0 250
+                 L180 215
+                 L360 170
+                 L540 105
+                 L720 65
+                 L900 25"
+                    fill="none"
+                    stroke="#1455d9"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    pathLength="1"
+                    strokeDasharray="1"
+                    strokeDashoffset="1"
+                    className="animate-[drawLine_2.5s_cubic-bezier(.65,0,.35,1)_forwards]"
+                    filter="url(#softGlow)"
+                  />
 
-                <text
-                  x="700"
-                  y="28"
-                  textAnchor="middle"
-                  fontFamily="monospace"
-                  fontSize="11"
-                  fontWeight="700"
-                  fill="#062b72"
-                >
-                  PREMIUM PLATFORM
-                </text>
-              </svg>
-            </div>
+                  {/* Stage Points */}
+                  <g>
+                    <circle
+                      cx="0"
+                      cy="250"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[pointPop_.5s_ease-out_.2s_both]"
+                    />
 
-            <div className="mt-4 border-t border-[#062b72]/10 pt-3 text-[12px] leading-6 text-[#59677f]">
-              This visual represents the build progression described in the case
-              study: CMS setup, custom design, performance, technical SEO,
-              security, and lead-generation structure.
+                    <circle
+                      cx="180"
+                      cy="215"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[pointPop_.5s_ease-out_.5s_both]"
+                    />
+
+                    <circle
+                      cx="360"
+                      cy="170"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[pointPop_.5s_ease-out_.8s_both]"
+                    />
+
+                    <circle
+                      cx="540"
+                      cy="105"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[pointPop_.5s_ease-out_1.1s_both]"
+                    />
+
+                    <circle
+                      cx="720"
+                      cy="65"
+                      r="6"
+                      fill="#1455d9"
+                      className="animate-[pointPop_.5s_ease-out_1.4s_both]"
+                    />
+
+                    <circle
+                      cx="900"
+                      cy="25"
+                      r="8"
+                      fill="#062b72"
+                      className="animate-[pointPulse_2s_ease-in-out_infinite]"
+                    />
+                  </g>
+                </svg>
+
+                {/* Moving Indicator */}
+                <div className="pointer-events-none absolute inset-x-[7%] top-[8%] h-[82%]">
+                  <div className="absolute right-0 top-0">
+                    <div className="relative">
+                      <div className="absolute -inset-3 animate-ping rounded-full bg-[#1455d9]/10" />
+
+                      <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-[#062b72] shadow-[0_0_20px_rgba(20,85,217,.35)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* X Axis Labels */}
+                <div className="absolute bottom-1 left-8 right-0 grid grid-cols-5 gap-2 text-center font-mono text-[8px] text-[#59677f] sm:text-[9px]">
+                  <span>Foundation</span>
+                  <span>CMS</span>
+                  <span>Performance</span>
+                  <span>SEO</span>
+                  <span>Growth Ready</span>
+                </div>
+              </div>
+
+              {/* Progress Cards */}
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-5">
+                {[
+                  ["01", "Foundation", "32%"],
+                  ["02", "CMS", "48%"],
+                  ["03", "Performance", "67%"],
+                  ["04", "SEO", "81%"],
+                  ["05", "Growth Ready", "92%"],
+                ].map(([number, label, value], index) => (
+                  <div
+                    key={number}
+                    className="group rounded-[14px] border border-[#062b72]/10 bg-[#f8fbff] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#1455d9]/20 hover:shadow-[0_8px_20px_rgba(20,85,217,.08)]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[8px] font-bold text-[#1455d9]">
+                        {number}
+                      </span>
+
+                      <span className="text-[10px] font-bold text-[#062b72]">
+                        {value}
+                      </span>
+                    </div>
+
+                    <p className="mt-2 m-0 text-[9px] font-semibold text-[#59677f]">
+                      {label}
+                    </p>
+
+                    <div className="mt-2 h-1 overflow-hidden rounded-full bg-[#062b72]/[.07]">
+                      <div
+                        className="h-full rounded-full bg-[#1455d9] transition-all duration-1000 ease-out"
+                        style={{
+                          width: value,
+                          animation: `progressGrow 1.4s ease-out ${index * 0.15}s both`,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Description */}
+              <div className="mt-5 border-t border-[#062b72]/10 pt-3 text-[12px] leading-6 text-[#59677f]">
+                This visual represents the build progression described in the
+                case study: CMS setup, custom design, performance, technical
+                SEO, security, and lead-generation structure.
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Animation Keyframes */}
+        <style jsx>{`
+          @keyframes drawLine {
+            from {
+              stroke-dashoffset: 1;
+            }
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+
+          @keyframes chartFade {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes pointPop {
+            from {
+              opacity: 0;
+              transform: scale(0);
+              transform-origin: center;
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+              transform-origin: center;
+            }
+          }
+
+          @keyframes pointPulse {
+            0%,
+            100% {
+              transform: scale(1);
+              opacity: 1;
+            }
+
+            50% {
+              transform: scale(1.35);
+              opacity: 0.7;
+            }
+          }
+
+          @keyframes progressGrow {
+            from {
+              width: 0;
+            }
+          }
+        `}</style>
       </section>
 
       {/* =========================================================
           BEFORE / AFTER
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">
@@ -1114,7 +1265,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           TESTIMONIAL
       ========================================================== */}
-      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-b border-[#062b72]/10 py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="relative overflow-hidden rounded-[24px] border border-[#1455d9]/15 bg-gradient-to-br from-[#f0f5ff] to-[#e6efff] p-7 shadow-[0_8px_30px_rgba(7,35,82,.06)] sm:p-[45px]">
             <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#1455d9]/[0.07]" />
@@ -1146,7 +1297,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           CTA
       ========================================================== */}
-      <section className="py-16 sm:py-20 lg:py-[86px]">
+      <section className="py-16 sm:py-20 lg:py-[16px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#031a46] to-[#1455d9] p-7 shadow-[0_18px_55px_rgba(7,35,82,.1)] sm:p-[46px]">
             <div className="absolute -right-24 -top-36 h-[280px] w-[280px] rounded-full bg-white/[0.07]" />
@@ -1173,7 +1324,7 @@ export default function PentagonTaxCorp() {
       {/* =========================================================
           RELATED WORK
       ========================================================== */}
-      <section className="border-t border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[86px]">
+      <section className="border-t border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-[40px]">
         <div className="mx-auto w-[min(100%-32px,1180px)] sm:w-[min(100%-48px,1180px)]">
           <div className="mb-9 max-w-[700px]">
             <div className="mb-3 inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#1455d9]">

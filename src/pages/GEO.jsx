@@ -157,29 +157,44 @@ function GEO() {
       {/* =====================================================
           HERO — PREMIUM ANIMATED VISUAL
       ===================================================== */}
-      <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-12 lg:px-14 lg:pb-24 lg:pt-14">
+      <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-10 lg:px-14 lg:pb-24 lg:pt-12">
+        {/* Background */}
         <div className="pointer-events-none absolute -right-48 -top-48 h-[520px] w-[520px] rounded-full bg-blue-100/70 blur-3xl" />
+
         <div className="pointer-events-none absolute -bottom-48 -left-48 h-[420px] w-[420px] rounded-full bg-indigo-100/50 blur-3xl" />
 
         <div className="relative mx-auto w-full max-w-[1600px] px-1 sm:px-2 lg:px-4 xl:px-6">
-          <div className="mb-8 flex items-center gap-2 text-[11px] font-medium text-gray-500 sm:mb-10 sm:text-[12px]">
-            <Link to="/" className="transition hover:text-[#1455d9]">
-              Home
-            </Link>
-            <span>/</span>
-            <span>Services</span>
-            <span>/</span>
-            <span className="text-[#1455d9]">GEO</span>
-          </div>
-
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[.92fr_1.08fr] lg:gap-12 xl:gap-20">
-            {/* LEFT */}
+          {/* =================================================
+        HERO GRID
+        LEFT + RIGHT = EQUAL WIDTH
+    ================================================= */}
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:gap-10 xl:gap-14">
+            {/* =================================================
+          LEFT
+      ================================================= */}
             <div className="max-w-[760px]">
+              {/* Breadcrumb — MOVED INSIDE LEFT */}
+              <div className="mb-5 flex flex-wrap items-center gap-2 text-[10px] font-medium text-gray-500 sm:mb-6 sm:text-[11px]">
+                <Link to="/" className="transition hover:text-[#1455d9]">
+                  Home
+                </Link>
+
+                <span>/</span>
+
+                <span>Services</span>
+
+                <span>/</span>
+
+                <span className="text-[#1455d9]">GEO</span>
+              </div>
+
+              {/* Service Badge */}
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[.16em] text-[#1455d9] shadow-sm sm:text-[11px]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1455d9] animate-pulse" />
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#1455d9]" />
                 Generative Engine Optimization
               </div>
 
+              {/* Heading */}
               <h1
                 data-delay="1"
                 className="m-0 max-w-[760px] text-[35px] font-bold leading-[1.04] tracking-[-.045em] text-[#101828] sm:text-[44px] md:text-[45px] lg:text-[45px] xl:text-[45px]"
@@ -190,6 +205,7 @@ function GEO() {
                 </span>
               </h1>
 
+              {/* Description */}
               <p className="mt-6 max-w-[660px] text-[14px] leading-7 text-gray-600 sm:text-[15px] lg:text-[16px]">
                 Improve your brand's visibility across generative search with
                 original content, entity clarity, topical authority and strong
@@ -197,13 +213,16 @@ function GEO() {
                 and measurable customer journey.
               </p>
 
+              {/* CTA */}
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/contact"
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#073b91] px-6 py-3 text-[13px] font-bold text-white shadow-[0_12px_30px_rgba(7,59,145,.18)] transition duration-300 hover:-translate-y-1 hover:bg-[#052f75]"
                 >
-                  Talk to Our Team <span className="ml-2">→</span>
+                  Talk to Our Team
+                  <span className="ml-2">→</span>
                 </Link>
+
                 <a
                   href="#geo-services"
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-gray-200 bg-white px-6 py-3 text-[13px] font-semibold text-gray-700 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:text-[#1455d9]"
@@ -212,229 +231,487 @@ function GEO() {
                 </a>
               </div>
 
+              {/* Trust Row */}
               <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 border-t border-gray-200/80 pt-5 text-[11px] font-medium text-gray-500">
                 <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />{" "}
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
                   Strategy-led
                 </span>
+
                 <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-blue-500" />{" "}
+                  <span className="h-2 w-2 rounded-full bg-blue-500" />
                   Search-ready
                 </span>
+
                 <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-violet-500" />{" "}
+                  <span className="h-2 w-2 rounded-full bg-violet-500" />
                   Measurable
                 </span>
               </div>
             </div>
 
-            {/* RIGHT — ILLUSTRATED AI NETWORK / SEARCH VISIBILITY */}
+            {/* =================================================
+          RIGHT — ILLUSTRATED AI NETWORK / SEARCH VISIBILITY
+      ================================================= */}
             <div className="relative mx-auto flex min-h-[440px] w-full max-w-[700px] items-center justify-center sm:min-h-[520px]">
-              <div className="absolute left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/60 blur-3xl animate-pulse" />
-              <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-100/80" />
-              <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-blue-100/60" />
+              {/* Ambient Glow */}
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[100px]" />
 
-              {/* orbiting nodes */}
-              <div className="absolute left-1/2 top-1/2 z-20 h-0 w-0 animate-spin [animation-duration:12s]">
-                <span className="block h-8 w-8 translate-x-[178px] -translate-y-1/2 rounded-full border border-blue-100 bg-white text-center text-[12px] font-black leading-8 text-[#1455d9] shadow-lg">
-                  AI
-                </span>
-              </div>
-              <div className="absolute left-1/2 top-1/2 z-20 h-0 w-0 animate-spin [animation-duration:9s] [animation-direction:reverse]">
-                <span className="block h-7 w-7 translate-x-[125px] -translate-y-1/2 rounded-full border border-violet-100 bg-white text-center text-[9px] font-black leading-7 text-violet-500 shadow-lg">
-                  SEO
-                </span>
-              </div>
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-[80px]" />
 
-              {/* connection lines */}
-              <svg
-                className="pointer-events-none absolute inset-0 z-0 h-full w-full"
-                viewBox="0 0 700 520"
-                fill="none"
-              >
-                <path
-                  d="M350 260 L155 135 M350 260 L548 130 M350 260 L140 385 M350 260 L570 385"
-                  stroke="#b9cdf5"
-                  strokeWidth="1.2"
-                  strokeDasharray="5 7"
-                />
-                <path
-                  d="M350 260 C410 210 430 170 548 130"
-                  stroke="#1455d9"
-                  strokeWidth="1.5"
-                  strokeDasharray="7 8"
-                  opacity=".45"
-                />
-                <path
-                  d="M350 260 C300 315 250 350 140 385"
-                  stroke="#7c83f6"
-                  strokeWidth="1.5"
-                  strokeDasharray="7 8"
-                  opacity=".4"
-                />
-              </svg>
+              {/* =================================================
+            MAIN AI NETWORK
+        ================================================= */}
+              <div className="relative z-10 h-[400px] w-full sm:h-[470px]">
+                {/* =================================================
+              SVG NETWORK PATHS
+          ================================================= */}
+                <svg
+                  viewBox="0 0 700 470"
+                  className="absolute inset-0 h-full w-full"
+                  fill="none"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <defs>
+                    {/* Blue Glow */}
+                    <filter id="geoBlueGlow">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
 
-              {/* central animated illustration */}
-              <div className="animate-bounce [animation-duration:5s] relative z-10 h-[290px] w-[290px] sm:h-[340px] sm:w-[340px]">
-                {/* rotating rings */}
-                <div className="absolute inset-0 rounded-full border border-blue-200/80 border-t-[#1455d9] animate-pulse" />
-                <div className="absolute inset-5 rounded-full border border-dashed border-blue-200/70" />
-                <div className="absolute inset-10 rounded-full bg-white/70 shadow-[0_25px_80px_rgba(20,85,217,.12)] backdrop-blur-xl" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
 
-                {/* central glass card */}
-                <div className="absolute left-1/2 top-1/2 w-[205px] -translate-x-1/2 -translate-y-1/2 rounded-[25px] border border-white bg-white/95 p-3.5 shadow-[0_25px_65px_rgba(15,23,42,.16)] sm:w-[230px] sm:p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#073b91] text-white shadow-md">
-                        <span className="text-[13px] font-black">A</span>
+                    {/* Violet Glow */}
+                    <filter id="geoVioletGlow">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+
+                    {/* Particle Gradient */}
+                    <radialGradient id="geoParticle">
+                      <stop offset="0%" stopColor="#93c5fd" />
+
+                      <stop offset="60%" stopColor="#60a5fa" />
+
+                      <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
+                    </radialGradient>
+                  </defs>
+
+                  {/* User Query → AI */}
+                  <path
+                    d="M350 92 C350 115 350 128 350 148"
+                    stroke="rgba(96,165,250,0.25)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* AI → ChatGPT */}
+                  <path
+                    d="M350 205 C300 225 235 245 170 275"
+                    stroke="rgba(96,165,250,0.25)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* AI → Gemini */}
+                  <path
+                    d="M350 205 C350 230 350 245 350 275"
+                    stroke="rgba(139,92,246,0.3)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* AI → AI Search */}
+                  <path
+                    d="M350 205 C400 225 465 245 530 275"
+                    stroke="rgba(34,211,238,0.25)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* ChatGPT → Brand */}
+                  <path
+                    d="M170 320 C205 350 260 370 315 382"
+                    stroke="rgba(96,165,250,0.3)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* Gemini → Brand */}
+                  <path
+                    d="M350 320 C350 345 350 355 350 382"
+                    stroke="rgba(139,92,246,0.3)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* AI Search → Brand */}
+                  <path
+                    d="M530 320 C495 350 440 370 385 382"
+                    stroke="rgba(34,211,238,0.3)"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 7"
+                  />
+
+                  {/* =================================================
+                ANIMATED PARTICLES
+            ================================================= */}
+
+                  {/* Query → AI */}
+                  <circle
+                    r="3"
+                    fill="url(#geoParticle)"
+                    filter="url(#geoBlueGlow)"
+                  >
+                    <animateMotion
+                      dur="2.5s"
+                      repeatCount="indefinite"
+                      path="M350 92 C350 115 350 128 350 148"
+                    />
+                  </circle>
+
+                  {/* AI → ChatGPT */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2.8s"
+                      begin="0.4s"
+                      repeatCount="indefinite"
+                      path="M350 205 C300 225 235 245 170 275"
+                    />
+                  </circle>
+
+                  {/* AI → Gemini */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2.4s"
+                      begin="0.8s"
+                      repeatCount="indefinite"
+                      path="M350 205 C350 230 350 245 350 275"
+                    />
+                  </circle>
+
+                  {/* AI → Search */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2.8s"
+                      begin="1.1s"
+                      repeatCount="indefinite"
+                      path="M350 205 C400 225 465 245 530 275"
+                    />
+                  </circle>
+
+                  {/* ChatGPT → Brand */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2.2s"
+                      begin="0.5s"
+                      repeatCount="indefinite"
+                      path="M170 320 C205 350 260 370 315 382"
+                    />
+                  </circle>
+
+                  {/* Gemini → Brand */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2s"
+                      begin="1s"
+                      repeatCount="indefinite"
+                      path="M350 320 C350 345 350 355 350 382"
+                    />
+                  </circle>
+
+                  {/* Search → Brand */}
+                  <circle r="3" fill="url(#geoParticle)">
+                    <animateMotion
+                      dur="2.2s"
+                      begin="1.5s"
+                      repeatCount="indefinite"
+                      path="M530 320 C495 350 440 370 385 382"
+                    />
+                  </circle>
+                </svg>
+
+                {/* =================================================
+              USER QUERY CARD
+          ================================================= */}
+                <div className="absolute left-1/2 top-2 w-[220px] -translate-x-1/2">
+                  <div className="rounded-2xl border border-blue-400/20 bg-[#090c1b]/95 p-3 shadow-[0_0_35px_rgba(59,130,246,0.12)] backdrop-blur-xl">
+                    <div className="mb-2 flex items-center gap-2">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-400/10">
+                        <span className="text-[10px] text-blue-300">?</span>
                       </div>
+
                       <div>
-                        <p className="m-0 text-[9px] font-bold text-gray-400">
-                          YOUR BRAND
+                        <p className="text-[7px] uppercase tracking-[0.16em] text-white/25">
+                          User Query
                         </p>
-                        <p className="m-0 mt-0.5 text-[12px] font-bold text-[#101828]">
-                          AI Presence
+
+                        <p className="text-[9px] font-medium text-white/65">
+                          Searching with AI...
                         </p>
                       </div>
                     </div>
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+
+                    {/* Typing Query */}
+                    <div className="rounded-lg border border-white/5 bg-white/[0.025] px-3 py-2">
+                      <div className="flex items-center gap-1">
+                        <span className="text-[8px] text-white/50">
+                          best digital agency for
+                        </span>
+
+                        <span className="h-3 w-px animate-pulse bg-blue-400" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+              AI CORE
+          ================================================= */}
+                <div className="absolute left-1/2 top-[150px] -translate-x-1/2">
+                  <div className="absolute -inset-5 animate-ping rounded-full border border-blue-400/10" />
+
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-400/30 bg-gradient-to-br from-blue-500/20 to-violet-500/20 shadow-[0_0_45px_rgba(96,165,250,0.2)] backdrop-blur-xl">
+                    <div className="absolute inset-2 rounded-xl bg-blue-400/5" />
+
+                    <span className="relative text-[13px] font-bold tracking-tight text-blue-200">
+                      AI
+                    </span>
                   </div>
 
-                  <div className="mt-4 rounded-[18px] bg-[#f7faff] p-3">
-                    <div className="flex items-end justify-between">
+                  <div className="mt-2 text-center">
+                    <span className="text-[7px] font-medium uppercase tracking-[0.2em] text-white/30">
+                      Generative Engine
+                    </span>
+                  </div>
+                </div>
+
+                {/* =================================================
+              CHATGPT NODE
+          ================================================= */}
+                <div className="absolute left-[4%] top-[270px] w-[145px] sm:left-[8%]">
+                  <div className="rounded-2xl border border-blue-400/15 bg-[#090c1b]/95 p-3 shadow-xl backdrop-blur-xl">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-400/10 ring-1 ring-blue-400/15">
+                        <span className="text-[11px] text-blue-300">✦</span>
+                      </div>
+
                       <div>
-                        <p className="m-0 text-[8px] font-semibold uppercase tracking-[.12em] text-gray-400">
-                          Visibility
+                        <p className="text-[9px] font-semibold text-white/65">
+                          ChatGPT
                         </p>
-                        <p className="mt-1 m-0 text-[29px] font-bold tracking-[-.04em] text-[#101828]">
-                          78%
+
+                        <p className="text-[7px] text-blue-300/50">
+                          Answer generated
                         </p>
                       </div>
-                      <span className="rounded-full bg-emerald-50 px-2 py-1 text-[8px] font-bold text-emerald-600">
-                        ↑ 18.4%
+                    </div>
+
+                    <div className="mt-3 space-y-1.5">
+                      <div className="h-1.5 w-full rounded-full bg-white/7" />
+
+                      <div className="h-1.5 w-[75%] rounded-full bg-white/5" />
+                    </div>
+
+                    <div className="mt-2 flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
+
+                      <span className="text-[6px] text-white/25">
+                        Processing
                       </span>
                     </div>
-
-                    <div className="mt-4 h-[74px]">
-                      <svg
-                        viewBox="0 0 210 75"
-                        className="h-full w-full"
-                        preserveAspectRatio="none"
-                      >
-                        <defs>
-                          <linearGradient
-                            id="heroLineFill"
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
-                          >
-                            <stop
-                              offset="0%"
-                              stopColor="#1455d9"
-                              stopOpacity=".18"
-                            />
-                            <stop
-                              offset="100%"
-                              stopColor="#1455d9"
-                              stopOpacity="0"
-                            />
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M0 64 C22 59 25 50 47 54 S72 41 91 45 S112 29 132 35 S153 24 169 28 S188 13 210 7 L210 75 L0 75 Z"
-                          fill="url(#heroLineFill)"
-                        />
-                        <path
-                          d="M0 64 C22 59 25 50 47 54 S72 41 91 45 S112 29 132 35 S153 24 169 28 S188 13 210 7"
-                          fill="none"
-                          stroke="#1455d9"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          className="animate-pulse"
-                        />
-                        <circle
-                          cx="210"
-                          cy="7"
-                          r="4"
-                          fill="#073b91"
-                          className="animate-pulse"
-                        />
-                      </svg>
-                    </div>
                   </div>
+                </div>
 
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <div className="rounded-xl border border-gray-100 bg-white p-2.5">
-                      <p className="m-0 text-[7px] font-semibold uppercase tracking-[.1em] text-gray-400">
-                        Topics
-                      </p>
-                      <p className="mt-1 m-0 text-[16px] font-bold text-[#101828]">
-                        126
-                      </p>
+                {/* =================================================
+              GEMINI NODE
+          ================================================= */}
+                <div className="absolute left-1/2 top-[270px] w-[145px] -translate-x-1/2">
+                  <div className="rounded-2xl border border-violet-400/15 bg-[#090c1b]/95 p-3 shadow-xl backdrop-blur-xl">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-violet-400/10 ring-1 ring-violet-400/15">
+                        <span className="text-[11px] text-violet-300">✦</span>
+                      </div>
+
+                      <div>
+                        <p className="text-[9px] font-semibold text-white/65">
+                          Gemini
+                        </p>
+
+                        <p className="text-[7px] text-violet-300/50">
+                          Answer generated
+                        </p>
+                      </div>
                     </div>
-                    <div className="rounded-xl border border-gray-100 bg-white p-2.5">
-                      <p className="m-0 text-[7px] font-semibold uppercase tracking-[.1em] text-gray-400">
-                        Clarity
-                      </p>
-                      <p className="mt-1 m-0 text-[16px] font-bold text-[#101828]">
-                        92
-                      </p>
+
+                    <div className="mt-3 space-y-1.5">
+                      <div className="h-1.5 w-full rounded-full bg-white/7" />
+
+                      <div className="h-1.5 w-[68%] rounded-full bg-white/5" />
+                    </div>
+
+                    <div className="mt-2 flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-violet-400" />
+
+                      <span className="text-[6px] text-white/25">
+                        Processing
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                {/* floating micro labels */}
-                <div className="animate-bounce [animation-duration:7s] absolute -left-8 top-[18%] rounded-2xl border border-white bg-white/95 px-3 py-2 shadow-[0_15px_40px_rgba(15,23,42,.12)] backdrop-blur-md sm:-left-16">
+                {/* =================================================
+              AI SEARCH NODE
+          ================================================= */}
+                <div className="absolute right-[4%] top-[270px] w-[145px] sm:right-[8%]">
+                  <div className="rounded-2xl border border-cyan-400/15 bg-[#090c1b]/95 p-3 shadow-xl backdrop-blur-xl">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-400/10 ring-1 ring-cyan-400/15">
+                        <span className="text-[11px] text-cyan-300">◉</span>
+                      </div>
+
+                      <div>
+                        <p className="text-[9px] font-semibold text-white/65">
+                          AI Search
+                        </p>
+
+                        <p className="text-[7px] text-cyan-300/50">
+                          Answer generated
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 space-y-1.5">
+                      <div className="h-1.5 w-full rounded-full bg-white/7" />
+
+                      <div className="h-1.5 w-[80%] rounded-full bg-white/5" />
+                    </div>
+
+                    <div className="mt-2 flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400" />
+
+                      <span className="text-[6px] text-white/25">
+                        Processing
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+              YOUR BRAND CENTER
+          ================================================= */}
+                <div className="absolute bottom-[18px] left-1/2 w-[220px] -translate-x-1/2">
+                  <div className="relative rounded-2xl border border-emerald-400/25 bg-[#09120f]/95 p-3 shadow-[0_0_45px_rgba(52,211,153,0.15)] backdrop-blur-xl">
+                    <div className="pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-emerald-400/5 blur-xl" />
+
+                    <div className="flex items-center gap-3">
+                      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-400/10 ring-1 ring-emerald-400/20">
+                        <span className="text-[12px] font-bold text-emerald-300">
+                          A
+                        </span>
+
+                        <span className="absolute -right-1 -top-1 h-2.5 w-2.5 animate-ping rounded-full bg-emerald-400/60" />
+                      </div>
+
+                      <div className="flex-1">
+                        <p className="text-[7px] uppercase tracking-[0.18em] text-emerald-300/45">
+                          AI Recommended
+                        </p>
+
+                        <p className="mt-0.5 text-[11px] font-semibold text-white/75">
+                          Your Brand
+                        </p>
+
+                        <p className="mt-0.5 text-[7px] text-white/30">
+                          Mentioned across AI answers
+                        </p>
+                      </div>
+
+                      <div className="rounded-full border border-emerald-400/15 bg-emerald-400/5 px-2 py-1">
+                        <span className="text-[6px] font-medium text-emerald-300/70">
+                          TOP
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+              FLOATING AI ANSWER CARD
+          ================================================= */}
+                <div className="absolute -right-1 bottom-[120px] z-30 hidden animate-[bounce_4s_ease-in-out_infinite] rounded-xl border border-white/10 bg-[#090c1b]/95 p-2.5 shadow-xl backdrop-blur-xl sm:block">
                   <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                    <span className="text-[9px] font-bold text-[#101828]">
-                      Entity clarity
-                    </span>
-                  </div>
-                  <p className="mt-1 m-0 text-[8px] text-gray-400">
-                    Strong signal
-                  </p>
-                </div>
+                    <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-400/10">
+                      <span className="text-[9px] text-blue-300">AI</span>
+                    </div>
 
-                <div className="animate-bounce [animation-duration:5s] absolute -right-7 top-[12%] rounded-2xl border border-white bg-[#101828] px-3 py-2.5 shadow-[0_15px_40px_rgba(15,23,42,.18)] sm:-right-12">
-                  <p className="m-0 text-[8px] font-semibold uppercase tracking-[.1em] text-blue-300">
-                    AI discovery
-                  </p>
-                  <p className="mt-1 m-0 text-[17px] font-bold text-white">
-                    +32.8%
-                  </p>
-                </div>
-
-                <div className="animate-bounce [animation-duration:7s] absolute -bottom-2 left-[5%] rounded-2xl border border-blue-100 bg-white/95 px-3 py-2 shadow-[0_15px_40px_rgba(15,23,42,.11)]">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-50 text-[#1455d9]">
-                      ✦
-                    </span>
                     <div>
-                      <p className="m-0 text-[8px] font-bold text-[#101828]">
-                        Content ready
+                      <p className="text-[7px] font-medium text-white/60">
+                        Answer Card
                       </p>
-                      <p className="m-0 mt-0.5 text-[7px] text-gray-400">
-                        84% optimized
+
+                      <p className="text-[6px] text-emerald-300/50">
+                        Brand found ✓
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 right-[2%] rounded-full border border-white bg-white px-3 py-1.5 text-[8px] font-bold text-[#1455d9] shadow-lg">
-                  ● Live signal
+                {/* =================================================
+              LEFT FLOATING STATUS
+          ================================================= */}
+                <div className="absolute -left-1 bottom-[125px] z-30 hidden animate-[bounce_5s_ease-in-out_infinite] rounded-xl border border-white/10 bg-[#090c1b]/95 p-2.5 shadow-xl backdrop-blur-xl sm:block">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-violet-400/10">
+                      <span className="text-[9px] text-violet-300">↗</span>
+                    </div>
+
+                    <div>
+                      <p className="text-[7px] font-medium text-white/60">
+                        Visibility
+                      </p>
+
+                      <p className="text-[6px] text-violet-300/50">
+                        Increasing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+              PARTICLE FIELD
+          ================================================= */}
+                <div className="pointer-events-none absolute inset-0">
+                  <span className="absolute left-[22%] top-[35%] h-1 w-1 animate-ping rounded-full bg-blue-400/60" />
+
+                  <span className="absolute left-[72%] top-[43%] h-1 w-1 animate-pulse rounded-full bg-violet-400/60" />
+
+                  <span className="absolute left-[31%] top-[68%] h-1 w-1 animate-ping rounded-full bg-cyan-400/60" />
+
+                  <span className="absolute right-[28%] top-[65%] h-1 w-1 animate-pulse rounded-full bg-emerald-400/60" />
+
+                  <span className="absolute left-[48%] top-[18%] h-1 w-1 animate-pulse rounded-full bg-blue-300/50" />
+                </div>
+
+                {/* =================================================
+              BOTTOM LABEL
+          ================================================= */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#090c1b]/90 px-4 py-2 backdrop-blur-xl">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+
+                    <span className="text-[7px] text-white/30">
+                      AI visibility network active
+                    </span>
+                  </div>
                 </div>
               </div>
-
-              {/* scan line */}
-              <div className="pointer-events-none absolute left-[18%] right-[18%] top-[10%] z-30 h-20 bg-gradient-to-b from-transparent via-blue-300/20 to-transparent blur-md animate-pulse" />
-
-              {/* tiny decorative nodes */}
-              <span className="absolute left-[9%] top-[22%] h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
-              <span className="absolute right-[8%] top-[25%] h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse [animation-delay:.6s]" />
-              <span className="absolute bottom-[17%] left-[12%] h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse [animation-delay:1.1s]" />
-              <span className="absolute bottom-[20%] right-[11%] h-2 w-2 rounded-full bg-blue-300 animate-pulse [animation-delay:1.6s]" />
             </div>
           </div>
         </div>
@@ -491,7 +768,7 @@ function GEO() {
               <p className="m-0 text-[10px] font-bold uppercase tracking-[.18em] text-blue-300">
                 The Akkurate approach
               </p>
-              <h3 className="mt-3 m-0 max-w-[650px] text-[25px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[32px]">
+              <h3 className="mt-3 m-0 max-w-[650px] text-[25px] font-bold leading-tight tracking-[-.03em] text-white sm:text-[25px]">
                 Strategy first. Content second. Measurement throughout.
               </h3>
               <p className="mt-4 max-w-[650px] text-[13px] leading-7 text-gray-300 sm:text-[14px]">
@@ -633,6 +910,32 @@ function GEO() {
             strategy, brand clarity and digital authority — not as a shortcut or
             ranking hack.
           </p>
+          <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+            {[
+              ["01", "Clarity", "Help the audience understand what matters."],
+              [
+                "02",
+                "Confidence",
+                "Make the experience feel credible and relevant.",
+              ],
+              ["03", "Action", "Make the next meaningful step easier."],
+            ].map(([n, t, c]) => (
+              <div
+                key={n}
+                className="rounded-[20px] border border-white/10 bg-white/[.045] p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/[.07]"
+              >
+                <span className="text-[9px] font-black tracking-[.15em] text-blue-300">
+                  {n}
+                </span>
+                <h3 className="mt-4 m-0 text-[16px] font-bold text-white">
+                  {t}
+                </h3>
+                <p className="mt-2 m-0 text-[11px] leading-5 text-gray-400">
+                  {c}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -644,7 +947,7 @@ function GEO() {
           <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16">
             <div>
               <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9]">
-                Visibility intelligence
+                Performance / Analytics
               </p>
               <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[37px]">
                 See how your digital presence is getting stronger.
@@ -679,32 +982,47 @@ function GEO() {
             </div>
 
             <div className="rounded-[28px] border border-gray-200 bg-white p-4 shadow-[0_25px_70px_rgba(15,23,42,.08)] sm:p-6">
+              {/* HEADER */}
               <div className="flex flex-col gap-3 border-b border-gray-100 pb-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="m-0 text-[13px] font-bold text-[#101828]">
-                    Organic + AI discovery trend
+                    AI Search Visibility Trend
                   </p>
+
                   <p className="mt-1 m-0 text-[10px] text-gray-400">
-                    Illustrative dashboard view
+                    Illustrative GEO performance view
                   </p>
                 </div>
+
                 <div className="flex items-center gap-4 text-[9px] font-semibold text-gray-500">
                   <span className="flex items-center gap-1.5">
-                    <i className="h-2 w-2 rounded-full bg-[#1455d9]" />{" "}
-                    Visibility
+                    <i className="h-2 w-2 rounded-full bg-[#1455d9]" />
+                    AI Visibility
                   </span>
+
                   <span className="flex items-center gap-1.5">
-                    <i className="h-2 w-2 rounded-full bg-violet-400" /> Topic
-                    depth
+                    <i className="h-2 w-2 rounded-full bg-violet-400" />
+                    Brand Mentions
                   </span>
                 </div>
               </div>
 
+              {/* =================================================
+      GEO ANIMATED CHART
+  ================================================= */}
+
               <div className="relative mt-6 h-[260px] overflow-hidden rounded-2xl bg-[#fbfdff] p-2">
+                {/* GRID */}
+
                 <div className="absolute inset-x-4 top-[20%] border-t border-dashed border-gray-200" />
+
                 <div className="absolute inset-x-4 top-[45%] border-t border-dashed border-gray-200" />
+
                 <div className="absolute inset-x-4 top-[70%] border-t border-dashed border-gray-200" />
+
                 <div className="absolute inset-x-4 top-[95%] border-t border-dashed border-gray-200" />
+
+                {/* CHART */}
 
                 <svg
                   viewBox="0 0 760 260"
@@ -713,49 +1031,140 @@ function GEO() {
                 >
                   <defs>
                     <linearGradient
-                      id="analyticsFill"
+                      id="geoVisibilityFill"
                       x1="0"
                       y1="0"
                       x2="0"
                       y2="1"
                     >
                       <stop offset="0%" stopColor="#1455d9" stopOpacity=".18" />
+
                       <stop offset="100%" stopColor="#1455d9" stopOpacity="0" />
                     </linearGradient>
                   </defs>
 
-                  <path
-                    d="M0 215 C45 208 70 192 105 198 S165 176 205 184 S255 148 300 160 S355 132 395 142 S445 105 490 119 S540 91 580 100 S640 60 680 72 S720 45 760 28 L760 260 L0 260 Z"
-                    fill="url(#analyticsFill)"
-                  />
+                  {/* AI VISIBILITY AREA */}
 
                   <path
-                    d="M0 215 C45 208 70 192 105 198 S165 176 205 184 S255 148 300 160 S355 132 395 142 S445 105 490 119 S540 91 580 100 S640 60 680 72 S720 45 760 28"
+                    d="
+          M0 215
+          C45 208 70 198 110 202
+          S165 181 205 188
+          S255 165 300 170
+          S355 142 395 151
+          S445 125 490 132
+          S540 105 580 112
+          S640 82 680 90
+          S725 55 760 42
+          L760 260
+          L0 260
+          Z
+        "
+                    fill="url(#geoVisibilityFill)"
+                  />
+
+                  {/* AI VISIBILITY LINE */}
+
+                  <path
+                    d="
+          M0 215
+          C45 208 70 198 110 202
+          S165 181 205 188
+          S255 165 300 170
+          S355 142 395 151
+          S445 125 490 132
+          S540 105 580 112
+          S640 82 680 90
+          S725 55 760 42
+        "
                     fill="none"
                     stroke="#1455d9"
                     strokeWidth="4"
                     strokeLinecap="round"
-                    className="animate-pulse"
+                    strokeDasharray="1000"
+                    strokeDashoffset="1000"
+                    className="animate-[geoDraw_3s_ease-out_forwards]"
                   />
 
+                  {/* BRAND MENTION LINE */}
+
                   <path
-                    d="M0 230 C48 222 70 215 110 220 S170 202 208 208 S260 190 305 196 S360 174 400 183 S448 155 492 165 S540 142 585 151 S640 119 684 127 S725 105 760 96"
+                    d="
+          M0 230
+          C45 224 75 215 115 220
+          S175 202 215 208
+          S265 190 310 195
+          S365 175 410 181
+          S465 158 505 165
+          S555 145 595 151
+          S650 125 695 132
+          S735 112 760 104
+        "
                     fill="none"
                     stroke="#8b7cf6"
                     strokeWidth="3"
                     strokeLinecap="round"
-                    strokeDasharray="7 8"
+                    strokeDasharray="8 8"
                     opacity=".8"
+                    className="animate-[geoDash_2.5s_linear_infinite]"
                   />
+
+                  {/* MOVING AI SIGNAL */}
+
+                  <circle r="6" fill="#1455d9">
+                    <animateMotion
+                      dur="4s"
+                      repeatCount="indefinite"
+                      path="
+            M0 215
+            C45 208 70 198 110 202
+            S165 181 205 188
+            S255 165 300 170
+            S355 142 395 151
+            S445 125 490 132
+            S540 105 580 112
+            S640 82 680 90
+            S725 55 760 42
+          "
+                    />
+                  </circle>
+
+                  {/* END SIGNAL */}
 
                   <circle
                     cx="760"
-                    cy="28"
+                    cy="42"
                     r="6"
                     fill="#073b91"
                     className="animate-pulse"
                   />
                 </svg>
+
+                {/* LIVE STATUS */}
+
+                <div className="absolute left-5 top-5 flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1.5 shadow-sm backdrop-blur">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+
+                  <span className="text-[7px] font-semibold text-gray-500">
+                    AI SEARCH SIGNALS
+                  </span>
+                </div>
+
+                {/* CURRENT SCORE */}
+
+                <div className="absolute right-5 top-5 rounded-xl border border-blue-100 bg-white/90 px-3 py-2 shadow-sm backdrop-blur">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-[#1455d9]" />
+
+                    <span className="text-[10px] font-bold text-[#1455d9]">
+                      +42.8%
+                    </span>
+                  </div>
+
+                  <p className="mt-1 text-[7px] text-gray-400">AI visibility</p>
+                </div>
+
+                {/* WEEK LABELS */}
 
                 <div className="absolute bottom-3 left-4 right-4 flex justify-between text-[9px] font-medium text-gray-400">
                   <span>W1</span>
@@ -769,21 +1178,82 @@ function GEO() {
                 </div>
               </div>
 
+              {/* =================================================
+      GEO METRICS
+  ================================================= */}
+
               <div className="mt-4 grid grid-cols-3 gap-3">
-                {[
-                  ["Topic coverage", "↑ 24"],
-                  ["Content depth", "↑ 31%"],
-                  ["Brand clarity", "↑ 18%"],
-                ].map(([label, value]) => (
-                  <div key={label} className="rounded-xl bg-[#f7faff] p-3">
-                    <p className="m-0 text-[9px] font-medium text-gray-400">
-                      {label}
-                    </p>
-                    <p className="mt-1 m-0 text-[13px] font-bold text-[#1455d9]">
-                      {value}
-                    </p>
-                  </div>
-                ))}
+                {/* AI MENTIONS */}
+
+                <div className="rounded-xl bg-[#f7faff] p-3">
+                  <p className="m-0 text-[9px] font-medium text-gray-400">
+                    AI Mentions
+                  </p>
+
+                  <p className="mt-1 m-0 text-[14px] font-bold text-[#1455d9]">
+                    184
+                  </p>
+
+                  <p className="mt-1 m-0 text-[7px] font-semibold text-emerald-500">
+                    ↑ 32.4%
+                  </p>
+                </div>
+
+                {/* PROMPT COVERAGE */}
+
+                <div className="rounded-xl bg-[#f7faff] p-3">
+                  <p className="m-0 text-[9px] font-medium text-gray-400">
+                    Prompt Coverage
+                  </p>
+
+                  <p className="mt-1 m-0 text-[14px] font-bold text-[#1455d9]">
+                    76%
+                  </p>
+
+                  <p className="mt-1 m-0 text-[7px] font-semibold text-emerald-500">
+                    ↑ 18.6%
+                  </p>
+                </div>
+
+                {/* AI VISIBILITY */}
+
+                <div className="rounded-xl bg-[#f7faff] p-3">
+                  <p className="m-0 text-[9px] font-medium text-gray-400">
+                    AI Visibility
+                  </p>
+
+                  <p className="mt-1 m-0 text-[14px] font-bold text-[#1455d9]">
+                    68%
+                  </p>
+
+                  <p className="mt-1 m-0 text-[7px] font-semibold text-emerald-500">
+                    ↑ 24.8%
+                  </p>
+                </div>
+              </div>
+
+              {/* =================================================
+      GEO SIGNAL FLOW
+  ================================================= */}
+
+              <div className="mt-4 flex items-center justify-between rounded-xl bg-[#f7faff] px-4 py-3">
+                <div>
+                  <p className="m-0 text-[8px] font-semibold text-gray-500">
+                    Generative Search Performance
+                  </p>
+
+                  <p className="mt-1 m-0 text-[7px] text-gray-400">
+                    Visibility → Mentions → Citations → Brand Discovery
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+
+                  <span className="text-[8px] font-bold text-emerald-500">
+                    Improving
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -801,7 +1271,7 @@ function GEO() {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
               <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-[#1455d9] sm:text-[11px]">
-                What we do
+                Our services
               </p>
               <h2 className="mt-3 m-0 text-[30px] font-bold leading-[1.08] tracking-[-.04em] text-[#101828] sm:text-[38px] lg:text-[37px]">
                 A complete GEO capability, not a single tactic.
@@ -1009,7 +1479,7 @@ function GEO() {
             <p className="m-0 text-[10px] font-bold uppercase tracking-[.2em] text-blue-300">
               How we work
             </p>
-            <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-white sm:text-[40px] lg:text-[48px]">
+            <h2 className="mt-3 m-0 text-[31px] font-bold leading-[1.08] tracking-[-.04em] text-white sm:text-[40px] lg:text-[40px]">
               A clear path from discovery to iteration.
             </h2>
             <p className="mt-5 text-[13px] leading-7 text-gray-400 sm:text-[14px]">
@@ -1292,13 +1762,6 @@ function GEO() {
           </div>
         </div>
       </section>
-
-      {/* =====================================================
-          RELATED SERVICES
-      ===================================================== */}
-      {/* =====================================================
-    RELATED SERVICES — PREMIUM DARK SECTION
-===================================================== */}
 
       {/* =====================================================
     RELATED SERVICES

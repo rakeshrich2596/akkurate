@@ -303,11 +303,11 @@ export default function DRMultiSpecialityHospital() {
               About the Client
             </div>
 
-            <h2 className="max-w-[700px] text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
-              Two healthcare brands,
-              <span className="block text-[#1455d9]">
+            <h2 className="max-w-[700px] text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-3xl">
+              Two healthcare brands, <span className="inline-block text-[#1455d9]">
                 one trust problem
               </span>
+              
             </h2>
 
             <p className="mt-5 max-w-[720px] text-[15px] leading-8 text-[#59677f]">
@@ -363,11 +363,11 @@ export default function DRMultiSpecialityHospital() {
               <span className="h-px w-8 bg-[#1455d9]" />
             </div>
 
-            <h2 className="text-3xl font-bold leading-[1.12] tracking-[-0.04em] text-[#101a2e] sm:text-4xl lg:text-[46px]">
-              Competing for trust,
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-[1.12] tracking-[-0.04em] text-[#101a2e] sm:text-4xl lg:text-[32px]">
+              Competing for trust, <span className="inline-block text-[#1455d9]">
                 not just clicks
               </span>
+              
             </h2>
 
             <p className="mx-auto mt-5 max-w-[650px] text-sm leading-7 text-[#59677f] sm:text-base">
@@ -466,7 +466,7 @@ export default function DRMultiSpecialityHospital() {
       ====================================================== */}
       <section
         id="results"
-        className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-16"
+        className="border-b border-[#062b72]/10 bg-[#f8faff] py-16 sm:py-20 lg:py-10"
       >
         <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-[760px]">
@@ -475,11 +475,11 @@ export default function DRMultiSpecialityHospital() {
               Results
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
-              SEO and social,
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-3xl">
+              SEO and social, <span className="inline-block text-[#1455d9]">
                 both moving together
               </span>
+              
             </h2>
           </div>
 
@@ -529,11 +529,11 @@ export default function DRMultiSpecialityHospital() {
               Growth Trajectory
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
-              From local visibility to
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-3xl">
+              From local visibility to <span className="inline-block text-[#1455d9]">
                 stronger patient reach
               </span>
+              
             </h2>
           </div>
 
@@ -815,11 +815,11 @@ export default function DRMultiSpecialityHospital() {
               Growth At A Glance
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
-              Key results across
-              <span className="block text-[#1455d9]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-3xl">
+              Key results across <span className="inline-block text-[#1455d9]">
                 the engagement
               </span>
+              
             </h2>
           </div>
 
@@ -908,11 +908,11 @@ export default function DRMultiSpecialityHospital() {
                   Ready to grow?
                 </div>
 
-                <h3 className="max-w-[700px] text-2xl font-bold leading-tight tracking-[-0.035em] text-white sm:text-3xl">
-                  Need patients to find you first,
-                  <span className="block text-[#72b4ff]">
+                <h3 className="max-w-[700px] text-2xl font-bold leading-tight tracking-[-0.035em] text-white sm:text-2xl">
+                  Need patients to find you first, <span className="inline-block text-[#72b4ff]">
                     and trust you once they do?
                   </span>
+                  
                 </h3>
               </div>
 
