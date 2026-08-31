@@ -17,6 +17,7 @@ import ResultsSection from "./components/ResultsSection";
 import ClientTrust from "./components/ClientTrust";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import FAQ from "./pages/FAQ";
+import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import SEO from "./pages/SEO";
 import GEO from "./pages/GEO";
@@ -61,6 +62,16 @@ import AlpineCoachTree from "./pages/case-studies/AlpineCoachTree";
 import RythmicBeatDanceCourt from "./pages/case-studies/RythmicBeatDanceCourt";
 import PentagonTaxCorp from "./pages/case-studies/PentagonTaxCorp";
 
+import Blog1 from "./blog/Blog1";
+import Blog2 from "./blog/Blog2";
+import Blog3 from "./blog/Blog3";
+import Blog4 from "./blog/Blog4";
+import Blog5 from "./blog/Blog5";
+import Blog6 from "./blog/Blog6";
+import Blog7 from "./blog/Blog7";
+import Blog8 from "./blog/Blog8";
+import Blog9 from "./blog/Blog9";
+import Blog10 from "./blog/Blog10";
 /* =========================================================
    HOME PAGE
    "/" → Hero page
@@ -795,7 +806,7 @@ function App() {
             "/about" → AboutPage
         ================================================= */}
 
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
 
         {/* =================================================
             OUR WORK
@@ -812,7 +823,59 @@ function App() {
         ================================================= */}
 
         <Route path="/blog" element={<BlogPage />} />
+          {/* =================================================
+    BLOG ARTICLES
+================================================= */}
 
+<Route
+  path="/blog/seo-vs-aeo-vs-geo/"
+  element={<Blog1 />}
+/>
+
+<Route
+  path="/blog/ai-search-digital-marketing-2026/"
+  element={<Blog2 />}
+/>
+
+<Route
+  path="/blog/generative-engine-optimization-guide/"
+  element={<Blog3 />}
+/>
+
+<Route
+  path="/blog/improve-ai-search-visibility/"
+  element={<Blog4 />}
+/>
+
+<Route
+  path="/blog/google-ads-vs-seo/"
+  element={<Blog5 />}
+/>
+
+<Route
+  path="/blog/b2b-digital-marketing-strategy/"
+  element={<Blog6 />}
+/>
+
+<Route
+  path="/blog/local-seo-guide/"
+  element={<Blog7 />}
+/>
+
+<Route
+  path="/blog/digital-marketing-budget-guide/"
+  element={<Blog8 />}
+/>
+
+<Route
+  path="/blog/website-redesign-checklist/"
+  element={<Blog9 />}
+/>
+
+<Route
+  path="/blog/content-for-ai-search/"
+  element={<Blog10 />}
+/>
         {/* =================================================
             FAQ
             "/faq" → FAQPage
@@ -918,6 +981,8 @@ function App() {
           path="/our-work/pentagon-tax-corp"
           element={<PentagonTaxCorpPage />}
         />
+
+        <Route path="/blog/seo-vs-aeo-vs-geo/" element={<Blog1 />} />
       </Routes>
     </BrowserRouter>
   );

@@ -730,7 +730,7 @@ function Navbar() {
           ================================================= */}
 
           <Link
-            to="/about"
+            to="/about-us/"
             onClick={closeMobileMenu}
             className="
               text-[15px]
