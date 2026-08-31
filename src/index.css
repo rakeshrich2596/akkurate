@@ -160,9 +160,6 @@ a {
 }
 
 
-
-
-
     @keyframes drawGrowthLine {
       from {
         stroke-dashoffset: 1;
@@ -215,4 +212,2031 @@ a {
         width: 0;
       }
     }
-  
+
+
+    /* Hospitality Hero Animations */
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes roomCardIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes checkPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes roomChange {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+}
+
+@keyframes searchPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 85, 217, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(20, 85, 217, 0.08);
+  }
+}
+
+@keyframes stepGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 85, 217, 0);
+  }
+
+  50% {
+    box-shadow: 0 6px 20px rgba(20, 85, 217, 0.1);
+  }
+}
+
+@keyframes arrowMove {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+
+@keyframes swipeHint {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+
+/* Real Estate Hero + Funnel Animations */
+
+@keyframes realEstateFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes propertyCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mapPulseLine {
+  0% {
+    transform: translateX(-130%);
+  }
+
+  100% {
+    transform: translateX(520%);
+  }
+}
+
+@keyframes pinRipple {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.7;
+  }
+
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes journeyRipple {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes funnelGrow {
+  from {
+    width: 0;
+  }
+}
+
+/* softPulse and checkPop are shared with the Hospitality UI above. */
+
+
+[data-animate] {
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+
+      [data-animate="left"] {
+        transform: translateX(-35px);
+        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+      }
+
+      [data-animate="left"].is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      [data-animate="right"] {
+        transform: translateX(35px);
+        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+      }
+
+      [data-animate="right"].is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      [data-animate="center"] {
+        opacity: 0;
+        transform: scaleX(0.88);
+        transform-origin: center center;
+        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+      }
+
+      [data-animate="center"].is-visible {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      [data-animate="card"] {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      }
+
+      [data-animate="card"].is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      [data-delay="1"] { transition-delay: 0.02s; }
+      [data-delay="2"] { transition-delay: 0.04s; }
+      [data-delay="3"] { transition-delay: 0.06s; }
+      [data-delay="4"] { transition-delay: 0.08s; }
+      [data-delay="5"] { transition-delay: 0.10s; }
+      [data-delay="6"] { transition-delay: 0.12s; }
+
+      [data-animate="up"] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      }
+
+      [data-animate="up"].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+
+      @media (max-width: 767px) {
+        [data-animate="left"] {
+          transform: translateX(-20px);
+        }
+
+        [data-animate="right"] {
+          transform: translateX(20px);
+        }
+
+        [data-animate="card"] {
+          transform: translateY(15px) scale(0.99);
+        }
+
+        [data-animate="center"] {
+          transform: scaleX(0.94);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animate-\[heroFloat_6s_ease-in-out_infinite\],
+  .animate-\[fadeSlideDown_.6s_ease-out_both\],
+  .animate-\[fadeSlideDown_.7s_ease-out_.1s_both\],
+  .animate-\[softPulse_2.5s_ease-in-out_infinite\],
+  .animate-\[stepGlow_2.5s_ease-in-out_infinite\],
+  .animate-\[arrowMove_1.8s_ease-in-out_infinite\],
+  .animate-\[searchPulse_2.5s_ease-in-out_infinite\],
+  .animate-\[swipeHint_2s_ease-in-out_infinite\],
+  .animate-\[roomCardIn_.65s_ease-out_both\],
+  .animate-\[checkPop_.35s_ease-out_both\],
+  .animate-\[roomChange_.35s_ease-out_both\],
+  .animate-\[realEstateFloat_6s_ease-in-out_infinite\],
+  .animate-\[propertyCardIn_.7s_ease-out_both\],
+  .animate-\[mapPulseLine_2.2s_linear_infinite\],
+  .animate-\[pinRipple_2s_ease-out_infinite\],
+  .animate-\[journeyRipple_1.7s_ease-out_infinite\],
+  .animate-\[iconBounce_.8s_ease-in-out_infinite\],
+  .animate-\[panelRise_.6s_ease-out_both\],
+  .animate-\[funnelGrow_1.2s_ease-out_both\],
+  .animate-\[softPulse_1.8s_ease-in-out_infinite\],
+  .animate-\[checkPop_.35s_ease-out_both\] {
+    animation: none !important;
+  }
+};
+
+/* Jewellery Premium Showcase Animations */
+
+@keyframes jewelleryOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jewelleryOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes gemOrbit {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle)) translateX(162px) rotate(calc(var(--orbit-angle) * -1));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) + 360deg)) translateX(162px) rotate(calc((var(--orbit-angle) + 360deg) * -1));
+  }
+}
+
+@keyframes gemTwinkle {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes productFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+@keyframes productShine {
+  0% {
+    left: -35%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.8;
+  }
+  65% {
+    left: 125%;
+    opacity: 0;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+@keyframes categoryReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes pieceNameIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes donutIn {
+  from {
+    opacity: 0;
+    transform: scale(0.72) rotate(-25deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes categoryLegendIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[jewelleryOrbit_12s_linear_infinite\],
+  .animate-\[jewelleryOrbitReverse_16s_linear_infinite\],
+  .animate-\[gemOrbit_8s_linear_infinite\],
+  .animate-\[gemTwinkle_2s_ease-in-out_infinite\],
+  .animate-\[productFloat_5s_ease-in-out_infinite\],
+  .animate-\[productShine_3\.5s_ease-in-out_infinite\],
+  .animate-\[categoryReveal_\.6s_ease-out_both\],
+  .animate-\[panelRise_\.7s_ease-out_both\],
+  .animate-\[pieceNameIn_\.4s_ease-out_both\],
+  .animate-\[donutIn_\.9s_ease-out_both\],
+  .animate-\[categoryLegendIn_\.55s_ease-out_both\] {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   TRAVEL PAGE ANIMATIONS
+   ========================================================= */
+
+@keyframes travelLineDraw {
+  from {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+  }
+
+  to {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes chartPulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[travelLineDraw_1\.4s_ease-out_both\],
+  .animate-\[chartPulse_2s_ease-in-out_infinite\] {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   FOOD PAGE ANIMATIONS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Hero entrance
+   --------------------------------------------------------- */
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   General card animation
+   --------------------------------------------------------- */
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------------------------------------------------------
+   Scale animation
+   --------------------------------------------------------- */
+
+@keyframes scaleOut {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------------------------------------------------------
+   Food steam
+   --------------------------------------------------------- */
+
+@keyframes foodSteam {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+
+  20% {
+    opacity: 0.35;
+  }
+
+  55% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(1.2);
+  }
+}
+
+.food-steam {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to top,
+    rgba(148, 163, 184, 0.18),
+    rgba(148, 163, 184, 0)
+  );
+  filter: blur(1px);
+  animation: foodSteam 3s ease-in-out infinite;
+}
+
+.food-steam-one {
+  left: 0;
+  top: 0;
+  animation-delay: 0s;
+}
+
+.food-steam-two {
+  left: 15px;
+  top: 5px;
+  height: 27px;
+  animation-delay: 0.8s;
+}
+
+.food-steam-three {
+  left: 30px;
+  top: 1px;
+  height: 20px;
+  animation-delay: 1.5s;
+}
+
+/* ---------------------------------------------------------
+   Menu card subtle floating effect
+   --------------------------------------------------------- */
+
+@keyframes foodCardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.food-menu-card {
+  animation: foodCardFloat 4s ease-in-out infinite;
+}
+
+.food-menu-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.food-menu-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* ---------------------------------------------------------
+   Bar chart animation
+   --------------------------------------------------------- */
+
+@keyframes foodBarRise {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.food-chart-bar {
+  animation: foodBarRise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[slideInLeft_\.7s_ease-out_both\],
+  .animate-\[slideInRight_\.7s_ease-out_both\],
+  .animate-\[cardIn_\.65s_ease-out_both\],
+  .animate-\[scaleOut_\.7s_ease-out_both\],
+  .food-steam,
+  .food-menu-card,
+  .food-chart-bar {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   CLOTHING PAGE ANIMATIONS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Hero / section entrance
+   --------------------------------------------------------- */
+
+@keyframes clothingSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes clothingSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   Scale entrance
+   --------------------------------------------------------- */
+
+@keyframes clothingScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------------------------------------------------------
+   Digital opportunity cards
+   --------------------------------------------------------- */
+
+@keyframes clothingCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------------------------------------------------------
+   Funnel stages
+   --------------------------------------------------------- */
+
+@keyframes clothingFunnelIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scaleX(0.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+  }
+}
+
+.clothing-funnel-stage {
+  animation: clothingFunnelIn 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+/* ---------------------------------------------------------
+   Funnel moving pulse
+   --------------------------------------------------------- */
+
+@keyframes clothingFunnelPulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -5px) scale(0.7);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 250px) scale(1);
+  }
+
+  85% {
+    opacity: 0.8;
+    transform: translate(-50%, 480px) scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 570px) scale(0.6);
+  }
+}
+
+.clothing-funnel-pulse {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 5px rgba(20, 85, 217, 0.16),
+    0 0 20px rgba(20, 85, 217, 0.45);
+  animation: clothingFunnelPulse 4.2s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   Funnel shine
+   --------------------------------------------------------- */
+
+@keyframes clothingFunnelShine {
+  0% {
+    left: -40%;
+  }
+
+  35% {
+    left: 125%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+.clothing-funnel-shine {
+  animation: clothingFunnelShine 3.8s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   Fashion card subtle floating movement
+   --------------------------------------------------------- */
+
+@keyframes clothingFashionFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[clothingSlideLeft_\.7s_ease-out_both\],
+  .animate-\[clothingSlideRight_\.7s_ease-out_both\],
+  .animate-\[clothingScale_\.7s_ease-out_both\],
+  .animate-\[clothingCardIn_\.65s_ease-out_both\],
+  .clothing-funnel-stage,
+  .clothing-funnel-pulse,
+  .clothing-funnel-shine {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   MANUFACTURING PAGE
+   FACTORY NETWORK + PERFORMANCE ANIMATIONS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   HERO ENTRANCE
+   --------------------------------------------------------- */
+
+@keyframes manufactureLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes manufactureRight {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes manufactureUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   OPPORTUNITY / CONTENT CARDS
+   --------------------------------------------------------- */
+
+@keyframes manufactureCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.manufacture-card {
+  animation: manufactureCardIn 0.65s ease-out both;
+}
+
+/* ---------------------------------------------------------
+   HERO FACTORY GRID
+   --------------------------------------------------------- */
+
+.manufacture-grid {
+  background-image:
+    linear-gradient(
+      rgba(20, 85, 217, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 85, 217, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+}
+
+/* ---------------------------------------------------------
+   FACTORY NETWORK GRID
+   --------------------------------------------------------- */
+
+.manufacture-network-grid {
+  background-image:
+    linear-gradient(
+      rgba(20, 85, 217, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 85, 217, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 28px 28px;
+}
+
+/* ---------------------------------------------------------
+   NETWORK MOVING SIGNAL
+   --------------------------------------------------------- */
+
+@keyframes manufactureNetworkPulse {
+  0% {
+    left: 8%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  25% {
+    left: 29%;
+    opacity: 1;
+  }
+
+  50% {
+    left: 50%;
+    opacity: 1;
+  }
+
+  75% {
+    left: 71%;
+    opacity: 1;
+  }
+
+  92% {
+    left: 92%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 92%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+.manufacture-network-pulse {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(20, 85, 217, 0.16),
+    0 0 20px rgba(20, 85, 217, 0.55);
+
+  animation:
+    manufactureNetworkPulse
+    7.5s
+    cubic-bezier(0.4, 0, 0.2, 1)
+    infinite;
+}
+
+/* ---------------------------------------------------------
+   ACTIVE NETWORK LINE
+   --------------------------------------------------------- */
+
+@keyframes manufactureLineGlow {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.manufacture-active-line {
+  animation: manufactureLineGlow 1.8s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   ACTIVE NODE RING
+   --------------------------------------------------------- */
+
+@keyframes manufactureNodeRing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.manufacture-node-ring {
+  animation: manufactureNodeRing 1.8s ease-out infinite;
+}
+
+/* ---------------------------------------------------------
+   PERFORMANCE BAR ENTRY
+   --------------------------------------------------------- */
+
+@keyframes manufactureBarGrow {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0.2;
+  }
+
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+}
+
+.manufacture-bar {
+  animation:
+    manufactureBarGrow
+    0.9s
+    cubic-bezier(0.2, 0.75, 0.25, 1)
+    both;
+}
+
+/* ---------------------------------------------------------
+   BAR SHINE
+   --------------------------------------------------------- */
+
+@keyframes manufactureBarShine {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+  80% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.manufacture-bar-shine::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 45%;
+
+  transform: skewX(-18deg);
+
+  background: rgba(255, 255, 255, 0.35);
+
+  animation:
+    manufactureBarShine
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .manufacture-card,
+  .manufacture-network-pulse,
+  .manufacture-active-line,
+  .manufacture-node-ring,
+  .manufacture-bar {
+    animation: none !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE NETWORK ADJUSTMENT
+   --------------------------------------------------------- */
+
+@media (max-width: 639px) {
+  .manufacture-network-pulse {
+    display: none;
+  }
+}
+
+/* =========================================================
+   B2B MARKETING — LEAD TO DEAL ANIMATION
+========================================================= */
+
+@keyframes b2bStageLight {
+
+  0%,
+  18% {
+    opacity: 0.55;
+    transform: scale(1);
+    border-color: rgba(229, 231, 235, 1);
+    box-shadow: 0 0 0 rgba(20, 85, 217, 0);
+  }
+
+  30%,
+  48% {
+    opacity: 1;
+    transform: scale(1.045);
+    border-color: rgba(20, 85, 217, 0.55);
+    box-shadow:
+      0 0 0 5px rgba(20, 85, 217, 0.06),
+      0 15px 35px rgba(20, 85, 217, 0.12);
+  }
+
+  62%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+    border-color: rgba(229, 231, 235, 1);
+    box-shadow: 0 0 0 rgba(20, 85, 217, 0);
+  }
+}
+
+@keyframes b2bStageText {
+
+  0%,
+  18% {
+    color: #101828;
+  }
+
+  30%,
+  48% {
+    color: #073b91;
+  }
+
+  62%,
+  100% {
+    color: #101828;
+  }
+}
+
+@keyframes b2bRouteTravel {
+
+  0% {
+    left: 10%;
+    opacity: 0;
+    width: 0;
+  }
+
+  8% {
+    opacity: 1;
+    width: 8%;
+  }
+
+  85% {
+    opacity: 1;
+    width: 76%;
+  }
+
+  100% {
+    left: 86%;
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes b2bRouteLightTravel {
+
+  0% {
+    left: 10%;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  88% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 90%;
+    opacity: 0;
+  }
+}
+
+@keyframes b2bLivePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP STAGES
+========================================================= */
+
+.b2b-stage-card {
+  animation: b2bStageCardFade 0.6s ease-out both;
+  animation-delay: var(--stage-delay);
+}
+
+.b2b-stage-node {
+  animation:
+    b2bStageLight 5.25s ease-in-out infinite,
+    b2bStageText 5.25s ease-in-out infinite;
+  animation-delay: var(--stage-delay);
+}
+
+.b2b-route-line {
+  animation: b2bRouteTravel 5.25s linear infinite;
+}
+
+.b2b-route-light {
+  box-shadow:
+    0 0 0 5px rgba(20, 85, 217, 0.08),
+    0 0 18px rgba(20, 85, 217, 0.55);
+
+  animation: b2bRouteLightTravel 5.25s linear infinite;
+}
+
+.b2b-live-dot {
+  animation: b2bLivePulse 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   MOBILE FLOW
+========================================================= */
+
+@keyframes b2bMobileStageLight {
+
+  0%,
+  18% {
+    opacity: 0.6;
+    transform: scale(1);
+    border-color: rgba(229, 231, 235, 1);
+    box-shadow: none;
+  }
+
+  30%,
+  48% {
+    opacity: 1;
+    transform: scale(1.06);
+    border-color: rgba(20, 85, 217, 0.55);
+    box-shadow:
+      0 0 0 5px rgba(20, 85, 217, 0.06),
+      0 10px 25px rgba(20, 85, 217, 0.12);
+  }
+
+  62%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+    border-color: rgba(229, 231, 235, 1);
+    box-shadow: none;
+  }
+}
+
+@keyframes b2bMobileRoute {
+
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  90% {
+    height: 88%;
+    opacity: 1;
+  }
+
+  100% {
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+.b2b-mobile-stage .b2b-stage-node {
+  animation:
+    b2bMobileStageLight 5.25s ease-in-out infinite;
+  animation-delay: var(--stage-delay);
+}
+
+.b2b-route-line-mobile {
+  animation: b2bMobileRoute 5.25s linear infinite;
+}
+
+
+/* =========================================================
+   FUNNEL
+========================================================= */
+
+@keyframes b2bFunnelGrow {
+
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.b2b-funnel-row {
+  animation: b2bFunnelRowIn 0.55s ease-out both;
+  animation-delay: var(--funnel-delay);
+}
+
+.b2b-funnel-bar {
+  transform-origin: left center;
+  animation: b2bFunnelGrow 0.9s cubic-bezier(.22, .61, .36, 1) both;
+  animation-delay: var(--funnel-delay);
+}
+
+
+/* =========================================================
+   GENERAL ENTRANCE
+========================================================= */
+
+@keyframes b2bStageCardFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes b2bFunnelRowIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   EXISTING OPPORTUNITY ICON HOVER
+========================================================= */
+
+.opportunity-icon {
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.opportunity-card:hover .opportunity-icon {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+
+/* =========================================================
+   EXISTING CUSTOMER JOURNEY
+========================================================= */
+
+.journey-node {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.journey-node:hover {
+  transform: translateY(-6px);
+  border-color: rgba(20, 85, 217, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+}
+
+.journey-dot {
+  animation: b2bLivePulse 2.2s ease-in-out infinite;
+}
+
+.journey-flow-dot {
+  animation: journeyFlowMove 2.2s linear infinite;
+}
+
+@keyframes journeyFlowMove {
+
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(42px);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .b2b-stage-card,
+  .b2b-stage-node,
+  .b2b-route-line,
+  .b2b-route-light,
+  .b2b-live-dot,
+  .b2b-mobile-stage .b2b-stage-node,
+  .b2b-route-line-mobile,
+  .b2b-funnel-row,
+  .b2b-funnel-bar,
+  .journey-dot,
+  .journey-flow-dot {
+    animation: none !important;
+  }
+
+  .b2b-route-line {
+    opacity: 1;
+    left: 10%;
+    width: 80%;
+  }
+
+  .b2b-route-light {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .b2b-route-line-mobile {
+    max-height: 90%;
+  }
+
+}
+
+/* =========================================================
+   HEALTHCARE PAGE ANIMATIONS
+========================================================= */
+
+[data-animate] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+[data-animate="left"] {
+  transform: translateX(-35px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+[data-animate="right"] {
+  transform: translateX(35px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+[data-animate="center"] {
+  transform: scale(0.96);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+[data-animate="card"] {
+  transform: translateY(22px);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.55s ease-out;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+[data-delay="1"] {
+  transition-delay: 0.05s;
+}
+
+[data-delay="2"] {
+  transition-delay: 0.1s;
+}
+
+[data-delay="3"] {
+  transition-delay: 0.15s;
+}
+
+[data-delay="4"] {
+  transition-delay: 0.2s;
+}
+
+[data-delay="5"] {
+  transition-delay: 0.25s;
+}
+
+[data-delay="6"] {
+  transition-delay: 0.3s;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+@keyframes healthcareHeroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.healthcare-hero-visual {
+  animation: healthcareHeroFloat 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ORBIT
+========================================================= */
+
+@keyframes healthcareOrbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.healthcare-orbit-one {
+  animation: healthcareOrbit 18s linear infinite;
+}
+
+.healthcare-orbit-two {
+  animation: healthcareOrbit 12s linear infinite reverse;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+@keyframes healthcareSearchGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+.healthcare-search-glow {
+  animation: healthcareSearchGlow 3s ease-in-out infinite;
+}
+
+.healthcare-search-card {
+  animation: healthcareCardFloat 5s ease-in-out infinite;
+}
+
+@keyframes healthcareCardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+
+/* =========================================================
+   JOURNEY LINE
+========================================================= */
+
+@keyframes healthcareJourneyLine {
+  0% {
+    width: 0;
+  }
+
+  20% {
+    width: 22%;
+  }
+
+  40% {
+    width: 44%;
+  }
+
+  60% {
+    width: 66%;
+  }
+
+  80%,
+  100% {
+    width: 91%;
+  }
+}
+
+.healthcare-journey-progress {
+  width: 0;
+  animation: healthcareJourneyLine 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   JOURNEY NODES
+========================================================= */
+
+@keyframes healthcareNodePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(20, 85, 217, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 7px rgba(20, 85, 217, 0.08);
+  }
+}
+
+.healthcare-step-node {
+  animation: healthcareNodePulse 2.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LIVE DOT
+========================================================= */
+
+@keyframes healthcareLivePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+.healthcare-live-dot {
+  animation: healthcareLivePulse 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SIGNAL
+========================================================= */
+
+@keyframes healthcareSignalPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.healthcare-signal-pulse {
+  animation: healthcareSignalPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PERFORMANCE LINE CHART
+========================================================= */
+
+.healthcare-chart-line {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: healthcareLineDraw 2.2s ease-out forwards;
+}
+
+@keyframes healthcareLineDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* =========================================================
+   CHART POINTS
+========================================================= */
+
+.healthcare-chart-point {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: healthcareChartPoint 2.2s ease-in-out infinite;
+}
+
+@keyframes healthcareChartPoint {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+
+/* =========================================================
+   MOVING CHART DOT
+========================================================= */
+
+@keyframes healthcareChartTravel {
+  0% {
+    left: 8%;
+    top: 74%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  25% {
+    left: 30%;
+    top: 55%;
+  }
+
+  50% {
+    left: 52%;
+    top: 43%;
+  }
+
+  75% {
+    left: 74%;
+    top: 25%;
+  }
+
+  90% {
+    left: 91%;
+    top: 11%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 91%;
+    top: 11%;
+    opacity: 0;
+  }
+}
+
+.healthcare-chart-traveller {
+  animation: healthcareChartTravel 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CUSTOMER JOURNEY FLOW
+========================================================= */
+
+@keyframes healthcareFlowLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  80% {
+    width: 82%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 82%;
+    opacity: 0;
+  }
+}
+
+.healthcare-flow-line {
+  width: 0;
+  animation: healthcareFlowLine 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   JOURNEY DOT
+========================================================= */
+
+@keyframes healthcareJourneyDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+.healthcare-journey-dot {
+  animation: healthcareJourneyDot 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .healthcare-hero-visual {
+    animation: none;
+  }
+
+  .healthcare-orbit-one {
+    width: 300px;
+    height: 300px;
+  }
+
+  .healthcare-orbit-two {
+    width: 230px;
+    height: 230px;
+  }
+
+  [data-animate="left"] {
+    transform: translateX(-20px);
+  }
+
+  [data-animate="right"] {
+    transform: translateX(20px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .healthcare-hero-visual,
+  .healthcare-orbit-one,
+  .healthcare-orbit-two,
+  .healthcare-search-glow,
+  .healthcare-search-card,
+  .healthcare-journey-progress,
+  .healthcare-step-node,
+  .healthcare-live-dot,
+  .healthcare-signal-pulse,
+  .healthcare-chart-line,
+  .healthcare-chart-point,
+  .healthcare-chart-traveller,
+  .healthcare-flow-line,
+  .healthcare-journey-dot {
+    animation: none !important;
+  }
+}
+
+

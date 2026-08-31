@@ -1,5 +1,56 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import "../index.css";
+
+const propertyCards = [
+  {
+    name: "Skyline Residences",
+    location: "Kochi · 3 BHK",
+    price: "₹82L",
+    tag: "Featured",
+    position: "top-[12%] left-[8%]",
+    accent: "from-blue-100 to-indigo-100",
+  },
+  {
+    name: "Palm Grove Villas",
+    location: "Goa · 4 BHK",
+    price: "₹1.24Cr",
+    tag: "New",
+    position: "top-[36%] right-[6%]",
+    accent: "from-emerald-100 to-teal-100",
+  },
+  {
+    name: "Urban Heights",
+    location: "Chennai · 2 BHK",
+    price: "₹58L",
+    tag: "Popular",
+    position: "bottom-[8%] left-[17%]",
+    accent: "from-violet-100 to-purple-100",
+  },
+  {
+    name: "Lakeview Enclave",
+    location: "Coimbatore · 3 BHK",
+    price: "₹74L",
+    tag: "Verified",
+    position: "bottom-[16%] right-[10%]",
+    accent: "from-amber-100 to-orange-100",
+  },
+];
+
+const propertyJourney = [
+  { label: "Search", icon: "⌕" },
+  { label: "Property View", icon: "↗" },
+  { label: "Shortlist", icon: "♡" },
+  { label: "Enquiry", icon: "→" },
+];
+
+const enquiryFunnel = [
+  { label: "Property Searches", value: 100 },
+  { label: "Property Views", value: 72 },
+  { label: "Shortlists", value: 46 },
+  { label: "Enquiries", value: 27 },
+  { label: "Site Visits", value: 14 },
+];
 
 const opportunities = [
   {
@@ -156,106 +207,21 @@ function ScrollAnimations() {
     };
   }, [location.pathname]);
 
-  return (
-    <style>{`
-      [data-animate] {
-        opacity: 0;
-        will-change: transform, opacity;
-      }
-
-      [data-animate="left"] {
-        transform: translateX(-35px);
-        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-      }
-
-      [data-animate="left"].is-visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      [data-animate="right"] {
-        transform: translateX(35px);
-        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-      }
-
-      [data-animate="right"].is-visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      [data-animate="center"] {
-        opacity: 0;
-        transform: scaleX(0.88);
-        transform-origin: center center;
-        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-      }
-
-      [data-animate="center"].is-visible {
-        opacity: 1;
-        transform: scaleX(1);
-      }
-
-      [data-animate="card"] {
-        opacity: 0;
-        transform: translateY(22px) scale(0.98);
-        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-      }
-
-      [data-animate="card"].is-visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-
-      [data-delay="1"] { transition-delay: 0.02s; }
-      [data-delay="2"] { transition-delay: 0.04s; }
-      [data-delay="3"] { transition-delay: 0.06s; }
-      [data-delay="4"] { transition-delay: 0.08s; }
-      [data-delay="5"] { transition-delay: 0.10s; }
-      [data-delay="6"] { transition-delay: 0.12s; }
-
-      [data-animate="up"] {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-      }
-
-      [data-animate="up"].is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (max-width: 767px) {
-        [data-animate="left"] {
-          transform: translateX(-20px);
-        }
-
-        [data-animate="right"] {
-          transform: translateX(20px);
-        }
-
-        [data-animate="card"] {
-          transform: translateY(15px) scale(0.99);
-        }
-
-        [data-animate="center"] {
-          transform: scaleX(0.94);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        [data-animate],
-        [data-animate].is-visible {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none !important;
-        }
-      }
-    `}</style>
-  );
+  
 }
 
 export default function RealEstate() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [activeJourney, setActiveJourney] = useState(0);
+  const [selectedProperty, setSelectedProperty] = useState(0);
+
+  useEffect(() => {
+    const journeyTimer = setInterval(() => {
+      setActiveJourney((current) => (current + 1) % propertyJourney.length);
+    }, 1700);
+
+    return () => clearInterval(journeyTimer);
+  }, []);
 
   useEffect(() => {
     document.title =
@@ -324,16 +290,151 @@ export default function RealEstate() {
                 </Link>
               </div>
 
-              {/* RIGHT HERO IMAGE */}
-              <div data-animate="right" className="relative flex items-center justify-center">
+              {/* RIGHT HERO — PROPERTY SEARCH MAP */}
+              <div data-animate="right" className="relative">
                 <div className="absolute -inset-8 rounded-[40px] bg-[#1455d9]/10 blur-3xl" />
 
-                <div className="relative w-full max-w-[600px] overflow-hidden rounded-[28px] border border-blue-100 bg-white p-2 shadow-[0_25px_70px_rgba(15,23,42,.10)]">
-                  <img
-                    src="/assets/images/content_images/real-estate.png"
-                    alt="Real Estate Digital Marketing"
-                    className="h-auto w-full rounded-[22px] object-cover transition-transform duration-500 hover:scale-[1.02]"
-                  />
+                <div className="relative w-full max-w-[650px] overflow-hidden rounded-[28px] border border-blue-100 bg-white p-4 shadow-[0_25px_70px_rgba(15,23,42,.10)] sm:p-5 animate-[realEstateFloat_6s_ease-in-out_infinite]">
+                  {/* MAP / GRID */}
+                  <div className="relative h-[390px] overflow-hidden rounded-[22px] border border-blue-100 bg-[#f4f8ff]">
+                    {/* grid */}
+                    <div className="absolute inset-0 opacity-60">
+                      <div className="absolute inset-0 bg-[linear-gradient(rgba(20,85,217,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(20,85,217,.07)_1px,transparent_1px)] bg-[size:34px_34px]" />
+                      <div className="absolute left-[10%] top-[22%] h-[2px] w-[78%] rotate-[16deg] bg-blue-200/60" />
+                      <div className="absolute left-[3%] top-[56%] h-[2px] w-[88%] rotate-[-11deg] bg-blue-200/60" />
+                      <div className="absolute left-[30%] top-[4%] h-[88%] w-[2px] rotate-[17deg] bg-blue-200/50" />
+                      <div className="absolute left-[67%] top-[3%] h-[92%] w-[2px] rotate-[-12deg] bg-blue-200/50" />
+                    </div>
+
+                    {/* map label */}
+                    <div className="absolute left-4 top-4 z-20 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#1455d9] shadow-sm backdrop-blur">
+                      Property Search
+                    </div>
+
+                    {/* animated journey path */}
+                    <div className="absolute left-[15%] top-[47%] z-10 h-[2px] w-[70%] overflow-hidden rounded-full bg-blue-200/70 rotate-[7deg]">
+                      <div className="h-full w-1/4 bg-[#1455d9] animate-[mapPulseLine_2.2s_linear_infinite]" />
+                    </div>
+
+                    {/* property markers */}
+                    {propertyCards.map((property, index) => {
+                      const isSelected = selectedProperty === index;
+
+                      return (
+                        <button
+                          key={property.name}
+                          type="button"
+                          onClick={() => setSelectedProperty(index)}
+                          className={`absolute ${property.position} z-20 w-[155px] rounded-[16px] border bg-white p-2.5 text-left shadow-[0_12px_30px_rgba(15,23,42,.10)] transition-all duration-500 animate-[propertyCardIn_.7s_ease-out_both] ${
+                            isSelected
+                              ? "border-[#1455d9] -translate-y-1 scale-[1.03] shadow-[0_16px_35px_rgba(20,85,217,.18)]"
+                              : "border-white/80 hover:-translate-y-1 hover:border-blue-200"
+                          }`}
+                          style={{ animationDelay: `${0.35 + index * 0.12}s` }}
+                        >
+                          <div className={`relative h-16 overflow-hidden rounded-xl bg-gradient-to-br ${property.accent}`}>
+                            <div className="absolute left-3 top-3 h-7 w-9 rounded-md border border-white/70 bg-white/45" />
+                            <div className="absolute right-3 top-2 h-9 w-11 rounded-md border border-white/70 bg-white/40" />
+                            <div className="absolute bottom-0 left-0 h-5 w-full bg-white/40" />
+                            <span className={`absolute right-2 top-2 rounded-full bg-white/90 px-1.5 py-0.5 text-[7px] font-bold text-[#1455d9] ${isSelected ? "animate-[softPulse_1.8s_ease-in-out_infinite]" : ""}`}>
+                              {property.tag}
+                            </span>
+                          </div>
+
+                          <div className="mt-2 flex items-start justify-between gap-2">
+                            <div className="min-w-0">
+                              <p className="m-0 truncate text-[10px] font-bold text-[#101828]">
+                                {property.name}
+                              </p>
+                              <p className="mt-0.5 truncate text-[8px] text-gray-500">
+                                {property.location}
+                              </p>
+                            </div>
+
+                            {isSelected && (
+                              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#073b91] text-[9px] text-white animate-[checkPop_.35s_ease-out_both]">
+                                ✓
+                              </span>
+                            )}
+                          </div>
+
+                          <p className="mt-1.5 m-0 text-[10px] font-bold text-[#1455d9]">
+                            {property.price}
+                          </p>
+                        </button>
+                      );
+                    })}
+
+                    {/* center location pin */}
+                    <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+                      <div className="absolute -inset-4 rounded-full bg-[#1455d9]/10 animate-[pinRipple_2s_ease-out_infinite]" />
+                      <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#073b91] text-sm text-white shadow-[0_8px_20px_rgba(7,59,145,.25)]">
+                        ◆
+                      </div>
+                    </div>
+
+                    {/* selected property mini panel */}
+                    <div className="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between gap-3 rounded-[16px] border border-white/80 bg-white/95 px-3 py-2.5 shadow-[0_12px_30px_rgba(15,23,42,.10)] backdrop-blur animate-[panelRise_.6s_ease-out_both]">
+                      <div className="min-w-0">
+                        <p className="m-0 text-[8px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                          Selected Property
+                        </p>
+                        <p className="mt-0.5 truncate text-[11px] font-bold text-[#101828]">
+                          {propertyCards[selectedProperty].name}
+                        </p>
+                      </div>
+                      <span className="shrink-0 rounded-full bg-blue-50 px-2.5 py-1 text-[9px] font-bold text-[#1455d9]">
+                        View Property →
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* JOURNEY PULSE */}
+                  <div className="mt-4 rounded-[18px] border border-gray-100 bg-[#f8fbff] p-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="m-0 text-[9px] font-bold uppercase tracking-[0.14em] text-[#1455d9]">
+                        Customer Journey
+                      </p>
+                      <span className="text-[9px] text-gray-400">
+                        Live flow
+                      </span>
+                    </div>
+
+                    <div className="mt-3 grid grid-cols-4 gap-1.5">
+                      {propertyJourney.map((step, index) => {
+                        const active = index === activeJourney;
+
+                        return (
+                          <div key={step.label} className="relative flex items-center">
+                            <div
+                              className={`relative flex min-h-[48px] w-full flex-col items-center justify-center rounded-xl border px-1 text-center transition-all duration-500 ${
+                                active
+                                  ? "border-[#1455d9]/30 bg-blue-50 text-[#073b91] shadow-[0_8px_20px_rgba(20,85,217,.10)]"
+                                  : "border-gray-100 bg-white text-gray-400"
+                              }`}
+                            >
+                              {active && (
+                                <span className="absolute -inset-1 rounded-xl border border-[#1455d9]/20 animate-[journeyRipple_1.7s_ease-out_infinite]" />
+                              )}
+
+                              <span className={`text-[13px] ${active ? "animate-[iconBounce_.8s_ease-in-out_infinite]" : ""}`}>
+                                {step.icon}
+                              </span>
+                              <span className="mt-0.5 text-[7px] font-bold uppercase tracking-wide sm:text-[8px]">
+                                {step.label}
+                              </span>
+                            </div>
+
+                            {index < 3 && (
+                              <span className={`px-0.5 text-[9px] transition-colors duration-500 ${active ? "text-[#1455d9]" : "text-gray-300"}`}>
+                                →
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -414,6 +515,117 @@ export default function RealEstate() {
           </div>
         </section>
 
+
+        {/* PERFORMANCE */}
+        <section className="bg-[#f7faff] px-14 py-16 sm:py-20 lg:py-24">
+          <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-10">
+            <div className="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+              <div data-animate="left">
+                <p className="m-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1455d9]">
+                  Performance
+                </p>
+
+                <h2
+                  data-animate="center"
+                  className="mt-4 m-0 max-w-[520px] text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]"
+                >
+                  Property Enquiry Funnel
+                </h2>
+
+                <p className="mt-5 max-w-[500px] text-[14px] leading-7 text-gray-600 sm:text-[15px] sm:leading-8">
+                  Track the property journey from initial search through
+                  property views, shortlists, enquiries and site visits.
+                </p>
+
+                <div className="mt-7 grid grid-cols-2 gap-3">
+                  <div className="rounded-[16px] border border-gray-200 bg-white p-4 shadow-sm">
+                    <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                      Funnel start
+                    </p>
+                    <p className="mt-1 text-[23px] font-bold tracking-tight text-[#101828]">
+                      100
+                    </p>
+                    <p className="mt-0.5 text-[10px] text-gray-500">
+                      property searches
+                    </p>
+                  </div>
+
+                  <div className="rounded-[16px] border border-gray-200 bg-white p-4 shadow-sm">
+                    <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                      Final stage
+                    </p>
+                    <p className="mt-1 text-[23px] font-bold tracking-tight text-[#101828]">
+                      14
+                    </p>
+                    <p className="mt-0.5 text-[10px] text-gray-500">
+                      site visits
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                data-animate="right"
+                className="rounded-[24px] border border-gray-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,.06)] sm:p-7"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="m-0 text-[11px] font-bold text-[#101828]">
+                      Conversion flow
+                    </p>
+                    <p className="mt-1 m-0 text-[10px] text-gray-400">
+                      Illustrative funnel view
+                    </p>
+                  </div>
+
+                  <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[9px] font-bold text-[#1455d9]">
+                    5 stages
+                  </span>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                  {enquiryFunnel.map((item, index) => (
+                    <div
+                      key={item.label}
+                      data-animate="card"
+                      data-delay={index + 1}
+                      className="group"
+                    >
+                      <div className="mb-1.5 flex items-center justify-between gap-3">
+                        <span className="text-[11px] font-bold text-[#101828]">
+                          {item.label}
+                        </span>
+                        <span className="text-[11px] font-bold text-[#1455d9]">
+                          {item.value}
+                        </span>
+                      </div>
+
+                      <div className="h-3 overflow-hidden rounded-full bg-gray-100">
+                        <div
+                          className="h-full rounded-full bg-[#1455d9] transition-all duration-1000 ease-out group-hover:bg-[#073b91] animate-[funnelGrow_1.2s_ease-out_both]"
+                          style={{
+                            width: `${item.value}%`,
+                            animationDelay: `${0.2 + index * 0.12}s`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                  <span className="text-[10px] text-gray-400">
+                    Search → Site visit
+                  </span>
+                  <span className="text-[11px] font-bold text-[#101828]">
+                    14% of starting volume
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* RECOMMENDED STRATEGY */}
         <section className="px-14 py-16 sm:py-20 lg:py-24">
           <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-8 xl:px-10">
@@ -437,7 +649,6 @@ export default function RealEstate() {
                 <div
                   key={item.number}
                   data-animate="card"
-                  data-delay={index + 1} data-animate="card"
                   data-delay={index + 1}
                   className="flex gap-5 rounded-[18px] border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-6"
                 >

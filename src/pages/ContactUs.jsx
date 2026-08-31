@@ -210,21 +210,25 @@ export default function ContactUs() {
                   <p className="m-0">
                     <strong className="text-slate-800">Chennai</strong>
                     <br />
-                    No. 63/44, 3rd Cross Street,
+                    1/15, kalamegam St, Annai Therasa Nagar,
                     <br className="hidden sm:block" />
                     West Tambaram
                   </p>
 
                   <p className="m-0">
-                    <strong className="text-slate-800">Trichy</strong>
+                    <strong className="text-slate-800">Madurai</strong>
                     <br />
-                    Nawab Garden Street, Woraiyur
+                    94/1, Nethaji St, Indrani Nagar
+                    <br />
+                    Mudukusalai, Madurai-16
                   </p>
 
                   <p className="m-0">
                     <strong className="text-slate-800">Singapore</strong>
                     <br />
-                    Ang Mo Kio Street 31
+                    309, Shunfu Road
+                    <br />
+                    #06-195, Singapore-570309
                   </p>
                 </div>
               </InfoCard>
@@ -377,7 +381,7 @@ export default function ContactUs() {
                 <div className="overflow-hidden rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
                   <iframe
                     title="Akkurate Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.827064177657!2d80.1198!3d12.9255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f9bfe6ee571%3A0x7a5d8f2c0c5a16d!2sWest%20Tambaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.827064177657!2d80.1198!3d12.9255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f9bfe6ee571%3A0x7a5d8f2c0c5a16d!2sEast%20Tambaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                     className="block h-[360px] w-full border-0 sm:h-[420px] lg:h-[540px]"
                     loading="lazy"
                     allowFullScreen

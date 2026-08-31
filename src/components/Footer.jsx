@@ -614,11 +614,13 @@ const Footer = () => {
                 />
 
                 <span>
-                  No. 63/44, 3rd Cross Street,
+                  1/15, Kalamegam St, 
                   <br />
-                  Ranganadhapuram, West Tambaram,
+                  Annai Therasa Nagar,
                   <br />
-                  Chennai - 600 045
+                   East Tambaram,Tambaram,
+                  <br />
+                  Chennai - 600 059.
                 </span>
               </div>
             </div>

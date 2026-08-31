@@ -1,5 +1,37 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import "../index.css";
+const roomOptions = [
+  {
+    name: "Deluxe Room",
+    price: "₹8,500",
+    meta: "2 Guests · 1 King Bed",
+    accent: "bg-blue-50",
+  },
+  {
+    name: "Ocean Suite",
+    price: "₹14,800",
+    meta: "3 Guests · 1 King Bed",
+    accent: "bg-indigo-50",
+  },
+  {
+    name: "Family Villa",
+    price: "₹19,500",
+    meta: "4 Guests · 2 Beds",
+    accent: "bg-sky-50",
+  },
+];
+
+const bookingDemand = [
+  { month: "Jan", value: 42 },
+  { month: "Feb", value: 55 },
+  { month: "Mar", value: 48 },
+  { month: "Apr", value: 68 },
+  { month: "May", value: 76 },
+  { month: "Jun", value: 64 },
+  { month: "Jul", value: 82 },
+  { month: "Aug", value: 91 },
+];
 
 const opportunities = [
   {
@@ -144,7 +176,7 @@ function ScrollAnimations() {
         {
           threshold: 0.01,
           rootMargin: "0px 0px 80px 0px",
-        }
+        },
       );
 
       elements.forEach((element) => observer.observe(element));
@@ -256,6 +288,7 @@ function ScrollAnimations() {
 
 export default function Hospitality() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState(1);
 
   useEffect(() => {
     document.title =
@@ -303,7 +336,10 @@ export default function Hospitality() {
                   Hospitality Digital Marketing
                 </p>
 
-                <h1 data-animate="center" className="mt-4 m-0 max-w-[760px] text-[34px] font-bold leading-[1.06] tracking-[-0.04em] sm:text-[44px] md:text-[50px] lg:text-[31px]">
+                <h1
+                  data-animate="center"
+                  className="mt-4 m-0 max-w-[760px] text-[34px] font-bold leading-[1.06] tracking-[-0.04em] sm:text-[44px] md:text-[50px] lg:text-[31px]"
+                >
                   Digital Marketing for Hospitality Businesses That Need Better
                   Visibility, Trust &amp; Leads
                 </h1>
@@ -324,16 +360,332 @@ export default function Hospitality() {
                 </Link>
               </div>
 
-              {/* RIGHT HERO IMAGE */}
-              <div data-animate="right" className="relative flex items-center justify-center">
+              {/* RIGHT HERO — BOOKING JOURNEY */}
+              <div data-animate="right" className="relative">
                 <div className="absolute -inset-8 rounded-[40px] bg-[#1455d9]/10 blur-3xl" />
 
-                <div className="relative w-full max-w-[600px] overflow-hidden rounded-[28px] border border-blue-100 bg-white p-2 shadow-[0_25px_70px_rgba(15,23,42,.10)]">
-                  <img
-                    src="/assets/images/content_images/hospitality.png"
-                    alt="Hospitality Digital Marketing"
-                    className="h-auto w-full rounded-[22px] object-cover transition-transform duration-500 hover:scale-[1.02]"
-                  />
+                <div
+                  className="
+      relative overflow-hidden rounded-[28px] border border-blue-100
+      bg-white p-5
+      shadow-[0_25px_70px_rgba(15,23,42,.10)]
+      sm:p-6
+      animate-[heroFloat_6s_ease-in-out_infinite]
+    "
+                >
+                  {/* HEADER */}
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p
+                        className="
+            m-0 text-[10px] font-bold uppercase tracking-[0.18em]
+            text-[#1455d9]
+            animate-[fadeSlideDown_.6s_ease-out_both]
+          "
+                      >
+                        Booking Journey
+                      </p>
+
+                      <p
+                        className="
+            mt-1 m-0 text-[12px] text-gray-500
+            animate-[fadeSlideDown_.7s_ease-out_.1s_both]
+          "
+                      >
+                        From destination discovery to confirmed booking
+                      </p>
+                    </div>
+
+                    <span
+                      className="
+          rounded-full bg-green-50 px-3 py-1.5
+          text-[10px] font-bold text-green-700
+          animate-[softPulse_2.5s_ease-in-out_infinite]
+        "
+                    >
+                      Live Journey
+                    </span>
+                  </div>
+
+                  {/* BOOKING JOURNEY STEPS */}
+                  <div className="mt-5 grid grid-cols-4 items-center gap-1.5">
+                    {["Destination Search", "Hotel", "Room", "Booking"].map(
+                      (step, index) => (
+                        <div
+                          key={step}
+                          className="
+              flex items-center
+              animate-[fadeSlideUp_.6s_ease-out_both]
+            "
+                          style={{
+                            animationDelay: `${index * 0.15}s`,
+                          }}
+                        >
+                          <div
+                            className={`
+                w-full rounded-xl border px-2 py-2.5 text-center
+                transition-all duration-500
+                ${
+                  index === 2
+                    ? `
+                      border-[#1455d9]/30
+                      bg-blue-50
+                      text-[#073b91]
+                      shadow-[0_8px_20px_rgba(20,85,217,.10)]
+                      animate-[stepGlow_2.5s_ease-in-out_infinite]
+                    `
+                    : `
+                      border-gray-100
+                      bg-gray-50
+                      text-gray-500
+                      hover:border-blue-100
+                      hover:bg-blue-50/50
+                    `
+                }
+              `}
+                          >
+                            <span className="block text-[9px] font-bold uppercase tracking-wide sm:text-[10px]">
+                              {step}
+                            </span>
+                          </div>
+
+                          {index < 3 && (
+                            <span
+                              className="
+                  px-0.5 text-[10px] text-gray-300
+                  animate-[arrowMove_1.8s_ease-in-out_infinite]
+                "
+                              style={{
+                                animationDelay: `${index * 0.2}s`,
+                              }}
+                            >
+                              →
+                            </span>
+                          )}
+                        </div>
+                      ),
+                    )}
+                  </div>
+
+                  {/* BOOKING PANEL */}
+                  <div
+                    className="
+        mt-5 rounded-[20px] border border-gray-100
+        bg-[#f8fbff] p-4
+        animate-[fadeSlideUp_.7s_ease-out_.35s_both]
+      "
+                  >
+                    {/* DESTINATION SEARCH */}
+                    <div
+                      className="
+          flex items-center gap-3 rounded-xl border border-gray-200
+          bg-white px-3 py-2.5 shadow-sm
+          transition-all duration-300
+          hover:-translate-y-0.5
+          hover:border-blue-200
+          hover:shadow-[0_10px_25px_rgba(20,85,217,.08)]
+        "
+                    >
+                      <span
+                        className="
+            flex h-8 w-8 items-center justify-center rounded-full
+            bg-blue-50 text-[#1455d9]
+            animate-[searchPulse_2.5s_ease-in-out_infinite]
+          "
+                      >
+                        ⌕
+                      </span>
+
+                      <div className="min-w-0 flex-1">
+                        <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                          Destination
+                        </p>
+
+                        <p className="mt-0.5 truncate text-[12px] font-bold text-[#101828]">
+                          Goa, India · 12–15 Sep
+                        </p>
+                      </div>
+
+                      <span
+                        className="
+            cursor-pointer text-[11px] font-bold text-[#1455d9]
+            transition-all duration-300
+            hover:translate-x-1
+          "
+                      >
+                        Search
+                      </span>
+                    </div>
+
+                    {/* ROOM HEADER */}
+                    <div className="mt-4 flex items-center justify-between">
+                      <p className="m-0 text-[11px] font-bold text-[#101828]">
+                        Choose your stay
+                      </p>
+
+                      <span
+                        className="
+            text-[10px] text-gray-400
+            animate-[swipeHint_2s_ease-in-out_infinite]
+          "
+                      >
+                        Swipe to explore
+                      </span>
+                    </div>
+
+                    {/* ROOM CARDS */}
+                    <div
+                      className="
+          mt-3 flex gap-3 overflow-x-auto pb-2
+          [scrollbar-width:none]
+          [&::-webkit-scrollbar]:hidden
+        "
+                    >
+                      {roomOptions.map((room, index) => {
+                        const isSelected = selectedRoom === index;
+
+                        return (
+                          <button
+                            key={room.name}
+                            type="button"
+                            onClick={() => setSelectedRoom(index)}
+                            className={`
+                group min-w-[175px] shrink-0 rounded-[16px]
+                border p-3 text-left
+                transition-all duration-500
+                animate-[roomCardIn_.65s_ease-out_both]
+                ${
+                  isSelected
+                    ? `
+                      border-[#1455d9]
+                      bg-white
+                      shadow-[0_12px_30px_rgba(20,85,217,.14)]
+                      -translate-y-1
+                    `
+                    : `
+                      border-gray-200
+                      bg-white
+                      hover:-translate-y-1
+                      hover:border-blue-200
+                      hover:shadow-[0_10px_25px_rgba(15,23,42,.08)]
+                    `
+                }
+              `}
+                            style={{
+                              animationDelay: `${0.45 + index * 0.12}s`,
+                            }}
+                          >
+                            {/* ROOM IMAGE */}
+                            <div
+                              className={`
+                  relative flex h-20 items-end overflow-hidden
+                  rounded-xl ${room.accent} p-2
+                  transition-transform duration-500
+                  group-hover:scale-[1.02]
+                `}
+                            >
+                              {/* Decorative room shapes */}
+                              <div className="absolute left-3 top-3 h-5 w-5 rounded-full bg-white/30" />
+
+                              <div className="absolute right-3 top-2 h-8 w-12 rounded-md bg-white/20" />
+
+                              <div
+                                className="
+                    h-8 w-full rounded-lg border border-white/80
+                    bg-white/70
+                    transition-all duration-500
+                    group-hover:translate-y-[-2px]
+                  "
+                              />
+                            </div>
+
+                            {/* ROOM INFO */}
+                            <div className="mt-2.5 flex items-start justify-between gap-2">
+                              <div>
+                                <p className="m-0 text-[11px] font-bold text-[#101828]">
+                                  {room.name}
+                                </p>
+
+                                <p className="mt-1 m-0 text-[9px] text-gray-500">
+                                  {room.meta}
+                                </p>
+                              </div>
+
+                              {isSelected && (
+                                <span
+                                  className="
+                      flex h-5 w-5 shrink-0 items-center
+                      justify-center rounded-full
+                      bg-[#073b91] text-[10px] text-white
+                      animate-[checkPop_.35s_ease-out_both]
+                    "
+                                >
+                                  ✓
+                                </span>
+                              )}
+                            </div>
+
+                            {/* PRICE */}
+                            <p className="mt-2 m-0 text-[11px] font-bold text-[#1455d9]">
+                              {room.price}
+                              <span className="font-normal text-gray-400">
+                                {" "}
+                                / night
+                              </span>
+                            </p>
+
+                            {/* SELECTED INDICATOR */}
+                            <div
+                              className={`
+                  mt-2 h-0.5 overflow-hidden rounded-full
+                  bg-[#1455d9]
+                  transition-all duration-500
+                  ${isSelected ? "w-full opacity-100" : "w-0 opacity-0"}
+                `}
+                            />
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* SELECTED ROOM / BOOK NOW */}
+                    <div
+                      className="
+          mt-3 flex items-center justify-between rounded-xl
+          bg-[#073b91] px-4 py-3 text-white
+          shadow-[0_10px_25px_rgba(7,59,145,.18)]
+          transition-all duration-300
+          hover:-translate-y-0.5
+          hover:shadow-[0_15px_30px_rgba(7,59,145,.25)]
+        "
+                    >
+                      <div>
+                        <p className="m-0 text-[9px] uppercase tracking-[0.12em] text-blue-200">
+                          Selected room
+                        </p>
+
+                        <p
+                          key={roomOptions[selectedRoom].name}
+                          className="
+              mt-0.5 m-0 text-[12px] font-bold
+              animate-[roomChange_.35s_ease-out_both]
+            "
+                        >
+                          {roomOptions[selectedRoom].name}
+                        </p>
+                      </div>
+
+                      <span
+                        className="
+            cursor-pointer text-[12px] font-bold
+            transition-all duration-300
+            hover:translate-x-1
+          "
+                      >
+                        Book Now →
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -348,7 +700,10 @@ export default function Hospitality() {
                 The Business Problem
               </p>
 
-              <h2 data-animate="center" className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[33px]">
+              <h2
+                data-animate="center"
+                className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[33px]"
+              >
                 Why Hospitality Marketing Needs a Specialized Approach
               </h2>
             </div>
@@ -379,7 +734,10 @@ export default function Hospitality() {
                 Digital Opportunities
               </p>
 
-              <h2 data-animate="center" className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]">
+              <h2
+                data-animate="center"
+                className="mt-3 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]"
+              >
                 Key Digital Opportunities for Hospitality
               </h2>
             </div>
@@ -388,7 +746,9 @@ export default function Hospitality() {
               {opportunities.map((item, index) => (
                 <article
                   key={item.number}
-                  data-animate="card" data-delay={index + 1} className="group rounded-[22px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.04)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_18px_45px_rgba(15,23,42,.08)] sm:p-7"
+                  data-animate="card"
+                  data-delay={index + 1}
+                  className="group rounded-[22px] border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,.04)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_18px_45px_rgba(15,23,42,.08)] sm:p-7"
                 >
                   <div className="flex items-start justify-between">
                     <span className="text-[11px] font-bold tracking-[0.15em] text-[#1455d9]">
@@ -413,6 +773,100 @@ export default function Hospitality() {
           </div>
         </section>
 
+        {/* PERFORMANCE */}
+        <section className="px-14 py-16 sm:py-20 lg:py-24">
+          <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-16 lg:px-8 xl:px-10">
+            <div data-animate="left">
+              <p className="m-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1455d9]">
+                Performance
+              </p>
+              <h2
+                data-animate="center"
+                className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]"
+              >
+                Booking Demand
+              </h2>
+              <p className="mt-5 max-w-[470px] text-[14px] leading-7 text-gray-600 sm:text-[15px]">
+                Track how booking interest changes across the year and use
+                demand signals to guide campaigns, content and conversion
+                priorities.
+              </p>
+
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                <div className="rounded-[16px] border border-gray-200 bg-white p-4 shadow-sm">
+                  <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                    Peak demand
+                  </p>
+                  <p className="mt-2 m-0 text-[22px] font-bold text-[#101828]">
+                    91%
+                  </p>
+                  <p className="mt-1 m-0 text-[10px] text-gray-500">
+                    Illustrative index
+                  </p>
+                </div>
+                <div className="rounded-[16px] border border-gray-200 bg-white p-4 shadow-sm">
+                  <p className="m-0 text-[9px] font-bold uppercase tracking-[0.12em] text-gray-400">
+                    Focus
+                  </p>
+                  <p className="mt-2 m-0 text-[22px] font-bold text-[#101828]">
+                    Q3
+                  </p>
+                  <p className="mt-1 m-0 text-[10px] text-gray-500">
+                    Highest demand period
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-animate="right"
+              className="rounded-[24px] border border-gray-200 bg-white p-5 shadow-[0_15px_45px_rgba(15,23,42,.06)] sm:p-7"
+            >
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <p className="m-0 text-[11px] font-bold text-[#101828]">
+                    Booking Demand Bar Chart
+                  </p>
+                  <p className="mt-1 m-0 text-[10px] text-gray-400">
+                    Illustrative monthly demand index
+                  </p>
+                </div>
+                <span className="rounded-full bg-blue-50 px-3 py-1.5 text-[9px] font-bold text-[#1455d9]">
+                  Demand Index
+                </span>
+              </div>
+
+              <div className="mt-7 flex h-[260px] items-end gap-2 border-b border-gray-100 sm:gap-3">
+                {bookingDemand.map((item, index) => (
+                  <div
+                    key={item.month}
+                    className="group flex h-full flex-1 flex-col justify-end"
+                  >
+                    <div className="mb-2 text-center text-[9px] font-bold text-[#1455d9] opacity-0 transition-opacity group-hover:opacity-100">
+                      {item.value}%
+                    </div>
+                    <div
+                      className="mx-auto w-full max-w-[48px] rounded-t-[10px] bg-[#1455d9] transition-all duration-500 group-hover:bg-[#073b91]"
+                      style={{
+                        height: `${item.value * 2.05}px`,
+                        transitionDelay: `${index * 40}ms`,
+                      }}
+                    />
+                    <span className="mt-2 text-center text-[9px] font-medium text-gray-500">
+                      {item.month}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 flex items-center justify-between text-[9px] text-gray-400">
+                <span>Lower demand</span>
+                <span>Higher demand</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* RECOMMENDED STRATEGY */}
         <section className="px-14 py-16 sm:py-20 lg:py-24">
           <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-8 xl:px-10">
@@ -421,7 +875,10 @@ export default function Hospitality() {
                 Our Approach
               </p>
 
-              <h2 data-animate="center" className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]">
+              <h2
+                data-animate="center"
+                className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]"
+              >
                 Recommended Strategy
               </h2>
 
@@ -435,7 +892,9 @@ export default function Hospitality() {
               {strategy.map((item, index) => (
                 <div
                   key={item.number}
-                  data-animate="card" data-delay={index + 1} className="flex gap-5 rounded-[18px] border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-6"
+                  data-animate="card"
+                  data-delay={index + 1}
+                  className="flex gap-5 rounded-[18px] border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-6"
                 >
                   <span className="shrink-0 pt-0.5 text-[11px] font-bold tracking-[0.14em] text-[#1455d9]">
                     {item.number}
@@ -464,7 +923,10 @@ export default function Hospitality() {
                 Why Choose Akkurate
               </p>
 
-              <h2 data-animate="center" className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px]">
+              <h2
+                data-animate="center"
+                className="mt-4 m-0 text-[30px] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[38px]"
+              >
                 Integrated Digital Growth for Hospitality
               </h2>
             </div>
@@ -473,7 +935,9 @@ export default function Hospitality() {
               {whyChoose.map((item, index) => (
                 <div
                   key={item}
-                  data-animate="card" data-delay={index + 1} className="flex gap-3 rounded-[16px] border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07]"
+                  data-animate="card"
+                  data-delay={index + 1}
+                  className="flex gap-3 rounded-[16px] border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07]"
                 >
                   <span className="mt-0.5 text-[14px] text-blue-300">✓</span>
                   <span className="text-[13px] leading-6 text-gray-300 sm:text-[14px]">
@@ -488,16 +952,20 @@ export default function Hospitality() {
         {/* FAQ */}
         <section className="px-14 py-16 sm:py-20 lg:py-24">
           <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16 lg:px-8 xl:px-10">
-            <div data-animate="left" className="lg:sticky lg:top-28 lg:self-start">
+            <div
+              data-animate="left"
+              className="lg:sticky lg:top-28 lg:self-start"
+            >
               <p className="m-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1455d9] sm:text-[11px]">
                 Frequently Asked Questions
               </p>
 
-              <h2 data-animate="center" className="mt-4 m-0 max-w-[450px] text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]">
+              <h2
+                data-animate="center"
+                className="mt-4 m-0 max-w-[450px] text-[30px] font-bold leading-tight tracking-[-0.03em] sm:text-[38px]"
+              >
                 Hospitality Marketing FAQs
               </h2>
-
-              
             </div>
 
             <div data-animate="right" className="space-y-3">
@@ -508,7 +976,9 @@ export default function Hospitality() {
                 return (
                   <div
                     key={faq.question}
-                    data-animate="card" data-delay={index + 1} className="overflow-hidden rounded-[16px] border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-[0_10px_35px_rgba(15,23,42,.05)]"
+                    data-animate="card"
+                    data-delay={index + 1}
+                    className="overflow-hidden rounded-[16px] border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-[0_10px_35px_rgba(15,23,42,.05)]"
                   >
                     <button
                       type="button"
