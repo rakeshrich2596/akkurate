@@ -1,18 +1,7 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-
-import {
-  Swiper,
-  SwiperSlide,
-} from "swiper/react";
-
-import {
-  Autoplay,
-  Pagination,
-} from "swiper/modules";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -24,282 +13,107 @@ import "swiper/css/pagination";
 const blogs = [
   {
     id: 1,
-
     title:
       "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need?",
-
     description:
       "A practical guide to SEO vs AEO vs GEO, including strategy, examples, common mistakes and actionable next steps for businesses.",
-
-    slug:
-      "/blog/seo-vs-aeo-vs-geo/",
-
-    focusKeyword:
-      "seo vs aeo vs geo",
-
-    metaTitle:
-      "SEO vs AEO vs GEO: What Is the Difference and Which Does Your Business Need? | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to seo vs aeo vs geo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog1.png",
-
-    alt:
-      "SEO AEO GEO digital marketing strategy",
+    slug: "/blog/seo-vs-aeo-vs-geo/",
+    image: "/assets/images/blogs/blog1.png",
+    alt: "SEO AEO GEO digital marketing strategy",
   },
 
   {
     id: 2,
-
-    title:
-      "How AI Search Is Changing Digital Marketing in 2026",
-
+    title: "How AI Search Is Changing Digital Marketing in 2026",
     description:
       "Understand how AI search is changing digital marketing in 2026, with practical strategies, examples, common mistakes and actionable next steps.",
-
-    slug:
-      "/blog/ai-search-digital-marketing-2026/",
-
-    focusKeyword:
-      "ai search digital marketing",
-
-    metaTitle:
-      "How AI Search Is Changing Digital Marketing in 2026 | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to ai search digital marketing, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog2.png",
-
-    alt:
-      "AI search and digital marketing",
+    slug: "/blog/ai-search-digital-marketing-2026/",
+    image: "/assets/images/blogs/blog2.png",
+    alt: "AI search and digital marketing",
   },
 
   {
     id: 3,
-
     title:
       "What Is Generative Engine Optimization (GEO)? A Practical Business Guide",
-
     description:
       "Learn what Generative Engine Optimization is, why it matters for businesses, how GEO works and the practical steps needed to improve visibility.",
-
-    slug:
-      "/blog/generative-engine-optimization-guide/",
-
-    focusKeyword:
-      "generative engine optimization",
-
-    metaTitle:
-      "What Is Generative Engine Optimization (GEO)? A Practical Business Guide | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to generative engine optimization, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog3.png",
-
-    alt:
-      "Generative engine optimization GEO",
+    slug: "/blog/generative-engine-optimization-guide/",
+    image: "/assets/images/blogs/blog3.png",
+    alt: "Generative Engine Optimization GEO",
   },
 
   {
     id: 4,
-
-    title:
-      "How to Improve Your Brand's Visibility in AI Search",
-
+    title: "How to Improve Your Brand's Visibility in AI Search",
     description:
       "Discover practical ways to improve your brand's visibility in AI search through better content, authority, structured information and search-focused strategy.",
-
-    slug:
-      "/blog/improve-ai-search-visibility/",
-
-    focusKeyword:
-      "ai search visibility",
-
-    metaTitle:
-      "How to Improve Your Brand's Visibility in AI Search | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to ai search visibility, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog4.png",
-
-    alt:
-      "Brand visibility in AI search",
+    slug: "/blog/improve-ai-search-visibility/",
+    image: "/assets/images/blogs/blog4.png",
+    alt: "Brand visibility in AI search",
   },
 
   {
     id: 5,
-
-    title:
-      "Google Ads vs SEO: Which Is Better for Lead Generation?",
-
+    title: "Google Ads vs SEO: Which Is Better for Lead Generation?",
     description:
       "Compare Google Ads and SEO for lead generation, understand when to use each channel and build a practical strategy for sustainable business growth.",
-
-    slug:
-      "/blog/google-ads-vs-seo/",
-
-    focusKeyword:
-      "google ads vs seo",
-
-    metaTitle:
-      "Google Ads vs SEO: Which Is Better for Lead Generation? | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to google ads vs seo, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog5.png",
-
-    alt:
-      "Google Ads versus SEO lead generation",
+    slug: "/blog/google-ads-vs-seo/",
+    image: "/assets/images/blogs/blog5.png",
+    alt: "Google Ads versus SEO lead generation",
   },
 
   {
     id: 6,
-
-    title:
-      "How to Build a B2B Digital Marketing Strategy in 2026",
-
+    title: "How to Build a B2B Digital Marketing Strategy in 2026",
     description:
       "Learn how to build a practical B2B digital marketing strategy in 2026 with clear goals, channels, content, lead generation and measurable next steps.",
-
-    slug:
-      "/blog/b2b-digital-marketing-strategy/",
-
-    focusKeyword:
-      "b2b digital marketing strategy",
-
-    metaTitle:
-      "How to Build a B2B Digital Marketing Strategy in 2026 | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to b2b digital marketing strategy, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog6.png",
-
-    alt:
-      "B2B digital marketing strategy",
+    slug: "/blog/b2b-digital-marketing-strategy/",
+    image: "/assets/images/blogs/blog6.png",
+    alt: "B2B digital marketing strategy",
   },
 
   {
     id: 7,
-
     title:
       "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews",
-
     description:
       "A practical local SEO guide covering Google Business Profile, local content, reviews and the key steps businesses can take to improve local visibility.",
-
-    slug:
-      "/blog/local-seo-guide/",
-
-    focusKeyword:
-      "local seo guide",
-
-    metaTitle:
-      "Local SEO Guide for Businesses: Google Business Profile, Content & Reviews | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to local seo guide, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog7.png",
-
-    alt:
-      "Local SEO guide for businesses",
+    slug: "/blog/local-seo-guide/",
+    image: "/assets/images/blogs/blog7.png",
+    alt: "Local SEO guide for businesses",
   },
 
   {
     id: 8,
-
-    title:
-      "How Much Should a Business Invest in Digital Marketing?",
-
+    title: "How Much Should a Business Invest in Digital Marketing?",
     description:
       "Understand digital marketing budgets, what influences investment decisions, how to allocate resources and how businesses can plan their next steps.",
-
-    slug:
-      "/blog/digital-marketing-budget-guide/",
-
-    focusKeyword:
-      "digital marketing budget",
-
-    metaTitle:
-      "How Much Should a Business Invest in Digital Marketing? | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to digital marketing budget, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog8.png",
-
-    alt:
-      "Digital marketing budget planning",
+    slug: "/blog/digital-marketing-budget-guide/",
+    image: "/assets/images/blogs/blog8.png",
+    alt: "Digital marketing budget planning",
   },
 
   {
     id: 9,
-
     title:
       "Website Redesign Checklist: SEO, UX, Performance & Conversion",
-
     description:
       "Use this website redesign checklist to review SEO, UX, website performance and conversion factors before launching your redesigned website.",
-
-    slug:
-      "/blog/website-redesign-checklist/",
-
-    focusKeyword:
-      "website redesign checklist",
-
-    metaTitle:
-      "Website Redesign Checklist: SEO, UX, Performance & Conversion | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to website redesign checklist, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog9.png",
-
-    alt:
-      "Website redesign checklist",
+    slug: "/blog/website-redesign-checklist/",
+    image: "/assets/images/blogs/blog9.png",
+    alt: "Website redesign checklist",
   },
 
   {
     id: 10,
-
     title:
       "How to Create Content That Performs in Google Search and AI Experiences",
-
     description:
       "Learn how to create useful content that performs across Google Search and AI experiences through better structure, relevance, authority and user-focused strategy.",
-
-    slug:
-      "/blog/content-for-ai-search/",
-
-    focusKeyword:
-      "content for ai search",
-
-    metaTitle:
-      "How to Create Content That Performs in Google Search and AI Experiences | Akkurate Digital Solutions",
-
-    metaDescription:
-      "A practical guide to content for ai search, including strategy, examples, common mistakes and actionable next steps from Akkurate Digital Solutions.",
-
-    image:
-      "/assets/images/blogs/blog10.png",
-
-    alt:
-      "Content strategy for Google and AI search",
+    slug: "/blog/content-for-ai-search/",
+    image: "/assets/images/blogs/blog10.png",
+    alt: "Content strategy for Google and AI search",
   },
 ];
 
@@ -313,125 +127,75 @@ function AnimatedHeadingText({
   animationKey,
 }) {
   const words = text.split(" ");
-
   const letters = [];
 
   words.forEach((word, wordIndex) => {
-    [...word].forEach(
-      (character, characterIndex) => {
-        letters.push({
-          character,
-          wordIndex,
-          characterIndex,
-          globalIndex: letters.length,
-        });
-      }
-    );
+    [...word].forEach((character, characterIndex) => {
+      letters.push({
+        character,
+        wordIndex,
+        characterIndex,
+        globalIndex: letters.length,
+      });
+    });
   });
 
-  const center =
-    (letters.length - 1) / 2;
+  const center = (letters.length - 1) / 2;
 
   const animationOrder = letters
     .map((letter) => ({
       ...letter,
-      distance: Math.abs(
-        letter.globalIndex - center
-      ),
+      distance: Math.abs(letter.globalIndex - center),
     }))
     .sort((a, b) => {
       if (a.distance !== b.distance) {
         return a.distance - b.distance;
       }
 
-      return (
-        a.globalIndex -
-        b.globalIndex
-      );
+      return a.globalIndex - b.globalIndex;
     });
 
   const delayMap = {};
 
-  animationOrder.forEach(
-    (letter, order) => {
-      delayMap[
-        letter.globalIndex
-      ] = order * delayStep;
-    }
-  );
+  animationOrder.forEach((letter, order) => {
+    delayMap[letter.globalIndex] = order * delayStep;
+  });
 
   return (
-    <span
-      key={animationKey}
-      className="inline"
-    >
-      {words.map(
-        (word, wordIndex) => (
-          <React.Fragment
-            key={`${wordIndex}-${animationKey}`}
-          >
-            <span
-              className="
-                inline-block
-                whitespace-nowrap
-              "
-            >
-              {[...word].map(
-                (
-                  character,
-                  characterIndex
-                ) => {
-                  const letter =
-                    letters.find(
-                      (item) =>
-                        item.wordIndex ===
-                          wordIndex &&
-                        item.characterIndex ===
-                          characterIndex
-                    );
+    <span key={animationKey} className="inline">
+      {words.map((word, wordIndex) => (
+        <React.Fragment key={`${wordIndex}-${animationKey}`}>
+          <span className="inline-block whitespace-nowrap">
+            {[...word].map((character, characterIndex) => {
+              const letter = letters.find(
+                (item) =>
+                  item.wordIndex === wordIndex &&
+                  item.characterIndex === characterIndex
+              );
 
-                  return (
-                    <span
-                      key={`
-                        ${wordIndex}-
-                        ${characterIndex}-
-                        ${animationKey}
-                      `}
-                      className="
-                        inline-block
-                        opacity-0
-                        animate-[blogLetterCenterReveal_0.55s_cubic-bezier(0.22,1,0.36,1)_forwards]
-                      "
-                      style={{
-                        animationDelay: `${
-                          delayMap[
-                            letter.globalIndex
-                          ]
-                        }s`,
-                      }}
-                    >
-                      {character}
-                    </span>
-                  );
-                }
-              )}
-            </span>
+              return (
+                <span
+                  key={`${wordIndex}-${characterIndex}-${animationKey}`}
+                  className="
+                    inline-block
+                    opacity-0
+                    animate-[blogLetterCenterReveal_0.55s_cubic-bezier(0.22,1,0.36,1)_forwards]
+                  "
+                  style={{
+                    animationDelay: `${delayMap[letter.globalIndex]}s`,
+                  }}
+                >
+                  {character}
+                </span>
+              );
+            })}
+          </span>
 
-            {wordIndex <
-              words.length - 1 && (
-              <span
-                className="
-                  inline-block
-                  w-[0.45em]
-                "
-                aria-hidden="true"
-              >
-                {" "}
-              </span>
-            )}
-          </React.Fragment>
-        )
-      )}
+          {wordIndex < words.length - 1 && (
+            <span className="inline-block w-[0.45em]"> </span>
+          )}
+        </React.Fragment>
+      ))}
     </span>
   );
 }
@@ -441,59 +205,36 @@ function AnimatedHeadingText({
 ===================================================== */
 
 const Blog = () => {
-  const sectionRef =
-    useRef(null);
+  const sectionRef = useRef(null);
 
-  const [
-    headingVisible,
-    setHeadingVisible,
-  ] = useState(false);
-
-  const [
-    animationKey,
-    setAnimationKey,
-  ] = useState(0);
-
-  /* =====================================================
-     SCROLL TRIGGER
-  ===================================================== */
+  const [headingVisible, setHeadingVisible] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
-    const section =
-      sectionRef.current;
+    const section = sectionRef.current;
 
     if (!section) return;
 
-    const observer =
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setHeadingVisible(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHeadingVisible(false);
 
-            setAnimationKey(
-              (previous) =>
-                previous + 1
-            );
+          setAnimationKey((previous) => previous + 1);
 
-            requestAnimationFrame(
-              () => {
-                requestAnimationFrame(
-                  () => {
-                    setHeadingVisible(
-                      true
-                    );
-                  }
-                );
-              }
-            );
-          } else {
-            setHeadingVisible(false);
-          }
-        },
-        {
-          threshold: 0.25,
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              setHeadingVisible(true);
+            });
+          });
+        } else {
+          setHeadingVisible(false);
         }
-      );
+      },
+      {
+        threshold: 0.25,
+      }
+    );
 
     observer.observe(section);
 
@@ -515,10 +256,7 @@ const Blog = () => {
         lg:py-24
       "
     >
-
-      {/* =================================================
-          BACKGROUND SHAPE
-      ================================================= */}
+      {/* BACKGROUND SHAPE */}
 
       <img
         src="/assets/images/shapes/shape-image.png"
@@ -534,9 +272,7 @@ const Blog = () => {
         "
       />
 
-      {/* =================================================
-          CONTAINER
-      ================================================= */}
+      {/* CONTAINER */}
 
       <div
         className="
@@ -547,10 +283,7 @@ const Blog = () => {
           lg:px-8
         "
       >
-
-        {/* =================================================
-            TOP TITLE
-        ================================================= */}
+        {/* HEADING */}
 
         <div
           className={`
@@ -559,16 +292,9 @@ const Blog = () => {
             transition-opacity
             duration-300
             sm:mb-12
-            ${
-              headingVisible
-                ? "opacity-100"
-                : "opacity-0"
-            }
+            ${headingVisible ? "opacity-100" : "opacity-0"}
           `}
         >
-
-          {/* OUR INSIGHTS */}
-
           <span
             className="
               block
@@ -586,8 +312,6 @@ const Blog = () => {
               animationKey={`our-${animationKey}`}
             />
           </span>
-
-          {/* LATEST BLOGS */}
 
           <h2
             className="
@@ -609,15 +333,10 @@ const Blog = () => {
           </h2>
         </div>
 
-        {/* =================================================
-            BLOG SWIPER
-        ================================================= */}
+        {/* BLOG SWIPER */}
 
         <Swiper
-          modules={[
-            Autoplay,
-            Pagination,
-          ]}
+          modules={[Autoplay, Pagination]}
           slidesPerView={1}
           spaceBetween={20}
           breakpoints={{
@@ -649,17 +368,8 @@ const Blog = () => {
           }}
           className="!pb-14"
         >
-
           {blogs.map((blog) => (
-            <SwiperSlide
-              key={blog.id}
-              className="!h-auto"
-            >
-
-              {/* =================================================
-                  BLOG CARD
-              ================================================= */}
-
+            <SwiperSlide key={blog.id} className="!h-auto">
               <article
                 className="
                   group
@@ -679,10 +389,7 @@ const Blog = () => {
                   hover:shadow-xl
                 "
               >
-
-                {/* =================================================
-                    IMAGE
-                ================================================= */}
+                {/* IMAGE */}
 
                 <div
                   className="
@@ -701,8 +408,8 @@ const Blog = () => {
                         "Blog image not found:",
                         blog.image
                       );
-                      e.currentTarget.style.display =
-                        "none";
+
+                      e.currentTarget.style.display = "none";
                     }}
                     className="
                       block
@@ -716,9 +423,7 @@ const Blog = () => {
                   />
                 </div>
 
-                {/* =================================================
-                    CONTENT
-                ================================================= */}
+                {/* CONTENT */}
 
                 <div
                   className="
@@ -729,7 +434,6 @@ const Blog = () => {
                     sm:p-6
                   "
                 >
-
                   {/* CATEGORY */}
 
                   <span
@@ -776,10 +480,10 @@ const Blog = () => {
                     {blog.description}
                   </p>
 
-                  {/* BUTTON */}
+                  {/* READ MORE */}
 
-                  <a
-                    href={blog.slug}
+                  <Link
+                    to={blog.slug}
                     className="
                       mt-auto
                       inline-flex
@@ -793,6 +497,7 @@ const Blog = () => {
                       text-sm
                       font-semibold
                       text-white
+                      no-underline
                       transition-all
                       duration-300
                       hover:-translate-y-0.5
@@ -810,42 +515,31 @@ const Blog = () => {
                     >
                       →
                     </span>
-                  </a>
-
+                  </Link>
                 </div>
               </article>
-
             </SwiperSlide>
           ))}
-
         </Swiper>
       </div>
 
-      {/* =================================================
-          ANIMATION
-      ================================================= */}
+      {/* ANIMATION */}
 
       <style>{`
         @keyframes blogLetterCenterReveal {
           0% {
             opacity: 0;
-            transform:
-              translateY(16px)
-              scale(0.82);
+            transform: translateY(16px) scale(0.82);
           }
 
           60% {
             opacity: 1;
-            transform:
-              translateY(-2px)
-              scale(1.04);
+            transform: translateY(-2px) scale(1.04);
           }
 
           100% {
             opacity: 1;
-            transform:
-              translateY(0)
-              scale(1);
+            transform: translateY(0) scale(1);
           }
         }
 
@@ -891,7 +585,6 @@ const Blog = () => {
           }
         }
       `}</style>
-
     </section>
   );
 };
