@@ -1,10 +1,7 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Globe from "globe.gl";
+import { useNavigate } from "react-router-dom";
 
 // =========================================================
 // LOCATIONS
@@ -44,47 +41,41 @@ const locations = [
 // =========================================================
 
 const GlobalPresence = () => {
-  const globeContainerRef =
-    useRef(null);
+  const globeContainerRef = useRef(null);
 
-  const globeRef =
-    useRef(null);
+  const globeRef = useRef(null);
 
-  const sectionRef =
-    useRef(null);
+  const sectionRef = useRef(null);
 
-  const [isVisible, setIsVisible] =
-    useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // =======================================================
   // SECTION SCROLL ANIMATION
   // =======================================================
 
   useEffect(() => {
-    const section =
-      sectionRef.current;
+    const section = sectionRef.current;
 
     if (!section) return;
 
-    const observer =
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(false);
 
+          requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                setIsVisible(true);
-              });
+              setIsVisible(true);
             });
-          } else {
-            setIsVisible(false);
-          }
-        },
-        {
-          threshold: 0.15,
+          });
+        } else {
+          setIsVisible(false);
         }
-      );
+      },
+      {
+        threshold: 0.15,
+      },
+    );
 
     observer.observe(section);
 
@@ -102,8 +93,7 @@ const GlobalPresence = () => {
       return;
     }
 
-    const container =
-      globeContainerRef.current;
+    const container = globeContainerRef.current;
 
     // Prevent duplicate globe
     container.innerHTML = "";
@@ -112,11 +102,9 @@ const GlobalPresence = () => {
     // CREATE GLOBE
     // =====================================================
 
-    const globe =
-      Globe()(container);
+    const globe = Globe()(container);
 
-    globeRef.current =
-      globe;
+    globeRef.current = globe;
 
     // =====================================================
     // EARTH IMAGE
@@ -124,12 +112,10 @@ const GlobalPresence = () => {
 
     globe
       .globeImageUrl(
-        "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg",
       )
 
-      .backgroundColor(
-        "rgba(0,0,0,0)"
-      )
+      .backgroundColor("rgba(0,0,0,0)")
 
       // IMPORTANT:
       // Globe itself uses 450x450.
@@ -147,42 +133,31 @@ const GlobalPresence = () => {
           lng: 90,
           altitude: 2,
         },
-        0
+        0,
       )
 
       // ===================================================
       // LOCATION MARKERS
       // ===================================================
 
-      .htmlElementsData(
-        locations
-      )
+      .htmlElementsData(locations)
 
-      .htmlElement(
-        (location) => {
-          const marker =
-            document.createElement(
-              "div"
-            );
+      .htmlElement((location) => {
+        const marker = document.createElement("div");
 
-          marker.className = `
+        marker.className = `
             -translate-x-1/2
             -translate-y-full
             cursor-pointer
           `;
 
-          const image =
-            document.createElement(
-              "img"
-            );
+        const image = document.createElement("img");
 
-          image.src =
-            "/assets/images/icons/location.png";
+        image.src = "/assets/images/icons/location.png";
 
-          image.alt =
-            location.city;
+        image.alt = location.city;
 
-          image.className = `
+        image.className = `
             block
 
             h-[18px]
@@ -198,127 +173,85 @@ const GlobalPresence = () => {
             hover:scale-125
           `;
 
-          image.title =
-            `${location.city} - ${location.area}`;
+        image.title = `${location.city} - ${location.area}`;
 
-          marker.appendChild(
-            image
-          );
+        marker.appendChild(image);
 
-          return marker;
-        }
-      );
+        return marker;
+      });
 
     // =====================================================
     // CONTROLS
     // =====================================================
 
-    const controls =
-      globe.controls();
+    const controls = globe.controls();
 
-    controls.autoRotate =
-      true;
+    controls.autoRotate = true;
 
-    controls.autoRotateSpeed =
-      1.5;
+    controls.autoRotateSpeed = 1.5;
 
-    controls.enableZoom =
-      false;
+    controls.enableZoom = false;
 
-    controls.enablePan =
-      false;
+    controls.enablePan = false;
 
-    controls.enableRotate =
-      true;
+    controls.enableRotate = true;
 
     // =====================================================
     // RESPONSIVE GLOBE SCALE
     // =====================================================
 
-    const updateGlobeSize =
-      () => {
-        if (
-          !globeRef.current ||
-          !container
-        ) {
-          return;
-        }
+    const updateGlobeSize = () => {
+      if (!globeRef.current || !container) {
+        return;
+      }
 
-        const width =
-          window.innerWidth;
+      const width = window.innerWidth;
 
-        let scale = 1;
+      let scale = 1;
 
-        if (width < 400) {
-          scale = 0.62;
-        } else if (
-          width < 480
-        ) {
-          scale = 0.70;
-        } else if (
-          width < 640
-        ) {
-          scale = 0.78;
-        } else if (
-          width < 768
-        ) {
-          scale = 0.82;
-        } else if (
-          width < 1024
-        ) {
-          scale = 0.88;
-        } else if (
-          width < 1280
-        ) {
-          scale = 0.92;
-        } else {
-          scale = 1;
-        }
+      if (width < 400) {
+        scale = 0.62;
+      } else if (width < 480) {
+        scale = 0.7;
+      } else if (width < 640) {
+        scale = 0.78;
+      } else if (width < 768) {
+        scale = 0.82;
+      } else if (width < 1024) {
+        scale = 0.88;
+      } else if (width < 1280) {
+        scale = 0.92;
+      } else {
+        scale = 1;
+      }
 
-        const canvas =
-          container.querySelector(
-            "canvas"
-          );
+      const canvas = container.querySelector("canvas");
 
-        if (canvas) {
-          canvas.style.transform =
-            `scale(${scale})`;
+      if (canvas) {
+        canvas.style.transform = `scale(${scale})`;
 
-          canvas.style.transformOrigin =
-            "center center";
-        }
-      };
+        canvas.style.transformOrigin = "center center";
+      }
+    };
 
     // Run once
-    requestAnimationFrame(
-      updateGlobeSize
-    );
+    requestAnimationFrame(updateGlobeSize);
 
     // Update on resize
-    window.addEventListener(
-      "resize",
-      updateGlobeSize
-    );
+    window.addEventListener("resize", updateGlobeSize);
 
     // =====================================================
     // CLEANUP
     // =====================================================
 
     return () => {
-      window.removeEventListener(
-        "resize",
-        updateGlobeSize
-      );
+      window.removeEventListener("resize", updateGlobeSize);
 
-      if (
-        container
-      ) {
-        container.innerHTML =
-          "";
+      if (container) {
+        container.innerHTML = "";
       }
 
-      globeRef.current =
-        null;
+      globeRef.current = null;
     };
   }, []);
 
@@ -326,13 +259,8 @@ const GlobalPresence = () => {
   // GO TO LOCATION
   // =========================================================
 
-  const goToLocation = (
-    lat,
-    lng
-  ) => {
-    if (
-      !globeRef.current
-    ) {
+  const goToLocation = (lat, lng) => {
+    if (!globeRef.current) {
       return;
     }
 
@@ -342,7 +270,7 @@ const GlobalPresence = () => {
         lng,
         altitude: 1.8,
       },
-      900
+      900,
     );
   };
 
@@ -350,15 +278,11 @@ const GlobalPresence = () => {
   // TALK BUTTON
   // =========================================================
 
-  const handleTalkToUs =
-    () => {
-      console.log(
-        "Talk to us clicked"
-      );
+  const navigate = useNavigate();
 
-      // window.location.href =
-      //   "/contact";
-    };
+  const handleTalkToUs = () => {
+    navigate("/contact");
+  };
 
   // =========================================================
   // RETURN
@@ -508,13 +432,9 @@ const GlobalPresence = () => {
             "
           >
             Trusted to Deliver
-
             <br />
-
             Excellence
-
             <br />
-
             Across Geographies
           </h1>
 
@@ -524,9 +444,7 @@ const GlobalPresence = () => {
 
           <button
             type="button"
-            onClick={
-              handleTalkToUs
-            }
+            onClick={handleTalkToUs}
             className="
               mt-5
 
@@ -578,7 +496,6 @@ const GlobalPresence = () => {
             "
           >
             Talk to us
-
             <span
               className="
                 text-lg
@@ -638,9 +555,7 @@ const GlobalPresence = () => {
           ================================================= */}
 
           <div
-            ref={
-              globeContainerRef
-            }
+            ref={globeContainerRef}
             className="
               globe-container
 
@@ -707,23 +622,12 @@ const GlobalPresence = () => {
             md:grid-cols-3
           "
         >
-          {locations.map(
-            (
-              location,
-              index
-            ) => (
-              <button
-                key={
-                  location.id
-                }
-                type="button"
-                onClick={() =>
-                  goToLocation(
-                    location.lat,
-                    location.lng
-                  )
-                }
-                className={`
+          {locations.map((location, index) => (
+            <button
+              key={location.id}
+              type="button"
+              onClick={() => goToLocation(location.lat, location.lng)}
+              className={`
                   group
 
                   flex
@@ -759,24 +663,15 @@ const GlobalPresence = () => {
 
                   md:py-3.5
 
-                  ${
-                    index !==
-                    locations.length - 1
-                      ? "md:border-r"
-                      : ""
-                  }
+                  ${index !== locations.length - 1 ? "md:border-r" : ""}
                 `}
-              >
-                {/* FLAG */}
+            >
+              {/* FLAG */}
 
-                <img
-                  src={
-                    location.flag
-                  }
-                  alt={
-                    location.city
-                  }
-                  className="
+              <img
+                src={location.flag}
+                alt={location.city}
+                className="
                     h-[20px]
                     w-[28px]
 
@@ -788,18 +683,18 @@ const GlobalPresence = () => {
 
                     shadow-sm
                   "
-                />
+              />
 
-                {/* LOCATION TEXT */}
+              {/* LOCATION TEXT */}
 
-                <div
-                  className="
+              <div
+                className="
                     flex
                     flex-col
                   "
-                >
-                  <span
-                    className="
+              >
+                <span
+                  className="
                       text-[14px]
 
                       font-medium
@@ -810,14 +705,12 @@ const GlobalPresence = () => {
 
                       sm:text-[15px]
                     "
-                  >
-                    {
-                      location.city
-                    }
-                  </span>
+                >
+                  {location.city}
+                </span>
 
-                  <span
-                    className="
+                <span
+                  className="
                       mt-0.5
 
                       text-[11px]
@@ -828,15 +721,12 @@ const GlobalPresence = () => {
 
                       sm:text-[12px]
                     "
-                  >
-                    {
-                      location.area
-                    }
-                  </span>
-                </div>
-              </button>
-            )
-          )}
+                >
+                  {location.area}
+                </span>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 

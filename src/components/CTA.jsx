@@ -251,7 +251,7 @@ const CTA = () => {
               >
 
                 <a
-                  href="/register"
+                  href="/contact"
                   className="
                     group
                     flex
