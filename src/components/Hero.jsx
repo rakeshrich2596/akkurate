@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 /* =========================================================
    HERO SLIDES
 ========================================================= */
@@ -376,50 +376,36 @@ function Hero() {
           >
             {/* BUTTON */}
 
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="
-                inline-flex
-
-                min-h-[54px]
-                min-w-[270px]
-
-                items-center
-                justify-center
-
-                rounded-full
-
-                bg-[#1455d9]
-
-                px-7
-                py-4
-
-                font-['Inter']
-
-                text-[14px]
-                font-semibold
-
-                text-white
-
-                shadow-[0_12px_30px_rgba(20,85,217,0.20)]
-
-                transition
-                duration-300
-
-                hover:-translate-y-1
-                hover:bg-[#0847c9]
-
-                sm:min-w-[285px]
-                sm:text-[15px]
-
-                md:min-w-[295px]
-
-                max-[480px]:w-full
-                max-[480px]:min-w-0
-              "
+    inline-flex
+    min-h-[54px]
+    min-w-[270px]
+    items-center
+    justify-center
+    rounded-full
+    bg-[#1455d9]
+    px-7
+    py-4
+    font-['Inter']
+    text-[14px]
+    font-semibold
+    text-white
+    shadow-[0_12px_30px_rgba(20,85,217,0.20)]
+    transition
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#0847c9]
+    sm:min-w-[285px]
+    sm:text-[15px]
+    md:min-w-[295px]
+    max-[480px]:w-full
+    max-[480px]:min-w-0
+  "
             >
               Build My Growth Engine
-            </a>
+            </Link>
 
             {/* CLIENT INFORMATION */}
 
