@@ -39,16 +39,16 @@ const socialLinks = [
     href: "https://www.facebook.com/people/Akkurate/61581308511005/",
     icon: FaFacebookF,
   },
-  {
-    name: "X",
-    href: "#",
-    icon: FaXTwitter,
-  },
-  {
-    name: "YouTube",
-    href: "#",
-    icon: FaYoutube,
-  },
+  // {
+  //   name: "X",
+  //   href: "#",
+  //   icon: FaXTwitter,
+  // },
+  // {
+  //   name: "YouTube",
+  //   href: "#",
+  //   icon: FaYoutube,
+  // },
 ];
 
 /* =========================================================
