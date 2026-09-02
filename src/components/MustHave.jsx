@@ -259,7 +259,7 @@ function MustHave() {
               `}
               style={{
                 transitionDelay: isVisible
-                  ? "1100ms"
+                  ? "200ms"
                   : "0ms",
               }}
             >
@@ -269,7 +269,7 @@ function MustHave() {
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 className="
                   h-full
                   w-full
